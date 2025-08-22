@@ -1,5 +1,5 @@
 // Replace with your Formspree endpoint
-const FORM_ENDPOINT = "https://formspree.io/f/XXXXXXXX";
+const FORM_ENDPOINT = "https://formspree.io/f/movlgnoy";
 
 const form = document.getElementById('signup');
 const msg  = document.getElementById('msg');
