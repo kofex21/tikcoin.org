@@ -8,59 +8,70 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="container">
-    <nav class="nav">
-      <div class="brand">TIKcoin</div>
-      <div class="links">
-        <a href="/#genesis">Genesis</a>
-        <a href="/#why">Why</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">TIKcoin</a>
+      <nav class="links">
+        <a href="/#manifesto">Manifesto</a>
+        <a href="/#ethos">Ethos</a>
         <a href="/#lifecycle">Lifecycle</a>
-        <a href="/tokenomics.html">Tokenomics</a>
+        <a aria-current="page" href="/tokenomics.html">Tokenomics</a>
         <a href="/#faq">FAQ</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <main class="container" style="padding:40px 0 60px">
-    <h1 style="margin-top:0">Tokenomics</h1>
-    <p>The foundation is fixed and public. No taxes, no burns, no admin keys. Allocations are locked according to on‑chain schedules.</p>
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Tokenomics</h1>
+        <p>The foundation is fixed and public. No taxes, no burns, no admin keys. Allocations are locked according to on‑chain schedules.</p>
+        <div class="pie" aria-label="Pie chart of allocations"></div>
+        <div class="pie-legend">
+          <div class="row"><div class="color" style="background:#1f77b4"></div><div>Presale</div><div>35%</div></div>
+          <div class="row"><div class="color" style="background:#ff7f0e"></div><div>Liquidity</div><div>20%</div></div>
+          <div class="row"><div class="color" style="background:#2ca02c"></div><div>Airdrop (15% bonuses, 5% ops)</div><div>20%</div></div>
+          <div class="row"><div class="color" style="background:#d62728"></div><div>Founder (strict unlocks)</div><div>10%</div></div>
+          <div class="row"><div class="color" style="background:#9467bd"></div><div>Marketing (future, multisig)</div><div>15%</div></div>
+        </div>
 
-    <div class="pie" aria-label="Pie chart of allocations"></div>
-    <div class="pie-legend">
-      <div class="row"><div class="color" style="background:#1f77b4"></div><div>Presale</div><div>35%</div></div>
-      <div class="row"><div class="color" style="background:#ff7f0e"></div><div>Liquidity</div><div>20%</div></div>
-      <div class="row"><div class="color" style="background:#2ca02c"></div><div>Airdrop (15% bonuses, 5% ops)</div><div>20%</div></div>
-      <div class="row"><div class="color" style="background:#d62728"></div><div>Founder (strict unlocks)</div><div>10%</div></div>
-      <div class="row"><div class="color" style="background:#9467bd"></div><div>Marketing (future, multisig)</div><div>15%</div></div>
-    </div>
+        <h2 class="section-title">Breakdown & Locks</h2>
+        <ul class="list-check">
+          <li><strong>Presale (35%).</strong> Hard wallet cap per address to avoid whales. Vesting/claim schedule published before TGE.</li>
+          <li><strong>Liquidity (20%).</strong> 85% added at TGE; 15% under timelock for price stabilization.</li>
+          <li><strong>Airdrop (20%).</strong> <em>15%</em> reserved for 10/20/30% buyer bonuses (locked ≥12 months). <em>5%</em> operational pool for referrals/memes/collabs under multisig, on‑chain tracked.</li>
+          <li><strong>Founder (10%).</strong> 50% unlocks one year after community unlock completion; remaining 50% unlocks after the project reaches Top‑50 by market cap (on a major tracker). Immutable rule.</li>
+          <li><strong>Marketing (future) (15%).</strong> Locked under multisig + timelock; spend only for listings/brand‑level campaigns. On‑chain proposals & receipts required.</li>
+        </ul>
 
-    <h2>Breakdown & Locks</h2>
-    <ul class="bullets">
-      <li><strong>Presale (35%).</strong> Hard wallet cap per address to avoid whales. Vesting/claim schedule published before TGE.</li>
-      <li><strong>Liquidity (20%).</strong> 85% added at TGE; 15% under timelock for price stabilization.</li>
-      <li><strong>Airdrop (20%).</strong> <em>15%</em> reserved for 10/20/30% buyer bonuses (locked ≥12 months). <em>5%</em> operational pool for referrals/memes/collabs under multisig, on‑chain tracked.</li>
-      <li><strong>Founder (10%).</strong> 50% unlocks one year after community unlock completion; remaining 50% unlocks after the project reaches Top‑50 by market cap (on a major tracker). Immutable rule.</li>
-      <li><strong>Marketing (future) (15%).</strong> Locked under multisig + timelock; spend only for listings/brand‑level campaigns. On‑chain proposals & receipts required.</li>
-    </ul>
+        <h2 class="section-title">Governance Safeguards</h2>
+        <ul class="list-check">
+          <li><strong>Multisig + Timelock.</strong> Treasury actions require N-of-M signatures and a public delay.</li>
+          <li><strong>No admin keys in the token.</strong> The base ERC‑20 is immutable. All utilities live in external modules.</li>
+          <li><strong>Emergency 1:1 migration (optional).</strong> Only via multisig and with an opt‑in swap contract.</li>
+        </ul>
 
-    <h2>Governance Safeguards</h2>
-    <ul class="bullets">
-      <li><strong>Multisig + Timelock.</strong> Treasury actions require N-of-M signatures and a public delay.</li>
-      <li><strong>No admin keys in the token.</strong> The base ERC‑20 is immutable. All utilities live in external modules.</li>
-      <li><strong>Emergency 1:1 migration (optional).</strong> Only via multisig and with an opt‑in swap contract.</li>
-    </ul>
-
-    <p>Last updated: <strong>draft</strong>. All addresses and lock transactions will be published before TGE.</p>
+        <p class="muted">Last updated: <strong>draft</strong>. All addresses and lock transactions will be published before TGE.</p>
+      </div>
+    </section>
   </main>
 
-  <footer class="container footer">
-    <div>© TIKcoin — The Trust Mechanism</div>
-    <div class="socials">
-      <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
-      <a href="mailto:contact@tikcoin.org">contact@tikcoin.org</a>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">TIKcoin</div>
+        <div class="muted">© TIKcoin — The Trust Mechanism</div>
+      </div>
+      <nav class="foot-links">
+        <a href="/tokenomics.html">Tokenomics</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="mailto:contact@tikcoin.org">contact@tikcoin.org</a>
+      </nav>
+      <nav class="socials">
+        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
+      </nav>
     </div>
-    <div><a href="/privacy.html">Privacy Policy</a></div>
   </footer>
 </body>
 </html>

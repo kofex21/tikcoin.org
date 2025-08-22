@@ -4,117 +4,193 @@
   <meta charset="utf-8">
   <title>TIKcoin — The Trust Mechanism</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="We are building a transparent and fair trust mechanism. No admin buttons. No hidden rules.">
+  <meta name="description" content="TIKcoin is a transparent, fair, immutable foundation. No admin keys. No hidden rules.">
   <meta property="og:title" content="TIKcoin — The Trust Mechanism">
-  <meta property="og:description" content="Honesty. Fairness. Immutability. The foundation is fixed forever; improvements only on top.">
+  <meta property="og:description" content="Born Aug 17, 2025 • Honesty. Fairness. Immutability.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/og.jpg">
   <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TIKcoin",
+    "url": "https://tikcoin.org",
+    "sameAs": [
+      "https://t.me/tikcoin_official_org",
+      "https://t.me/tikcoin_community_chat"
+    ]
+  }
+  </script>
   <!-- Plausible: uncomment when connected -->
   <!-- <script defer data-domain="tikcoin.org" src="https://plausible.io/js/script.js"></script> -->
 </head>
 <body>
-  <div class="ribbon">Born: <strong>August 17, 2025</strong> — Original channel & chat live on Telegram.</div>
-  <header class="container">
-    <nav class="nav">
-      <div class="brand">TIKcoin</div>
-      <div class="links">
-        <a href="#genesis">Genesis</a>
-        <a href="#why">Why</a>
+  <div class="ribbon">Born: <strong>August 17, 2025</strong> — Channel & chat live on Telegram.</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">TIKcoin</a>
+      <nav class="links">
+        <a href="#manifesto">Manifesto</a>
+        <a href="#ethos">Ethos</a>
         <a href="#lifecycle">Lifecycle</a>
         <a href="/tokenomics.html">Tokenomics</a>
         <a href="#faq">FAQ</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <h1>We are building a mechanism of trust.</h1>
-      <p class="sub">Honesty. Fairness. Immutability. No admin keys, no hidden rules. The foundation is set once and forever.</p>
-      <form id="signup" class="signup">
-        <input type="email" id="email" name="email" placeholder="your@email" required>
-        <button type="submit">Join Early</button>
-        <div id="msg" class="msg"></div>
-      </form>
-      <small class="privacy-note">Sign‑up is only for launch announcements. Unsubscribe anytime.</small>
-      <div class="cta-links">
-        <a class="btn secondary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Telegram</a>
-        <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Community Chat</a>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="display">We are building a mechanism of trust.</h1>
+        <p class="lead">Honesty. Fairness. Immutability. No admin keys, no hidden rules. The foundation is set once — evolution happens on top.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Telegram</a>
+          <a class="btn btn-ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Community Chat</a>
+        </div>
+        <form id="signup" class="signup" aria-label="Early access form">
+          <input type="email" id="email" name="email" placeholder="your@email" required aria-label="Email">
+          <button type="submit" class="btn btn-accent">Join Early</button>
+          <div id="msg" class="msg" role="status" aria-live="polite"></div>
+        </form>
+        <small class="privacy-note">Only launch updates. Unsubscribe anytime.</small>
+      </div>
+      <div class="backdrop">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="noise"></div>
       </div>
     </section>
 
-    <section id="genesis" class="container section">
-      <h2>Genesis & Ethos</h2>
-      <p>TIKcoin starts simple and grows organically. We’re not recruiting “investors”; we’re attracting builders — people who value clear rules and consistent behavior. The base stays minimal and immutable. Everything else is layered on top, transparently.</p>
-      <ul class="bullets">
-        <li><strong>Honesty.</strong> Speak plainly, publish what matters, keep receipts.</li>
-        <li><strong>Fairness.</strong> Equal conditions. No privileged backdoors.</li>
-        <li><strong>Immutability.</strong> Base rules are fixed. Extensions never break the foundation.</li>
-      </ul>
-    </section>
-
-    <section id="why" class="container section">
-      <h2>Why TIKcoin</h2>
-      <ul class="cards">
-        <li><strong>Safe foundation.</strong> A clean ERC‑20 contract without taxes, burns or blacklists.</li>
-        <li><strong>Transparent distribution.</strong> Allocations and locks are fixed and published in advance.</li>
-        <li><strong>Evolution safeguard.</strong> Optional 1:1 migration via multisig — only if it protects participants.</li>
-      </ul>
-    </section>
-
-    <section id="lifecycle" class="container section">
-      <h2>Lifecycle</h2>
-      <div class="life-grid">
-        <div class="life-card">
-          <h3>Birth</h3>
-          <p>Public inception (Aug 17, 2025). Website + Telegram + open manifesto. Find the first 100 who care.</p>
+    <!-- MANIFESTO -->
+    <section id="manifesto" class="section">
+      <div class="container two-col">
+        <div>
+          <h2 class="section-title">Manifesto</h2>
+          <p>We are not creating another hype token. We are crafting a base layer where rules are written at the start and never rewritten mid‑journey.</p>
+          <ul class="list-check">
+            <li><strong>Honesty.</strong> Speak plainly. Publish what matters. Keep receipts.</li>
+            <li><strong>Fairness.</strong> Equal conditions for everyone. No privileged allocations.</li>
+            <li><strong>Immutability.</strong> The foundation is locked. Improvements only as extensions.</li>
+          </ul>
         </div>
-        <div class="life-card">
-          <h3>First Steps</h3>
-          <p>Fundamental contract + initial audit. No admin keys. Publish addresses and locks.</p>
-        </div>
-        <div class="life-card">
-          <h3>Early Growth</h3>
-          <p>Presale with strict per‑wallet limits and open reporting. Community before volume.</p>
-        </div>
-        <div class="life-card">
-          <h3>Adolescence</h3>
-          <p>Listings. Interfaces and utilities ship as external modules. Base remains unchanged.</p>
-        </div>
-        <div class="life-card">
-          <h3>Adulthood</h3>
-          <p>Long‑run stewardship. Multisig + timelock for treasury. Measured evolution only.</p>
+        <div class="card glass">
+          <h3>Principles</h3>
+          <p class="muted">Simple base. Transparent distribution. Public locks. No taxes. No burns. No blacklists.</p>
+          <a class="chip" href="/tokenomics.html">View Tokenomics →</a>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="container section">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Why another project?</summary>
-        <p>To prove crypto can build long‑living systems without hidden doors or manual control.</p>
-      </details>
-      <details>
-        <summary>Will there be taxes, burns or admin keys?</summary>
-        <p>No. The foundation is clean. Improvements only as extensions, never by rewriting the base.</p>
-      </details>
-      <details>
-        <summary>When is the launch?</summary>
-        <p>We follow “foundation first, then scale”. Subscribe to be first to know.</p>
-      </details>
+    <!-- ETHOS -->
+    <section id="ethos" class="section alt">
+      <div class="container">
+        <h2 class="section-title center">Ethos</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="icon">🔒</div>
+            <h3>Immutable Base</h3>
+            <p>No admin keys. No hidden buttons. The core cannot be changed.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🧭</div>
+            <h3>Clear Direction</h3>
+            <p>Rules first, growth later. Extensions never break the foundation.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🧾</div>
+            <h3>Open Records</h3>
+            <p>Allocations, locks, and reports are public and verifiable.</p>
+          </div>
+        </div>
+      </div>
+      <div class="backdrop backdrop-soft"></div>
+    </section>
+
+    <!-- LIFECYCLE -->
+    <section id="lifecycle" class="section">
+      <div class="container">
+        <h2 class="section-title center">Lifecycle</h2>
+        <div class="timeline">
+          <div class="step">
+            <div class="badge">Birth</div>
+            <p>Public inception (Aug 17, 2025). Website + Telegram + open manifesto. Find the first 100 who care.</p>
+          </div>
+          <div class="step">
+            <div class="badge">First Steps</div>
+            <p>Fundamental contract + initial audit. No admin keys. Publish addresses and locks.</p>
+          </div>
+          <div class="step">
+            <div class="badge">Early Growth</div>
+            <p>Presale with strict per‑wallet limits and open reporting. Community before volume.</p>
+          </div>
+          <div class="step">
+            <div class="badge">Adolescence</div>
+            <p>Listings. Interfaces and utilities as external modules. Base remains unchanged.</p>
+          </div>
+          <div class="step">
+            <div class="badge">Adulthood</div>
+            <p>Long‑run stewardship. Multisig + timelock for treasury. Measured evolution only.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section alt">
+      <div class="container cta-wrap">
+        <h2 class="section-title">Join the builders.</h2>
+        <p class="muted">If you value clear rules and consistent behavior, you’ll feel at home here.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Telegram</a>
+          <a class="btn btn-ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Community Chat</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="section-title center">FAQ</h2>
+        <div class="faq">
+          <details class="card">
+            <summary>Why another project?</summary>
+            <p>To prove crypto can build long‑living systems without hidden doors or manual control.</p>
+          </details>
+          <details class="card">
+            <summary>Will there be taxes, burns or admin keys?</summary>
+            <p>No. The foundation is clean. Improvements only as extensions, never by rewriting the base.</p>
+          </details>
+          <details class="card">
+            <summary>When is the launch?</summary>
+            <p>We follow “foundation first, then scale”. Subscribe to be first to know.</p>
+          </details>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="container footer">
-    <div>© TIKcoin — The Trust Mechanism</div>
-    <div class="socials">
-      <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
-      <a href="mailto:contact@tikcoin.org">contact@tikcoin.org</a>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">TIKcoin</div>
+        <div class="muted">© TIKcoin — The Trust Mechanism</div>
+      </div>
+      <nav class="foot-links">
+        <a href="/tokenomics.html">Tokenomics</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="mailto:contact@tikcoin.org">contact@tikcoin.org</a>
+      </nav>
+      <nav class="socials">
+        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
+      </nav>
     </div>
-    <div><a href="/privacy.html">Privacy Policy</a> • <a href="/tokenomics.html">Tokenomics</a></div>
   </footer>
 
   <script src="/main.js"></script>
