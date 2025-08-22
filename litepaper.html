@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TIKcoin Litepaper — The Trust Mechanism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TIKcoin Litepaper: ethos, token model, distribution, governance, audits, roadmap.">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .lp { max-width: 900px; margin: 0 auto; padding: 48px 20px 64px; }
+    .lp h1 { font-size: 40px; margin: 0 0 8px; }
+    .lp .meta { color: var(--muted); margin-bottom: 24px; }
+    .toc { border:1px solid var(--outline); border-radius:12px; padding:14px; background:rgba(255,255,255,.03); }
+    .toc a { display:block; padding:4px 0; opacity:.9 }
+    .toc a:hover { opacity:1 }
+    .lp h2 { margin-top:28px; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .card.tbl { border:1px solid var(--outline); border-radius:12px; padding:0; overflow:hidden; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--outline); }
+    tr:last-child td { border-bottom:0 }
+    .note { color:var(--muted); font-size:14px }
+    .warn { border-left:3px solid #f59e0b; padding-left:10px; }
+    @media (max-width: 860px) { .grid2 { grid-template-columns:1fr } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/">TIKcoin</a>
+      <nav class="links">
+        <a href="/#manifesto">Manifesto</a>
+        <a href="/#ethos">Ethos</a>
+        <a href="/#lifecycle">Lifecycle</a>
+        <a href="/tokenomics.html">Tokenomics</a>
+        <a aria-current="page" href="/litepaper.html">Litepaper</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="lp">
+    <h1>TIKcoin — Litepaper</h1>
+    <div class="meta">Version 1.0 · Updated August 22, 2025 · This document is a concise overview intended for builders and partners.</div>
+
+    <div class="toc card">
+      <strong>Contents</strong>
+      <a href="#overview">1. Overview</a>
+      <a href="#problem">2. Problem</a>
+      <a href="#vision">3. Vision & Principles</a>
+      <a href="#token">4. Token Summary</a>
+      <a href="#distribution">5. Distribution & Locks</a>
+      <a href="#launch">6. Launch Plan</a>
+      <a href="#security">7. Security & Audits</a>
+      <a href="#governance">8. Governance & Treasury</a>
+      <a href="#roadmap">9. Roadmap</a>
+      <a href="#disclaimer">10. Disclaimer</a>
+    </div>
+
+    <h2 id="overview">1. Overview</h2>
+    <p><strong>TIKcoin</strong> is a mechanism of trust: a clean, immutable ERC‑20 base with transparent distribution, public locks, and no admin keys. We focus on <em>honesty</em>, <em>fairness</em> and <em>immutability</em>: rules are defined at inception and respected over time. Utilities are built as <em>external modules</em> so the base never changes.</p>
+
+    <h2 id="problem">2. Problem</h2>
+    <p>Too many tokens rely on opaque controls, arbitrary changes, and short‑term hype. This erodes trust and makes participants dependent on insiders. We aim to demonstrate that a minimal, verifiable foundation can compound trust long‑term.</p>
+
+    <h2 id="vision">3. Vision & Principles</h2>
+    <ul class="list-check">
+      <li><strong>Honesty.</strong> Publish what matters; keep verifiable records.</li>
+      <li><strong>Fairness.</strong> Equal rules for all, enforced in code.</li>
+      <li><strong>Immutability.</strong> Base ERC‑20 is final — no taxes, no burn mechanics, no blacklists, no owner functions.</li>
+      <li><strong>Evolution as extensions.</strong> New utilities live in separate contracts/interfaces without breaking the foundation.</li>
+      <li><strong>Measured stewardship.</strong> Treasury actions via multisig + timelock, with receipts.</li>
+    </ul>
+
+    <h2 id="token">4. Token Summary</h2>
+    <div class="grid2">
+      <div class="card tbl">
+        <table>
+          <tr><th>Ticker</th><td>TIK</td></tr>
+          <tr><th>Standard</th><td>ERC‑20 (EVM)</td></tr>
+          <tr><th>Supply</th><td>Fixed (to be announced at TGE)</td></tr>
+          <tr><th>Taxes</th><td>None (0%)</td></tr>
+          <tr><th>Admin keys</th><td>None on token contract</td></tr>
+          <tr><th>Upgrades</th><td>Optional opt‑in 1:1 migration, guarded by multisig + timelock</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <strong>Base philosophy.</strong>
+        <p>The token itself remains simple and immutable. Any advanced logic (vesting, claims, utilities) is handled by external contracts and public schedules.</p>
+      </div>
+    </div>
+
+    <h2 id="distribution">5. Distribution & Locks</h2>
+    <p>Distribution is fixed and public:</p>
+    <div class="card tbl">
+      <table>
+        <tr><th>Presale</th><td>35%</td><td>Per‑wallet hard cap; base: 50% at TGE + 50% linear over 10 months (draft); exact schedule published pre‑TGE.</td></tr>
+        <tr><th>Liquidity</th><td>20%</td><td>~85% added to initial LP at TGE; ~15% reserved under timelock for stabilization/liquidity management.</td></tr>
+        <tr><th>Airdrop</th><td>20%</td><td>15% reserved for 10/20/30% buyer bonuses (locked ≥12 months). 5% operational pool for referrals/memes/collabs (unlocked on distribution; on‑chain tracked).</td></tr>
+        <tr><th>Founder</th><td>10%</td><td>50% unlocks one year after community unlock completion; remaining 50% unlocks after the project reaches Top‑50 by market cap on a major tracker. Immutable rule.</td></tr>
+        <tr><th>Marketing (future)</th><td>15%</td><td>Multisig + timelock; spend limited to listings, brand‑level campaigns, and core growth. On‑chain proposals & receipts required.</td></tr>
+      </table>
+    </div>
+    <p class="note">All lock addresses, timelocks, and transactions will be published before TGE.</p>
+
+    <h2 id="launch">6. Launch Plan</h2>
+    <ol>
+      <li><strong>Birth.</strong> Public channels, website, litepaper (this document). Early community formation.</li>
+      <li><strong>Foundation.</strong> Deploy audited base ERC‑20 + claim/vesting contracts. Publish addresses and locks.</li>
+      <li><strong>Presale.</strong> Per‑wallet cap; transparent reporting; bonuses (10/20/30%) are distributed from the 15% bonus sub‑pool and locked ≥12 months.</li>
+      <li><strong>Liquidity & TGE.</strong> Add initial LP (targeting measured pricing), publish LP tx and timelocked stabilization reserves.</li>
+      <li><strong>Listings.</strong> Start with DEX; pursue CEX when organic metrics justify it.</li>
+    </ol>
+
+    <h2 id="security">7. Security & Audits</h2>
+    <ul class="list-check">
+      <li>Base token is minimal, using a well‑reviewed ERC‑20 implementation; no owner functions.</li>
+      <li>Independent audits in phases (at least two), including static analysis + manual review.</li>
+      <li>Public bug bounty after TGE; scope includes vesting/claims and ancillary modules.</li>
+      <li>Operational security: multisig signers, hardware wallets, timelock, monitored addresses.</li>
+    </ul>
+
+    <h2 id="governance">8. Governance & Treasury</h2>
+    <p>Treasury is controlled by a <strong>multisig + timelock</strong>. Initial signers are intended to include: founder, independent auditor partner, legal counsel (jurisdictional compliance), technical advisor, and a community representative. Threshold and addresses will be published pre‑TGE. All spends require on‑chain proposals with receipts. No spend can alter the base token rules.</p>
+
+    <h2 id="roadmap">9. Roadmap (high‑level)</h2>
+    <ul class="list-check">
+      <li><strong>Q3–Q4 2025.</strong> Finalize specs, audits (phase 1), presale infra, website growth, community milestones.</li>
+      <li><strong>Q4 2025.</strong> TGE, initial LP, start of vesting/claims, audit phase 2, public bounty.</li>
+      <li><strong>2026.</strong> Utility modules, listings expansion, brand collaborations, measured treasury deployments.</li>
+    </ul>
+
+    <h2 id="disclaimer">10. Disclaimer</h2>
+    <p class="warn">This litepaper is for informational purposes only and does not constitute financial, legal, or tax advice. Participation may be restricted in certain jurisdictions. Always do your own research.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><div class="brand">TIKcoin</div><div class="muted">© TIKcoin — The Trust Mechanism</div></div>
+      <nav class="foot-links">
+        <a href="/tokenomics.html">Tokenomics</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/">Home</a>
+      </nav>
+      <nav class="socials">
+        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
