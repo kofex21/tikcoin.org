@@ -162,6 +162,21 @@
     </div>
   </footer>
 
-  <script src="/main.js"></script>
+<script>
+  // burger (мобильное меню)
+  const b=document.querySelector('.burger'), n=document.querySelector('.nav');
+  if(b&&n){ b.addEventListener('click',()=>n.classList.toggle('open')); }
+
+  // header shadow при скролле
+  const h=document.querySelector('.site-header');
+  addEventListener('scroll',()=>{ h.style.boxShadow = scrollY>10 ? '0 8px 24px rgba(0,0,0,.25)' : 'none'; });
+
+  // появление секций
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // год в подвале
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
