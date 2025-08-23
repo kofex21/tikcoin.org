@@ -3,146 +3,165 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TIKcoin — Honest by Design</title>
-  <meta name="description" content="TIKcoin: honest, transparent, time-inspired crypto philosophy.">
+  <title>TIKcoin — We can’t stop time — we can monetize it</title>
+  <meta name="description" content="TIKcoin is a radically honest, community-first crypto experiment. Immutable rules. Transparent tokenomics.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="icon" type="image/png" href="./assets/logo.png">
-  <meta property="og:title" content="TIKcoin — Honest by Design">
-  <meta property="og:description" content="We can't stop time. We can monetize it.">
-  <meta property="og:image" content="./assets/og.jpg">
-  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <meta property="og:title" content="TIKcoin">
+  <meta property="og:description" content="We can’t stop time — we can monetize it. Radical honesty. Immutable rules.">
+  <meta property="og:image" content="/og.jpg">
+  <meta name="theme-color" content="#0b0d12">
 </head>
-<body>
-  <header class="site-head">
-    <a class="brand" href="./">
-      <img src="./assets/logo.png" alt="TIKcoin" class="brand-icon">
-      <span class="brand-name">TIKcoin</span>
-    </a>
-    <nav class="top-nav">
-      <a href="./index.html" class="nav-link active">Home</a>
-      <a href="./whitepaper.html" class="nav-link">Whitepaper</a>
-      <a href="./roadmap.html" class="nav-link">Roadmap</a>
-      <a href="./tokenomics.html" class="nav-link">Tokenomics</a>
-      <a href="https://t.me/tikcoin_official_org" target="_blank" class="btn tg">Telegram</a>
-    </nav>
+<body id="top">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="TIKcoin">
+        <span class="brand-logo-wrap">
+          <!-- твой логотип в SVG; если пока нет — оставь <img src="/logo.png"> -->
+          <img src="/logo.svg" alt="TIKcoin" class="brand-logo">
+          <!-- маленькая «тик-тик» шестерёнка -->
+          <svg class="gear-overlay" viewBox="0 0 100 100" aria-hidden="true">
+            <g class="gear">
+              <circle cx="50" cy="50" r="10" fill="transparent"/>
+              <path fill="#6E72FF" d="M50 25 l6 0 2 8 7 3 5 -4 5 5 -4 5 3 7 8 2 0 6 -8 2 -3 7 4 5 -5 5 -5 -4 -7 3 -2 8 -6 0 -2 -8 -7 -3 -5 4 -5 -5 4 -5 -3 -7 -8 -2 0 -6 8 -2 3 -7 -4 -5 5 -5 5 4 7 -3 2 -8z"/>
+              <circle cx="50" cy="50" r="6" fill="#6E72FF"/>
+            </g>
+          </svg>
+        </span>
+        <span class="brand-text">TIKcoin</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#top">Home</a>
+        <a href="/litepaper.html">Whitepaper</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="/tokenomics.html">Tokenomics</a>
+        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Community</a>
+      </nav>
+
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-left">
-      <h1 class="h1">
-        We can’t stop <span class="accent">time</span> —<br> we can <span class="accent">monetize</span> it.
-      </h1>
-      <p class="lead">
-        Radical honesty. Immutable rules. One mission: build a community where
-        <strong>trust compounds</strong> and speculation takes the back seat.
-      </p>
-      <div class="cta-row">
-        <a href="./whitepaper.html" class="btn primary">Read Whitepaper</a>
-        <a href="https://t.me/tikcoin_community_chat" target="_blank" class="btn ghost">Join Community</a>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="badge">⏳ Radical honesty • Immutable rules</div>
+        <h1>
+          We can’t stop <span class="grad">time</span> —<br>
+          we can <span class="grad">monetize</span> it.
+        </h1>
+        <p>
+          Our mission is simple: build a community where <strong>trust compounds</strong>,
+          speculation takes the back seat, and rules are written before the ship leaves the harbor.
+          Время не остановить — <strong>TIKcoin тоже</strong>.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="/litepaper.html">Read Whitepaper</a>
+          <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Join Community</a>
+        </div>
+        <div class="mini-note">No burns. No stealth taxes. Clear locks. Transparent vesting.</div>
       </div>
-    </div>
-
-    <div class="hero-right">
-      <!-- Container where we inline and animate your SVG logo -->
-      <div id="logo-mount" class="logo-mount">
-        <!-- graceful fallback while SVG loads / or if blocked -->
-        <img src="./logo.svg" alt="TIKcoin logo" class="logo-fallback">
-      </div>
-    </div>
-  </section>
-
-  <section class="pillars">
-    <h2 class="h2">Pillars</h2>
-    <div class="cards">
-      <div class="card">
-        <h3 class="card-title">Transparency</h3>
-        <p>Open code, auditable flows, no hidden switches. Communication mirrors the contract: clear and verifiable.</p>
-      </div>
-      <div class="card">
-        <h3 class="card-title">Fair Launch</h3>
-        <p>Presale with equal rules and public allocations. Liquidity first, founder unlocks are long and conditional.</p>
-      </div>
-      <div class="card">
-        <h3 class="card-title">Community-First</h3>
-        <p>Incentives for contribution, not noise. Rewards tied to real value added to the ecosystem.</p>
+      <div class="hero-art">
+        <!-- Светящийся диск/аура -->
+        <div class="aura"></div>
+        <div class="hourglass">
+          <div class="top-sand"></div>
+          <div class="neck"></div>
+          <div class="bottom-sand"></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="site-foot">
-    <div class="foot-left">
-      <img src="./assets/logo.png" class="foot-icon" alt="">
-      <span>TIKcoin</span>
+  <!-- Pillars -->
+  <section class="section" id="pillars">
+    <div class="container">
+      <h2 class="section-title">Pillars</h2>
+      <div class="grid cards">
+        <article class="card reveal">
+          <h3>Radical Honesty</h3>
+          <p>Rules declared upfront. No surprise mints, no shadow changes. Корабль уходит — правила уже написаны.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Immutable Core</h3>
+          <p>Core contract locked. Only whitelisted improvements that keep the foundation intact.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Community-First</h3>
+          <p>Incentives for builders, memers, referrers — without abusing supply. 20% community pool, transparently managed.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Healthy Markets</h3>
+          <p>Clear liquidity plan, vesting schedules that breathe, and safeguards against sudden dumps.</p>
+        </article>
+      </div>
     </div>
-    <div class="foot-right">
-      <a href="./privacy.html">Privacy</a>
-      <a href="https://t.me/tikcoin_official_org" target="_blank">Telegram</a>
-      <a href="https://t.me/tikcoin_community_chat" target="_blank">Community Chat</a>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="section" id="roadmap">
+    <div class="container">
+      <h2 class="section-title">Roadmap</h2>
+      <ol class="timeline">
+        <li class="reveal">
+          <h4>Phase 0 — Birth</h4>
+          <p>Site, brand, manifesto. Closed-date-less presale draft. Community ignition.</p>
+        </li>
+        <li class="reveal">
+          <h4>Phase 1 — Contract v1</h4>
+          <p>Foundation rules on-chain. Internal review. Public docs.</p>
+        </li>
+        <li class="reveal">
+          <h4>Phase 2 — Audit & v2</h4>
+          <p>External audit, fixes, hard-lock. Vesting & multisig wired. Presale go-live.</p>
+        </li>
+        <li class="reveal">
+          <h4>Phase 3 — Listing + Liquidity</h4>
+          <p>Listing 8 days after sellout. X2 target price band; liquidity buffers pre-wired.</p>
+        </li>
+        <li class="reveal">
+          <h4>Phase 4 — Utilities & Collabs</h4>
+          <p>Time-centric utilities, brand collabs, creator programs, dashboards.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="section subscribe">
+    <div class="container sub-wrap">
+      <h2>Get updates</h2>
+      <form class="sub-form" action="https://formspree.io/f/your-id" method="POST">
+        <input type="email" name="email" placeholder="you@domain.com" required>
+        <button class="btn primary" type="submit">Subscribe</button>
+      </form>
+      <p class="sub-note">We send only releases and major updates.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <div class="foot-brand">
+        <img src="/logo.svg" alt="" class="foot-logo">
+        <strong>TIKcoin</strong>
+      </div>
+      <div class="foot-links">
+        <a href="/litepaper.html">Whitepaper</a>
+        <a href="/tokenomics.html">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="foot-copy">© <span id="y"></span> TIKcoin. Time can’t be stopped — neither can we.</div>
     </div>
   </footer>
 
-  <!-- Inline-loader that fetches your SVG, injects into DOM, and animates gears -->
-  <script>
-    (function () {
-      const mount = document.getElementById('logo-mount');
-      if (!mount) return;
-
-      // Path to your vectorized logo
-      const svgPath = './logo.svg';
-
-      fetch(svgPath)
-        .then(r => r.text())
-        .then(txt => {
-          // Inject SVG inline
-          mount.innerHTML = txt;
-          const svg = mount.querySelector('svg');
-          if (!svg) return;
-
-          svg.classList.add('logo-svg'); // for sizing via CSS
-
-          // Heuristic: find elements that look like gears by id/class
-          const gearSelectors = [
-            '[id*="gear"]','[class*="gear"]',
-            '[id*="cog"]','[class*="cog"]',
-            '[id*="wheel"]','[class*="wheel"]'
-          ].join(',');
-
-          let gears = svg.querySelectorAll(gearSelectors);
-
-          // If the converter didn't keep ids/classes, try circles in lower area (bottom bulb heuristic)
-          if (!gears.length) {
-            const all = Array.from(svg.querySelectorAll('circle, path, polygon, rect, g'));
-            const bbox = svg.viewBox && svg.viewBox.baseVal
-              ? svg.viewBox.baseVal
-              : {x:0,y:0,width:200,height:200};
-            const bottomY = bbox.y + bbox.height * 0.55;
-            // Cheap heuristic: pick small-ish shapes that are placed in the lower half
-            gears = all.filter(node => {
-              try {
-                const b = node.getBBox();
-                return (b.width < bbox.width*0.5 && b.height < bbox.height*0.5 && (b.y+b.height/2) > bottomY);
-              } catch(e){ return false; }
-            });
-          }
-
-          // Apply spinning classes with staggered speeds
-          if (gears.length) {
-            gears.forEach((el, i) => {
-              el.classList.add(i % 2 ? 'spin' : 'spin-rev');
-              // custom property to vary speed
-              el.style.setProperty('--spd', (8 + (i%4)*3) + 's');
-            });
-          }
-
-          // Optional: add soft glow
-          svg.style.filter = 'drop-shadow(0 0 18px rgba(59,91,219,.25))';
-        })
-        .catch(() => {
-          // Fallback image already visible
-        });
-    })();
-  </script>
+  <script src="/main.js"></script>
 </body>
 </html>
