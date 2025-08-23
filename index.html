@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TIKcoin — Time can’t be stopped. Neither can TIKcoin.</title>
+  <meta name="description" content="Honest rules, transparent tokenomics, presale without a calendar end date. Time can’t be stopped. Neither can TIKcoin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <meta property="og:title" content="TIKcoin — We cannot buy time. But we can tokenize it.">
+  <meta property="og:description" content="Time can’t be stopped. Neither can TIKcoin.">
+  <meta property="og:image" content="./assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="brand" href="/">
+      <img src="./assets/logo.png" alt="TIKcoin" class="brand-logo"
+           onerror="this.style.display='none';document.getElementById('svgLogo').style.display='inline';">
+      <svg id="svgLogo" class="brand-logo" viewBox="0 0 100 100" aria-hidden="true" style="display:none">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+        <g fill="none" stroke="#3B5BDB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 20h40M30 80h40"/>
+          <path d="M35 20c0 15 30 15 30 30s-30 15-30 30"/>
+          <path d="M65 20c0 15-30 15-30 30s30 15 30 30"/>
+          <circle cx="50" cy="70" r="12"/>
+          <path d="M50 58v12m0 0l10 6m-10-6l-10 6"/>
+        </g>
+      </svg>
+      <span>TIKcoin</span>
+    </a>
+    <div class="nav-links">
+      <a href="#philosophy">Philosophy</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#join">Community</a>
+      <a class="btn small ghost" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-left">
+      <h1 class="title">Time can’t be stopped.<br><span>Neither can TIKcoin.</span></h1>
+      <p class="subtitle">We don’t value hype — we value <strong>time</strong>. Rules are written before the ship sails.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Join Telegram</a>
+        <a class="btn ghost" href="#philosophy">Read Philosophy</a>
+      </div>
+      <p class="tag ru">Время не остановить. И TIKcoin тоже.</p>
+    </div>
+    <div class="hero-right">
+      <!-- Animated hourglass (flips once per minute) -->
+      <div class="hourglass-wrap">
+        <svg class="hourglass" viewBox="0 0 120 220" aria-hidden="true">
+          <defs>
+            <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#9fb0ff"/>
+              <stop offset="100%" stop-color="#3B5BDB"/>
+            </linearGradient>
+          </defs>
+          <!-- frame -->
+          <rect x="20" y="10" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+          <rect x="20" y="190" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+          <path d="M26 30 Q60 70 94 30" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+          <path d="M26 190 Q60 150 94 190" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+          <!-- sand top -->
+          <path class="sand-top" d="M30 60 Q60 90 90 60 L90 80 Q60 100 30 80 Z" fill="url(#sand)" opacity="0.9"/>
+          <!-- stream -->
+          <rect class="sand-stream" x="59" y="110" width="2" height="30" fill="url(#sand)"/>
+          <!-- sand bottom -->
+          <path class="sand-bottom" d="M30 160 Q60 140 90 160 L90 170 Q60 190 30 170 Z" fill="url(#sand)" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="glow"></div>
+    </div>
+  </header>
+
+  <!-- PREVIEW CARDS -->
+  <section class="container grid">
+    <article class="card">
+      <h3>Philosophy</h3>
+      <p>Immutable base. No admin keys. No taxes/burns. Public timelocks. On-chain receipts.</p>
+      <a class="more" href="#philosophy">Read more →</a>
+    </article>
+    <article class="card">
+      <h3>Tokenomics</h3>
+      <p>Simple and fixed. One 20% community pool. Founder unlocks are strict.</p>
+      <a class="more" href="#tokenomics">See details →</a>
+    </article>
+    <article class="card">
+      <h3>Presale</h3>
+      <p>No calendar end date. Listing on day 8 after sell-out. Per-wallet hard cap.</p>
+      <a class="more" href="#roadmap">How it works →</a>
+    </article>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" class="section">
+    <div class="container">
+      <h2>Philosophy</h2>
+      <p class="lead">
+        Minimal, immutable foundation (ERC‑20). Utilities live as extensions — the base never changes.
+      </p>
+      <ul class="pills">
+        <li>No admin keys</li>
+        <li>No taxes / burns</li>
+        <li>Public timelocks</li>
+        <li>On-chain receipts</li>
+      </ul>
+      <p class="tag">TIME CAN’T BE STOPPED.</p>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section id="tokenomics" class="section alt">
+    <div class="container">
+      <h2>Tokenomics (v1)</h2>
+      <p>Total Supply: <strong>3,155,760,000&nbsp;TIK</strong></p>
+      <div class="tok-grid">
+        <div class="tok"><span>35%</span> Presale</div>
+        <div class="tok"><span>20%</span> Liquidity</div>
+        <div class="tok"><span>20%</span> Community & Growth Pool</div>
+        <div class="tok"><span>15%</span> Marketing (multisig + timelock)</div>
+        <div class="tok"><span>10%</span> Founder (strict unlocks)</div>
+      </div>
+      <p class="muted small">
+        Community & Growth — единый 20% пул: бонусы 10/20/30% во время пресейла по спросу; неиспользованное остаётся для рефералок, мемов, контента, коллабораций.
+      </p>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="section">
+    <div class="container">
+      <h2>Roadmap (v1)</h2>
+      <ol class="road">
+        <li><strong>Genesis.</strong> Сайт, бренд, Telegram/X, публичные правила «на берегу».</li>
+        <li><strong>Community ignition.</strong> Мем‑механики, органика, прозрачная аналитика.</li>
+        <li><strong>Presale.</strong> Без даты окончания; бонусы 10/20/30% из 20% community‑pool; жёсткий per‑wallet cap.</li>
+        <li><strong>Audit v1 + Listing.</strong> Базовый аудит; <em>TGE + листинг на 8‑й день</em> после sell‑out (закреплено в смарт‑контракте).</li>
+        <li><strong>Liquidity & Ops.</strong> 20% ликвидность; 15% маркетинг через multisig+timelock; ежемесячные отчёты.</li>
+        <li><strong>Audit v2 + Contract upgrade path.</strong> Улучшения без изменения фундамента (миграция 1:1 при необходимости).</li>
+        <li><strong>Partnerships & Utilities.</strong> Коллаборации, расширения, не ломающие базу; мем‑культура как двигатель притока.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" class="section join">
+    <div class="container center">
+      <h2>Join the movement</h2>
+      <p class="muted">Memes are the fuel. Honesty is the engine.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Telegram</a>
+        <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Community Chat</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footgrid">
+      <a class="brand" href="/"><img src="./assets/logo.png" class="brand-logo" alt="" onerror="this.style.display='none'"><span>TIKcoin</span></a>
+      <div class="muted">© <span id="y"></span> • We cannot buy time, but we can tokenize it.</div>
+      <div class="foot-links">
+        <a href="./litepaper.html">Litepaper</a>
+        <a href="./tokenomics.html">Tokenomics</a>
+        <a href="mailto:info@tikcoin.org">info@tikcoin.org</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
