@@ -87,55 +87,78 @@ h2{font:800 30px/1.2 Orbitron,sans-serif;color:#dbe4ff;text-align:center;margin:
 @media(max-width:860px){.container.grid{grid-template-columns:1fr}.title{font-size:36px}}
 @media(max-width:640px){.title{font-size:30px}.nav-links{display:none}}
 
-/* ===== Hourglass v3 (natural + brand coin) ===== */
-.hg3{display:inline-block; width:260px; transform-origin:50% 50%;
-     animation: hg3Flip 12s linear infinite;}
-.svg-hourglass3{width:100%; height:auto}
+/* ===== Hourglass v4 (continuous, no flip) ===== */
+.hg4{display:inline-block;width:260px}
+.svg-hourglass4{width:100%;height:auto}
 
-/* Песок: плавное «опустошение/наполнение» */
-.sand-top3{transform-origin:50% 100%; animation: sandTop3 12s linear infinite}
-.sand-bot3{transform-origin:50% 0%;   animation: sandBot3 12s linear infinite}
-.sand-stream3{animation: sandStream3 12s linear infinite; transform-origin:50% 0%}
+/* Длительность цикла (измени на 8s/16s по желанию) */
+:root{ --hgT: 12s; }
 
-/* Бренд-диск внутри колбы — лёгкое раскачивание */
-.tik-coin{animation: tikSwing 3s ease-in-out infinite alternate}
+/* A-фаза: верх уменьшается, низ растёт */
+.sand-topA{ transform-origin:50% 100%;
+  animation: topDrainA var(--hgT) linear infinite; }
+.sand-botA{ transform-origin:50% 0%;
+  animation: botFillA  var(--hgT) linear infinite; }
 
-/* Переворот всей колбы ближе к концу цикла */
-@keyframes hg3Flip{
-  0%, 88%   { transform: rotate(0deg) }
-  92%, 100% { transform: rotate(180deg) }
+/* B-фаза (в противофазе) — чтобы не было «пустоты» при сбросе */
+.sand-topB{ transform-origin:50% 100%;
+  animation: topDrainB var(--hgT) linear infinite; }
+.sand-botB{ transform-origin:50% 0%;
+  animation: botFillB  var(--hgT) linear infinite; }
+
+/* Струя песка всегда видна, слегка пульсирует к середине цикла */
+.sand-stream4{
+  animation: streamPulse var(--hgT) linear infinite;
+  transform-origin:50% 0%;
+  opacity:.9;
 }
 
-/* Верхняя колба: от полной до почти пустой, затем резет */
-@keyframes sandTop3{
-  0%   { transform: scaleY(1);   opacity:.95 }
-  85%  { transform: scaleY(.15); opacity:.35 }
-  90%  { transform: scaleY(0.05);opacity:0   } /* пауза на flip */
-  92%  { transform: scaleY(1);   opacity:.95 } /* резет после flip */
-  100% { transform: scaleY(1);   opacity:.95 }
+/* Цифры слегка «дышат» */
+.tik-core{ animation: tikBreath 3s ease-in-out infinite alternate }
+
+/* --- Keyframes --- */
+@keyframes topDrainA{
+  0%   { transform:scaleY(1);    opacity:1 }
+  48%  { transform:scaleY(.08);  opacity:1 }
+  50%  { transform:scaleY(.08);  opacity:0 } /* крест-фейд */
+  52%  { transform:scaleY(1);    opacity:0 } /* незаметный резет */
+  100% { transform:scaleY(1);    opacity:0 }
+}
+@keyframes botFillA{
+  0%   { transform:scaleY(.08);  opacity:.15 }
+  48%  { transform:scaleY(1);    opacity:.95 }
+  50%  { transform:scaleY(1);    opacity:0 }  /* крест-фейд */
+  52%  { transform:scaleY(.08);  opacity:0 }  /* резет */
+  100% { transform:scaleY(.08);  opacity:0 }
 }
 
-/* Нижняя колба: от почти пустой к полной, затем резет */
-@keyframes sandBot3{
-  0%   { transform: scaleY(.05); opacity:.15 }
-  85%  { transform: scaleY(1);   opacity:.95 }
-  90%  { transform: scaleY(0);   opacity:0   } /* пауза на flip */
-  92%  { transform: scaleY(.05); opacity:.15 } /* резет */
-  100% { transform: scaleY(.05); opacity:.15 }
+/* B заполняет «провал» A (противофаза) */
+@keyframes topDrainB{
+  0%   { transform:scaleY(1);    opacity:0 }
+  48%  { transform:scaleY(1);    opacity:0 }
+  50%  { transform:scaleY(1);    opacity:1 }  /* включаемся мягко */
+  98%  { transform:scaleY(.08);  opacity:1 }
+  100% { transform:scaleY(.08);  opacity:0 }  /* погасили перед стартом цикла */
+}
+@keyframes botFillB{
+  0%   { transform:scaleY(.08);  opacity:0 }
+  48%  { transform:scaleY(.08);  opacity:0 }
+  50%  { transform:scaleY(.08);  opacity:1 }
+  98%  { transform:scaleY(1);    opacity:1 }
+  100% { transform:scaleY(1);    opacity:0 }
 }
 
-/* Струйка — сужение к flip, исчезает на момент переворота */
-@keyframes sandStream3{
-  0%   { transform: scaleY(1); opacity:1 }
-  85%  { transform: scaleY(.25); opacity:.3 }
-  90%  { transform: scaleY(0);  opacity:0 }
-  92%  { transform: scaleY(1);  opacity:1 }
-  100% { transform: scaleY(1);  opacity:1 }
+/* Лёгкая пульсация струи */
+@keyframes streamPulse{
+  0%   { opacity:.9; transform:scaleY(1) }
+  48%  { opacity:.6; transform:scaleY(.8) }
+  50%  { opacity:.9; transform:scaleY(1) }
+  100% { opacity:.9; transform:scaleY(1) }
 }
 
-/* Небольшое покачивание бренд-диска (туда-сюда) */
-@keyframes tikSwing{
-  0%   { transform: translate(100px,160px) rotate(-10deg) }
-  100% { transform: translate(100px,160px) rotate(10deg) }
+/* Дыхание цифрового ядра */
+@keyframes tikBreath{
+  from { transform: translate(100px,160px) scale(1) }
+  to   { transform: translate(100px,160px) scale(1.05) }
 }
   
