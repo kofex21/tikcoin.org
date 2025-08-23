@@ -34,40 +34,38 @@
   </nav>
 
   <!-- HERO -->
-  <header class="hero">
-    <div class="hero-left">
-      <h1 class="title">Time can’t be stopped.<br><span>Neither can TIKcoin.</span></h1>
-      <p class="subtitle">We don’t value hype — we value <strong>time</strong>. Rules are written before the ship sails.</p>
-      <div class="cta">
-        <a class="btn primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Join Telegram</a>
-        <a class="btn ghost" href="#philosophy">Read Philosophy</a>
-      </div>
-      <p class="tag">Время не остановить. И TIKcoin тоже.</p>
-    </div>
-    <div class="hero-right">
-      <!-- Animated hourglass (flips every second) -->
-      <div class="hourglass-wrap">
-        <svg class="hourglass" viewBox="0 0 120 220" aria-hidden="true">
-          <defs>
-            <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#b7c6ff"/>
-              <stop offset="100%" stop-color="#3B5BDB"/>
-            </linearGradient>
-          </defs>
-          <!-- frame -->
-          <rect x="20" y="10" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-          <rect x="20" y="190" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-          <path d="M26 30 Q60 70 94 30" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-          <path d="M26 190 Q60 150 94 190" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-          <!-- sand shapes (animated via CSS scaleY + opacity) -->
-          <path class="sand-top" d="M30 60 Q60 90 90 60 L90 85 Q60 105 30 85 Z" fill="url(#sand)" opacity="0.95"/>
-          <rect class="sand-stream" x="59" y="110" width="2" height="34" fill="url(#sand)"/>
-          <path class="sand-bottom" d="M30 155 Q60 135 90 155 L90 175 Q60 195 30 175 Z" fill="url(#sand)" opacity="0.2"/>
-        </svg>
-      </div>
-      <div class="glow"></div>
-    </div>
-  </header>
+  <div class="hero-right">
+  <!-- Hourglass: smooth sand flow ~12s, quick flip -->
+  <div class="hg">
+    <svg class="svg-hourglass" viewBox="0 0 120 220" aria-hidden="true">
+      <defs>
+        <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c8d2ff"/>
+          <stop offset="100%" stop-color="#3B5BDB"/>
+        </linearGradient>
+      </defs>
+      <!-- frame -->
+      <rect x="20" y="10" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+      <rect x="20" y="190" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+      <path d="M26 30 Q60 70 94 30"  fill="none" stroke="#3B5BDB" stroke-width="6"/>
+      <path d="M26 190 Q60 150 94 190" fill="none" stroke="#3B5BDB" stroke-width="6"/>
+
+      <!-- sand top (shrinks) -->
+      <g class="sand-top">
+        <path d="M30 60 Q60 90 90 60 L90 85 Q60 105 30 85 Z" fill="url(#sand)"/>
+      </g>
+
+      <!-- falling stream -->
+      <rect class="sand-stream" x="59" y="110" width="2" height="34" fill="url(#sand)"/>
+
+      <!-- sand bottom (grows) -->
+      <g class="sand-bottom">
+        <path d="M30 155 Q60 135 90 155 L90 175 Q60 195 30 175 Z" fill="url(#sand)"/>
+      </g>
+    </svg>
+  </div>
+  <div class="glow"></div>
+</div>
 
   <!-- PREVIEW CARDS -->
   <section class="container grid">
