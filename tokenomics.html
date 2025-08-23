@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>TIKcoin Tokenomics</title><link rel="stylesheet" href="./styles.css">
+<title>TIKcoin • Tokenomics</title>
+<link rel="stylesheet" href="./styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
 </head><body>
-<nav class="nav"><a class="brand" href="./"><img class="brand-logo" src="./assets/logo.png" alt="" onerror="this.style.display='none'"><span>TIKcoin</span></a></nav>
+<nav class="nav"><a class="brand" href="./"><img class="brand-logo" src="./assets/logo.png" alt="" onerror="this.style.display='none'"><span>TIKcoin</span></a>
+<div class="nav-links"><a href="./whitepaper.html">Whitepaper</a><a href="./roadmap.html">Roadmap</a></div></nav>
+
 <section class="section"><div class="container">
-<h2>Tokenomics</h2>
-<p>Total Supply: <strong>3,155,760,000 TIK</strong></p>
-<ul class="list">
-<li>35% Presale</li>
-<li>20% Liquidity</li>
-<li>20% Community & Growth Pool</li>
-<li>15% Marketing (multisig + timelock)</li>
-<li>10% Founder (strict unlocks)</li>
-</ul>
-<p class="muted">Community pool (20%) covers bonuses (10/20/30%) during presale by demand; unused stays for referrals/memes/content/collabs.</p>
+  <h2>Tokenomics (v1)</h2>
+  <p>Total Supply: <strong>3,155,760,000 TIK</strong></p>
+  <ul class="list">
+    <li><strong>35% Presale</strong> — per-wallet hard cap; on-chain accounting.</li>
+    <li><strong>20% Liquidity</strong> — locked liquidity according to listing plan.</li>
+    <li><strong>20% Community & Growth Pool</strong> — единый пул: пресейл-бонусы 10/20/30%; остаток — рефералки/мемы/контент/коллаборации.</li>
+    <li><strong>15% Marketing</strong> — multisig + timelock + ежемесячные отчёты.</li>
+    <li><strong>10% Founder</strong> — жёсткие условия разблокировок (см. ниже).</li>
+  </ul>
+
+  <h2 style="margin-top:24px">Unlock Policy</h2>
+  <ul class="list">
+    <li><strong>Tier 0 — Sun</strong> (бесплатный/минимальный): <em>0% lock</em>, средства доступны сразу.</li>
+    <li><strong>Tier 1 — Hourglass</strong>: <em>0% lock</em>, средства доступны сразу.</li>
+    <li><strong>Tiers 2–3–4 (Mechanic • Tourbillon • Eternity)</strong>:
+      <ul class="list">
+        <li>Месяцы 1–5: <strong>каждый месяц по 10%</strong> (итого 50%).</li>
+        <li>Месяцы 6–7: <em>без разблокировок</em> (стабилизация).</li>
+        <li>Месяц 8: <strong>оставшиеся 50% одним куском</strong>.</li>
+      </ul>
+    </li>
+    <li><strong>Whales (китовые кошельки с лимитом верхнего диапазона)</strong>:
+      <ul class="list">
+        <li>Месяцы 1–5: по 10% (итого 50%).</li>
+        <li><strong>Месяц 7: 25%</strong>, <strong>Месяц 8: 25%</strong> (чтобы тоже закончить в 8 месяцев, но мягче входить на рынок).</li>
+      </ul>
+    </li>
+    <li><strong>Founder 10%</strong> — как мы закрепили ранее:
+      <ul class="list">
+        <li>5% — через год <em>после</em> завершения разлоков у всех участников.</li>
+        <li>5% — после попадания в <strong>Top-50</strong> по капитализации (или альтернативная твёрдая дата-заслонка, если метрика будет спорной).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p class="muted small">Примечание: точная классификация «китов» (порог входа) фиксируется в контракте/правилах пресейла. Все сроки — календарные месяцы с момента TGE.</p>
 </div></section>
 </body></html>
