@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>TIKcoin — We can’t stop time — we can monetize it</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="TIKcoin is a radically honest, community-first crypto experiment. Immutable rules. Transparent tokenomics.">
+  <meta name="theme-color" content="#0b0d12">
   <link rel="icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,6 @@
   <meta property="og:title" content="TIKcoin">
   <meta property="og:description" content="We can’t stop time — we can monetize it. Radical honesty. Immutable rules.">
   <meta property="og:image" content="/og.jpg">
-  <meta name="theme-color" content="#0b0d12">
 </head>
 <body id="top">
 
@@ -22,9 +22,9 @@
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="TIKcoin">
         <span class="brand-logo-wrap">
-          <!-- твой логотип в SVG; если пока нет — оставь <img src="/logo.png"> -->
+          <!-- Если у тебя сейчас PNG — замени src на /logo.png -->
           <img src="/logo.svg" alt="TIKcoin" class="brand-logo">
-          <!-- маленькая «тик-тик» шестерёнка -->
+          <!-- маленькая «тик-тик» шестерёнка поверх лого -->
           <svg class="gear-overlay" viewBox="0 0 100 100" aria-hidden="true">
             <g class="gear">
               <circle cx="50" cy="50" r="10" fill="transparent"/>
@@ -59,23 +59,17 @@
         </h1>
         <p>
           Our mission is simple: build a community where <strong>trust compounds</strong>,
-          speculation takes the back seat, and rules are written before the ship leaves the harbor.
-          Время не остановить — <strong>TIKcoin тоже</strong>.
+          speculation takes the back seat, and the rules are written before the ship leaves the harbor.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="/litepaper.html">Read Whitepaper</a>
           <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Join Community</a>
         </div>
         <div class="mini-note">No burns. No stealth taxes. Clear locks. Transparent vesting.</div>
+        <p class="ru-note">Время не остановить — <strong>TIKcoin тоже</strong>.</p>
       </div>
       <div class="hero-art">
-        <!-- Светящийся диск/аура -->
         <div class="aura"></div>
-        <div class="hourglass">
-          <div class="top-sand"></div>
-          <div class="neck"></div>
-          <div class="bottom-sand"></div>
-        </div>
       </div>
     </div>
   </section>
@@ -87,19 +81,19 @@
       <div class="grid cards">
         <article class="card reveal">
           <h3>Radical Honesty</h3>
-          <p>Rules declared upfront. No surprise mints, no shadow changes. Корабль уходит — правила уже написаны.</p>
+          <p>Rules declared upfront. No surprise mints, no stealth changes. The ship sails with the rules already written.</p>
         </article>
         <article class="card reveal">
           <h3>Immutable Core</h3>
-          <p>Core contract locked. Only whitelisted improvements that keep the foundation intact.</p>
+          <p>Core contract locked. Only whitelisted upgrades that preserve the foundation.</p>
         </article>
         <article class="card reveal">
           <h3>Community-First</h3>
-          <p>Incentives for builders, memers, referrers — without abusing supply. 20% community pool, transparently managed.</p>
+          <p>Incentives for builders, memers, and referrers—without abusing supply. A single 20% community pool, transparently managed.</p>
         </article>
         <article class="card reveal">
           <h3>Healthy Markets</h3>
-          <p>Clear liquidity plan, vesting schedules that breathe, and safeguards against sudden dumps.</p>
+          <p>A clear liquidity playbook, vesting that breathes, and safeguards against sudden dumps.</p>
         </article>
       </div>
     </div>
@@ -112,7 +106,7 @@
       <ol class="timeline">
         <li class="reveal">
           <h4>Phase 0 — Birth</h4>
-          <p>Site, brand, manifesto. Closed-date-less presale draft. Community ignition.</p>
+          <p>Site, brand, manifesto. Open-ended presale spec. Community ignition.</p>
         </li>
         <li class="reveal">
           <h4>Phase 1 — Contract v1</h4>
@@ -120,11 +114,11 @@
         </li>
         <li class="reveal">
           <h4>Phase 2 — Audit & v2</h4>
-          <p>External audit, fixes, hard-lock. Vesting & multisig wired. Presale go-live.</p>
+          <p>External audit, fixes, final hard-lock. Vesting & multisig wired. Presale go-live.</p>
         </li>
         <li class="reveal">
           <h4>Phase 3 — Listing + Liquidity</h4>
-          <p>Listing 8 days after sellout. X2 target price band; liquidity buffers pre-wired.</p>
+          <p>Listing 8 days after sell-out. X2 price band target; liquidity buffers pre-wired.</p>
         </li>
         <li class="reveal">
           <h4>Phase 4 — Utilities & Collabs</h4>
@@ -138,7 +132,8 @@
   <section class="section subscribe">
     <div class="container sub-wrap">
       <h2>Get updates</h2>
-      <form class="sub-form" action="https://formspree.io/f/your-id" method="POST">
+      <!-- Временный mailto; когда подключишь Formspree — замени action -->
+      <form class="sub-form" action="mailto:info@tikcoin.org" method="POST">
         <input type="email" name="email" placeholder="you@domain.com" required>
         <button class="btn primary" type="submit">Subscribe</button>
       </form>
@@ -162,21 +157,19 @@
     </div>
   </footer>
 
-<script>
-  // burger (мобильное меню)
-  const b=document.querySelector('.burger'), n=document.querySelector('.nav');
-  if(b&&n){ b.addEventListener('click',()=>n.classList.toggle('open')); }
-
-  // header shadow при скролле
-  const h=document.querySelector('.site-header');
-  addEventListener('scroll',()=>{ h.style.boxShadow = scrollY>10 ? '0 8px 24px rgba(0,0,0,.25)' : 'none'; });
-
-  // появление секций
-  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  // год в подвале
-  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-</script>
+  <!-- встроенный JS, отдельный main.js не нужен -->
+  <script>
+    // mobile nav
+    const b=document.querySelector('.burger'), n=document.querySelector('.nav');
+    if(b&&n){ b.addEventListener('click',()=>n.classList.toggle('open')); }
+    // header shadow
+    const h=document.querySelector('.site-header');
+    addEventListener('scroll',()=>{ h.style.boxShadow = scrollY>10 ? '0 8px 24px rgba(0,0,0,.25)' : 'none'; });
+    // reveal
+    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // year
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+  </script>
 </body>
 </html>
