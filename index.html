@@ -34,33 +34,75 @@
   </nav>
 
   <!-- HERO -->
-  <div class="hero-right">
-  <!-- Hourglass: smooth sand flow ~12s, quick flip -->
-  <div class="hg">
-    <svg class="svg-hourglass" viewBox="0 0 120 220" aria-hidden="true">
+<div class="hero-right">
+  <!-- Hourglass v3: natural silhouette + inner TIK coin -->
+  <div class="hg3">
+    <svg class="svg-hourglass3" viewBox="0 0 200 320" aria-hidden="true">
       <defs>
-        <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#c8d2ff"/>
+        <!-- стеклянный контур -->
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2a2f47"/>
+          <stop offset="100%" stop-color="#0f1428"/>
+        </linearGradient>
+        <!-- песок -->
+        <linearGradient id="sand3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#cfd7ff"/>
           <stop offset="100%" stop-color="#3B5BDB"/>
         </linearGradient>
-      </defs>
-      <!-- frame -->
-      <rect x="20" y="10" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-      <rect x="20" y="190" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-      <path d="M26 30 Q60 70 94 30"  fill="none" stroke="#3B5BDB" stroke-width="6"/>
-      <path d="M26 190 Q60 150 94 190" fill="none" stroke="#3B5BDB" stroke-width="6"/>
 
-      <!-- sand top (shrinks) -->
-      <g class="sand-top">
-        <path d="M30 60 Q60 90 90 60 L90 85 Q60 105 30 85 Z" fill="url(#sand)"/>
+        <!-- клипы для верхней и нижней колб -->
+        <clipPath id="bulbTop">
+          <path d="M40,40
+                   C40,20 160,20 160,40
+                   C160,70 120,96 105,120
+                   C100,128 100,132 100,140
+                   C100,140 100,140 100,140
+                   C100,140 100,140 100,140
+                   C100,132 100,128 95,120
+                   C80,96 40,70 40,40 Z"/>
+        </clipPath>
+        <clipPath id="bulbBottom">
+          <path d="M40,280
+                   C40,300 160,300 160,280
+                   C160,250 120,224 105,200
+                   C100,192 100,188 100,180
+                   C100,180 100,180 100,180
+                   C100,188 100,192 95,200
+                   C80,224 40,250 40,280 Z"/>
+        </clipPath>
+      </defs>
+
+      <!-- РАМКА (стекло) -->
+      <path d="M40,40
+               C40,20 160,20 160,40
+               C160,70 120,96 105,120
+               C100,128 100,132 100,140
+               C100,148 100,152 95,160
+               C80,184 40,210 40,240
+               C40,260 160,260 160,240
+               C160,210 120,184 105,160
+               C100,152 100,148 100,140
+               C100,132 100,128 95,120
+               C80,96 40,70 40,40 Z"
+            fill="none" stroke="#3B5BDB" stroke-width="6"/>
+
+      <!-- ПЕСОК: верх/низ под клипами -->
+      <g clip-path="url(#bulbTop)">
+        <rect class="sand-top3" x="42" y="42" width="116" height="90" fill="url(#sand3)" rx="12"/>
+      </g>
+      <g clip-path="url(#bulbBottom)">
+        <rect class="sand-bot3" x="42" y="180" width="116" height="98" fill="url(#sand3)" rx="12"/>
       </g>
 
-      <!-- falling stream -->
-      <rect class="sand-stream" x="59" y="110" width="2" height="34" fill="url(#sand)"/>
+      <!-- Струя песка в «горлышке» -->
+      <rect class="sand-stream3" x="99" y="140" width="2" height="40" fill="url(#sand3)"/>
 
-      <!-- sand bottom (grows) -->
-      <g class="sand-bottom">
-        <path d="M30 155 Q60 135 90 155 L90 175 Q60 195 30 175 Z" fill="url(#sand)"/>
+      <!-- ВНУТРЕННИЙ ДИСК (бренд-койн TIK), мягко качается -->
+      <g class="tik-coin" transform="translate(100,160)">
+        <circle r="22" fill="#0e1428" stroke="#3B5BDB" stroke-width="2"/>
+        <circle r="18" fill="#121a33" stroke="#6f84ff" stroke-width="1.5"/>
+        <text text-anchor="middle" y="6" font-size="13" font-family="Orbitron, Arial, sans-serif"
+              fill="#cfe1ff" font-weight="800">TIK</text>
       </g>
     </svg>
   </div>
