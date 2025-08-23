@@ -1,130 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>TIKcoin — Time cannot be stopped</title>
-  <meta name="description" content="We don’t value hype — we value time. TIKcoin: simple rules, transparent tokenomics, fair presale without a calendar end date.">
-  <!-- Если у тебя есть favicon.ico — можно заменить строку ниже -->
+  <meta name="description" content="We don’t value hype — we value time. Honest rules, transparent tokenomics, fair presale without a calendar end date.">
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
-  <!-- OpenGraph/Twitter -->
   <meta property="og:title" content="TIKcoin — We cannot buy time. But we can tokenize it.">
   <meta property="og:description" content="Time cannot be stopped. Neither can we.">
-  <meta property="og:image" content="https://tikcoin.org/og.jpg"><!-- локально можно ./og.jpg -->
+  <meta property="og:image" content="./assets/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="topnav">
+<nav class="nav">
   <a class="brand" href="/">
-    <img class="brand-logo" src="./assets/logo.svg" alt="TIKcoin">
+    <img src="./assets/logo.png" alt="TIKcoin" class="brand-logo">
     <span>TIKcoin</span>
   </a>
-  <div class="navlinks">
+  <div class="nav-links">
     <a href="#philosophy">Philosophy</a>
-    <a href="#vision">Vision</a>
     <a href="#tokenomics">Tokenomics</a>
     <a href="#presale">Presale</a>
-    <a href="#manifesto">Manifesto</a>
-    <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
+    <a href="#join">Community</a>
+    <a class="btn small ghost" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="clock" aria-hidden="true">
-    <div class="hand hour"></div>
-    <div class="hand minute"></div>
-    <div class="center-dot"></div>
+  <div class="hero-inner">
+    <img src="./assets/logo.png" alt="TIKcoin" class="hero-logo">
+    <h1 class="title">
+      We cannot buy time.<br><span>But we can tokenize it.</span>
+    </h1>
+    <p class="subtitle">Time cannot be stopped — <strong>neither can we.</strong></p>
+    <div class="cta">
+      <a class="btn primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Join Telegram</a>
+      <a class="btn ghost" href="#philosophy">Read Philosophy</a>
+    </div>
   </div>
-  <h1 class="hero-title">We cannot buy time.<br><span>But we can tokenize it.</span></h1>
-  <p class="tagline">Time cannot be stopped. <strong>Neither can we.</strong></p>
-
-  <div class="hourglass" aria-hidden="true"></div>
-
-  <!-- простая форма-пустышка до подключения бэка -->
-  <form class="subscribe" onsubmit="event.preventDefault(); alert('Thanks! We announce first in Telegram.');">
-    <input type="email" placeholder="Your email (optional)" aria-label="email">
-    <button class="btn primary" type="submit">Get updates</button>
-    <a class="btn ghost" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Join Telegram</a>
-  </form>
+  <div class="glow"></div>
 </header>
 
 <!-- PREVIEW CARDS -->
-<section class="previews container">
-  <div class="grid">
-    <div class="card">
-      <div><h3>Philosophy</h3><p>Rules are written before the ship sails. No admin keys. No games with time.</p></div>
-      <a class="more" href="#philosophy">Read full philosophy →</a>
-    </div>
-    <div class="card">
-      <div><h3>Vision</h3><p>Trust between people is measured in time, not money.</p></div>
-      <a class="more" href="#vision">Explore vision →</a>
-    </div>
-    <div class="card">
-      <div><h3>Tokenomics</h3><p>Simple and fixed. One 20% community pool. Nothing hidden.</p></div>
-      <a class="more" href="#tokenomics">See details →</a>
-    </div>
-    <div class="card">
-      <div><h3>Presale</h3><p>No end-date. Listing on day 8 after sell-out. On-chain enforced.</p></div>
-      <a class="more" href="#presale">How it works →</a>
-    </div>
-    <div class="card">
-      <div><h3>Manifesto</h3><p>We don’t value hype. We value time. Honesty over noise.</p></div>
-      <a class="more" href="#manifesto">Read manifesto →</a>
-    </div>
-    <div class="card">
-      <div><h3>Community</h3><p>Memes are the fuel. Honesty is the engine. Builders welcome.</p></div>
-      <a class="more" href="#join">Join us →</a>
-    </div>
-  </div>
+<section class="container grid">
+  <article class="card">
+    <h3>Philosophy</h3>
+    <p>Rules are written before the ship sails. No admin keys. No taxes. No burns. Public locks and on-chain receipts.</p>
+    <a class="more" href="#philosophy">Read more →</a>
+  </article>
+  <article class="card">
+    <h3>Tokenomics</h3>
+    <p>Simple and fixed. One 20% community pool. Nothing hidden. Founder unlocks are strict.</p>
+    <a class="more" href="#tokenomics">See details →</a>
+  </article>
+  <article class="card">
+    <h3>Presale</h3>
+    <p>No calendar end date. Listing on day 8 after sell-out — enforced on-chain. Per-wallet hard cap.</p>
+    <a class="more" href="#presale">How it works →</a>
+  </article>
 </section>
 
-<!-- FULL SECTIONS -->
+<!-- PHILOSOPHY -->
 <section id="philosophy" class="section">
   <div class="container">
     <h2>Philosophy</h2>
-    <p>We don’t value hype — we value <strong>time</strong>. We set simple rules once and respect them forever: immutable ERC-20 base, utilities as extensions, not by rewriting the foundation. No admin keys, no taxes, no burns, no blacklists. Locks and receipts are public.</p>
-    <div class="truths">
-      <div class="truth">No admin keys</div>
-      <div class="truth">No taxes / burns</div>
-      <div class="truth">Public locks</div>
-      <div class="truth">On-chain receipts</div>
-    </div>
-    <p class="time-tag">TIME CANNOT BE STOPPED.</p>
+    <p class="lead">
+      We don’t value hype — we value <strong>time</strong>. Minimal immutable base (ERC-20). Utilities live as extensions, not by rewriting the foundation.
+    </p>
+    <ul class="pills">
+      <li>No admin keys</li>
+      <li>No taxes / burns</li>
+      <li>Public timelocks</li>
+      <li>On-chain receipts</li>
+    </ul>
+    <p class="tag">TIME CANNOT BE STOPPED.</p>
   </div>
 </section>
 
-<section id="vision" class="section alt">
-  <div class="container">
-    <h2>Vision</h2>
-    <p>People everywhere are rewarded for time — workers, freelancers, founders. <strong>Time is the universal currency.</strong> We won’t sell fantasies; we defend clear rules and let the market judge.</p>
-    <p class="muted">Lost on empty memes? — Reclaim your time. Missed early blue chips? — Start with fair rules.</p>
-    <p class="time-tag">AS LONG AS TIME FLOWS, SO WILL WE.</p>
-  </div>
-</section>
-
-<section id="levels" class="section">
-  <div class="container">
-    <h2>Levels of Trust</h2>
-    <div class="levels">
-      <div class="level"><div class="ico">☀️</div><h3>Sun</h3><p>Free for all. Beginning.</p></div>
-      <div class="level"><div class="ico">⏳</div><h3>Hourglass</h3><p>First commitment — entry into value.</p></div>
-      <div class="level"><div class="ico">⚙️</div><h3>Mechanical</h3><p>Precision and progress.</p></div>
-      <div class="level"><div class="ico">🌀</div><h3>Tourbillon</h3><p>Excellence rewarded.</p></div>
-      <div class="level"><div class="ico">♾</div><h3>Eternity</h3><p>Ultimate trust. Timeless.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="tokenomics" class="section">
+<!-- TOKENOMICS -->
+<section id="tokenomics" class="section alt">
   <div class="container">
     <h2>Tokenomics (v1)</h2>
-    <p>Total Supply: <strong>3,155,760,000 TIK</strong></p>
+    <p>Total Supply: <strong>3,155,760,000&nbsp;TIK</strong></p>
     <div class="tok-grid">
       <div class="tok"><span>35%</span> Presale</div>
       <div class="tok"><span>20%</span> Liquidity</div>
@@ -132,48 +95,44 @@
       <div class="tok"><span>15%</span> Marketing (multisig + timelock)</div>
       <div class="tok"><span>10%</span> Founder (strict unlocks)</div>
     </div>
-    <p class="muted">Community & Growth — единый 20% пул. Бонусы 10/20/30% выдаются по спросу во время пресейла; неиспользованное остаётся для рефералок, мемов, контента, коллабораций.</p>
-    <p class="time-tag">VALUE FLOWS WITH TIME.</p>
+    <p class="muted small">
+      Community & Growth — единый 20% пул: бонусы 10/20/30% по спросу во время пресейла; неиспользованное остаётся для рефералок, мемов, контента, коллабораций.
+    </p>
   </div>
 </section>
 
-<section id="presale" class="section alt">
+<!-- PRESALE -->
+<section id="presale" class="section">
   <div class="container">
     <h2>Presale Policy</h2>
     <ul class="list">
-      <li><strong>No calendar end-date.</strong> Presale ends when the last presale token is sold.</li>
-      <li><strong>TGE & initial listing on day 8 after sell-out</strong> — enforced by smart contracts.</li>
-      <li><strong>Per-wallet hard cap</strong> to keep it fair.</li>
-      <li><strong>On-chain transparency</strong> — all flows are visible.</li>
+      <li><strong>No calendar end-date</strong> — пресейл заканчивается, когда продан последний токен пресейла.</li>
+      <li><strong>TGE & initial listing на 8-й день</strong> после sell-out (смарт-контрактом).</li>
+      <li><strong>Per-wallet hard cap</strong> — чтобы сохранить честность и массовость.</li>
+      <li><strong>Все потоки прозрачны</strong> — on-chain.</li>
     </ul>
-    <p class="time-tag">TIME DOESN’T WAIT. NEITHER SHOULD YOU.</p>
+    <p class="tag">TIME DOESN’T WAIT.</p>
   </div>
 </section>
 
-<section id="manifesto" class="section">
-  <div class="container">
-    <h2>Manifesto</h2>
-    <p>We don’t invest money — we <strong>commit time</strong>. Rules are written before the ship sails. Minimal base, honest distribution, transparent locks. Money is an illusion; <strong>time is reality</strong>. Join us and own what you already have: your time.</p>
-    <p class="time-tag">TIME CANNOT BE STOPPED. NEITHER CAN WE.</p>
-  </div>
-</section>
-
+<!-- JOIN -->
 <section id="join" class="section join">
-  <div class="container" style="text-align:center">
+  <div class="container center">
     <h2>Join the movement</h2>
     <p class="muted">Memes are the fuel. Honesty is the engine.</p>
-    <div class="cta-row">
+    <div class="cta">
       <a class="btn primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Telegram</a>
       <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Community Chat</a>
     </div>
   </div>
 </section>
 
-<footer class="foot">
-  <div class="container foot-grid">
-    <a class="brand" href="/"><img class="brand-logo" src="./assets/logo.svg" alt=""><span>TIKcoin</span></a>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footgrid">
+    <a class="brand" href="/"><img src="./assets/logo.png" class="brand-logo" alt=""><span>TIKcoin</span></a>
     <div class="muted">© <span id="y"></span> • We cannot buy time, but we can tokenize it.</div>
-    <div class="links">
+    <div class="foot-links">
       <a href="./litepaper.html">Litepaper</a>
       <a href="./tokenomics.html">Tokenomics</a>
       <a href="mailto:info@tikcoin.org">info@tikcoin.org</a>
@@ -181,9 +140,6 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
-
