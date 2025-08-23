@@ -1,14 +1,70 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>TIKcoin Litepaper</title><link rel="stylesheet" href="./styles.css">
-</head><body>
-<nav class="nav"><a class="brand" href="./"><img class="brand-logo" src="./assets/logo.png" alt="TIKcoin" onerror="this.style.display='none'"><span>TIKcoin</span></a></nav>
-<section class="section"><div class="container">
-<h2>Litepaper v1.0</h2>
-<p><strong>Foundation:</strong> Immutable ERC‑20, no admin keys, no burns, no taxes.</p>
-<p><strong>Tokenomics:</strong> 35% Presale, 20% Liquidity, 20% Community & Growth, 15% Marketing, 10% Founder.</p>
-<p><strong>Presale:</strong> No calendar end-date. Listing on day 8 after sell-out.</p>
-<p><strong>Vision:</strong> We don’t value hype. We value time.</p>
-</div></section>
-</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TIKcoin — Litepaper</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="TIKcoin">
+        <img src="/logo.svg" class="brand-logo" alt=""> <span class="brand-text">TIKcoin</span>
+      </a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/tokenomics.html">Tokenomics</a>
+        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1 class="section-title">Litepaper v1.0</h1>
+
+      <h3>Foundation</h3>
+      <p>Immutable ERC-20 core. No admin keys. No burns. No stealth taxes.</p>
+
+      <h3>Token Allocation</h3>
+      <ul>
+        <li>35% — Presale</li>
+        <li>20% — Liquidity (locked per listing plan)</li>
+        <li>20% — Community & Growth (single pool: presale bonuses 10/20/30%; remainder for referrals, memes, content, collabs)</li>
+        <li>15% — Marketing (multisig + timelock; monthly on-chain reports)</li>
+        <li>10% — Founder (see Unlock Policy)</li>
+      </ul>
+
+      <h3>Presale</h3>
+      <p>Open-ended (no fixed end date). Listing occurs on day 8 after sell-out.</p>
+
+      <h3>Unlock Policy — Overview</h3>
+      <ul>
+        <li>Tier 0 — Sun: unlocked at TGE.</li>
+        <li>Tier 1 — Hourglass: unlocked at TGE.</li>
+        <li>Tiers 2–4 (Mechanical • Tourbillon • Eternity): months 1–5 → 10% each (50% total), months 6–7 → none, month 8 → remaining 50%.</li>
+        <li>Whales (top bracket): months 1–5 → 10% each; month 7 → 25%, month 8 → 25%.</li>
+        <li><strong>Founder 10%:</strong> 10% at TGE; remaining 90% start vesting only <em>after all presale participants complete their unlocks</em> (default: linear 12 months; adjustable before contract freeze).</li>
+      </ul>
+
+      <h3>Vision</h3>
+      <p>We don’t value hype. We value time.</p>
+
+      <p class="ru-note">Коротко (RU): мы ценим не хайп, а время; правила объявляются заранее; локи и вестинг прозрачны.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <div class="foot-brand"><img src="/logo.svg" class="foot-logo" alt=""><strong>TIKcoin</strong></div>
+      <div class="foot-links"><a href="/">Home</a><a href="/tokenomics.html">Tokenomics</a></div>
+      <div class="foot-copy">© <span id="y"></span> TIKcoin</div>
+    </div>
+  </footer>
+
+  <script>
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
