@@ -1,204 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>TIKcoin — Time can’t be stopped. Neither can TIKcoin.</title>
-  <meta name="description" content="Honest rules, transparent tokenomics, presale without a calendar end date. Time can’t be stopped. Neither can TIKcoin.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TIKcoin — Honest by Design</title>
+  <meta name="description" content="TIKcoin: honest, transparent, time-inspired crypto philosophy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
-  <meta property="og:title" content="TIKcoin — We cannot buy time. But we can tokenize it.">
-  <meta property="og:description" content="Time can’t be stopped. Neither can TIKcoin.">
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <meta property="og:title" content="TIKcoin — Honest by Design">
+  <meta property="og:description" content="We can't stop time. We can monetize it.">
   <meta property="og:image" content="./assets/og.jpg">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
 </head>
-<script>
-(function(){
-  var n = new Date().getSeconds();
-  function paint(){
-    var el = document.getElementById('tikNum');
-    if(el){ el.textContent = (n%60<10?'0':'') + (n%60); }
-    n++;
-  }
-  paint();
-  setInterval(paint, 1000);
-})();
-</script>
 <body>
-  <!-- NAV -->
-  <nav class="nav">
+  <header class="site-head">
     <a class="brand" href="./">
-      <img src="./assets/logo.png" alt="TIKcoin" class="brand-logo"
-           onerror="this.style.display='none';document.getElementById('svgLogo').style.display='inline';">
-      <svg id="svgLogo" class="brand-logo" viewBox="0 0 100 100" aria-hidden="true" style="display:none">
-        <circle cx="50" cy="50" r="46" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-      </svg>
-      <span>TIKcoin</span>
+      <img src="./assets/logo.png" alt="TIKcoin" class="brand-icon">
+      <span class="brand-name">TIKcoin</span>
     </a>
-    <div class="nav-links">
-      <a href="#philosophy">Philosophy</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="./roadmap.html">Roadmap</a>
-      <a href="./whitepaper.html">Whitepaper</a>
-      <a class="btn small ghost" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
-    </div>
-  </nav>
+    <nav class="top-nav">
+      <a href="./index.html" class="nav-link active">Home</a>
+      <a href="./whitepaper.html" class="nav-link">Whitepaper</a>
+      <a href="./roadmap.html" class="nav-link">Roadmap</a>
+      <a href="./tokenomics.html" class="nav-link">Tokenomics</a>
+      <a href="https://t.me/tikcoin_official_org" target="_blank" class="btn tg">Telegram</a>
+    </nav>
+  </header>
 
-  <!-- HERO -->
-<<div class="hero-right">
-  <!-- Hourglass v4: continuous sand flow (no flip) + TIK digits -->
-  <div class="hg4">
-    <svg class="svg-hourglass4" viewBox="0 0 200 320" aria-hidden="true">
-      <defs>
-        <!-- стеклянный контур -->
-        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#2a2f47"/>
-          <stop offset="100%" stop-color="#0f1428"/>
-        </linearGradient>
-        <!-- песок -->
-        <linearGradient id="sand4" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#d8e0ff"/>
-          <stop offset="100%" stop-color="#3B5BDB"/>
-        </linearGradient>
-        <!-- клипы для верхней и нижней колб -->
-        <clipPath id="bulbTop4">
-          <path d="M40,40 C40,20 160,20 160,40
-                   C160,70 120,96 105,120
-                   C100,128 100,132 100,140
-                   C100,132 100,128 95,120
-                   C80,96 40,70 40,40 Z"/>
-        </clipPath>
-        <clipPath id="bulbBottom4">
-          <path d="M40,280 C40,300 160,300 160,280
-                   C160,250 120,224 105,200
-                   C100,192 100,188 100,180
-                   C100,188 100,192 95,200
-                   C80,224 40,250 40,280 Z"/>
-        </clipPath>
-      </defs>
-
-      <!-- РАМКА (стекло) -->
-      <path d="M40,40 C40,20 160,20 160,40
-               C160,70 120,96 105,120
-               C100,128 100,132 100,140
-               C100,148 100,152 95,160
-               C80,184 40,210 40,240
-               C40,260 160,260 160,240
-               C160,210 120,184 105,160
-               C100,152 100,148 100,140
-               C100,132 100,128 95,120
-               C80,96 40,70 40,40 Z"
-            fill="none" stroke="#3B5BDB" stroke-width="6"/>
-
-      <!-- Пакет A: верх пустеет, низ наполняется -->
-      <g clip-path="url(#bulbTop4)">
-        <rect class="sand-topA" x="42" y="42" width="116" height="90" fill="url(#sand4)" rx="12"/>
-      </g>
-      <g clip-path="url(#bulbBottom4)">
-        <rect class="sand-botA" x="42" y="180" width="116" height="98" fill="url(#sand4)" rx="12"/>
-      </g>
-
-      <!-- Пакет B (в противофазе) для мягкого «рестарта» без исчезновения -->
-      <g clip-path="url(#bulbTop4)">
-        <rect class="sand-topB" x="42" y="42" width="116" height="90" fill="url(#sand4)" rx="12"/>
-      </g>
-      <g clip-path="url(#bulbBottom4)">
-        <rect class="sand-botB" x="42" y="180" width="116" height="98" fill="url(#sand4)" rx="12"/>
-      </g>
-
-      <!-- Струя песка -->
-      <rect class="sand-stream4" x="99" y="140" width="2" height="40" fill="url(#sand4)"/>
-
-      <!-- Внутренний «диск» с цифрами -->
-      <g class="tik-core" transform="translate(100,160)">
-        <circle r="22" fill="#0e1428" stroke="#3B5BDB" stroke-width="2"/>
-        <circle r="18" fill="#121a33" stroke="#6f84ff" stroke-width="1.5"/>
-        <text id="tikNum" text-anchor="middle" y="6" font-size="13"
-              font-family="Orbitron, Arial, sans-serif"
-              fill="#cfe1ff" font-weight="800">00</text>
-      </g>
-    </svg>
-  </div>
-  <div class="glow"></div>
-</div>
-
-  <!-- PREVIEW CARDS -->
-  <section class="container grid">
-    <article class="card">
-      <h3>Philosophy</h3>
-      <p>Immutable base. No admin keys. No taxes/burns. Public timelocks. On-chain receipts.</p>
-      <a class="more" href="#philosophy">Read more →</a>
-    </article>
-    <article class="card">
-      <h3>Tokenomics</h3>
-      <p>Simple and fixed. One 20% community pool. Founder unlocks are strict.</p>
-      <a class="more" href="./tokenomics.html">See details →</a>
-    </article>
-    <article class="card">
-      <h3>Presale</h3>
-      <p>No calendar end date. Listing on day 8 after sell-out. Per-wallet hard cap.</p>
-      <a class="more" href="./roadmap.html#presale">How it works →</a>
-    </article>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section id="philosophy" class="section">
-    <div class="container">
-      <h2>Philosophy</h2>
-      <p class="lead">Minimal, immutable ERC-20 foundation. Extensions add utility — the base never changes.</p>
-      <ul class="pills">
-        <li>No admin keys</li>
-        <li>No taxes / burns</li>
-        <li>Public timelocks</li>
-        <li>On-chain receipts</li>
-      </ul>
-      <p class="tag">TIME CAN’T BE STOPPED.</p>
-    </div>
-  </section>
-
-  <!-- TOKENOMICS (brief) -->
-  <section id="tokenomics" class="section alt">
-    <div class="container">
-      <h2>Tokenomics (v1)</h2>
-      <p>Total Supply: <strong>3,155,760,000&nbsp;TIK</strong></p>
-      <div class="tok-grid">
-        <div class="tok"><span>35%</span> Presale</div>
-        <div class="tok"><span>20%</span> Liquidity</div>
-        <div class="tok"><span>20%</span> Community & Growth Pool</div>
-        <div class="tok"><span>15%</span> Marketing (multisig + timelock)</div>
-        <div class="tok"><span>10%</span> Founder (strict unlocks)</div>
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="h1">
+        We can’t stop <span class="accent">time</span> —<br> we can <span class="accent">monetize</span> it.
+      </h1>
+      <p class="lead">
+        Radical honesty. Immutable rules. One mission: build a community where
+        <strong>trust compounds</strong> and speculation takes the back seat.
+      </p>
+      <div class="cta-row">
+        <a href="./whitepaper.html" class="btn primary">Read Whitepaper</a>
+        <a href="https://t.me/tikcoin_community_chat" target="_blank" class="btn ghost">Join Community</a>
       </div>
-      <p class="small muted">Community & Growth — единый 20% пул: бонусы 10/20/30% по спросу во время пресейла; неиспользованное остаётся для рефералок, мемов, контента и коллабораций.</p>
     </div>
-  </section>
 
-  <!-- JOIN -->
-  <section id="join" class="section join">
-    <div class="container center">
-      <h2>Join the movement</h2>
-      <p class="muted">Memes are the fuel. Honesty is the engine.</p>
-      <div class="cta">
-        <a class="btn primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Telegram</a>
-        <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Community Chat</a>
+    <div class="hero-right">
+      <!-- Container where we inline and animate your SVG logo -->
+      <div id="logo-mount" class="logo-mount">
+        <!-- graceful fallback while SVG loads / or if blocked -->
+        <img src="./logo.svg" alt="TIKcoin logo" class="logo-fallback">
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footgrid">
-      <a class="brand" href="./"><img src="./assets/logo.png" class="brand-logo" alt="" onerror="this.style.display='none'"><span>TIKcoin</span></a>
-      <div class="muted">© <span id="y"></span> • We cannot buy time, but we can tokenize it.</div>
-      <div class="foot-links">
-        <a href="./whitepaper.html">Whitepaper</a>
-        <a href="./tokenomics.html">Tokenomics</a>
-        <a href="./roadmap.html">Roadmap</a>
-        <a href="mailto:info@tikcoin.org">info@tikcoin.org</a>
+  <section class="pillars">
+    <h2 class="h2">Pillars</h2>
+    <div class="cards">
+      <div class="card">
+        <h3 class="card-title">Transparency</h3>
+        <p>Open code, auditable flows, no hidden switches. Communication mirrors the contract: clear and verifiable.</p>
       </div>
+      <div class="card">
+        <h3 class="card-title">Fair Launch</h3>
+        <p>Presale with equal rules and public allocations. Liquidity first, founder unlocks are long and conditional.</p>
+      </div>
+      <div class="card">
+        <h3 class="card-title">Community-First</h3>
+        <p>Incentives for contribution, not noise. Rewards tied to real value added to the ecosystem.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="foot-left">
+      <img src="./assets/logo.png" class="foot-icon" alt="">
+      <span>TIKcoin</span>
+    </div>
+    <div class="foot-right">
+      <a href="./privacy.html">Privacy</a>
+      <a href="https://t.me/tikcoin_official_org" target="_blank">Telegram</a>
+      <a href="https://t.me/tikcoin_community_chat" target="_blank">Community Chat</a>
     </div>
   </footer>
 
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <!-- Inline-loader that fetches your SVG, injects into DOM, and animates gears -->
+  <script>
+    (function () {
+      const mount = document.getElementById('logo-mount');
+      if (!mount) return;
+
+      // Path to your vectorized logo
+      const svgPath = './logo.svg';
+
+      fetch(svgPath)
+        .then(r => r.text())
+        .then(txt => {
+          // Inject SVG inline
+          mount.innerHTML = txt;
+          const svg = mount.querySelector('svg');
+          if (!svg) return;
+
+          svg.classList.add('logo-svg'); // for sizing via CSS
+
+          // Heuristic: find elements that look like gears by id/class
+          const gearSelectors = [
+            '[id*="gear"]','[class*="gear"]',
+            '[id*="cog"]','[class*="cog"]',
+            '[id*="wheel"]','[class*="wheel"]'
+          ].join(',');
+
+          let gears = svg.querySelectorAll(gearSelectors);
+
+          // If the converter didn't keep ids/classes, try circles in lower area (bottom bulb heuristic)
+          if (!gears.length) {
+            const all = Array.from(svg.querySelectorAll('circle, path, polygon, rect, g'));
+            const bbox = svg.viewBox && svg.viewBox.baseVal
+              ? svg.viewBox.baseVal
+              : {x:0,y:0,width:200,height:200};
+            const bottomY = bbox.y + bbox.height * 0.55;
+            // Cheap heuristic: pick small-ish shapes that are placed in the lower half
+            gears = all.filter(node => {
+              try {
+                const b = node.getBBox();
+                return (b.width < bbox.width*0.5 && b.height < bbox.height*0.5 && (b.y+b.height/2) > bottomY);
+              } catch(e){ return false; }
+            });
+          }
+
+          // Apply spinning classes with staggered speeds
+          if (gears.length) {
+            gears.forEach((el, i) => {
+              el.classList.add(i % 2 ? 'spin' : 'spin-rev');
+              // custom property to vary speed
+              el.style.setProperty('--spd', (8 + (i%4)*3) + 's');
+            });
+          }
+
+          // Optional: add soft glow
+          svg.style.filter = 'drop-shadow(0 0 18px rgba(59,91,219,.25))';
+        })
+        .catch(() => {
+          // Fallback image already visible
+        });
+    })();
+  </script>
 </body>
 </html>
