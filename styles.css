@@ -87,29 +87,48 @@ h2{font:800 30px/1.2 Orbitron,sans-serif;color:#dbe4ff;text-align:center;margin:
 @media(max-width:860px){.container.grid{grid-template-columns:1fr}.title{font-size:36px}}
 @media(max-width:640px){.title{font-size:30px}.nav-links{display:none}}
 
-/* ===== HOURGLASS (every 1s) ===== */
-.hourglass-wrap{display:flex;align-items:center;justify-content:center}
-.hourglass{width:240px;height:auto;transform-origin:60px 110px;animation:flip 1s steps(1,end) infinite}
-@keyframes flip{0%{transform:rotate(0)}100%{transform:rotate(180deg)}}
+/* ===== Hourglass 2.0 ===== */
+.hg{ display:inline-block; width:240px; transform-origin:50% 50%;
+     animation: hgFlip 12s linear infinite; }
+.svg-hourglass{ width:100%; height:auto; }
 
-/* Sand flow illusion */
-.sand-top,.sand-bottom,.sand-stream{transform-origin:50% 50%}
-.sand-top{animation:sandTop 1s linear infinite}
-.sand-bottom{animation:sandBottom 1s linear infinite}
-.sand-stream{animation:sandStream 1s linear infinite}
+.sand-top, .sand-bottom, .sand-stream{ transform-origin:50% 50%; }
+
+/* плавное «опустошение» верхней колбы */
+.sand-top{ animation: sandTop 12s linear infinite; }
+/* плавное «наполнение» нижней колбы */
+.sand-bottom{ animation: sandBottom 12s linear infinite; }
+/* струйка меняет интенсивность */
+.sand-stream{ animation: sandStream 12s linear infinite; }
 
 @keyframes sandTop{
-  0%{opacity:.95; transform:scaleY(1)}
-  90%{opacity:.15; transform:scaleY(.2)}
-  100%{opacity:.95; transform:scaleY(1)}
+  0%   { opacity:.95; transform: scaleY(1) translateY(0); }
+  88%  { opacity:.35; transform: scaleY(.18) translateY(18px); }
+  90%  { opacity:0;   transform: scaleY(.12) translateY(22px); }
+  92%  { opacity:.95; transform: scaleY(1) translateY(0); }  /* сброс после «переворота» */
+  100% { opacity:.95; transform: scaleY(1) translateY(0); }
 }
+
 @keyframes sandBottom{
-  0%{opacity:.15; transform:scaleY(.2)}
-  90%{opacity:.95; transform:scaleY(1)}
-  100%{opacity:.15; transform:scaleY(.2)}
+  0%   { opacity:.15; transform: scaleY(.18) translateY(-18px); }
+  88%  { opacity:.95; transform: scaleY(1) translateY(0); }
+  90%  { opacity:0;   transform: scaleY(.12) translateY(-22px); }
+  92%  { opacity:.15; transform: scaleY(.18) translateY(-18px); } /* сброс */
+  100% { opacity:.15; transform: scaleY(.18) translateY(-18px); }
 }
+
 @keyframes sandStream{
-  0%{opacity:1}
-  90%{opacity:.1}
-  100%{opacity:1}
+  0%   { opacity:1;   transform: scaleY(1); }
+  85%  { opacity:.25; transform: scaleY(.25); }
+  90%  { opacity:0;   transform: scaleY(0); }   /* пауза на «переворот» */
+  92%  { opacity:1;   transform: scaleY(1); }
+  100% { opacity:1;   transform: scaleY(1); }
 }
+
+/* быстрый поворот колбы в конце цикла */
+@keyframes hgFlip{
+  0%, 88% { transform: rotate(0deg); }
+  92%,100%{ transform: rotate(180deg); }
+}
+
+  
