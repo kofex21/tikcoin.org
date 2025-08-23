@@ -16,26 +16,19 @@
 <body>
   <!-- NAV -->
   <nav class="nav">
-    <a class="brand" href="/">
+    <a class="brand" href="./">
       <img src="./assets/logo.png" alt="TIKcoin" class="brand-logo"
            onerror="this.style.display='none';document.getElementById('svgLogo').style.display='inline';">
       <svg id="svgLogo" class="brand-logo" viewBox="0 0 100 100" aria-hidden="true" style="display:none">
         <circle cx="50" cy="50" r="46" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-        <g fill="none" stroke="#3B5BDB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M30 20h40M30 80h40"/>
-          <path d="M35 20c0 15 30 15 30 30s-30 15-30 30"/>
-          <path d="M65 20c0 15-30 15-30 30s30 15 30 30"/>
-          <circle cx="50" cy="70" r="12"/>
-          <path d="M50 58v12m0 0l10 6m-10-6l-10 6"/>
-        </g>
       </svg>
       <span>TIKcoin</span>
     </a>
     <div class="nav-links">
       <a href="#philosophy">Philosophy</a>
       <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#join">Community</a>
+      <a href="./roadmap.html">Roadmap</a>
+      <a href="./whitepaper.html">Whitepaper</a>
       <a class="btn small ghost" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
     </div>
   </nav>
@@ -49,15 +42,15 @@
         <a class="btn primary" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Join Telegram</a>
         <a class="btn ghost" href="#philosophy">Read Philosophy</a>
       </div>
-      <p class="tag ru">Время не остановить. И TIKcoin тоже.</p>
+      <p class="tag">Время не остановить. И TIKcoin тоже.</p>
     </div>
     <div class="hero-right">
-      <!-- Animated hourglass (flips once per minute) -->
+      <!-- Animated hourglass (flips every second) -->
       <div class="hourglass-wrap">
         <svg class="hourglass" viewBox="0 0 120 220" aria-hidden="true">
           <defs>
             <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#9fb0ff"/>
+              <stop offset="0%" stop-color="#b7c6ff"/>
               <stop offset="100%" stop-color="#3B5BDB"/>
             </linearGradient>
           </defs>
@@ -66,12 +59,10 @@
           <rect x="20" y="190" width="80" height="20" rx="8" ry="8" fill="none" stroke="#3B5BDB" stroke-width="6"/>
           <path d="M26 30 Q60 70 94 30" fill="none" stroke="#3B5BDB" stroke-width="6"/>
           <path d="M26 190 Q60 150 94 190" fill="none" stroke="#3B5BDB" stroke-width="6"/>
-          <!-- sand top -->
-          <path class="sand-top" d="M30 60 Q60 90 90 60 L90 80 Q60 100 30 80 Z" fill="url(#sand)" opacity="0.9"/>
-          <!-- stream -->
-          <rect class="sand-stream" x="59" y="110" width="2" height="30" fill="url(#sand)"/>
-          <!-- sand bottom -->
-          <path class="sand-bottom" d="M30 160 Q60 140 90 160 L90 170 Q60 190 30 170 Z" fill="url(#sand)" opacity="0.9"/>
+          <!-- sand shapes (animated via CSS scaleY + opacity) -->
+          <path class="sand-top" d="M30 60 Q60 90 90 60 L90 85 Q60 105 30 85 Z" fill="url(#sand)" opacity="0.95"/>
+          <rect class="sand-stream" x="59" y="110" width="2" height="34" fill="url(#sand)"/>
+          <path class="sand-bottom" d="M30 155 Q60 135 90 155 L90 175 Q60 195 30 175 Z" fill="url(#sand)" opacity="0.2"/>
         </svg>
       </div>
       <div class="glow"></div>
@@ -88,12 +79,12 @@
     <article class="card">
       <h3>Tokenomics</h3>
       <p>Simple and fixed. One 20% community pool. Founder unlocks are strict.</p>
-      <a class="more" href="#tokenomics">See details →</a>
+      <a class="more" href="./tokenomics.html">See details →</a>
     </article>
     <article class="card">
       <h3>Presale</h3>
       <p>No calendar end date. Listing on day 8 after sell-out. Per-wallet hard cap.</p>
-      <a class="more" href="#roadmap">How it works →</a>
+      <a class="more" href="./roadmap.html#presale">How it works →</a>
     </article>
   </section>
 
@@ -101,9 +92,7 @@
   <section id="philosophy" class="section">
     <div class="container">
       <h2>Philosophy</h2>
-      <p class="lead">
-        Minimal, immutable foundation (ERC‑20). Utilities live as extensions — the base never changes.
-      </p>
+      <p class="lead">Minimal, immutable ERC-20 foundation. Extensions add utility — the base never changes.</p>
       <ul class="pills">
         <li>No admin keys</li>
         <li>No taxes / burns</li>
@@ -114,7 +103,7 @@
     </div>
   </section>
 
-  <!-- TOKENOMICS -->
+  <!-- TOKENOMICS (brief) -->
   <section id="tokenomics" class="section alt">
     <div class="container">
       <h2>Tokenomics (v1)</h2>
@@ -126,25 +115,7 @@
         <div class="tok"><span>15%</span> Marketing (multisig + timelock)</div>
         <div class="tok"><span>10%</span> Founder (strict unlocks)</div>
       </div>
-      <p class="muted small">
-        Community & Growth — единый 20% пул: бонусы 10/20/30% во время пресейла по спросу; неиспользованное остаётся для рефералок, мемов, контента, коллабораций.
-      </p>
-    </div>
-  </section>
-
-  <!-- ROADMAP -->
-  <section id="roadmap" class="section">
-    <div class="container">
-      <h2>Roadmap (v1)</h2>
-      <ol class="road">
-        <li><strong>Genesis.</strong> Сайт, бренд, Telegram/X, публичные правила «на берегу».</li>
-        <li><strong>Community ignition.</strong> Мем‑механики, органика, прозрачная аналитика.</li>
-        <li><strong>Presale.</strong> Без даты окончания; бонусы 10/20/30% из 20% community‑pool; жёсткий per‑wallet cap.</li>
-        <li><strong>Audit v1 + Listing.</strong> Базовый аудит; <em>TGE + листинг на 8‑й день</em> после sell‑out (закреплено в смарт‑контракте).</li>
-        <li><strong>Liquidity & Ops.</strong> 20% ликвидность; 15% маркетинг через multisig+timelock; ежемесячные отчёты.</li>
-        <li><strong>Audit v2 + Contract upgrade path.</strong> Улучшения без изменения фундамента (миграция 1:1 при необходимости).</li>
-        <li><strong>Partnerships & Utilities.</strong> Коллаборации, расширения, не ломающие базу; мем‑культура как двигатель притока.</li>
-      </ol>
+      <p class="small muted">Community & Growth — единый 20% пул: бонусы 10/20/30% по спросу во время пресейла; неиспользованное остаётся для рефералок, мемов, контента и коллабораций.</p>
     </div>
   </section>
 
@@ -163,18 +134,17 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footgrid">
-      <a class="brand" href="/"><img src="./assets/logo.png" class="brand-logo" alt="" onerror="this.style.display='none'"><span>TIKcoin</span></a>
+      <a class="brand" href="./"><img src="./assets/logo.png" class="brand-logo" alt="" onerror="this.style.display='none'"><span>TIKcoin</span></a>
       <div class="muted">© <span id="y"></span> • We cannot buy time, but we can tokenize it.</div>
       <div class="foot-links">
-        <a href="./litepaper.html">Litepaper</a>
+        <a href="./whitepaper.html">Whitepaper</a>
         <a href="./tokenomics.html">Tokenomics</a>
+        <a href="./roadmap.html">Roadmap</a>
         <a href="mailto:info@tikcoin.org">info@tikcoin.org</a>
       </div>
     </div>
   </footer>
 
-<script>
-  document.getElementById('y').textContent=new Date().getFullYear();
-</script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
