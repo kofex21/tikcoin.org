@@ -14,6 +14,17 @@
   <meta property="og:title" content="TIKcoin">
   <meta property="og:description" content="We can’t stop time — we can monetize it. Radical honesty. Immutable rules.">
   <meta property="og:image" content="/og.jpg">
+
+  <!-- Небольшой стиль для FAQ (details/summary), чтобы выглядело как карточки -->
+  <style>
+    details.faq { background: linear-gradient(180deg,#10162a,#0d1224); border:1px solid #3a3f5a33; border-radius:16px; padding:14px 16px; margin:10px 0; box-shadow:0 10px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.02); }
+    details.faq[open] { border-color:#4a5591; }
+    details.faq summary { cursor:pointer; list-style:none; font-weight:600; color:#E9ECF1; outline:none; }
+    details.faq summary::-webkit-details-marker { display:none; }
+    details.faq summary::after { content:"+"; float:right; color:#9aa3b2; transition:transform .2s ease; }
+    details.faq[open] summary::after { content:"–"; }
+    details.faq p { color:#A8B2C4; margin:.6rem 0 0; }
+  </style>
 </head>
 <body id="top">
 
@@ -22,8 +33,7 @@
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="TIKcoin">
         <span class="brand-logo-wrap">
-          <!-- Если у тебя сейчас PNG — замени src на /logo.png -->
-          <img src="/logo.svg" alt="TIKcoin" class="brand-logo">
+          <img src="/logo.png" alt="TIKcoin" class="brand-logo">
           <!-- маленькая «тик-тик» шестерёнка поверх лого -->
           <svg class="gear-overlay" viewBox="0 0 100 100" aria-hidden="true">
             <g class="gear">
@@ -41,6 +51,8 @@
         <a href="/litepaper.html">Whitepaper</a>
         <a href="#roadmap">Roadmap</a>
         <a href="/tokenomics.html">Tokenomics</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
         <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Community</a>
       </nav>
 
@@ -128,6 +140,81 @@
     </div>
   </section>
 
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About TIKcoin</h2>
+      <div class="grid cards" style="grid-template-columns: 2fr 1fr;">
+        <article class="card reveal">
+          <h3>What we’re building</h3>
+          <p>
+            TIKcoin is a community-first crypto experiment grounded in radical honesty. We publish the rules
+            before launch, lock the core, and keep incentives simple. We don’t chase hype — we cultivate trust.
+          </p>
+          <p>
+            Our vision is to make participation feel fair: transparent tokenomics, clear liquidity,
+            and vesting that respects both early believers and long-term stability.
+          </p>
+        </article>
+        <article class="card reveal">
+          <h3>Principles</h3>
+          <ul style="margin:0; padding-left:18px; color:#A8B2C4">
+            <li>No burns, no stealth taxes</li>
+            <li>Immutable core (whitelisted improvements only)</li>
+            <li>Community incentives without supply abuse</li>
+            <li>Open-ended presale → listing on day 8 after sell-out</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+
+      <details class="faq reveal">
+        <summary>Is there a burn or hidden tax?</summary>
+        <p>No. Fixed supply, no burns, no stealth taxes. We keep the mechanics clean and auditable.</p>
+      </details>
+
+      <details class="faq reveal">
+        <summary>When does listing happen?</summary>
+        <p>Eight days after the presale sells out. This is stated upfront for predictability and fairness.</p>
+      </details>
+
+      <details class="faq reveal">
+        <summary>How does vesting work for tiers?</summary>
+        <p>
+          Sun & Hourglass: unlocked at TGE.  
+          Mechanical • Tourbillon • Eternity: months 1–5 unlock 10% each (50%), months 6–7 no unlocks, month 8 unlocks the remaining 50%.  
+          Top-bracket wallets (“whales”): months 1–5 → 10% each; month 7 → 25%; month 8 → 25%.
+        </p>
+      </details>
+
+      <details class="faq reveal">
+        <summary>How is the founder allocation locked?</summary>
+        <p>
+          Founder 10%: 10% unlock at TGE (same as everyone), the remaining 90% begin vesting only
+          <em>after all presale participants complete their unlocks</em> (default plan: linear vesting over 12 months starting the following month; final cadence is fixed before contract freeze).
+        </p>
+      </details>
+
+      <details class="faq reveal">
+        <summary>What’s in the community pool (20%)?</summary>
+        <p>Presale bonuses (10/20/30%) plus the remainder for referrals, memes, content, and collaborations — managed transparently.</p>
+      </details>
+
+      <details class="faq reveal">
+        <summary>Why “open-ended” presale?</summary>
+        <p>
+          We prefer demand-led timing. Community heat matters more than arbitrary dates. The listing countdown starts the moment we sell out.
+        </p>
+      </details>
+    </div>
+  </section>
+
   <!-- Subscribe -->
   <section class="section subscribe">
     <div class="container sub-wrap">
@@ -144,20 +231,21 @@
   <footer class="site-footer">
     <div class="container foot">
       <div class="foot-brand">
-        <img src="/logo.svg" alt="" class="foot-logo">
+        <img src="/logo.png" alt="" class="foot-logo">
         <strong>TIKcoin</strong>
       </div>
       <div class="foot-links">
         <a href="/litepaper.html">Whitepaper</a>
         <a href="/tokenomics.html">Tokenomics</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
         <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
       </div>
       <div class="foot-copy">© <span id="y"></span> TIKcoin. Time can’t be stopped — neither can we.</div>
     </div>
   </footer>
 
-  <!-- встроенный JS, отдельный main.js не нужен -->
+  <!-- Встроенный JS: бургер, тень хедера, reveal, год -->
   <script>
     // mobile nav
     const b=document.querySelector('.burger'), n=document.querySelector('.nav');
@@ -165,7 +253,7 @@
     // header shadow
     const h=document.querySelector('.site-header');
     addEventListener('scroll',()=>{ h.style.boxShadow = scrollY>10 ? '0 8px 24px rgba(0,0,0,.25)' : 'none'; });
-    // reveal
+    // reveal on scroll
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     // year
