@@ -2,72 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>TIKcoin — Tokenomics</title>
+  <title>TIKcoin • Tokenomics</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="TIKcoin">
-        <img src="/logo.svg" class="brand-logo" alt=""> <span class="brand-text">TIKcoin</span>
-      </a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/litepaper.html">Whitepaper</a>
-        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
-      </nav>
-    </div>
-  </header>
+  <main class="container" style="padding:40px 0 60px">
+    <a href="/" style="text-decoration:none;color:#9aa3b2">← TIKcoin</a>
 
-  <main class="section">
-    <div class="container">
-      <h1 class="section-title">Tokenomics v1</h1>
+    <h2>Tokenomics (v1)</h2>
+    <p><strong>Total Supply:</strong> 3,155,760,000 TIK</p>
 
-      <h3>Supply</h3>
-      <p>Total Supply: <strong>3,155,760,000 TIK</strong></p>
+    <ul>
+      <li><strong>35% Presale</strong> — per-wallet hard cap; on-chain accounting.</li>
+      <li><strong>20% Liquidity</strong> — locked liquidity per listing plan.</li>
+      <li><strong>20% Community & Growth Pool</strong> — a single pool:
+        <em>presale bonuses 10/20/30%</em> plus the remainder for referrals, memes, content, and collaborations (managed transparently).</li>
+      <li><strong>15% Marketing</strong> — multisig + timelock + monthly transparency reports.</li>
+      <li><strong>10% Founder</strong> — strict unlock conditions (see below).</li>
+    </ul>
 
-      <h3>Allocation</h3>
-      <ul>
-        <li><strong>35% — Presale</strong> (per-wallet hard cap; on-chain accounting)</li>
-        <li><strong>20% — Liquidity</strong> (locked per listing plan)</li>
-        <li><strong>20% — Community & Growth</strong> (single pool: 10/20/30% presale bonuses; remainder for referrals/memes/content/collabs)</li>
-        <li><strong>15% — Marketing</strong> (multisig + timelock; monthly on-chain reports)</li>
-        <li><strong>10% — Founder</strong> (see unlocks)</li>
-      </ul>
+    <h3>Unlock Policy</h3>
+    <ul>
+      <li><strong>Tier 0 — Sun</strong> (free/minimal): 0% lock, funds available at TGE.</li>
+      <li><strong>Tier 1 — Hourglass</strong>: 0% lock, funds available at TGE.</li>
+      <li><strong>Tiers 2–3–4 (Mechanical • Tourbillon • Eternity)</strong>:
+        <ul>
+          <li>Months 1–5: 10% each month (total 50%).</li>
+          <li>Months 6–7: no unlocks (market stabilization).</li>
+          <li>Month 8: remaining 50% in one tranche.</li>
+        </ul>
+      </li>
+      <li><strong>Whales</strong> (top-bracket wallets at the upper buy cap):
+        <ul>
+          <li>Months 1–5: 10% each (total 50%).</li>
+          <li>Month 7: 25%, Month 8: 25% (still complete within 8 months with a softer market impact).</li>
+        </ul>
+      </li>
+      <li><strong>Founder 10%</strong>:
+        <ul>
+          <li>5% — unlocks one year after all presale participants finish their unlocks.</li>
+          <li>5% — unlocks once the project reaches Top-50 by market cap (or by a hard fallback date if that metric becomes disputable; finalized before contract freeze).</li>
+        </ul>
+      </li>
+    </ul>
 
-      <h3>Unlocks</h3>
-      <ul>
-        <li><strong>Tier 0 — Sun:</strong> unlocked at TGE.</li>
-        <li><strong>Tier 1 — Hourglass:</strong> unlocked at TGE.</li>
-        <li><strong>Tiers 2–4 (Mechanical • Tourbillon • Eternity):</strong>
-          Months 1–5 → 10% each (50% total); Months 6–7 → none; Month 8 → remaining 50%.</li>
-        <li><strong>Whales (top bracket wallets):</strong>
-          Months 1–5 → 10% each; Month 7 → 25%; Month 8 → 25% (still finishing within 8 months, softer entry).</li>
-        <li><strong>Founder 10%:</strong> 10% at TGE; remaining 90% start vesting only after all presale participants complete their schedules (default: linear over 12 months starting the following month; exact cadence can be fixed before contract freeze).</li>
-      </ul>
+    <p style="color:#9aa3b2">
+      Note: exact “whale” threshold is fixed in the contract/presale rules. All periods are calendar months from TGE.
+    </p>
 
-      <h3>Notes</h3>
-      <ul>
-        <li>Exact “whale” threshold is defined in the presale/contract rules.</li>
-        <li>All periods are calendar months from TGE.</li>
-        <li>No hidden taxes, no burns, no admin keys. Immutable core; only whitelisted improvements that preserve the foundation.</li>
-      </ul>
-
-      <p class="ru-note">Примечание (RU): Фаундер — 10% в TGE; оставшиеся 90% начинают вестинг только после полного завершения всех локов у участников (по умолчанию линейно 12 мес.; можно уточнить до заморозки контракта).</p>
-    </div>
+    <p><a href="/litepaper.html">→ Whitepaper</a> &nbsp; <a href="/#faq">→ FAQ</a></p>
   </main>
-
-  <footer class="site-footer">
-    <div class="container foot">
-      <div class="foot-brand"><img src="/logo.svg" class="foot-logo" alt=""><strong>TIKcoin</strong></div>
-      <div class="foot-links"><a href="/">Home</a><a href="/litepaper.html">Whitepaper</a></div>
-      <div class="foot-copy">© <span id="y"></span> TIKcoin</div>
-    </div>
-  </footer>
-
-  <script>
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-  </script>
 </body>
 </html>
