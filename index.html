@@ -117,32 +117,100 @@
 
   <!-- Roadmap -->
   <section class="section alt" id="roadmap">
-    <div class="container">
-      <h2 class="section-title">Roadmap</h2>
-      <ol class="timeline">
-        <li class="reveal">
-          <h4>Phase 0 — Birth</h4>
-          <p>Site, brand, manifesto. Open-ended presale spec. Community ignition.</p>
-        </li>
-        <li class="reveal">
-          <h4>Phase 1 — Contract v1</h4>
-          <p>Foundation rules on-chain. Internal review. Public docs.</p>
-        </li>
-        <li class="reveal">
-          <h4>Phase 2 — Audit & v2</h4>
-          <p>External audit, fixes, final hard-lock. Vesting & multisig wired. Presale go-live.</p>
-        </li>
-        <li class="reveal">
-          <h4>Phase 3 — Listing + Liquidity</h4>
-          <p>Listing 8 days after sell-out. X2 price band target; liquidity buffers pre-wired.</p>
-        </li>
-        <li class="reveal">
-          <h4>Phase 4 — Utilities & Collabs</h4>
-          <p>Time-centric utilities, brand collabs, creator programs, dashboards.</p>
-        </li>
-      </ol>
+  <div class="container">
+    <h2 class="section-title">Roadmap</h2>
+
+    <!-- Progress rail (visual flow of time) -->
+    <div class="time-rail" aria-hidden="true">
+      <div class="time-rail-fill"></div>
     </div>
-  </section>
+
+    <ol class="timeline timeline-time">
+      <!-- 0 — Sun (Sundial) -->
+      <li class="reveal stage" data-stage="sun">
+        <div class="stage-icon" aria-hidden="true">
+          <!-- Sundial -->
+          <svg viewBox="0 0 48 48" class="ico">
+            <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 6v6M24 42v-6M6 24h6M42 24h-6M14 14l4 4M34 34l-4-4M14 34l4-4M34 14l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M24 24l9 -9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="stage-body">
+          <h4>Phase 0 — Sun (Sundial)</h4>
+          <p>Birth of the idea, brand, manifesto. Open-ended presale spec. Community ignition.</p>
+        </div>
+      </li>
+
+      <!-- 1 — Hourglass -->
+      <li class="reveal stage" data-stage="hourglass">
+        <div class="stage-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" class="ico">
+            <path d="M12 8h24M12 40h24M16 8c0 8 16 8 16 0M16 40c0 -8 16 -8 16 0" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path class="sand top" d="M18 14h12l-6 5z" />
+            <rect class="sand stream" x="23" y="20" width="2" height="7" rx="1"/>
+            <path class="sand bottom" d="M18 34h12l-6 -5z"/>
+          </svg>
+        </div>
+        <div class="stage-body">
+          <h4>Phase 1 — Hourglass</h4>
+          <p>Contract v1 with foundation rules. Internal review. Public docs aligned with honesty.</p>
+        </div>
+      </li>
+
+      <!-- 2 — Mechanical (gears) -->
+      <li class="reveal stage" data-stage="mechanical">
+        <div class="stage-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" class="ico">
+            <g class="gear-slow">
+              <circle cx="17" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M17 14v-3M17 34v3M10 24h-3M27 24h3M12 18l-2-2M22 30l2 2M12 30l-2 2M22 18l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <g class="gear-fast">
+              <circle cx="32" cy="24" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M32 18.5v-2M32 31.5v2M26.5 24h-2M39.5 24h2M28.5 20.5l-1.5-1.5M35.5 27.5l1.5 1.5M28.5 27.5l-1.5 1.5M35.5 20.5l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="stage-body">
+          <h4>Phase 2 — Mechanical</h4>
+          <p>External audit & fixes → v2 hardening. Multisig & timelocks wired. Presale go-live.</p>
+        </div>
+      </li>
+
+      <!-- 3 — Tourbillon -->
+      <li class="reveal stage" data-stage="tourbillon">
+        <div class="stage-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" class="ico">
+            <circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle class="cage" cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path class="balance" d="M24 19v10M19 24h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="stage-body">
+          <h4>Phase 3 — Tourbillon</h4>
+          <p>Listing + liquidity orchestration. Target X2 band on day 8 post sell-out with buffers.</p>
+        </div>
+      </li>
+
+      <!-- 4 — Atomic -->
+      <li class="reveal stage" data-stage="atomic">
+        <div class="stage-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" class="ico">
+            <circle cx="24" cy="24" r="2.6" fill="currentColor"/>
+            <ellipse class="orb o1" cx="24" cy="24" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <ellipse class="orb o2" cx="24" cy="24" rx="6" ry="14" fill="none" stroke="currentColor" stroke-width="2"/>
+            <ellipse class="orb o3" cx="24" cy="24" rx="12" ry="12" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="stage-body">
+          <h4>Phase 4 — Atomic</h4>
+          <p>Utilities & collabs focused on time. Dashboards, creators, partner integrations.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
 
   <!-- About -->
   <section class="section" id="about">
