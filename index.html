@@ -16,10 +16,13 @@
   <meta property="og:image" content="/og.jpg">
 </head>
 <body id="top">
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="TIKcoin">
         <span class="brand-logo-wrap">
+          <!-- ВАЖНО: логотип лежит в /assets/ -->
           <img src="assets/logo.png" alt="TIKcoin" class="brand-logo">
           <svg class="gear-overlay" viewBox="0 0 100 100" aria-hidden="true">
             <g class="gear"><circle cx="50" cy="50" r="10" fill="transparent"/>
@@ -43,6 +46,7 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
@@ -60,27 +64,50 @@
           <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Join Community</a>
         </div>
       </div>
-      <div class="hero-art"><div class="aura"></div></div>
+      <div class="hero-art">
+        <canvas id="hero-canvas" class="hero-canvas" width="900" height="380" aria-hidden="true"></canvas>
+        <div class="aura"></div>
+      </div>
     </div>
   </section>
 
+  <!-- Pillars -->
   <section class="section" id="pillars">
     <div class="container">
       <h2 class="section-title">Pillars</h2>
       <div class="grid cards">
         <article class="card reveal">
+          <div class="icon-wrap" aria-hidden="true">
+            <!-- honesty -->
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4zM7 10l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Radical Honesty</h3>
           <p>Rules declared upfront. No surprise mints, no stealth changes. The ship sails with the rules already written.</p>
         </article>
+
         <article class="card reveal">
+          <div class="icon-wrap" aria-hidden="true">
+            <!-- lock -->
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 10V7a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
           <h3>Immutable Core</h3>
           <p>Core contract locked. Only whitelisted improvements that preserve the foundation.</p>
         </article>
+
         <article class="card reveal">
+          <div class="icon-wrap" aria-hidden="true">
+            <!-- community -->
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c1.5-3 4.5-4.5 9-4.5S19.5 17 21 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
           <h3>Community-First</h3>
           <p>We tokenize participation without abusing supply. A single 20% community pool managed transparently.</p>
         </article>
+
         <article class="card reveal">
+          <div class="icon-wrap" aria-hidden="true">
+            <!-- healthy markets -->
+            <svg class="icon" viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 6-7 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <h3>Healthy Markets</h3>
           <p>Clear liquidity playbook, vesting that breathes, and safeguards against sudden dumps.</p>
         </article>
@@ -88,7 +115,8 @@
     </div>
   </section>
 
-  <section class="section" id="roadmap">
+  <!-- Roadmap -->
+  <section class="section alt" id="roadmap">
     <div class="container">
       <h2 class="section-title">Roadmap</h2>
       <ol class="timeline">
@@ -116,6 +144,7 @@
     </div>
   </section>
 
+  <!-- About -->
   <section class="section" id="about">
     <div class="container">
       <h2 class="section-title">About TIKcoin</h2>
@@ -144,7 +173,8 @@
     </div>
   </section>
 
-  <section class="section" id="faq">
+  <!-- FAQ -->
+  <section class="section alt" id="faq">
     <div class="container">
       <h2 class="section-title">FAQ</h2>
 
@@ -186,6 +216,7 @@
     </div>
   </section>
 
+  <!-- Subscribe -->
   <section class="section subscribe">
     <div class="container sub-wrap">
       <h2>Get updates</h2>
@@ -211,14 +242,45 @@
     </div>
   </footer>
 
+  <!-- JS: меню, reveal, год + частицы в hero -->
   <script>
     const b=document.querySelector('.burger'), n=document.querySelector('.nav');
     if(b&&n){ b.addEventListener('click',()=>n.classList.toggle('open')); }
     const h=document.querySelector('.site-header');
-    addEventListener('scroll',()=>{ h.style.boxShadow = scrollY>10 ? '0 8px 24px rgba(0,0,0,.25)' : 'none'; });
+    addEventListener('scroll',()=>{ h.classList.toggle('shadow', scrollY>10); });
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+
+    // Hero particles (медленные «зерна времени»)
+    (function(){
+      const c=document.getElementById('hero-canvas'); if(!c) return;
+      const ctx=c.getContext('2d');
+      let w=c.width = c.offsetWidth, h=c.height = c.offsetHeight;
+      const dots = Array.from({length: 80}, () => ({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: Math.random()*1.8+0.4,
+        vx:(Math.random()-.5)*0.08,
+        vy:(Math.random()*0.12)+0.02,
+        a: Math.random()*0.8+0.2
+      }));
+      function resize(){ w=c.width=c.offsetWidth; h=c.height=c.offsetHeight; }
+      window.addEventListener('resize', resize);
+
+      function tick(){
+        ctx.clearRect(0,0,w,h);
+        for(const d of dots){
+          d.x += d.vx; d.y += d.vy;
+          if(d.x<0||d.x>w) d.vx*=-1;
+          if(d.y>h+20){ d.y = -10; d.x=Math.random()*w; }
+          ctx.beginPath(); ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+          ctx.fillStyle=`rgba(150,160,255,${d.a})`; ctx.fill();
+        }
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
   </script>
 </body>
 </html>
