@@ -52,7 +52,7 @@ h1{font-family:"Space Grotesk",Inter; font-weight:700; font-size:clamp(32px, 6vw
 .btn.primary{background:linear-gradient(180deg,#6E72FF,#5A60FF); border-color:#5A60FF; box-shadow:0 10px 20px rgba(110,114,255,.25)}
 .btn.primary:hover{filter:brightness(1.08)}
 .btn.ghost:hover{background:#161b2b}
-.mini-note{color:#7f8aa1; font-size:.9rem; margin-top:8px}
+..ru-note{color:#99a7c0;font-size:.92rem;margin-top:10px}
 
 .hero-art{position:relative; height:220px}
 .aura{position:absolute; inset:auto 0 0 0; margin:0 auto; width:360px; height:360px; border-radius:50%;
