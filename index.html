@@ -22,14 +22,13 @@
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="TIKcoin">
         <span class="brand-logo-wrap">
-          <!-- ЛОГО ДОЛЖЕН ЛЕЖАТЬ В: /assets/logo.png -->
-          <img src="assets/logo.png" alt="TIKcoin" class="brand-logo">
+          <img src="/assets/logo.png" alt="TIKcoin" class="brand-logo">
         </span>
         <span class="brand-text">TIKcoin</span>
       </a>
 
       <nav class="nav">
-        <a href="#top">Home</a>
+        <a href="/">Home</a>
         <a href="/litepaper.html">Whitepaper</a>
         <a href="#pillars">Pillars</a>
         <a href="#roadmap">Roadmap</a>
@@ -62,7 +61,6 @@
       </div>
 
       <div class="hero-art">
-        <!-- Делает деликатные «зерна времени» -->
         <canvas id="hero-canvas" class="hero-canvas" width="900" height="380" aria-hidden="true"></canvas>
         <div class="aura"></div>
       </div>
@@ -94,36 +92,34 @@
     </div>
   </section>
 
-  <!-- ===== Roadmap (эволюция приборов времени) ===== -->
+  <!-- ===== Roadmap (Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom) ===== -->
   <section class="section alt" id="roadmap">
     <div class="container">
       <h2 class="section-title">Roadmap</h2>
-
-      <!-- Прогресс-рейл (визуальный поток времени) -->
       <div class="time-rail" aria-hidden="true"><div class="time-rail-fill"></div></div>
 
       <ol class="timeline timeline-time">
+        <!-- 0 — Sun (Sundial) -->
         <li class="reveal stage" data-stage="sun">
           <div class="stage-icon" aria-hidden="true">
-            <!-- Sundial -->
             <svg viewBox="0 0 48 48" class="ico">
               <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
               <path d="M24 6v6M24 42v-6M6 24h6M42 24h-6M14 14l4 4M34 34l-4-4M14 34l4-4M34 14l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
-              <path d="M24 24l9 -9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <path class="gnomon" d="M24 24l9 -9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="stage-body">
             <h4>Phase 0 — Sun (Sundial)</h4>
-            <p>Site, brand, manifesto. Open-ended presale spec. Community ignition.</p>
+            <p>Idea, brand, manifesto. Open-ended presale spec. Community ignition.</p>
           </div>
         </li>
 
+        <!-- 1 — Hourglass -->
         <li class="reveal stage" data-stage="hourglass">
           <div class="stage-icon" aria-hidden="true">
-            <!-- Hourglass -->
             <svg viewBox="0 0 48 48" class="ico">
-              <path d="M12 8h24M12 40h24M16 8c0 8 16 8 16 0M16 40c0 -8 16 -8 16 0" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path class="sand top" d="M18 14h12l-6 5z" />
+              <path d="M12 8h24M12 40h24M16 8c0 8 16 8 16 0M16 40c0 -8 16 -8 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path class="sand top" d="M18 14h12l-6 5z"/>
               <rect class="sand stream" x="23" y="20" width="2" height="7" rx="1"/>
               <path class="sand bottom" d="M18 34h12l-6 -5z"/>
             </svg>
@@ -134,9 +130,9 @@
           </div>
         </li>
 
+        <!-- 2 — Mechanical -->
         <li class="reveal stage" data-stage="mechanical">
           <div class="stage-icon" aria-hidden="true">
-            <!-- Mechanical gears -->
             <svg viewBox="0 0 48 48" class="ico">
               <g class="gear-slow">
                 <circle cx="17" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -154,9 +150,30 @@
           </div>
         </li>
 
+        <!-- 3 — Quartz -->
+        <li class="reveal stage" data-stage="quartz">
+          <div class="stage-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" class="ico">
+              <!-- watch bezel -->
+              <circle cx="24" cy="24" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
+              <!-- hour marks -->
+              <path d="M24 12v3M24 33v3M12 24h3M33 24h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <!-- hands -->
+              <path class="hand-hour" d="M24 24l0 -6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <path class="hand-sec" d="M24 24l6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- quartz wave -->
+              <path class="qu-wave" d="M14 36c2-2 4-2 6 0s4 2 6 0 4-2 6 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".85"/>
+            </svg>
+          </div>
+          <div class="stage-body">
+            <h4>Phase 3 — Quartz</h4>
+            <p>Efficiency & scale. Tooling, dashboards, faster UX. Listing prep for broader reach.</p>
+          </div>
+        </li>
+
+        <!-- 4 — Tourbillon -->
         <li class="reveal stage" data-stage="tourbillon">
           <div class="stage-icon" aria-hidden="true">
-            <!-- Tourbillon -->
             <svg viewBox="0 0 48 48" class="ico">
               <circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
               <circle class="cage" cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -164,14 +181,14 @@
             </svg>
           </div>
           <div class="stage-body">
-            <h4>Phase 3 — Tourbillon</h4>
+            <h4>Phase 4 — Tourbillon</h4>
             <p>Listing + liquidity orchestration. Target X2 band on day 8 post sell-out with buffers.</p>
           </div>
         </li>
 
+        <!-- 5 — Atom -->
         <li class="reveal stage" data-stage="atomic">
           <div class="stage-icon" aria-hidden="true">
-            <!-- Atomic -->
             <svg viewBox="0 0 48 48" class="ico">
               <circle cx="24" cy="24" r="2.6" fill="currentColor"/>
               <ellipse class="orb o1" cx="24" cy="24" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -180,8 +197,8 @@
             </svg>
           </div>
           <div class="stage-body">
-            <h4>Phase 4 — Atomic</h4>
-            <p>Utilities & collabs focused on time. Dashboards, creators, partner integrations.</p>
+            <h4>Phase 5 — Atom</h4>
+            <p>Utilities & collabs centered on time. Partner integrations and sustainable growth.</p>
           </div>
         </li>
       </ol>
@@ -240,7 +257,7 @@
       <details class="faq reveal">
         <summary>How does vesting work for tiers?</summary>
         <p>
-          Sun & Hourglass: unlocked at TGE. Mechanical • Tourbillon • Eternity: months 1–5 → 10% each (50%), months 6–7 → none, month 8 → remaining 50%.  
+          Sun & Hourglass: unlocked at TGE. Mechanical • Quartz • Tourbillon: months 1–5 → 10% each (50%), months 6–7 → none, month 8 → remaining 50%.  
           Top-bracket wallets (“whales”): months 1–5 → 10% each; month 7 → 25%; month 8 → 25%.
         </p>
       </details>
@@ -249,7 +266,7 @@
         <summary>How is the founder allocation locked?</summary>
         <p>
           Founder 10%: 10% at TGE (same as everyone). The remaining 90% begin vesting only
-          <em>after all presale participants finish their unlocks</em> (default: linear 12 months; finalized before contract freeze).
+          <em>after all presale participants finish their unlocks</em> (final params fixed before contract freeze).
         </p>
       </details>
 
@@ -275,57 +292,47 @@
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container foot">
-      <div class="foot-brand"><img src="assets/logo.png" alt="" class="foot-logo"><strong>TIKcoin</strong></div>
+      <div class="foot-brand"><img src="/assets/logo.png" alt="" class="foot-logo"><strong>TIKcoin</strong></div>
       <div class="foot-links">
         <a href="/litepaper.html">Whitepaper</a>
         <a href="/tokenomics.html">Tokenomics</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
+        <a href="/#about">About</a>
+        <a href="/#faq">FAQ</a>
         <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
       </div>
       <div class="foot-copy">© <span id="y"></span> TIKcoin. Time can’t be stopped — neither can we.</div>
     </div>
   </footer>
 
-  <!-- ===== JS: меню, reveal, год, частицы в hero ===== -->
+  <!-- ===== JS (menu, reveal, year, hero particles) ===== -->
   <script>
-    // Меню
     const b=document.querySelector('.burger'), n=document.querySelector('.nav');
     if(b&&n){ b.addEventListener('click',()=>n.classList.toggle('open')); }
 
-    // Тень у шапки при скролле
-    const h=document.querySelector('.site-header');
-    addEventListener('scroll',()=>{ h.classList.toggle('shadow', scrollY>10); });
+    const sh=document.querySelector('.site-header');
+    addEventListener('scroll',()=>{ sh.classList.toggle('shadow', scrollY>10); });
 
-    // Плавное появление для .reveal
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Год в футере
     const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 
-    // Hero particles (медленные «зерна времени»)
     (function(){
       const c=document.getElementById('hero-canvas'); if(!c) return;
       const ctx=c.getContext('2d');
       let w=c.width = c.offsetWidth, h=c.height = c.offsetHeight;
       const dots = Array.from({length: 80}, () => ({
-        x: Math.random()*w,
-        y: Math.random()*h,
-        r: Math.random()*1.8+0.4,
-        vx:(Math.random()-.5)*0.08,
-        vy:(Math.random()*0.12)+0.02,
-        a: Math.random()*0.8+0.2
+        x: Math.random()*w, y: Math.random()*h,
+        r: Math.random()*1.8+0.4, vx:(Math.random()-.5)*0.08, vy:(Math.random()*0.12)+0.02, a: Math.random()*0.8+0.2
       }));
       function resize(){ w=c.width=c.offsetWidth; h=c.height=c.offsetHeight; }
-      window.addEventListener('resize', resize);
-
+      addEventListener('resize', resize);
       function tick(){
         ctx.clearRect(0,0,w,h);
         for(const d of dots){
-          d.x += d.vx; d.y += d.vy;
+          d.x+=d.vx; d.y+=d.vy;
           if(d.x<0||d.x>w) d.vx*=-1;
-          if(d.y>h+20){ d.y = -10; d.x=Math.random()*w; }
+          if(d.y>h+20){ d.y=-10; d.x=Math.random()*w; }
           ctx.beginPath(); ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
           ctx.fillStyle=`rgba(150,160,255,${d.a})`; ctx.fill();
         }
@@ -335,7 +342,6 @@
     })();
   </script>
 
-  <!-- Мини-стили для появления -->
   <style>
     .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
     .reveal.is-in{opacity:1; transform:translateY(0)}
