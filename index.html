@@ -17,17 +17,13 @@
 </head>
 <body id="top">
 
-  <!-- Header -->
+  <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="TIKcoin">
         <span class="brand-logo-wrap">
-          <!-- ВАЖНО: логотип лежит в /assets/ -->
+          <!-- ЛОГО ДОЛЖЕН ЛЕЖАТЬ В: /assets/logo.png -->
           <img src="assets/logo.png" alt="TIKcoin" class="brand-logo">
-          <svg class="gear-overlay" viewBox="0 0 100 100" aria-hidden="true">
-            <g class="gear"><circle cx="50" cy="50" r="10" fill="transparent"/>
-              <path fill="#6E72FF" d="M50 25 l6 0 2 8 7 3 5 -4 5 5 -4 5 3 7 8 2 0 6 -8 2 -3 7 4 5 -5 5 -5 -4 -7 3 -2 8 -6 0 -2 -8 -7 -3 -5 4 -5 -5 4 -5 -3 -7 -8 -2 0 -6 8 -2 3 -7 -4 -5 5 -5 5 4 7 -3 2 -8z"/><circle cx="50" cy="50" r="6" fill="#6E72FF"/></g>
-          </svg>
         </span>
         <span class="brand-text">TIKcoin</span>
       </a>
@@ -46,7 +42,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy">
@@ -64,50 +60,33 @@
           <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Join Community</a>
         </div>
       </div>
+
       <div class="hero-art">
+        <!-- Делает деликатные «зерна времени» -->
         <canvas id="hero-canvas" class="hero-canvas" width="900" height="380" aria-hidden="true"></canvas>
         <div class="aura"></div>
       </div>
     </div>
   </section>
 
-  <!-- Pillars -->
+  <!-- ===== Pillars ===== -->
   <section class="section" id="pillars">
     <div class="container">
       <h2 class="section-title">Pillars</h2>
       <div class="grid cards">
         <article class="card reveal">
-          <div class="icon-wrap" aria-hidden="true">
-            <!-- honesty -->
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4zM7 10l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
           <h3>Radical Honesty</h3>
           <p>Rules declared upfront. No surprise mints, no stealth changes. The ship sails with the rules already written.</p>
         </article>
-
         <article class="card reveal">
-          <div class="icon-wrap" aria-hidden="true">
-            <!-- lock -->
-            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 10V7a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
           <h3>Immutable Core</h3>
           <p>Core contract locked. Only whitelisted improvements that preserve the foundation.</p>
         </article>
-
         <article class="card reveal">
-          <div class="icon-wrap" aria-hidden="true">
-            <!-- community -->
-            <svg class="icon" viewBox="0 0 24 24"><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c1.5-3 4.5-4.5 9-4.5S19.5 17 21 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          </div>
           <h3>Community-First</h3>
           <p>We tokenize participation without abusing supply. A single 20% community pool managed transparently.</p>
         </article>
-
         <article class="card reveal">
-          <div class="icon-wrap" aria-hidden="true">
-            <!-- healthy markets -->
-            <svg class="icon" viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 6-7 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
           <h3>Healthy Markets</h3>
           <p>Clear liquidity playbook, vesting that breathes, and safeguards against sudden dumps.</p>
         </article>
@@ -115,104 +94,101 @@
     </div>
   </section>
 
-  <!-- Roadmap -->
+  <!-- ===== Roadmap (эволюция приборов времени) ===== -->
   <section class="section alt" id="roadmap">
-  <div class="container">
-    <h2 class="section-title">Roadmap</h2>
+    <div class="container">
+      <h2 class="section-title">Roadmap</h2>
 
-    <!-- Progress rail (visual flow of time) -->
-    <div class="time-rail" aria-hidden="true">
-      <div class="time-rail-fill"></div>
+      <!-- Прогресс-рейл (визуальный поток времени) -->
+      <div class="time-rail" aria-hidden="true"><div class="time-rail-fill"></div></div>
+
+      <ol class="timeline timeline-time">
+        <li class="reveal stage" data-stage="sun">
+          <div class="stage-icon" aria-hidden="true">
+            <!-- Sundial -->
+            <svg viewBox="0 0 48 48" class="ico">
+              <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 6v6M24 42v-6M6 24h6M42 24h-6M14 14l4 4M34 34l-4-4M14 34l4-4M34 14l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M24 24l9 -9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stage-body">
+            <h4>Phase 0 — Sun (Sundial)</h4>
+            <p>Site, brand, manifesto. Open-ended presale spec. Community ignition.</p>
+          </div>
+        </li>
+
+        <li class="reveal stage" data-stage="hourglass">
+          <div class="stage-icon" aria-hidden="true">
+            <!-- Hourglass -->
+            <svg viewBox="0 0 48 48" class="ico">
+              <path d="M12 8h24M12 40h24M16 8c0 8 16 8 16 0M16 40c0 -8 16 -8 16 0" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path class="sand top" d="M18 14h12l-6 5z" />
+              <rect class="sand stream" x="23" y="20" width="2" height="7" rx="1"/>
+              <path class="sand bottom" d="M18 34h12l-6 -5z"/>
+            </svg>
+          </div>
+          <div class="stage-body">
+            <h4>Phase 1 — Hourglass</h4>
+            <p>Contract v1 with foundation rules. Internal review. Public docs aligned with honesty.</p>
+          </div>
+        </li>
+
+        <li class="reveal stage" data-stage="mechanical">
+          <div class="stage-icon" aria-hidden="true">
+            <!-- Mechanical gears -->
+            <svg viewBox="0 0 48 48" class="ico">
+              <g class="gear-slow">
+                <circle cx="17" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M17 14v-3M17 34v3M10 24h-3M27 24h3M12 18l-2-2M22 30l2 2M12 30l-2 2M22 18l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </g>
+              <g class="gear-fast">
+                <circle cx="32" cy="24" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 18.5v-2M32 31.5v2M26.5 24h-2M39.5 24h2M28.5 20.5l-1.5-1.5M35.5 27.5l1.5 1.5M28.5 27.5l-1.5 1.5M35.5 20.5l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+          <div class="stage-body">
+            <h4>Phase 2 — Mechanical</h4>
+            <p>External audit & fixes → v2 hardening. Multisig & timelocks wired. Presale go-live.</p>
+          </div>
+        </li>
+
+        <li class="reveal stage" data-stage="tourbillon">
+          <div class="stage-icon" aria-hidden="true">
+            <!-- Tourbillon -->
+            <svg viewBox="0 0 48 48" class="ico">
+              <circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle class="cage" cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path class="balance" d="M24 19v10M19 24h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stage-body">
+            <h4>Phase 3 — Tourbillon</h4>
+            <p>Listing + liquidity orchestration. Target X2 band on day 8 post sell-out with buffers.</p>
+          </div>
+        </li>
+
+        <li class="reveal stage" data-stage="atomic">
+          <div class="stage-icon" aria-hidden="true">
+            <!-- Atomic -->
+            <svg viewBox="0 0 48 48" class="ico">
+              <circle cx="24" cy="24" r="2.6" fill="currentColor"/>
+              <ellipse class="orb o1" cx="24" cy="24" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="2"/>
+              <ellipse class="orb o2" cx="24" cy="24" rx="6" ry="14" fill="none" stroke="currentColor" stroke-width="2"/>
+              <ellipse class="orb o3" cx="24" cy="24" rx="12" ry="12" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="stage-body">
+            <h4>Phase 4 — Atomic</h4>
+            <p>Utilities & collabs focused on time. Dashboards, creators, partner integrations.</p>
+          </div>
+        </li>
+      </ol>
     </div>
+  </section>
 
-    <ol class="timeline timeline-time">
-      <!-- 0 — Sun (Sundial) -->
-      <li class="reveal stage" data-stage="sun">
-        <div class="stage-icon" aria-hidden="true">
-          <!-- Sundial -->
-          <svg viewBox="0 0 48 48" class="ico">
-            <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path d="M24 6v6M24 42v-6M6 24h6M42 24h-6M14 14l4 4M34 34l-4-4M14 34l4-4M34 14l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M24 24l9 -9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="stage-body">
-          <h4>Phase 0 — Sun (Sundial)</h4>
-          <p>Birth of the idea, brand, manifesto. Open-ended presale spec. Community ignition.</p>
-        </div>
-      </li>
-
-      <!-- 1 — Hourglass -->
-      <li class="reveal stage" data-stage="hourglass">
-        <div class="stage-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" class="ico">
-            <path d="M12 8h24M12 40h24M16 8c0 8 16 8 16 0M16 40c0 -8 16 -8 16 0" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path class="sand top" d="M18 14h12l-6 5z" />
-            <rect class="sand stream" x="23" y="20" width="2" height="7" rx="1"/>
-            <path class="sand bottom" d="M18 34h12l-6 -5z"/>
-          </svg>
-        </div>
-        <div class="stage-body">
-          <h4>Phase 1 — Hourglass</h4>
-          <p>Contract v1 with foundation rules. Internal review. Public docs aligned with honesty.</p>
-        </div>
-      </li>
-
-      <!-- 2 — Mechanical (gears) -->
-      <li class="reveal stage" data-stage="mechanical">
-        <div class="stage-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" class="ico">
-            <g class="gear-slow">
-              <circle cx="17" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M17 14v-3M17 34v3M10 24h-3M27 24h3M12 18l-2-2M22 30l2 2M12 30l-2 2M22 18l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </g>
-            <g class="gear-fast">
-              <circle cx="32" cy="24" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M32 18.5v-2M32 31.5v2M26.5 24h-2M39.5 24h2M28.5 20.5l-1.5-1.5M35.5 27.5l1.5 1.5M28.5 27.5l-1.5 1.5M35.5 20.5l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </g>
-          </svg>
-        </div>
-        <div class="stage-body">
-          <h4>Phase 2 — Mechanical</h4>
-          <p>External audit & fixes → v2 hardening. Multisig & timelocks wired. Presale go-live.</p>
-        </div>
-      </li>
-
-      <!-- 3 — Tourbillon -->
-      <li class="reveal stage" data-stage="tourbillon">
-        <div class="stage-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" class="ico">
-            <circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-            <circle class="cage" cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path class="balance" d="M24 19v10M19 24h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="stage-body">
-          <h4>Phase 3 — Tourbillon</h4>
-          <p>Listing + liquidity orchestration. Target X2 band on day 8 post sell-out with buffers.</p>
-        </div>
-      </li>
-
-      <!-- 4 — Atomic -->
-      <li class="reveal stage" data-stage="atomic">
-        <div class="stage-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" class="ico">
-            <circle cx="24" cy="24" r="2.6" fill="currentColor"/>
-            <ellipse class="orb o1" cx="24" cy="24" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="2"/>
-            <ellipse class="orb o2" cx="24" cy="24" rx="6" ry="14" fill="none" stroke="currentColor" stroke-width="2"/>
-            <ellipse class="orb o3" cx="24" cy="24" rx="12" ry="12" fill="none" stroke="currentColor" stroke-width="2"/>
-          </svg>
-        </div>
-        <div class="stage-body">
-          <h4>Phase 4 — Atomic</h4>
-          <p>Utilities & collabs focused on time. Dashboards, creators, partner integrations.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-  <!-- About -->
+  <!-- ===== About ===== -->
   <section class="section" id="about">
     <div class="container">
       <h2 class="section-title">About TIKcoin</h2>
@@ -241,7 +217,7 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- ===== FAQ ===== -->
   <section class="section alt" id="faq">
     <div class="container">
       <h2 class="section-title">FAQ</h2>
@@ -284,7 +260,7 @@
     </div>
   </section>
 
-  <!-- Subscribe -->
+  <!-- ===== Subscribe ===== -->
   <section class="section subscribe">
     <div class="container sub-wrap">
       <h2>Get updates</h2>
@@ -296,6 +272,7 @@
     </div>
   </section>
 
+  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container foot">
       <div class="foot-brand"><img src="assets/logo.png" alt="" class="foot-logo"><strong>TIKcoin</strong></div>
@@ -310,14 +287,21 @@
     </div>
   </footer>
 
-  <!-- JS: меню, reveal, год + частицы в hero -->
+  <!-- ===== JS: меню, reveal, год, частицы в hero ===== -->
   <script>
+    // Меню
     const b=document.querySelector('.burger'), n=document.querySelector('.nav');
     if(b&&n){ b.addEventListener('click',()=>n.classList.toggle('open')); }
+
+    // Тень у шапки при скролле
     const h=document.querySelector('.site-header');
     addEventListener('scroll',()=>{ h.classList.toggle('shadow', scrollY>10); });
+
+    // Плавное появление для .reveal
     const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Год в футере
     const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
 
     // Hero particles (медленные «зерна времени»)
@@ -350,5 +334,11 @@
       tick();
     })();
   </script>
+
+  <!-- Мини-стили для появления -->
+  <style>
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.is-in{opacity:1; transform:translateY(0)}
+  </style>
 </body>
 </html>
