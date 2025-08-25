@@ -1,194 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TIKCOIN — Interactive Time Tree</title>
-  <meta name="description" content="TIKCOIN: We cannot stop time — but we can tokenize it. 1 TIK = 1 second. Total supply: 3,155,760,000 TIK (100 years)." />
-  <link rel="stylesheet" href="/styles.css?v=5" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIKCOIN • We Tokenized Time</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">TIKCOIN</div>
-  <nav>
-    <a href="/index.html" aria-current="page">Time Tree</a>
-    <a href="/whitepaper.html">WhitePaper</a>
-  </nav>
-</header>
 
-<!-- HERO with slogan -->
-<section class="hero">
-  <h1 class="hero-title">We cannot stop time — <span>but we can tokenize it.</span></h1>
-  <p class="hero-sub">1 TIK = 1 second • Total supply: <strong>3,155,760,000 TIK</strong> (100 years)</p>
-  <div class="hero-cta">
-    <a class="btn" href="/whitepaper.html">Read WhitePaper</a>
-    <a class="btn ghost" href="#tree">Explore the Time Tree</a>
-  </div>
-</section>
+  <!-- Hero -->
+  <header class="hero">
+    <h1>We cannot stop time — but we can tokenize it.</h1>
+    <p>1 TIK = 1 second • Total supply: 3,155,760,000 TIK (100 years)</p>
+  </header>
 
-<main class="container">
-  <h2 id="tree" class="page-title">Interactive Time Tree</h2>
-  <p class="muted">Tap any node to jump to the corresponding WhitePaper section.</p>
-</main>
+  <!-- Interactive Tree -->
+  <section id="time-tree" aria-labelledby="time-tree-title">
+    <h2 id="time-tree-title">Interactive Time Tree</h2>
+    <p class="tree-lead">Tap any node to jump to the matching WhitePaper section.</p>
 
-<!-- Edge-to-edge tree (full width, large and readable) -->
-<section class="edge">
-  <div class="tree-wrap fixed">
-    <svg class="tree-fixed" viewBox="0 0 1600 1000" width="1400" height="900"
-         role="img" aria-label="TIKCOIN Time Tree" preserveAspectRatio="xMidYMid meet">
-      <defs>
-        <linearGradient id="gMain" x1="0" x2="1">
-          <stop offset="0" stop-color="#2a7bd6"/>
-          <stop offset="1" stop-color="#24d6a8"/>
-        </linearGradient>
-        <style>
-          .node text{font-size:20px}
-          .node rect{width:320px;height:70px;transform:translate(-160px,-35px)}
-          .node-small text{font-size:18px}
-          .node-small rect{width:260px;height:62px;transform:translate(-130px,-31px)}
-        </style>
-      </defs>
-
-      <!-- Center node (Roadmap) -->
-      <a href="/whitepaper.html#ch0">
-        <g class="node node-main" transform="translate(800,130)">
-          <rect rx="14" ry="14"></rect>
-          <text text-anchor="middle" dy="8">TIKCOIN • Roadmap</text>
-        </g>
+    <div class="tree-grid">
+      <!-- Center (Roadmap) -->
+      <a class="tree-node tree-node--center" href="/whitepaper_en.html#ch0">
+        <span class="tree-tag">TIKCOIN</span>
+        <strong>Roadmap</strong>
+        <small>V1 → V6</small>
       </a>
 
-      <!-- ===== TIME ===== -->
-      <g class="branch">
-        <path class="link" d="M800,160 C660,225 520,275 360,340"/>
-        <a href="/whitepaper.html#ch3">
-          <g class="node" transform="translate(360,340)">
-            <rect rx="12" ry="12"></rect>
-            <text text-anchor="middle" dy="8">TIME</text>
-          </g>
-        </a>
+      <!-- TIME -->
+      <a class="tree-node" href="/whitepaper_en.html#ch4-axioms">
+        <span class="tree-tag">TIME</span>
+        <strong>Time Axioms</strong>
+        <small>Stop / Reverse / Cheat — impossible</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch5-stages">
+        <span class="tree-tag">TIME</span>
+        <strong>Stages of Time</strong>
+        <small>Sun → Quantum</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch6-mechanics">
+        <span class="tree-tag">TIME</span>
+        <strong>Contract Mechanics</strong>
+        <small>V1, V1.5, V2…</small>
+      </a>
 
-        <path class="link" d="M360,370 C300,410 250,445 200,485"/>
-        <path class="link" d="M360,370 C360,415 360,445 360,485"/>
-        <path class="link" d="M360,370 C420,410 470,445 520,485"/>
+      <!-- HONESTY -->
+      <a class="tree-node" href="/whitepaper_en.html#ch2">
+        <span class="tree-tag">HONESTY</span>
+        <strong>Honesty Doctrine</strong>
+        <small>Rules over promises</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch1-tokenomics">
+        <span class="tree-tag">HONESTY</span>
+        <strong>Tokenomics</strong>
+        <small>3,155,760,000 TIK</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch7-presale">
+        <span class="tree-tag">HONESTY</span>
+        <strong>Presale</strong>
+        <small>$0.01 • 85/15</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch8-bonuses">
+        <span class="tree-tag">HONESTY</span>
+        <strong>Bonuses</strong>
+        <small>2.5% → 30% (Airdrop)</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch9-airdrop">
+        <span class="tree-tag">HONESTY</span>
+        <strong>Airdrop</strong>
+        <small>time → tokens</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch10-vesting">
+        <span class="tree-tag">HONESTY</span>
+        <strong>Vesting & Lockups</strong>
+        <small>Unified rules</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch11-vote">
+        <span class="tree-tag">HONESTY</span>
+        <strong>Governance</strong>
+        <small>Tourbillon/Atomic/Quantum</small>
+      </a>
 
-        <a href="/whitepaper.html#ch4-axioms">
-          <g class="node-small" transform="translate(200,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Time Axioms</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch5-stages">
-          <g class="node-small" transform="translate(360,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Stages of Time</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch6-mechanics">
-          <g class="node-small" transform="translate(520,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Contract Mechanics</text>
-          </g>
-        </a>
-      </g>
+      <!-- PHILOSOPHY -->
+      <a class="tree-node" href="/whitepaper_en.html#ch12-utility">
+        <span class="tree-tag">PHILOSOPHY</span>
+        <strong>Utility & Telegram Bot</strong>
+        <small>onboarding, proofs, payouts</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch13-symbols">
+        <span class="tree-tag">PHILOSOPHY</span>
+        <strong>Symbolism</strong>
+        <small>Golden Age</small>
+      </a>
+      <a class="tree-node" href="/whitepaper_en.html#ch14-comms">
+        <span class="tree-tag">PHILOSOPHY</span>
+        <strong>Comms & Waves</strong>
+        <small>no fixed dates</small>
+      </a>
 
-      <!-- ===== HONESTY ===== -->
-      <g class="branch">
-        <path class="link" d="M800,160 C800,235 800,285 800,340"/>
-        <a href="/whitepaper.html#ch2">
-          <g class="node" transform="translate(800,340)">
-            <rect rx="12" ry="12"></rect>
-            <text text-anchor="middle" dy="8">HONESTY</text>
-          </g>
-        </a>
+      <!-- End -->
+      <a class="tree-node tree-node--alt" href="/whitepaper_en.html#outro">
+        <span class="tree-tag">END</span>
+        <strong>Conclusion</strong>
+        <small>Everything begins & ends in time</small>
+      </a>
+      <a class="tree-node tree-node--alt" href="/whitepaper_en.html#app-risk">
+        <span class="tree-tag">APPENDIX</span>
+        <strong>Risks & Disclaimer</strong>
+        <small>Do your own research</small>
+      </a>
+    </div>
+  </section>
 
-        <path class="link" d="M800,370 C720,415 660,445 600,485"/>
-        <path class="link" d="M800,370 C800,415 800,445 800,485"/>
-        <path class="link" d="M800,370 C880,415 940,445 1000,485"/>
-        <path class="link" d="M800,370 C920,415 1020,450 1120,485"/>
-
-        <a href="/whitepaper.html#ch1-tokenomics">
-          <g class="node-small" transform="translate(600,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Tokenomics</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch7-presale">
-          <g class="node-small" transform="translate(800,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Presale</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch8-bonuses">
-          <g class="node-small" transform="translate(1000,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Bonuses</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch9-airdrop">
-          <g class="node-small" transform="translate(1120,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Airdrop</text>
-          </g>
-        </a>
-
-        <path class="link" d="M800,515 C740,555 720,580 700,620"/>
-        <path class="link" d="M800,515 C860,555 880,580 900,620"/>
-
-        <a href="/whitepaper.html#ch11-vote">
-          <g class="node-small" transform="translate(700,620)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Governance</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch10-vesting">
-          <g class="node-small" transform="translate(900,620)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Vesting & Lockups</text>
-          </g>
-        </a>
-      </g>
-
-      <!-- ===== PHILOSOPHY ===== -->
-      <g class="branch">
-        <path class="link" d="M800,160 C940,225 1080,275 1240,340"/>
-        <a href="/whitepaper.html#ch12-utility">
-          <g class="node" transform="translate(1240,340)">
-            <rect rx="12" ry="12"></rect>
-            <text text-anchor="middle" dy="8">PHILOSOPHY / UTILITY</text>
-          </g>
-        </a>
-
-        <path class="link" d="M1240,370 C1180,410 1130,445 1080,485"/>
-        <path class="link" d="M1240,370 C1240,415 1240,445 1240,485"/>
-        <path class="link" d="M1240,370 C1300,410 1350,445 1400,485"/>
-
-        <a href="/whitepaper.html#ch13-symbols">
-          <g class="node-small" transform="translate(1080,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Symbolism / Golden Age</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch14-comms">
-          <g class="node-small" transform="translate(1240,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Comms & Waves</text>
-          </g>
-        </a>
-        <a href="/whitepaper.html#ch15-risk">
-          <g class="node-small" transform="translate(1400,485)">
-            <rect rx="10" ry="10"></rect>
-            <text text-anchor="middle" dy="7">Risks & Disclaimer</text>
-          </g>
-        </a>
-      </g>
-    </svg>
-  </div>
-
-  <div class="container">
-    <p class="muted small">Mobile: horizontal scroll is enabled to keep nodes readable.</p>
-  </div>
-</section>
-
-<footer class="footer">© TIKCOIN</footer>
 </body>
 </html>
