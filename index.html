@@ -1,181 +1,183 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TIKCOIN — Древо</title>
+  <title>TIKCOIN — Interactive Time Tree</title>
+  <meta name="description" content="TIKCOIN: 1 TIK = 1 second. Read the interactive WhitePaper and roadmap." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <header class="topbar">
   <div class="brand">TIKCOIN</div>
   <nav>
-    <a href="index.html">Древо</a>
-    <a href="whitepaper.html">WhitePaper</a>
+    <a href="index.html" aria-current="page">Time Tree</a>
+    <a href="whitepaper_en.html">WhitePaper</a>
   </nav>
 </header>
 
 <main class="container">
-  <h1 class="page-title">Интерактивное древо TIKCOIN</h1>
-  <p class="muted">Нажмите на любой блок, чтобы перейти к соответствующему разделу WhitePaper.</p>
+  <h1 class="page-title">Interactive Time Tree</h1>
+  <p class="muted">Tap any node to open the corresponding WhitePaper section.</p>
 
-  <!-- SVG-древо (вектор, адаптивный) -->
-  <div class="tree-wrap">
-    <svg viewBox="0 0 1200 820" role="img" aria-label="Интерактивное древо TIKCOIN" class="tree">
+  <div class="tree-wrap" id="panzoom">
+    <svg class="tree" viewBox="0 0 1200 820" role="img" aria-label="TIKCOIN Time Tree">
+      <defs>
+        <linearGradient id="gMain" x1="0" x2="1">
+          <stop offset="0" stop-color="#2a7bd6"/>
+          <stop offset="1" stop-color="#24d6a8"/>
+        </linearGradient>
+      </defs>
 
-      <!-- Центральный узел: TIKCOIN (ведёт в Roadmap 0) -->
-      <a xlink:href="whitepaper.html#ch0">
+      <!-- Center node -->
+      <a href="whitepaper_en.html#ch0">
         <g class="node node-main" transform="translate(600,80)">
-          <rect x="-110" y="-28" rx="10" ry="10" width="220" height="56"></rect>
+          <rect x="-128" y="-30" rx="12" ry="12" width="256" height="60"></rect>
           <text text-anchor="middle" dy="6">TIKCOIN • Roadmap</text>
         </g>
       </a>
 
-      <!-- ВЕТКА: ВРЕМЯ -->
+      <!-- ===== BRANCH: TIME ===== -->
       <g class="branch">
-        <!-- линия от главного узла -->
-        <line x1="600" y1="108" x2="300" y2="220" class="link"/>
-        <!-- заголовок ветки -->
-        <a xlink:href="whitepaper.html#ch3">
+        <path class="link" d="M600,108 C520,150 420,182 300,220"/>
+        <a href="whitepaper_en.html#ch3">
           <g class="node" transform="translate(300,220)">
-            <rect x="-95" y="-24" rx="10" ry="10" width="190" height="48"></rect>
-            <text text-anchor="middle" dy="6">ВРЕМЯ</text>
+            <rect x="-105" y="-24" rx="10" ry="10" width="210" height="48"></rect>
+            <text text-anchor="middle" dy="6">TIME</text>
           </g>
         </a>
-        <!-- дети времени -->
-        <line x1="300" y1="244" x2="170" y2="320" class="link"/>
-        <line x1="300" y1="244" x2="300" y2="320" class="link"/>
-        <line x1="300" y1="244" x2="430" y2="320" class="link"/>
 
-        <a xlink:href="whitepaper.html#ch4-axioms">
+        <path class="link" d="M300,244 C250,270 210,292 170,320"/>
+        <path class="link" d="M300,244 C300,280 300,292 300,320"/>
+        <path class="link" d="M300,244 C350,270 390,292 430,320"/>
+
+        <a href="whitepaper_en.html#ch4-axioms">
           <g class="node" transform="translate(170,320)">
-            <rect x="-120" y="-22" rx="10" ry="10" width="240" height="44"></rect>
-            <text text-anchor="middle" dy="5">Аксиомы времени</text>
+            <rect x="-122" y="-22" rx="10" ry="10" width="244" height="44"></rect>
+            <text text-anchor="middle" dy="5">Time Axioms</text>
           </g>
         </a>
-
-        <a xlink:href="whitepaper.html#ch5-stages">
+        <a href="whitepaper_en.html#ch5-stages">
           <g class="node" transform="translate(300,320)">
-            <rect x="-110" y="-22" rx="10" ry="10" width="220" height="44"></rect>
-            <text text-anchor="middle" dy="5">Стадии времени</text>
+            <rect x="-115" y="-22" rx="10" ry="10" width="230" height="44"></rect>
+            <text text-anchor="middle" dy="5">Stages of Time</text>
           </g>
         </a>
-
-        <a xlink:href="whitepaper.html#ch6-mechanics">
+        <a href="whitepaper_en.html#ch6-mechanics">
           <g class="node" transform="translate(430,320)">
-            <rect x="-110" y="-22" rx="10" ry="10" width="220" height="44"></rect>
-            <text text-anchor="middle" dy="5">Механика/версии</text>
+            <rect x="-120" y="-22" rx="10" ry="10" width="240" height="44"></rect>
+            <text text-anchor="middle" dy="5">Contract Mechanics</text>
           </g>
         </a>
       </g>
 
-      <!-- ВЕТКА: ЧЕСТНОСТЬ -->
+      <!-- ===== BRANCH: HONESTY ===== -->
       <g class="branch">
-        <line x1="600" y1="108" x2="600" y2="220" class="link"/>
-        <a xlink:href="whitepaper.html#ch2">
+        <path class="link" d="M600,108 C600,150 600,182 600,220"/>
+        <a href="whitepaper_en.html#ch2">
           <g class="node" transform="translate(600,220)">
-            <rect x="-110" y="-24" rx="10" ry="10" width="220" height="48"></rect>
-            <text text-anchor="middle" dy="6">ЧЕСТНОСТЬ</text>
+            <rect x="-115" y="-24" rx="10" ry="10" width="230" height="48"></rect>
+            <text text-anchor="middle" dy="6">HONESTY</text>
           </g>
         </a>
 
-        <line x1="600" y1="244" x2="480" y2="320" class="link"/>
-        <line x1="600" y1="244" x2="600" y2="320" class="link"/>
-        <line x1="600" y1="244" x2="720" y2="320" class="link"/>
-        <line x1="600" y1="244" x2="840" y2="320" class="link"/>
+        <path class="link" d="M600,244 C560,270 520,292 480,320"/>
+        <path class="link" d="M600,244 C600,270 600,292 600,320"/>
+        <path class="link" d="M600,244 C640,270 680,292 720,320"/>
+        <path class="link" d="M600,244 C680,270 760,300 840,320"/>
 
-        <a xlink:href="whitepaper.html#ch1-tokenomics">
+        <a href="whitepaper_en.html#ch1-tokenomics">
           <g class="node" transform="translate(480,320)">
             <rect x="-115" y="-22" rx="10" ry="10" width="230" height="44"></rect>
-            <text text-anchor="middle" dy="5">Токеномика</text>
+            <text text-anchor="middle" dy="5">Tokenomics</text>
           </g>
         </a>
-
-        <a xlink:href="whitepaper.html#ch7-presale">
+        <a href="whitepaper_en.html#ch7-presale">
           <g class="node" transform="translate(600,320)">
-            <rect x="-95" y="-22" rx="10" ry="10" width="190" height="44"></rect>
-            <text text-anchor="middle" dy="5">Пресейл</text>
+            <rect x="-100" y="-22" rx="10" ry="10" width="200" height="44"></rect>
+            <text text-anchor="middle" dy="5">Presale</text>
           </g>
         </a>
-
-        <a xlink:href="whitepaper.html#ch8-bonuses">
+        <a href="whitepaper_en.html#ch8-bonuses">
           <g class="node" transform="translate(720,320)">
             <rect x="-95" y="-22" rx="10" ry="10" width="190" height="44"></rect>
-            <text text-anchor="middle" dy="5">Бонусы</text>
+            <text text-anchor="middle" dy="5">Bonuses</text>
           </g>
         </a>
-
-        <a xlink:href="whitepaper.html#ch9-airdrop">
+        <a href="whitepaper_en.html#ch9-airdrop">
           <g class="node" transform="translate(840,320)">
             <rect x="-95" y="-22" rx="10" ry="10" width="190" height="44"></rect>
             <text text-anchor="middle" dy="5">Airdrop</text>
           </g>
         </a>
 
-        <!-- нижний уровень честности -->
-        <line x1="600" y1="344" x2="660" y2="420" class="link"/>
-        <a xlink:href="whitepaper.html#ch10-vesting">
-          <g class="node" transform="translate(660,420)">
-            <rect x="-115" y="-22" rx="10" ry="10" width="230" height="44"></rect>
-            <text text-anchor="middle" dy="5">Вестинг/блокировки</text>
-          </g>
-        </a>
+        <path class="link" d="M600,344 C560,372 548,392 540,420"/>
+        <path class="link" d="M600,344 C640,372 652,392 660,420"/>
 
-        <line x1="600" y1="344" x2="540" y2="420" class="link"/>
-        <a xlink:href="whitepaper.html#ch11-vote">
+        <a href="whitepaper_en.html#ch11-vote">
           <g class="node" transform="translate(540,420)">
-            <rect x="-105" y="-22" rx="10" ry="10" width="210" height="44"></rect>
-            <text text-anchor="middle" dy="5">Голосование</text>
-          </g>
-        </a>
-      </g>
-
-      <!-- ВЕТКА: ФИЛОСОФИЯ -->
-      <g class="branch">
-        <line x1="600" y1="108" x2="900" y2="220" class="link"/>
-        <a xlink:href="whitepaper.html#ch12-utility">
-          <g class="node" transform="translate(900,220)">
-            <rect x="-115" y="-24" rx="10" ry="10" width="230" height="48"></rect>
-            <text text-anchor="middle" dy="6">ФИЛОСОФИЯ/Утилити</text>
-          </g>
-        </a>
-
-        <line x1="900" y1="244" x2="780" y2="320" class="link"/>
-        <line x1="900" y1="244" x2="900" y2="320" class="link"/>
-        <line x1="900" y1="244" x2="1020" y2="320" class="link"/>
-
-        <a xlink:href="whitepaper.html#ch13-symbols">
-          <g class="node" transform="translate(780,320)">
-            <rect x="-120" y="-22" rx="10" ry="10" width="240" height="44"></rect>
-            <text text-anchor="middle" dy="5">Символизм / мем-коды</text>
-          </g>
-        </a>
-
-        <a xlink:href="whitepaper.html#ch14-comms">
-          <g class="node" transform="translate(900,320)">
             <rect x="-110" y="-22" rx="10" ry="10" width="220" height="44"></rect>
-            <text text-anchor="middle" dy="5">Коммуникации</text>
+            <text text-anchor="middle" dy="5">Governance / Voting</text>
           </g>
         </a>
-
-        <a xlink:href="whitepaper.html#ch15-risk">
-          <g class="node" transform="translate(1020,320)">
-            <rect x="-105" y="-22" rx="10" ry="10" width="210" height="44"></rect>
-            <text text-anchor="middle" dy="5">Риски/дисклеймер</text>
+        <a href="whitepaper_en.html#ch10-vesting">
+          <g class="node" transform="translate(660,420)">
+            <rect x="-125" y="-22" rx="10" ry="10" width="250" height="44"></rect>
+            <text text-anchor="middle" dy="5">Vesting & Lockups</text>
           </g>
         </a>
       </g>
 
+      <!-- ===== BRANCH: PHILOSOPHY ===== -->
+      <g class="branch">
+        <path class="link" d="M600,108 C680,150 780,182 900,220"/>
+        <a href="whitepaper_en.html#ch12-utility">
+          <g class="node" transform="translate(900,220)">
+            <rect x="-125" y="-24" rx="10" ry="10" width="250" height="48"></rect>
+            <text text-anchor="middle" dy="6">PHILOSOPHY / UTILITY</text>
+          </g>
+        </a>
+
+        <path class="link" d="M900,244 C860,270 820,292 780,320"/>
+        <path class="link" d="M900,244 C900,270 900,292 900,320"/>
+        <path class="link" d="M900,244 C940,270 980,292 1020,320"/>
+
+        <a href="whitepaper_en.html#ch13-symbols">
+          <g class="node" transform="translate(780,320)">
+            <rect x="-123" y="-22" rx="10" ry="10" width="246" height="44"></rect>
+            <text text-anchor="middle" dy="5">Symbolism / Golden Age</text>
+          </g>
+        </a>
+        <a href="whitepaper_en.html#ch14-comms">
+          <g class="node" transform="translate(900,320)">
+            <rect x="-115" y="-22" rx="10" ry="10" width="230" height="44"></rect>
+            <text text-anchor="middle" dy="5">Comms & Waves</text>
+          </g>
+        </a>
+        <a href="whitepaper_en.html#ch15-risk">
+          <g class="node" transform="translate(1020,320)">
+            <rect x="-110" y="-22" rx="10" ry="10" width="220" height="44"></rect>
+            <text text-anchor="middle" dy="5">Risks & Disclaimer</text>
+          </g>
+        </a>
+      </g>
     </svg>
   </div>
 
-  <p class="muted small">
-    Подсказка: на мобильном можно масштабировать древо жестами.
-  </p>
+  <p class="muted small">Tip: on mobile you can pinch-zoom; on desktop drag to pan.</p>
 </main>
 
-<footer class="footer">
-  © TIKCOIN
-</footer>
+<footer class="footer">© TIKCOIN</footer>
+
+<script>
+/* drag-to-pan for the tree container (no external libs) */
+(function(){
+  const el = document.getElementById('panzoom');
+  let down=false, sx=0, sy=0, sl=0, st=0;
+  el.addEventListener('mousedown',e=>{down=true; sx=e.clientX; sy=e.clientY; sl=el.scrollLeft; st=el.scrollTop; el.classList.add('grabbing');});
+  window.addEventListener('mouseup',()=>{down=false; el.classList.remove('grabbing');});
+  window.addEventListener('mousemove',e=>{ if(!down) return; el.scrollLeft = sl - (e.clientX - sx); el.scrollTop = st - (e.clientY - sy);});
+})();
+</script>
 </body>
 </html>
