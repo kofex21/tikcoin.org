@@ -183,3 +183,20 @@ h1,h2,h3{margin:0 0 8px;font-weight:800}
   margin-top:40px;text-align:center;padding:20px 16px;color:var(--muted);
   border-top:1px solid #1a2250;background: rgba(12,18,40,.5);
 }
+/* Central hub logo — bigger, no background ring */
+.hub--logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  text-decoration: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.hub__logo-big {
+  width: 200px;   /* можно увеличить до 240px если нужно еще больше */
+  height: auto;
+  display: block;
+}
