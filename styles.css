@@ -113,7 +113,7 @@ h2{margin-top:0}
   a{color:#000;text-decoration:none}
 }
 
-/* Responsive */
+/* Responsive: keep nodes readable; allow horizontal scroll on small screens */
 @media (max-width:900px){
   .hero-title{font-size:clamp(24px,5vw,34px)}
   .tree-wrap{padding:10px}
