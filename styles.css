@@ -59,36 +59,26 @@ img{max-width:100%;height:auto}
   color:var(--muted);text-align:center;margin-top:48px
 }
 
-/* TREE area */
+/* TREE area: fixed-size for readability */
 .tree-wrap{
   background:var(--card);border:1px solid var(--border);
-  border-radius:14px;overflow:auto;box-shadow:0 8px 24px var(--shadow)
+  border-radius:14px;box-shadow:0 8px 24px var(--shadow);
+  padding:12px;overflow:auto
 }
-.tree-wrap.full{
-  position:relative;height:72vh;min-height:520px
-}
-.tree{width:100%;height:100%} /* SVG заполняет контейнер */
+.tree-wrap.fixed{display:flex;justify-content:center}
+.tree-fixed{display:block;max-width:100%}
 
-.zoom-ui{
-  position:absolute; right:10px; top:10px; display:flex; gap:8px; z-index:2
-}
-.zoom-ui button{
-  width:36px;height:36px;border-radius:10px;border:1px solid var(--border);
-  background:#121820;color:var(--ink);font-size:18px;cursor:pointer
-}
-.zoom-ui button:hover{border-color:var(--accent)}
-
+/* Node/link visual styles (reused by embedded <style> in SVG for sizes) */
 .node rect{
-  fill:#1b222a;stroke:var(--border);stroke-width:1.4;
+  fill:#1b222a;stroke:var(--border);stroke-width:1.6;
   filter:drop-shadow(0 4px 10px var(--shadow))
 }
 .node text{fill:var(--ink)}
 .node-main rect{fill:url(#gMain);stroke:#2ed3a0}
 .node-main text{font-weight:700}
-.link{fill:none;stroke:#2b3946;stroke-width:3}
+.link{fill:none;stroke:#2b3946;stroke-width:3.2}
 .node:hover rect{stroke:var(--accent2)}
 .node:hover text{fill:#fff}
-#panzoom.grabbing{cursor:grabbing}
 
 /* WHITEPAPER content */
 .toc{
@@ -113,13 +103,18 @@ h2{margin-top:0}
 /* Print for PDF from browser */
 @media print{
   body{background:#fff;color:#000;font:12pt/1.5 Arial,Helvetica,sans-serif}
-  .topbar,.footer,.toc a[href^="http"]::after,.hero,.zoom-ui{display:none}
+  .topbar,.footer,.toc a[href^="http"]::after,.hero{display:none}
   .container{max-width:none;margin:0;padding:0}
   section{break-inside:avoid;background:#fff;border:none;padding:0;margin:0 0 12pt}
   a{color:#000;text-decoration:none}
 }
 
-/* Responsive */
-@media (max-width:720px){
-  .tree-wrap.full{height:75vh}
+/* Responsive: keep nodes readable; allow horizontal scroll on small screens */
+@media (max-width:900px){
+  .hero-title{font-size:clamp(24px,5vw,34px)}
+  .tree-wrap{padding:10px}
+  .tree-fixed{width:1200px;height:auto} /* минимальный размер дерева для читаемости */
+}
+@media (max-width:600px){
+  .tree-fixed{width:1100px}
 }
