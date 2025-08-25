@@ -1,4 +1,4 @@
-/* Base */
+/* === Base === */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -12,7 +12,7 @@ h1, h2 {
   font-weight: 700;
 }
 
-/* Hero */
+/* === Hero === */
 .hero {
   text-align: center;
   padding: 3rem 1rem 2rem;
@@ -28,7 +28,29 @@ h1, h2 {
   color: #3b4b5c;
 }
 
-/* Tree */
+/* === Nav === */
+.main-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #dbe3ec;
+}
+.main-nav ul {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1b3b72;
+}
+.main-nav a:hover {
+  color: #0a141a;
+}
+
+/* === Time Tree === */
 #time-tree {
   margin: 2rem auto;
   max-width: 1200px;
@@ -93,4 +115,14 @@ h1, h2 {
 
 .tree-node--alt {
   background: #f9fbfd;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #3b4b5c;
+  background: #ffffff;
+  border-top: 1px solid #dbe3ec;
 }
