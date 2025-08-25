@@ -32,22 +32,30 @@
     <div class="tree-min">
       <!-- Center/top: TIKCOIN → Roadmap -->
       <a class="node node--center" href="./whitepaper_en.html#ch0" aria-label="Roadmap (V1…V6)">
-        <span class="node__brand">TIKCOIN</span>
+        <div class="node__content">
+          <div class="node__brand">TIKCOIN</div>
+        </div>
       </a>
 
       <!-- TIME -->
       <a class="node node--time" href="./whitepaper_en.html#ch3" aria-label="Time">
-        <strong>Time</strong>
+        <div class="node__content">
+          <div class="node__label">TIME</div>
+        </div>
       </a>
 
       <!-- HONESTY -->
       <a class="node node--honesty" href="./whitepaper_en.html#ch2" aria-label="Honesty">
-        <strong>Honesty</strong>
+        <div class="node__content">
+          <div class="node__label">HONESTY</div>
+        </div>
       </a>
 
       <!-- PHILOSOPHY -->
       <a class="node node--philosophy" href="./whitepaper_en.html#ch13-symbols" aria-label="Philosophy">
-        <strong>Philosophy</strong>
+        <div class="node__content">
+          <div class="node__label">PHILOSOPHY</div>
+        </div>
       </a>
 
       <!-- connectors -->
@@ -62,7 +70,7 @@
     <h3>Message</h3>
     <p class="muted">Join our Telegram or leave your email — we’ll get back to you.</p>
     <div class="msg">
-      <a class="btn btn--tg" href="https://t.me/tikcoin" target="_blank" rel="noopener">Join Telegram</a>
+      <a class="btn btn--tg" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Join Telegram</a>
 
       <form class="msg__form" onsubmit="return sendEmail(this);">
         <input type="email" name="email" placeholder="Your email" required>
@@ -74,7 +82,8 @@
   <!-- CONTACTS -->
   <section id="contacts" class="block">
     <h3>Contacts</h3>
-    <p class="muted">Official channels will be published in the WhitePaper and on Telegram.</p>
+    <p class="muted">Email: <a class="link" href="mailto:info@tikcoin.org">info@tikcoin.org</a></p>
+    <p class="muted">Telegram: <a class="link" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">@tikcoin_official_org</a></p>
   </section>
 
   <!-- FOOTER -->
@@ -85,7 +94,7 @@
   <!-- minimal JS for mailto: -->
   <script>
     function sendEmail(form){
-      const to = 'contact@tikcoin.org'; // change if needed
+      const to = 'info@tikcoin.org';
       const email = form.email.value.trim();
       const subject = encodeURIComponent('Subscribe / Contact');
       const body = encodeURIComponent('My email: ' + email);
