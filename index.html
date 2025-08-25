@@ -21,86 +21,58 @@
   <nav class="nav">
     <ul class="nav__list">
       <li><a href="#tree">Tree</a></li>
-      <li><a href="./whitepaper_en.html">WhitePaper</a></li>
-      <li><a href="#message">Message</a></li>
-      <li><a href="#contacts">Contacts</a></li>
+      <li><a href="whitepaper.html">WhitePaper</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- MINIMAL TIME TREE (4 nodes) -->
-  <section id="tree" class="tree" aria-label="Interactive Time Tree">
+  <!-- TIME TREE -->
+  <section id="tree" class="tree" aria-labelledby="tree-title">
+    <h2 id="tree-title" class="tree__title">TIKCOIN Tree</h2>
+
     <div class="tree-min">
-      <!-- Center/top: TIKCOIN → Roadmap -->
-      <a class="node node--center" href="./whitepaper_en.html#ch0" aria-label="Roadmap (V1…V6)">
-        <div class="node__content">
-          <div class="node__brand">TIKCOIN</div>
-        </div>
+      <!-- Center: TIKCOIN → Roadmap -->
+      <a class="node node--center" href="whitepaper.html#ch0" aria-label="Roadmap (V1…V6)">
+        <span class="node__brand">TIKCOIN</span>
+        <strong>Roadmap</strong>
       </a>
 
       <!-- TIME -->
-      <a class="node node--time" href="./whitepaper_en.html#ch3" aria-label="Time">
-        <div class="node__content">
-          <div class="node__label">TIME</div>
-        </div>
+      <a class="node node--time" href="whitepaper.html#ch3" aria-label="Time">
+        <strong>TIME</strong>
       </a>
 
       <!-- HONESTY -->
-      <a class="node node--honesty" href="./whitepaper_en.html#ch2" aria-label="Honesty">
-        <div class="node__content">
-          <div class="node__label">HONESTY</div>
-        </div>
+      <a class="node node--honesty" href="whitepaper.html#ch2" aria-label="Honesty">
+        <strong>HONESTY</strong>
       </a>
 
       <!-- PHILOSOPHY -->
-      <a class="node node--philosophy" href="./whitepaper_en.html#ch13-symbols" aria-label="Philosophy">
-        <div class="node__content">
-          <div class="node__label">PHILOSOPHY</div>
-        </div>
+      <a class="node node--philosophy" href="whitepaper.html#ch13-symbols" aria-label="Philosophy">
+        <strong>PHILOSOPHY</strong>
       </a>
 
-      <!-- connectors -->
+      <!-- connectors (CSS draws lines) -->
       <div class="link link--time" aria-hidden="true"></div>
       <div class="link link--honesty" aria-hidden="true"></div>
       <div class="link link--philosophy" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- MESSAGE: Telegram + Email -->
-  <section id="message" class="block">
-    <h3>Message</h3>
-    <p class="muted">Join our Telegram or leave your email — we’ll get back to you.</p>
-    <div class="msg">
-      <a class="btn btn--tg" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Join Telegram</a>
-
-      <form class="msg__form" onsubmit="return sendEmail(this);">
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit" class="btn">Send</button>
-      </form>
-    </div>
+  <!-- COMMUNITY -->
+  <section id="community" class="block">
+    <h3>Community</h3>
+    <p>Join our official Telegram group and become part of the TIKCOIN movement.</p>
+    <p><a href="https://t.me/tikcoin_official_org" target="_blank">➡ Join Telegram</a></p>
   </section>
 
-  <!-- CONTACTS -->
-  <section id="contacts" class="block">
-    <h3>Contacts</h3>
-    <p class="muted">Email: <a class="link" href="mailto:info@tikcoin.org">info@tikcoin.org</a></p>
-    <p class="muted">Telegram: <a class="link" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">@tikcoin_official_org</a></p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
+  <!-- CONTACT -->
+  <footer id="contact" class="footer">
+    <h3>Contact</h3>
+    <p>Email us at: <a href="mailto:info@tikcoin.org">info@tikcoin.org</a></p>
     <p>© 2025 TIKCOIN • #TimeTokenized</p>
   </footer>
 
-  <!-- minimal JS for mailto: -->
-  <script>
-    function sendEmail(form){
-      const to = 'info@tikcoin.org';
-      const email = form.email.value.trim();
-      const subject = encodeURIComponent('Subscribe / Contact');
-      const body = encodeURIComponent('My email: ' + email);
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      return false;
-    }
-  </script>
 </body>
 </html>
