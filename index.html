@@ -1,316 +1,181 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>TIKcoin — We can’t stop time — we can tokenize it</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="TIKcoin: radically honest, immutable-core, community-first crypto. We tokenize time—fairly.">
-  <meta name="theme-color" content="#0b0d12">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-  <meta property="og:title" content="TIKcoin">
-  <meta property="og:description" content="We can’t stop time — we can tokenize it. Radical honesty. Immutable rules.">
-  <meta property="og:image" content="/og.jpg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TIKCOIN — Древо</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="top">
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="TIKcoin">
-        <span class="brand-logo-wrap"><img src="/assets/logo.png" alt="TIKcoin" class="brand-logo"></span>
-        <span class="brand-text">TIKcoin</span>
+<body>
+<header class="topbar">
+  <div class="brand">TIKCOIN</div>
+  <nav>
+    <a href="index.html">Древо</a>
+    <a href="whitepaper.html">WhitePaper</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1 class="page-title">Интерактивное древо TIKCOIN</h1>
+  <p class="muted">Нажмите на любой блок, чтобы перейти к соответствующему разделу WhitePaper.</p>
+
+  <!-- SVG-древо (вектор, адаптивный) -->
+  <div class="tree-wrap">
+    <svg viewBox="0 0 1200 820" role="img" aria-label="Интерактивное древо TIKCOIN" class="tree">
+
+      <!-- Центральный узел: TIKCOIN (ведёт в Roadmap 0) -->
+      <a xlink:href="whitepaper.html#ch0">
+        <g class="node node-main" transform="translate(600,80)">
+          <rect x="-110" y="-28" rx="10" ry="10" width="220" height="56"></rect>
+          <text text-anchor="middle" dy="6">TIKCOIN • Roadmap</text>
+        </g>
       </a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/litepaper.html">Whitepaper</a>
-        <a href="#doctrine">Doctrine</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="/tokenomics.html">Tokenomics</a>
-        <a href="#community">Community</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
-      </nav>
-      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <div class="badge">⏳ Radical honesty • Immutable core</div>
-        <h1>We can’t stop <span class="grad">time</span> — we can <span class="grad">tokenize</span> it.</h1>
-        <p>
-          We publish the rules before launch, lock the core, and align incentives with reality.
-          No burns. No stealth taxes. Clear liquidity. Transparent locks and vesting.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="/litepaper.html">Read Whitepaper</a>
-          <a class="btn ghost" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Join Community</a>
-        </div>
-      </div>
-      <div class="hero-art">
-        <canvas id="hero-canvas" class="hero-canvas" width="900" height="360" aria-hidden="true"></canvas>
-        <div class="aura"></div>
-      </div>
-    </div>
-  </section>
+      <!-- ВЕТКА: ВРЕМЯ -->
+      <g class="branch">
+        <!-- линия от главного узла -->
+        <line x1="600" y1="108" x2="300" y2="220" class="link"/>
+        <!-- заголовок ветки -->
+        <a xlink:href="whitepaper.html#ch3">
+          <g class="node" transform="translate(300,220)">
+            <rect x="-95" y="-24" rx="10" ry="10" width="190" height="48"></rect>
+            <text text-anchor="middle" dy="6">ВРЕМЯ</text>
+          </g>
+        </a>
+        <!-- дети времени -->
+        <line x1="300" y1="244" x2="170" y2="320" class="link"/>
+        <line x1="300" y1="244" x2="300" y2="320" class="link"/>
+        <line x1="300" y1="244" x2="430" y2="320" class="link"/>
 
-  <!-- Doctrine of Time -->
-  <section class="section" id="doctrine">
-    <div class="container">
-      <h2 class="section-title">Doctrine of Time</h2>
-      <div class="grid cards">
-        <article class="card reveal">
-          <h3>1) No hidden functions</h3>
-          <p>Rules are public and final before launch. No stealth mints, no black boxes.</p>
-        </article>
-        <article class="card reveal">
-          <h3>2) Immutable core</h3>
-          <p>The core contract is frozen. Only whitelisted upgrades that preserve the foundation.</p>
-        </article>
-        <article class="card reveal">
-          <h3>3) Transparent vesting</h3>
-          <p>Simple schedules on-chain. Early trust is respected, late stability is preserved.</p>
-        </article>
-        <article class="card reveal">
-          <h3>4) One honest community pool</h3>
-          <p>Single 20% pool for bonuses/referrals/memes/collabs with on-chain controls.</p>
-        </article>
-        <article class="card reveal">
-          <h3>5) Markets over hype</h3>
-          <p>Liquidity and listing by a published playbook. No surprise taxes or burns.</p>
-        </article>
-        <article class="card reveal">
-          <h3>6) Same rules for founder</h3>
-          <p>Founder vesting mirrors community logic; no shortcuts, no special exits.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+        <a xlink:href="whitepaper.html#ch4-axioms">
+          <g class="node" transform="translate(170,320)">
+            <rect x="-120" y="-22" rx="10" ry="10" width="240" height="44"></rect>
+            <text text-anchor="middle" dy="5">Аксиомы времени</text>
+          </g>
+        </a>
 
-  <!-- Roadmap: Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom -->
-  <section class="section alt" id="roadmap">
-    <div class="container">
-      <h2 class="section-title">Roadmap</h2>
-      <div class="time-rail" aria-hidden="true"><div class="time-rail-fill"></div></div>
+        <a xlink:href="whitepaper.html#ch5-stages">
+          <g class="node" transform="translate(300,320)">
+            <rect x="-110" y="-22" rx="10" ry="10" width="220" height="44"></rect>
+            <text text-anchor="middle" dy="5">Стадии времени</text>
+          </g>
+        </a>
 
-      <ol class="timeline timeline-time">
-        <li class="reveal stage" data-stage="sun">
-          <div class="stage-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="ico">
-              <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 6v6M24 42v-6M6 24h6M42 24h-6M14 14l4 4M34 34l-4-4M14 34l4-4M34 14l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
-              <path class="gnomon" d="M24 24l9 -9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="stage-body">
-            <h4>Phase 0 — Sun (Sundial)</h4>
-            <p>Idea, brand, manifesto. Open-ended presale spec. Community ignition.</p>
-          </div>
-        </li>
+        <a xlink:href="whitepaper.html#ch6-mechanics">
+          <g class="node" transform="translate(430,320)">
+            <rect x="-110" y="-22" rx="10" ry="10" width="220" height="44"></rect>
+            <text text-anchor="middle" dy="5">Механика/версии</text>
+          </g>
+        </a>
+      </g>
 
-        <li class="reveal stage" data-stage="hourglass">
-          <div class="stage-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="ico">
-              <path d="M12 8h24M12 40h24M16 8c0 8 16 8 16 0M16 40c0 -8 16 -8 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path class="sand top" d="M18 14h12l-6 5z"/>
-              <rect class="sand stream" x="23" y="20" width="2" height="7" rx="1"/>
-              <path class="sand bottom" d="M18 34h12l-6 -5z"/>
-            </svg>
-          </div>
-          <div class="stage-body">
-            <h4>Phase 1 — Hourglass</h4>
-            <p>Contract v1 with foundation rules. Internal review. Public docs aligned with honesty.</p>
-          </div>
-        </li>
+      <!-- ВЕТКА: ЧЕСТНОСТЬ -->
+      <g class="branch">
+        <line x1="600" y1="108" x2="600" y2="220" class="link"/>
+        <a xlink:href="whitepaper.html#ch2">
+          <g class="node" transform="translate(600,220)">
+            <rect x="-110" y="-24" rx="10" ry="10" width="220" height="48"></rect>
+            <text text-anchor="middle" dy="6">ЧЕСТНОСТЬ</text>
+          </g>
+        </a>
 
-        <li class="reveal stage" data-stage="mechanical">
-          <div class="stage-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="ico">
-              <g class="gear-slow">
-                <circle cx="17" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M17 14v-3M17 34v3M10 24h-3M27 24h3M12 18l-2-2M22 30l2 2M12 30l-2 2M22 18l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </g>
-              <g class="gear-fast">
-                <circle cx="32" cy="24" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
-                <path d="M32 18.5v-2M32 31.5v2M26.5 24h-2M39.5 24h2M28.5 20.5l-1.5-1.5M35.5 27.5l1.5 1.5M28.5 27.5l-1.5 1.5M35.5 20.5l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </g>
-            </svg>
-          </div>
-          <div class="stage-body">
-            <h4>Phase 2 — Mechanical</h4>
-            <p>External audit & fixes → v2 hardening. Multisig & timelocks wired. Presale go-live.</p>
-          </div>
-        </li>
+        <line x1="600" y1="244" x2="480" y2="320" class="link"/>
+        <line x1="600" y1="244" x2="600" y2="320" class="link"/>
+        <line x1="600" y1="244" x2="720" y2="320" class="link"/>
+        <line x1="600" y1="244" x2="840" y2="320" class="link"/>
 
-        <li class="reveal stage" data-stage="quartz">
-          <div class="stage-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="ico">
-              <circle cx="24" cy="24" r="12" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 12v3M24 33v3M12 24h3M33 24h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path class="hand-hour" d="M24 24l0 -6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              <path class="hand-sec" d="M24 24l6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path class="qu-wave" d="M14 36c2-2 4-2 6 0s4 2 6 0 4-2 6 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".85"/>
-            </svg>
-          </div>
-          <div class="stage-body">
-            <h4>Phase 3 — Quartz</h4>
-            <p>Efficiency & scale. Tooling, dashboards, faster UX. Listing prep for broader reach.</p>
-          </div>
-        </li>
+        <a xlink:href="whitepaper.html#ch1-tokenomics">
+          <g class="node" transform="translate(480,320)">
+            <rect x="-115" y="-22" rx="10" ry="10" width="230" height="44"></rect>
+            <text text-anchor="middle" dy="5">Токеномика</text>
+          </g>
+        </a>
 
-        <li class="reveal stage" data-stage="tourbillon">
-          <div class="stage-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="ico">
-              <circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle class="cage" cx="24" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path class="balance" d="M24 19v10M19 24h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="stage-body">
-            <h4>Phase 4 — Tourbillon</h4>
-            <p>Listing + liquidity orchestration. Target X2 band on day 8 post sell-out with buffers.</p>
-          </div>
-        </li>
+        <a xlink:href="whitepaper.html#ch7-presale">
+          <g class="node" transform="translate(600,320)">
+            <rect x="-95" y="-22" rx="10" ry="10" width="190" height="44"></rect>
+            <text text-anchor="middle" dy="5">Пресейл</text>
+          </g>
+        </a>
 
-        <li class="reveal stage" data-stage="atomic">
-          <div class="stage-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" class="ico">
-              <circle cx="24" cy="24" r="2.6" fill="currentColor"/>
-              <ellipse class="orb o1" cx="24" cy="24" rx="14" ry="6" fill="none" stroke="currentColor" stroke-width="2"/>
-              <ellipse class="orb o2" cx="24" cy="24" rx="6" ry="14" fill="none" stroke="currentColor" stroke-width="2"/>
-              <ellipse class="orb o3" cx="24" cy="24" rx="12" ry="12" fill="none" stroke="currentColor" stroke-width="2"/>
-            </svg>
-          </div>
-          <div class="stage-body">
-            <h4>Phase 5 — Atom</h4>
-            <p>Utilities & collaborations centered on time. Partner integrations and sustainable growth.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+        <a xlink:href="whitepaper.html#ch8-bonuses">
+          <g class="node" transform="translate(720,320)">
+            <rect x="-95" y="-22" rx="10" ry="10" width="190" height="44"></rect>
+            <text text-anchor="middle" dy="5">Бонусы</text>
+          </g>
+        </a>
 
-  <!-- Community Mechanics -->
-  <section class="section" id="community">
-    <div class="container">
-      <h2 class="section-title">Community Mechanics</h2>
-      <div class="grid cards">
-        <article class="card reveal">
-          <h3>On-chain incentives</h3>
-          <p>Single 20% pool, transparent spending. Bonuses 10/20/30% + fair referral rewards documented on-chain.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Open dashboard (coming)</h3>
-          <p>Public tracker for contributions (memes, content, invites) and payouts. No guessing — just data.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Voting (coming)</h3>
-          <p>Snapshot-style off-chain voting for proposals that do not alter the immutable core.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+        <a xlink:href="whitepaper.html#ch9-airdrop">
+          <g class="node" transform="translate(840,320)">
+            <rect x="-95" y="-22" rx="10" ry="10" width="190" height="44"></rect>
+            <text text-anchor="middle" dy="5">Airdrop</text>
+          </g>
+        </a>
 
-  <!-- FAQ -->
-  <section class="section alt" id="faq">
-    <div class="container">
-      <h2 class="section-title">FAQ</h2>
+        <!-- нижний уровень честности -->
+        <line x1="600" y1="344" x2="660" y2="420" class="link"/>
+        <a xlink:href="whitepaper.html#ch10-vesting">
+          <g class="node" transform="translate(660,420)">
+            <rect x="-115" y="-22" rx="10" ry="10" width="230" height="44"></rect>
+            <text text-anchor="middle" dy="5">Вестинг/блокировки</text>
+          </g>
+        </a>
 
-      <details class="faq reveal">
-        <summary>Are you “monetizing” time?</summary>
-        <p>No. We <strong>tokenize</strong> time-aligned participation and behavior. The mechanics stay auditable and fair.</p>
-      </details>
+        <line x1="600" y1="344" x2="540" y2="420" class="link"/>
+        <a xlink:href="whitepaper.html#ch11-vote">
+          <g class="node" transform="translate(540,420)">
+            <rect x="-105" y="-22" rx="10" ry="10" width="210" height="44"></rect>
+            <text text-anchor="middle" dy="5">Голосование</text>
+          </g>
+        </a>
+      </g>
 
-      <details class="faq reveal">
-        <summary>Any burns or hidden taxes?</summary>
-        <p>No. Fixed supply. No burns. No stealth taxes.</p>
-      </details>
+      <!-- ВЕТКА: ФИЛОСОФИЯ -->
+      <g class="branch">
+        <line x1="600" y1="108" x2="900" y2="220" class="link"/>
+        <a xlink:href="whitepaper.html#ch12-utility">
+          <g class="node" transform="translate(900,220)">
+            <rect x="-115" y="-24" rx="10" ry="10" width="230" height="48"></rect>
+            <text text-anchor="middle" dy="6">ФИЛОСОФИЯ/Утилити</text>
+          </g>
+        </a>
 
-      <details class="faq reveal">
-        <summary>When do you list?</summary>
-        <p>Eight days after the presale sells out. The countdown starts at sell-out, not before.</p>
-      </details>
+        <line x1="900" y1="244" x2="780" y2="320" class="link"/>
+        <line x1="900" y1="244" x2="900" y2="320" class="link"/>
+        <line x1="900" y1="244" x2="1020" y2="320" class="link"/>
 
-      <details class="faq reveal">
-        <summary>How does vesting work for tiers?</summary>
-        <p>
-          Sun & Hourglass: unlocked at TGE. Mechanical • Quartz • Tourbillon: months 1–5 → 10% each (50%), months 6–7 → none, month 8 → remaining 50%.  
-          Whale bracket: months 1–5 → 10% each; month 7 → 25%; month 8 → 25%.
-        </p>
-      </details>
+        <a xlink:href="whitepaper.html#ch13-symbols">
+          <g class="node" transform="translate(780,320)">
+            <rect x="-120" y="-22" rx="10" ry="10" width="240" height="44"></rect>
+            <text text-anchor="middle" dy="5">Символизм / мем-коды</text>
+          </g>
+        </a>
 
-      <details class="faq reveal">
-        <summary>How is the founder allocation locked?</summary>
-        <p>
-          Founder 10%: 10% at TGE (same as everyone). The remaining 90% begin vesting only
-          <em>after all presale participants finish their unlocks</em> (final params fixed before contract freeze).
-        </p>
-      </details>
-    </div>
-  </section>
+        <a xlink:href="whitepaper.html#ch14-comms">
+          <g class="node" transform="translate(900,320)">
+            <rect x="-110" y="-22" rx="10" ry="10" width="220" height="44"></rect>
+            <text text-anchor="middle" dy="5">Коммуникации</text>
+          </g>
+        </a>
 
-  <!-- Subscribe -->
-  <section class="section subscribe">
-    <div class="container sub-wrap">
-      <h2>Get updates</h2>
-      <form class="sub-form" action="mailto:info@tikcoin.org" method="POST">
-        <input type="email" name="email" placeholder="you@domain.com" required>
-        <button class="btn primary" type="submit">Subscribe</button>
-      </form>
-      <p class="sub-note">We send only releases and major updates.</p>
-    </div>
-  </section>
+        <a xlink:href="whitepaper.html#ch15-risk">
+          <g class="node" transform="translate(1020,320)">
+            <rect x="-105" y="-22" rx="10" ry="10" width="210" height="44"></rect>
+            <text text-anchor="middle" dy="5">Риски/дисклеймер</text>
+          </g>
+        </a>
+      </g>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container foot">
-      <div class="foot-brand"><img src="/assets/logo.png" alt="" class="foot-logo"><strong>TIKcoin</strong></div>
-      <div class="foot-links">
-        <a href="/litepaper.html">Whitepaper</a>
-        <a href="/tokenomics.html">Tokenomics</a>
-        <a href="/#doctrine">Doctrine</a>
-        <a href="/#roadmap">Roadmap</a>
-        <a href="/#faq">FAQ</a>
-        <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
-      </div>
-      <div class="foot-copy">© <span id="y"></span> TIKcoin. Time can’t be stopped — neither can we.</div>
-    </div>
-  </footer>
+    </svg>
+  </div>
 
-  <!-- JS (menu, reveal, year, particles) -->
-  <script>
-    const b=document.querySelector('.burger'), n=document.querySelector('.nav');
-    if(b&&n){ b.addEventListener('click',()=>n.classList.toggle('open')); }
-    const sh=document.querySelector('.site-header'); addEventListener('scroll',()=>{ sh.classList.toggle('shadow', scrollY>10); });
-    const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target);} }),{threshold:.15});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+  <p class="muted small">
+    Подсказка: на мобильном можно масштабировать древо жестами.
+  </p>
+</main>
 
-    (function(){
-      const c=document.getElementById('hero-canvas'); if(!c) return;
-      const ctx=c.getContext('2d');
-      let w=c.width=c.offsetWidth, h=c.height=c.offsetHeight;
-      const dots = Array.from({length: 80}, () => ({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+0.4,vx:(Math.random()-.5)*0.08,vy:(Math.random()*0.12)+0.02,a:Math.random()*0.8+0.2}));
-      addEventListener('resize',()=>{ w=c.width=c.offsetWidth; h=c.height=c.offsetHeight; });
-      (function tick(){
-        ctx.clearRect(0,0,w,h);
-        for(const d of dots){
-          d.x+=d.vx; d.y+=d.vy;
-          if(d.x<0||d.x>w) d.vx*=-1;
-          if(d.y>h+20){ d.y=-10; d.x=Math.random()*w; }
-          ctx.beginPath(); ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
-          ctx.fillStyle=`rgba(150,160,255,${d.a})`; ctx.fill();
-        }
-        requestAnimationFrame(tick);
-      })();
-    })();
-  </script>
-
-  <style>.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s}.reveal.is-in{opacity:1;transform:translateY(0)}</style>
+<footer class="footer">
+  © TIKCOIN
+</footer>
 </body>
 </html>
