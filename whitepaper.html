@@ -1,24 +1,214 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>TIKcoin • Whitepaper</title>
-<link rel="stylesheet" href="./styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
-</head><body>
-<nav class="nav"><a class="brand" href="./"><img class="brand-logo" src="./assets/logo.png" alt="" onerror="this.style.display='none'"><span>TIKcoin</span></a></nav>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TIKCOIN — WhitePaper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">TIKCOIN</div>
+  <nav>
+    <a href="index.html">Древо</a>
+    <a href="#toc">Оглавление</a>
+  </nav>
+</header>
 
-<section class="section"><div class="container">
-  <h2>Whitepaper v1 (Skeleton)</h2>
-  <ul class="list">
-    <li><strong>Vision.</strong> We don’t value hype — we value time. Rules are set before the ship sails.</li>
-    <li><strong>Philosophy.</strong> Immutable ERC-20 base (no admin keys, no taxes/burns). Utilities live as extensions.</li>
-    <li><strong>Tokenomics.</strong> 35/20/20/15/10 with a single Community & Growth pool (bonuses 10/20/30%).</li>
-    <li><strong>Presale Model.</strong> No end date; listing on day-8 after sell-out; per-wallet caps; on-chain receipts.</li>
-    <li><strong>Unlocks.</strong> Sun/Hourglass 0% lock; higher tiers: 10%/month for 5 months → pause (2) → 50% cliff at month-8; whales: 10%×5 then 25% + 25% at months 7 & 8.</li>
-    <li><strong>Governance / Controls.</strong> Marketing under multisig+timelock with monthly transparency reports.</li>
-    <li><strong>Roadmap.</strong> Genesis → Community → Presale → Audit v1 + Listing → Ops → Audit v2/Upgrade → Partnerships.</li>
-    <li><strong>Risk & Disclosures.</strong> Volatility, liquidity risks, execution risks. We build for longevity.</li>
-  </ul>
-</div></section>
-</body></html>
+<main class="container">
+  <h1>TIKCOIN — WhitePaper</h1>
+
+  <section id="intro">
+    <h2>Введение</h2>
+    <p><strong>1 TIK = 1 секунда</strong>. Эмиссия: <strong>31 557 600 TIK</strong> (100 лет). Лозунг: «Мы не можем остановить время, но можем токенизировать его».</p>
+  </section>
+
+  <nav id="toc" class="toc">
+    <h3>Оглавление</h3>
+    <ol>
+      <li><a href="#ch0">0. Roadmap (V1…V6, DEX/CEX/NFT/Quantum)</a></li>
+      <li><a href="#ch1-tokenomics">1. Токеномика</a></li>
+      <li><a href="#ch2">2. Доктрина честности</a></li>
+      <li><a href="#ch3">3. Равенство времени (1 TIK = 1 секунда)</a></li>
+      <li><a href="#ch4-axioms">4. Аксиомы времени</a></li>
+      <li><a href="#ch5-stages">5. Стадии времени</a></li>
+      <li><a href="#ch6-mechanics">6. Механика версий контракта</a></li>
+      <li><a href="#ch7-presale">7. Пресейл</a></li>
+      <li><a href="#ch8-bonuses">8. Бонусы пресейла</a></li>
+      <li><a href="#ch9-airdrop">9. Airdrop (время → токены)</a></li>
+      <li><a href="#ch10-vesting">10. Вестинг/блокировки</a></li>
+      <li><a href="#ch11-vote">11. Голосование</a></li>
+      <li><a href="#ch12-utility">12. Utility</a></li>
+      <li><a href="#ch13-symbols">13. Символизм / мем-коды / Золотой век</a></li>
+      <li><a href="#ch14-comms">14. Коммуникации</a></li>
+      <li><a href="#ch15-risk">15. Риски/дисклеймер</a></li>
+      <li><a href="#outro">Заключение</a></li>
+    </ol>
+  </nav>
+
+  <!-- 0. Roadmap -->
+  <section id="ch0">
+    <h2>0. Roadmap (эволюция продукта)</h2>
+    <ol>
+      <li id="ch0-1"><strong>0.1 — Версия 1:</strong> TIKP + Distributor (Airdrop).</li>
+      <li id="ch0-2"><strong>0.2 — Версия 1.5:</strong> Telegram-бот, инструменты комьюнити.</li>
+      <li id="ch0-3"><strong>0.3 — Версия 2:</strong> неизменяемый TIK, подготовка к DEX.</li>
+      <li id="ch0-4"><strong>0.4 — Версия 3:</strong> интеграции, партнёрства, листинг CEX.</li>
+      <li id="ch0-5"><strong>0.5 — Версия 4:</strong> расширение CEX.</li>
+      <li id="ch0-6"><strong>0.6 — Версия 5:</strong> коллаборации, NFT.</li>
+      <li id="ch0-7"><strong>0.7 — Версия 6:</strong> Quantum Clock (дальнейшая утилита).</li>
+    </ol>
+  </section>
+
+  <!-- 1. Tokenomics -->
+  <section id="ch1-tokenomics">
+    <h2>1. Токеномика</h2>
+    <p>Общая эмиссия: <strong>31 557 600 TIK</strong> (1 TIK = 1 секунда).</p>
+    <ul>
+      <li>35% — Presale (цена <strong>$0.01</strong> за TIK)</li>
+      <li>20% — Airdrop (включая бонусы за труд)</li>
+      <li>20% — Резерв (будущее развитие)</li>
+      <li>10% — Маркетинг (с блокировками)</li>
+      <li>10% — Основатель (разблокировка через 12 мес. после общего unlock)</li>
+      <li>5% — Команда/операционные</li>
+    </ul>
+    <p><strong>Сплит поступлений Presale:</strong> 85% — в ликвидность, 15% — на развитие (аудиты, доработка контрактов, инфраструктура).</p>
+  </section>
+
+  <!-- 2. Доктрина честности -->
+  <section id="ch2">
+    <h2>2. Доктрина честности</h2>
+    <p>Прозрачные правила, единые условия вестинга, голосование держателей высоких уровней.</p>
+  </section>
+
+  <!-- 3. Равенство времени -->
+  <section id="ch3">
+    <h2>3. Равенство времени</h2>
+    <p>Одна единица — одна секунда. Вся логика построена вокруг времени как универсальной меры.</p>
+  </section>
+
+  <!-- 4. Аксиомы времени -->
+  <section id="ch4-axioms">
+    <h2>4. Аксиомы времени</h2>
+    <ul>
+      <li>Время нельзя остановить.</li>
+      <li>Время нельзя вернуть.</li>
+      <li>Время нельзя обмануть.</li>
+    </ul>
+  </section>
+
+  <!-- 5. Стадии времени -->
+  <section id="ch5-stages">
+    <h2>5. Стадии времени</h2>
+    <ol>
+      <li>Солнце (free)</li>
+      <li>Песочные часы ($300, бонус 0%)</li>
+      <li>Механика ($1 000, 2.5%)</li>
+      <li>Кварц ($5 000, 5%)</li>
+      <li>Турбион ($10 000, 10%)</li>
+      <li>Атом ($25 000, 20%)</li>
+      <li>Квантовые часы ($50 000, 30%, также лимит на один кошелёк)</li>
+    </ol>
+  </section>
+
+  <!-- 6. Механика/версии -->
+  <section id="ch6-mechanics">
+    <h2>6. Механика версий контракта</h2>
+    <ul>
+      <li>V1 — минимальный TIKP + Distributor (airdrop/бонусы времени).</li>
+      <li>V1.5 — Telegram-бот, валидация, отчётность.</li>
+      <li>V2 — неизменяемый TIK, подготовка DEX (аудит).</li>
+      <li>V3 — интеграции, партнёры, подготовка CEX.</li>
+      <li>V4–V6 — расширение утилиты, NFT, Quantum Clock.</li>
+    </ul>
+  </section>
+
+  <!-- 7. Пресейл -->
+  <section id="ch7-presale">
+    <h2>7. Пресейл</h2>
+    <ul>
+      <li>Цена: <strong>$0.01</strong> за TIK.</li>
+      <li>Лимит: до $50 000 на кошелёк.</li>
+      <li>Завершение без продлений; листинг происходит на 8-й день после закрытия, без указания фиксированной даты заранее.</li>
+      <li>Статусы (уровни) присваиваются только в пресейле и неизменяемы далее.</li>
+    </ul>
+  </section>
+
+  <!-- 8. Бонусы пресейла -->
+  <section id="ch8-bonuses">
+    <h2>8. Бонусы пресейла</h2>
+    <table class="table">
+      <thead><tr><th>Уровень</th><th>Порог вклада</th><th>Бонус</th></tr></thead>
+      <tbody>
+        <tr><td>Солнце</td><td>—</td><td>0%</td></tr>
+        <tr><td>Песочные</td><td>$300</td><td>0%</td></tr>
+        <tr><td>Механика</td><td>$1 000</td><td>2.5%</td></tr>
+        <tr><td>Кварц</td><td>$5 000</td><td>5%</td></tr>
+        <tr><td>Турбион</td><td>$10 000</td><td>10%</td></tr>
+        <tr><td>Атом</td><td>$25 000</td><td>20%</td></tr>
+        <tr><td>Квант</td><td>$50 000</td><td>30%</td></tr>
+      </tbody>
+    </table>
+    <p class="muted small">Топ-подарки → Квант; премиум → Атом; участие в голосовании: Турбион/Атом/Квант.</p>
+  </section>
+
+  <!-- 9. Airdrop -->
+  <section id="ch9-airdrop">
+    <h2>9. Airdrop (время → токены)</h2>
+    <p>За вклад времени выдаются TIK 1:1. Бонусы комьюнити оплачиваются только из пула Airdrop (без продаж).</p>
+  </section>
+
+  <!-- 10. Вестинг -->
+  <section id="ch10-vesting">
+    <h2>10. Вестинг/блокировки</h2>
+    <ul>
+      <li>Единые правила для всех категорий (кроме полностью разблокированных статусов).</li>
+      <li>Средства основателя: разблок через 12 мес. после общего unlock.</li>
+    </ul>
+  </section>
+
+  <!-- 11. Голосование -->
+  <section id="ch11-vote">
+    <h2>11. Голосование</h2>
+    <p>Право голоса у уровней Турбион, Атом, Квант. Вопросы: сроки и параметры заморозок, направления развития, приоритет интеграций.</p>
+  </section>
+
+  <!-- 12. Utility -->
+  <section id="ch12-utility">
+    <h2>12. Utility</h2>
+    <ul>
+      <li>Telegram-бот: учёт времени, выплаты, уведомления.</li>
+      <li>NFT-роллинг, доступы, партнёрские кейсы.</li>
+      <li>Коммерческая интеграция мерчантов по мере роста.</li>
+    </ul>
+  </section>
+
+  <!-- 13. Символизм -->
+  <section id="ch13-symbols">
+    <h2>13. Символизм / мем-коды / Золотой век</h2>
+    <p>Визуальный язык стадий (Солнце…Квант), лозунги, «Золотой век» как образ эпохи токенизированного времени.</p>
+  </section>
+
+  <!-- 14. Коммуникации -->
+  <section id="ch14-comms">
+    <h2>14. Коммуникации</h2>
+    <p>Волны без жёстких дат, прозрачные отчёты, KPI по комьюнити и разработке.</p>
+  </section>
+
+  <!-- 15. Риски -->
+  <section id="ch15-risk">
+    <h2>15. Риски и дисклеймер</h2>
+    <p>Крипториски, рыночная волатильность, технические и регуляторные факторы.</p>
+  </section>
+
+  <section id="outro">
+    <h2>Заключение</h2>
+    <p>Время — единственная универсальная единица. Мы строим экономику, где вклад времени прозрачно конвертируется в ценность.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  © TIKCOIN
+</footer>
+</body>
+</html>
