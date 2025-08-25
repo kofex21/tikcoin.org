@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TIKCOIN • We Tokenized Time</title>
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="TIKCOIN — We cannot stop time, but we can tokenize it. 1 TIK = 1 second. Total 3,155,760,000 TIK (100 years).">
+  <meta name="description" content="TIKCOIN — We cannot stop time, but we can tokenize it. 1 TIK = 1 second. Total: 3,155,760,000 TIK (100 years).">
 </head>
 <body>
 
@@ -27,33 +27,31 @@
     </ul>
   </nav>
 
-  <!-- TIME TREE -->
-  <section id="tree" class="tree" aria-labelledby="tree-title">
-    <h2 id="tree-title" class="tree__title">TIKCOIN Tree</h2>
-
+  <!-- TIME TREE (4 nodes) -->
+  <section id="tree" class="tree" aria-label="TIKCOIN Tree">
     <div class="tree-min">
-      <!-- Center: TIKCOIN → Roadmap -->
-      <a class="node node--center" href="whitepaper.html#ch0" aria-label="Roadmap (V1…V6)">
-        <span class="node__brand">TIKCOIN</span>
-        <strong>Roadmap</strong>
+
+      <!-- TIKCOIN (center/top) → Roadmap -->
+      <a class="node node--center" href="whitepaper.html#roadmap" aria-label="Roadmap">
+        <div class="node__content"><div class="node__brand">TIKCOIN</div></div>
       </a>
 
       <!-- TIME -->
-      <a class="node node--time" href="whitepaper.html#ch3" aria-label="Time">
-        <strong>TIME</strong>
+      <a class="node node--time" href="whitepaper.html#time" aria-label="Time">
+        <div class="node__content"><div class="node__label">TIME</div></div>
       </a>
 
       <!-- HONESTY -->
-      <a class="node node--honesty" href="whitepaper.html#ch2" aria-label="Honesty">
-        <strong>HONESTY</strong>
+      <a class="node node--honesty" href="whitepaper.html#honesty" aria-label="Honesty">
+        <div class="node__content"><div class="node__label">HONESTY</div></div>
       </a>
 
       <!-- PHILOSOPHY -->
-      <a class="node node--philosophy" href="whitepaper.html#ch13-symbols" aria-label="Philosophy">
-        <strong>PHILOSOPHY</strong>
+      <a class="node node--philosophy" href="whitepaper.html#philosophy" aria-label="Philosophy">
+        <div class="node__content"><div class="node__label">PHILOSOPHY</div></div>
       </a>
 
-      <!-- connectors (CSS draws lines) -->
+      <!-- connectors -->
       <div class="link link--time" aria-hidden="true"></div>
       <div class="link link--honesty" aria-hidden="true"></div>
       <div class="link link--philosophy" aria-hidden="true"></div>
@@ -64,13 +62,13 @@
   <section id="community" class="block">
     <h3>Community</h3>
     <p>Join our official Telegram group and become part of the TIKCOIN movement.</p>
-    <p><a href="https://t.me/tikcoin_official_org" target="_blank">➡ Join Telegram</a></p>
+    <p><a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">➡ Join Telegram</a></p>
   </section>
 
   <!-- CONTACT -->
   <footer id="contact" class="footer">
     <h3>Contact</h3>
-    <p>Email us at: <a href="mailto:info@tikcoin.org">info@tikcoin.org</a></p>
+    <p>Email: <a href="mailto:info@tikcoin.org">info@tikcoin.org</a></p>
     <p>© 2025 TIKCOIN • #TimeTokenized</p>
   </footer>
 
