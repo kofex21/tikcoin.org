@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TIKCOIN — WhitePaper</title>
-  <meta name="description" content="TIKCOIN WhitePaper: time-based tokenomics, roadmap, governance and philosophy." />
-  <link rel="stylesheet" href="/styles.css?v=5" />
+  <meta name="description" content="TIKCOIN WhitePaper: time as the only universal unit; tokenomics, roadmap, governance, airdrop, philosophy and community trust." />
+  <link rel="stylesheet" href="/styles.css?v=8" />
 </head>
 <body>
 <header class="topbar">
@@ -19,16 +19,23 @@
 <main class="container">
   <h1>TIKCOIN — WhitePaper</h1>
 
+  <!-- INTRO -->
   <section id="intro">
     <h2>Introduction</h2>
-    <p><strong>1 TIK = 1 second</strong>. Total supply: <strong>3,155,760,000 TIK</strong> — exactly one century of seconds. Slogan: <em>“We cannot stop time — but we can tokenize it.”</em></p>
-    <p>Our aim is simple: align effort, honesty, and time. TIKCOIN encodes time as the only universal unit and structures distribution so that early, committed contributors receive proportionally higher recognition — without compromising equality of rules.</p>
+    <p><strong>Slogan:</strong> “We cannot stop time — but we can tokenize it.” Time is the only universal unit. TIKCOIN encodes time into a transparent, irreversible set of rules where effort and honesty compound into lasting value.</p>
+    <ul>
+      <li><strong>Unit:</strong> 1 TIK = 1 second.</li>
+      <li><strong>Total Supply:</strong> 3,155,760,000 TIK (exactly one century of seconds).</li>
+      <li><strong>Vision:</strong> Tokenize a century (“Golden Age”) and align incentives so that time, effort and honesty remain the core of value creation.</li>
+      <li><strong>Design Principles:</strong> Irreversibility, Equality of rules, Verifiability, Minimal attack surface.</li>
+    </ul>
   </section>
 
+  <!-- TOC -->
   <nav id="toc" class="toc">
     <h3>Table of Contents</h3>
     <ol>
-      <li><a href="#ch0">0. Roadmap (V1…V6, DEX/CEX/NFT/Quantum)</a></li>
+      <li><a href="#ch0">0. Roadmap</a></li>
       <li><a href="#ch1-tokenomics">1. Tokenomics</a></li>
       <li><a href="#ch2">2. Honesty Doctrine</a></li>
       <li><a href="#ch3">3. Equality of Time</a></li>
@@ -37,157 +44,162 @@
       <li><a href="#ch6-mechanics">6. Contract Mechanics</a></li>
       <li><a href="#ch7-presale">7. Presale</a></li>
       <li><a href="#ch8-bonuses">8. Presale Bonuses</a></li>
-      <li><a href="#ch9-airdrop">9. Airdrop (time → tokens)</a></li>
+      <li><a href="#ch9-airdrop">9. Airdrop</a></li>
       <li><a href="#ch10-vesting">10. Vesting & Lockups</a></li>
       <li><a href="#ch11-vote">11. Governance & Voting</a></li>
       <li><a href="#ch12-utility">12. Utility</a></li>
       <li><a href="#ch13-symbols">13. Symbolism & Golden Age</a></li>
-      <li><a href="#ch14-comms">14. Communications</a></li>
-      <li><a href="#ch15-risk">15. Risks & Disclaimer</a></li>
+      <li><a href="#ch14-comms">14. Communications (Waves)</a></li>
+      <li><a href="#ch15-trust">15. Trust & Community</a></li>
       <li><a href="#outro">Conclusion</a></li>
+      <li><a href="#app-risk">Appendix A — Risks & Disclaimer</a></li>
     </ol>
   </nav>
 
+  <!-- 0 -->
   <section id="ch0">
-    <h2>0. Roadmap (product evolution)</h2>
+    <h2>0. Roadmap</h2>
     <ol>
-      <li id="ch0-1"><strong>0.1 — Version 1:</strong> TIKP + Distributor (Airdrop accounting). Minimal rules, no ambiguity.</li>
-      <li id="ch0-2"><strong>0.2 — Version 1.5:</strong> Telegram bot (onboarding, proofs, payouts), community tooling.</li>
-      <li id="ch0-3"><strong>0.3 — Version 2:</strong> Immutable TIK release, audit for DEX, operational readiness.</li>
-      <li id="ch0-4"><strong>0.4 — Version 3:</strong> Integrations & partners; first CEX listing.</li>
-      <li id="ch0-5"><strong>0.5 — Version 4:</strong> Additional CEX listings; scaling infra.</li>
-      <li id="ch0-6"><strong>0.6 — Version 5:</strong> Collaborations, NFT utility, extended Telegram modules.</li>
-      <li id="ch0-7"><strong>0.7 — Version 6:</strong> “Quantum Clock” — long-term compounding utility.</li>
+      <li><strong>V1:</strong> Minimal contract (TIKP + Distributor), secure baseline.</li>
+      <li><strong>V1.5:</strong> Telegram bot (onboarding, tasks, payouts).</li>
+      <li><strong>V2:</strong> Immutable TIK, audit, DEX listing.</li>
+      <li><strong>V3:</strong> Integrations, first CEX listing.</li>
+      <li><strong>V4:</strong> Wider CEX listings, collaborations.</li>
+      <li><strong>V5:</strong> NFT roles, merchant pilots.</li>
+      <li><strong>V6:</strong> “Quantum Clock” long-term mechanics.</li>
     </ol>
   </section>
 
+  <!-- 1 -->
   <section id="ch1-tokenomics">
     <h2>1. Tokenomics</h2>
-    <p>Total supply: <strong>3,155,760,000 TIK</strong> (1 TIK = 1 second).</p>
+    <p>Total: 3,155,760,000 TIK.</p>
     <ul>
-      <li>35% — Presale (price <strong>$0.01</strong> per TIK)</li>
-      <li>20% — Airdrop (incl. contribution & presale-bonus payouts)</li>
-      <li>20% — Reserve (future development)</li>
-      <li>10% — Marketing (locked)</li>
-      <li>10% — Founder (unlock 12 months after global unlock)</li>
-      <li>5% — Team/Operations</li>
+      <li>35% — Presale ($0.01 each).</li>
+      <li>20% — Airdrop.</li>
+      <li>20% — Reserve.</li>
+      <li>10% — Marketing.</li>
+      <li>10% — Founder (locked 12 months after global unlock).</li>
+      <li>5% — Team/Operations.</li>
     </ul>
-    <p><strong>Use of presale funds:</strong> 85% → liquidity; 15% → development (audits, contract upgrades, infrastructure). Levels are assigned <em>only</em> during presale and cannot be gained or lost afterwards.</p>
+    <p>Presale funds: 85% liquidity, 15% development (audits, infra).</p>
   </section>
 
+  <!-- 2 -->
   <section id="ch2">
     <h2>2. Honesty Doctrine</h2>
-    <p>Honesty is encoded through transparent rules, consistent vesting for all locked categories, and public reporting. We prioritize clarity over hype and commit to irreversible constraints when they increase user trust.</p>
+    <p>Transparency, irreversibility, equal vesting, trust through rules not promises.</p>
   </section>
 
+  <!-- 3 -->
   <section id="ch3">
     <h2>3. Equality of Time</h2>
-    <p>Time is the only universal unit. All accounting and rewards derive from time. Equal categories share the same vesting rules; voting weight maps to the same unit across the system.</p>
+    <p>All categories share equal rules of vesting; differentiation is public and predefined.</p>
   </section>
 
+  <!-- 4 -->
   <section id="ch4-axioms">
     <h2>4. Time Axioms</h2>
     <ul>
-      <li><strong>Time cannot be stopped</strong> → No arbitrary pauses of vesting or distributions.</li>
-      <li><strong>Time cannot be reversed</strong> → No rollbacks or retroactive changes to finalized allocations.</li>
-      <li><strong>Time cannot be cheated</strong> → Anti-sybil, immutable rules, audits, on-chain verifiability.</li>
+      <li>Time cannot be stopped.</li>
+      <li>Time cannot be reversed.</li>
+      <li>Time cannot be cheated.</li>
     </ul>
   </section>
 
+  <!-- 5 -->
   <section id="ch5-stages">
-    <h2>5. Stages of Time (levels & bonuses)</h2>
+    <h2>5. Stages of Time</h2>
     <table class="table">
-      <thead><tr><th>Stage</th><th>Threshold</th><th>Bonus</th><th>Notes</th></tr></thead>
+      <thead><tr><th>Stage</th><th>Threshold</th><th>Bonus</th></tr></thead>
       <tbody>
-        <tr><td>Sun</td><td>Free</td><td>0%</td><td>Entry</td></tr>
-        <tr><td>Hourglass</td><td>$300</td><td>0%</td><td>No bonus</td></tr>
-        <tr><td>Mechanic</td><td>$1,000</td><td>2.5%</td><td>Presale only</td></tr>
-        <tr><td>Quartz</td><td>$5,000</td><td>5%</td><td>Presale only</td></tr>
-        <tr><td>Tourbillon</td><td>$10,000</td><td>10%</td><td>Governance</td></tr>
-        <tr><td>Atomic</td><td>$25,000</td><td>20%</td><td>Premium gift, governance</td></tr>
-        <tr><td>Quantum</td><td>$50,000</td><td>30%</td><td>Top gifts, governance; max $50k per wallet</td></tr>
+        <tr><td>Sun</td><td>Free</td><td>0%</td></tr>
+        <tr><td>Hourglass</td><td>$300</td><td>0%</td></tr>
+        <tr><td>Mechanic</td><td>$1,000</td><td>2.5%</td></tr>
+        <tr><td>Quartz</td><td>$5,000</td><td>5%</td></tr>
+        <tr><td>Tourbillon</td><td>$10,000</td><td>10%</td></tr>
+        <tr><td>Atomic</td><td>$25,000</td><td>20%</td></tr>
+        <tr><td>Quantum</td><td>$50,000</td><td>30%</td></tr>
       </tbody>
     </table>
-    <p class="muted small">Levels are assigned during presale only; after presale they cannot be gained or lost regardless of subsequent holdings.</p>
+    <p>Levels only during presale; gifts for Atomic & Quantum; governance rights for Tourbillon+.</p>
   </section>
 
+  <!-- 6 -->
   <section id="ch6-mechanics">
     <h2>6. Contract Mechanics</h2>
-    <ul>
-      <li><strong>V1:</strong> TIKP + Distributor for airdrop/bonus accounting; minimal surface.</li>
-      <li><strong>V1.5:</strong> Telegram bot: onboarding, proofs, payouts, notifications.</li>
-      <li><strong>V2:</strong> Immutable TIK; audit; DEX readiness.</li>
-      <li><strong>V3:</strong> Integrations and first CEX listing.</li>
-      <li><strong>V4–V6:</strong> Collaborations, NFT roles/utility, Quantum Clock.</li>
-    </ul>
+    <p>Step-by-step evolution: V1 minimal contract → V6 quantum mechanics. Security: audits, timelocks, no bridges.</p>
   </section>
 
+  <!-- 7 -->
   <section id="ch7-presale">
     <h2>7. Presale</h2>
-    <ul>
-      <li>Price: <strong>$0.01</strong> per TIK.</li>
-      <li>Cap per wallet: <strong>$50,000</strong>.</li>
-      <li>No extensions. Listing occurs on the <strong>8th day</strong> after closure (date not pre-announced).</li>
-      <li>Levels determined strictly during presale.</li>
-    </ul>
+    <p>Price $0.01. Ends without extension. Listing on 8th day. Max $50k/wallet. Funds split 85/15.</p>
   </section>
 
+  <!-- 8 -->
   <section id="ch8-bonuses">
     <h2>8. Presale Bonuses</h2>
-    <p>Bonuses are paid only from the <strong>Airdrop</strong> allocation; never sold. Final bonus % is computed at presale end based on contributed amount and level reached.</p>
-    <ul>
-      <li>Mechanic 2.5% • Quartz 5% • Tourbillon 10% • Atomic 20% • Quantum 30%</li>
-    </ul>
+    <p>Bonuses only from Airdrop pool: Mechanic 2.5%, Quartz 5%, Tourbillon 10%, Atomic 20%, Quantum 30%.</p>
   </section>
 
+  <!-- 9 -->
   <section id="ch9-airdrop">
-    <h2>9. Airdrop (time → tokens)</h2>
-    <p>Community tasks and contributions convert time to tokens at 1:1 logic (within program limits). Rewards are paid exclusively from the Airdrop pool and never sold by the project.</p>
+    <h2>9. Airdrop</h2>
+    <p>Rewards time spent: memes, hashtags, translations, integrations. 20% reserved, never sold.</p>
   </section>
 
+  <!-- 10 -->
   <section id="ch10-vesting">
     <h2>10. Vesting & Lockups</h2>
-    <ul>
-      <li>Unified vesting logic for all locked categories to preserve equality.</li>
-      <li>Founder unlocks <strong>12 months after the global unlock</strong>.</li>
-      <li>On-chain timelocks; no “backdoors” or privileged bypasses.</li>
-    </ul>
+    <p>Unified across categories. Founder unlocks 12 months later. Timelocks ensure fairness.</p>
   </section>
 
+  <!-- 11 -->
   <section id="ch11-vote">
     <h2>11. Governance & Voting</h2>
-    <p>Voting rights: <strong>Tourbillon</strong>, <strong>Atomic</strong>, <strong>Quantum</strong>. Topics: lock periods, roadmap priorities, integrations. One unit of time maps to one unit of voting weight.</p>
+    <p>Tourbillon, Atomic, Quantum vote. Topics: locks, roadmap, integrations. One time = one unit weight.</p>
   </section>
 
+  <!-- 12 -->
   <section id="ch12-utility">
     <h2>12. Utility</h2>
-    <ul>
-      <li>Telegram bot for onboarding, proofs, payouts, and status.</li>
-      <li>NFT roles, partner access, and future merchant integrations.</li>
-    </ul>
+    <p>Telegram bot, NFT roles, partner pilots, developer docs.</p>
   </section>
 
+  <!-- 13 -->
   <section id="ch13-symbols">
     <h2>13. Symbolism & Golden Age</h2>
-    <p>Seven stages (Sun → Hourglass → Mechanic → Quartz → Tourbillon → Atomic → Quantum) form our visual language and educational path. “Golden Age” names our tokenized century.</p>
+    <p>Sun → Hourglass → Mechanic → Quartz → Tourbillon → Atomic → Quantum. One century = Golden Age.</p>
   </section>
 
+  <!-- 14 -->
   <section id="ch14-comms">
     <h2>14. Communications</h2>
-    <p>Wave-based releases (no fixed public dates), periodic reports, and transparent KPIs for community growth, development progress, and treasury usage (85/15 split from presale respected).</p>
+    <p>Waves (not fixed dates). Reports of treasury 85/15, audits, airdrop stats. Channels: website, bot, X/Twitter.</p>
   </section>
 
-  <section id="ch15-risk">
-    <h2>15. Risks & Disclaimer</h2>
-    <p>Markets are volatile; technical and regulatory landscapes change. This document is not financial advice. Users must perform their own due diligence and comply with local laws.</p>
+  <!-- 15 -->
+  <section id="ch15-trust">
+    <h2>15. Trust & Community</h2>
+    <p>Trust operationalized. Rules public. Earlier belief rewarded. Governance rights for top levels. No hidden mints, no backdoors.</p>
   </section>
 
+  <!-- OUTRO -->
   <section id="outro">
     <h2>Conclusion</h2>
-    <p>Time is the only universal unit. TIKCOIN encodes time, rewards contribution, and compounds honesty into long-term value. We cannot stop time — but together we can tokenize it.</p>
+    <p>Time is the only universal unit. By encoding honesty and equality into code, TIKCOIN aligns time, effort and value. We cannot stop time — but together, we can tokenize it.</p>
+  </section>
+
+  <!-- APPENDIX -->
+  <section id="app-risk">
+    <h2>Appendix A — Risks & Disclaimer</h2>
+    <p>Markets are volatile, regulations evolve. This is not financial advice. Do your own research.</p>
   </section>
 </main>
 
-<footer class="footer">© TIKCOIN</footer>
+<footer class="footer">
+  © 2025 TIKCOIN — #TimeTokenized
+</footer>
 </body>
 </html>
