@@ -1,129 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TIKCOIN • We Tokenized Time</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="TIKCOIN — We cannot stop time, but we can tokenize it. 1 TIK = 1 second. Total 3,155,760,000 TIK (100 years).">
 </head>
 <body>
 
   <!-- HERO -->
   <header class="hero">
-    <h1>We cannot stop time — but we can tokenize it.</h1>
-    <p>1 TIK = 1 second • Total supply: 3,155,760,000 TIK (100 years)</p>
+    <div class="hero__wrap">
+      <h1 class="hero__title">We cannot stop time — but we can tokenize it.</h1>
+      <p class="hero__subtitle">1 TIK = 1 second • Total: 3,155,760,000 TIK (100 years)</p>
+    </div>
   </header>
 
   <!-- NAV -->
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#time-tree">Tree</a></li>
+  <nav class="nav">
+    <ul class="nav__list">
+      <li><a href="#tree">Tree</a></li>
       <li><a href="/whitepaper_en.html">WhitePaper</a></li>
       <li><a href="#community">Community</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- TIME TREE -->
-  <section id="time-tree" aria-labelledby="time-tree-title">
-    <h2 id="time-tree-title">Interactive Time Tree</h2>
-    <p class="tree-lead">Tap any node to jump to the matching WhitePaper section.</p>
+  <!-- MINIMAL TIME TREE -->
+  <section id="tree" class="tree" aria-labelledby="tree-title">
+    <h2 id="tree-title" class="tree__title">Interactive Time Tree</h2>
+    <p class="tree__lead">Tap any node to open the matching section in the WhitePaper.</p>
 
-    <div class="tree-grid">
-      <!-- Center -->
-      <a class="tree-node tree-node--center" href="/whitepaper_en.html#ch0">
-        <span class="tree-tag">TIKCOIN</span>
+    <div class="tree-min">
+      <!-- Center: TIKCOIN → Roadmap -->
+      <a class="node node--center" href="/whitepaper_en.html#ch0" aria-label="Roadmap (V1…V6)">
+        <span class="node__brand">TIKCOIN</span>
         <strong>Roadmap</strong>
         <small>V1 → V6</small>
       </a>
 
       <!-- TIME -->
-      <a class="tree-node" href="/whitepaper_en.html#ch4-axioms">
-        <span class="tree-tag">TIME</span>
-        <strong>Time Axioms</strong>
-        <small>Stop / Reverse / Cheat</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch5-stages">
-        <span class="tree-tag">TIME</span>
-        <strong>Stages</strong>
-        <small>Sun → Quantum</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch6-mechanics">
-        <span class="tree-tag">TIME</span>
-        <strong>Mechanics</strong>
-        <small>V1, V1.5, V2…</small>
+      <a class="node node--time" href="/whitepaper_en.html#ch3" aria-label="Time">
+        <span class="node__tag">TIME</span>
+        <strong>Time</strong>
+        <small>Equality of Time</small>
       </a>
 
       <!-- HONESTY -->
-      <a class="tree-node" href="/whitepaper_en.html#ch2">
-        <span class="tree-tag">HONESTY</span>
-        <strong>Doctrine</strong>
-        <small>Immutable rules</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch1-tokenomics">
-        <span class="tree-tag">HONESTY</span>
-        <strong>Tokenomics</strong>
-        <small>3,155,760,000 TIK</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch7-presale">
-        <span class="tree-tag">HONESTY</span>
-        <strong>Presale</strong>
-        <small>$0.01 • 85/15</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch8-bonuses">
-        <span class="tree-tag">HONESTY</span>
-        <strong>Bonuses</strong>
-        <small>2.5% → 30%</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch9-airdrop">
-        <span class="tree-tag">HONESTY</span>
-        <strong>Airdrop</strong>
-        <small>time → tokens</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch10-vesting">
-        <span class="tree-tag">HONESTY</span>
-        <strong>Vesting</strong>
-        <small>Equal rules</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch11-vote">
-        <span class="tree-tag">HONESTY</span>
-        <strong>Governance</strong>
-        <small>Tourbillon/Atomic/Quantum</small>
+      <a class="node node--honesty" href="/whitepaper_en.html#ch2" aria-label="Honesty">
+        <span class="node__tag">HONESTY</span>
+        <strong>Honesty</strong>
+        <small>Doctrine & Rules</small>
       </a>
 
       <!-- PHILOSOPHY -->
-      <a class="tree-node" href="/whitepaper_en.html#ch12-utility">
-        <span class="tree-tag">PHILOSOPHY</span>
-        <strong>Utility & Bot</strong>
-        <small>Telegram automation</small>
-      </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch13-symbols">
-        <span class="tree-tag">PHILOSOPHY</span>
-        <strong>Symbolism</strong>
+      <a class="node node--philosophy" href="/whitepaper_en.html#ch13-symbols" aria-label="Philosophy">
+        <span class="node__tag">PHILOSOPHY</span>
+        <strong>Philosophy</strong>
         <small>Golden Age</small>
       </a>
-      <a class="tree-node" href="/whitepaper_en.html#ch14-comms">
-        <span class="tree-tag">PHILOSOPHY</span>
-        <strong>Comms</strong>
-        <small>No fixed dates</small>
-      </a>
 
-      <!-- END -->
-      <a class="tree-node tree-node--alt" href="/whitepaper_en.html#outro">
-        <span class="tree-tag">END</span>
-        <strong>Conclusion</strong>
-        <small>Everything begins & ends in time</small>
-      </a>
-      <a class="tree-node tree-node--alt" href="/whitepaper_en.html#app-risk">
-        <span class="tree-tag">APPENDIX</span>
-        <strong>Risks</strong>
-        <small>DYOR</small>
-      </a>
+      <!-- connectors (CSS draws lines) -->
+      <div class="link link--time" aria-hidden="true"></div>
+      <div class="link link--honesty" aria-hidden="true"></div>
+      <div class="link link--philosophy" aria-hidden="true"></div>
     </div>
   </section>
 
+  <!-- COMMUNITY (placeholder) -->
+  <section id="community" class="block">
+    <h3>Community</h3>
+    <p>Join our Telegram to contribute time, ideas and memes.</p>
+  </section>
+
   <!-- FOOTER -->
-  <footer id="contact">
+  <footer id="contact" class="footer">
     <p>© 2025 TIKCOIN • #TimeTokenized</p>
   </footer>
 
