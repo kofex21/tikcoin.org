@@ -27,34 +27,37 @@
     </ul>
   </nav>
 
-  <!-- TIME TREE (4 nodes) -->
+  <!-- TIME TREE (Center big + bottom row) -->
   <section id="tree" class="tree" aria-label="TIKCOIN Tree">
-    <div class="tree-min">
+    <div class="tree-stage">
 
-      <!-- TIKCOIN (center/top) → Roadmap -->
-      <a class="node node--center" href="whitepaper.html#roadmap" aria-label="Roadmap">
-        <div class="node__content"><div class="node__brand">TIKCOIN</div></div>
+      <!-- CENTER: BIG TIKCOIN (logo + fallback text) -->
+      <a class="hub" href="whitepaper.html#roadmap" aria-label="Roadmap">
+        <div class="hub__ring"></div>
+        <div class="hub__inner">
+          <!-- Поменяй путь, если у тебя другой; если картинки нет, текст TIKCOIN будет виден -->
+          <img class="hub__logo" src="assets/tikcoin-logo.svg" alt="TIKCOIN" onerror="this.style.display='none'">
+          <div class="hub__brand">TIKCOIN</div>
+        </div>
       </a>
 
-      <!-- TIME -->
-      <a class="node node--time" href="whitepaper.html#time" aria-label="Time">
-        <div class="node__content"><div class="node__label">TIME</div></div>
-      </a>
-
-      <!-- HONESTY -->
-      <a class="node node--honesty" href="whitepaper.html#honesty" aria-label="Honesty">
-        <div class="node__content"><div class="node__label">HONESTY</div></div>
-      </a>
-
-      <!-- PHILOSOPHY -->
-      <a class="node node--philosophy" href="whitepaper.html#philosophy" aria-label="Philosophy">
-        <div class="node__content"><div class="node__label">PHILOSOPHY</div></div>
-      </a>
+      <!-- BOTTOM ROW (3 nodes) -->
+      <div class="row">
+        <a class="card card--time" href="whitepaper.html#time" aria-label="Time">
+          <div class="card__content">TIME</div>
+        </a>
+        <a class="card card--honesty" href="whitepaper.html#honesty" aria-label="Honesty">
+          <div class="card__content">HONESTY</div>
+        </a>
+        <a class="card card--philosophy" href="whitepaper.html#philosophy" aria-label="Philosophy">
+          <div class="card__content">PHILOSOPHY</div>
+        </a>
+      </div>
 
       <!-- connectors -->
-      <div class="link link--time" aria-hidden="true"></div>
-      <div class="link link--honesty" aria-hidden="true"></div>
-      <div class="link link--philosophy" aria-hidden="true"></div>
+      <div class="stem stem--time" aria-hidden="true"></div>
+      <div class="stem stem--honesty" aria-hidden="true"></div>
+      <div class="stem stem--philosophy" aria-hidden="true"></div>
     </div>
   </section>
 
