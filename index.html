@@ -21,63 +21,77 @@
   <nav class="nav">
     <ul class="nav__list">
       <li><a href="#tree">Tree</a></li>
-      <li><a href="/whitepaper_en.html">WhitePaper</a></li>
-      <li><a href="#community">Community</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="./whitepaper_en.html">WhitePaper</a></li>
+      <li><a href="#message">Message</a></li>
+      <li><a href="#contacts">Contacts</a></li>
     </ul>
   </nav>
 
-  <!-- MINIMAL TIME TREE -->
-  <section id="tree" class="tree" aria-labelledby="tree-title">
-    <h2 id="tree-title" class="tree__title">Interactive Time Tree</h2>
-    <p class="tree__lead">Tap any node to open the matching section in the WhitePaper.</p>
-
+  <!-- MINIMAL TIME TREE (4 nodes) -->
+  <section id="tree" class="tree" aria-label="Interactive Time Tree">
     <div class="tree-min">
-      <!-- Center: TIKCOIN → Roadmap -->
-      <a class="node node--center" href="/whitepaper_en.html#ch0" aria-label="Roadmap (V1…V6)">
+      <!-- Center/top: TIKCOIN → Roadmap -->
+      <a class="node node--center" href="./whitepaper_en.html#ch0" aria-label="Roadmap (V1…V6)">
         <span class="node__brand">TIKCOIN</span>
-        <strong>Roadmap</strong>
-        <small>V1 → V6</small>
       </a>
 
       <!-- TIME -->
-      <a class="node node--time" href="/whitepaper_en.html#ch3" aria-label="Time">
-        <span class="node__tag">TIME</span>
+      <a class="node node--time" href="./whitepaper_en.html#ch3" aria-label="Time">
         <strong>Time</strong>
-        <small>Equality of Time</small>
       </a>
 
       <!-- HONESTY -->
-      <a class="node node--honesty" href="/whitepaper_en.html#ch2" aria-label="Honesty">
-        <span class="node__tag">HONESTY</span>
+      <a class="node node--honesty" href="./whitepaper_en.html#ch2" aria-label="Honesty">
         <strong>Honesty</strong>
-        <small>Doctrine & Rules</small>
       </a>
 
       <!-- PHILOSOPHY -->
-      <a class="node node--philosophy" href="/whitepaper_en.html#ch13-symbols" aria-label="Philosophy">
-        <span class="node__tag">PHILOSOPHY</span>
+      <a class="node node--philosophy" href="./whitepaper_en.html#ch13-symbols" aria-label="Philosophy">
         <strong>Philosophy</strong>
-        <small>Golden Age</small>
       </a>
 
-      <!-- connectors (CSS draws lines) -->
+      <!-- connectors -->
       <div class="link link--time" aria-hidden="true"></div>
       <div class="link link--honesty" aria-hidden="true"></div>
       <div class="link link--philosophy" aria-hidden="true"></div>
     </div>
   </section>
 
-  <!-- COMMUNITY (placeholder) -->
-  <section id="community" class="block">
-    <h3>Community</h3>
-    <p>Join our Telegram to contribute time, ideas and memes.</p>
+  <!-- MESSAGE: Telegram + Email -->
+  <section id="message" class="block">
+    <h3>Message</h3>
+    <p class="muted">Join our Telegram or leave your email — we’ll get back to you.</p>
+    <div class="msg">
+      <a class="btn btn--tg" href="https://t.me/tikcoin" target="_blank" rel="noopener">Join Telegram</a>
+
+      <form class="msg__form" onsubmit="return sendEmail(this);">
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts" class="block">
+    <h3>Contacts</h3>
+    <p class="muted">Official channels will be published in the WhitePaper and on Telegram.</p>
   </section>
 
   <!-- FOOTER -->
-  <footer id="contact" class="footer">
+  <footer class="footer">
     <p>© 2025 TIKCOIN • #TimeTokenized</p>
   </footer>
 
+  <!-- minimal JS for mailto: -->
+  <script>
+    function sendEmail(form){
+      const to = 'contact@tikcoin.org'; // change if needed
+      const email = form.email.value.trim();
+      const subject = encodeURIComponent('Subscribe / Contact');
+      const body = encodeURIComponent('My email: ' + email);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
 </body>
 </html>
