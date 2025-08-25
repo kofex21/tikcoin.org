@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TIKCOIN — WhitePaper</title>
-  <meta name="description" content="TIKCOIN WhitePaper: time as the only universal unit; tokenomics, roadmap, governance, airdrop, philosophy and community trust." />
-  <link rel="stylesheet" href="/styles.css?v=8" />
+  <meta name="description" content="TIKCOIN: time as the only universal unit. Full tokenomics, roadmap, governance, airdrop, bonuses, philosophy, and community trust." />
+  <link rel="stylesheet" href="/styles.css?v=9" />
 </head>
 <body>
 <header class="topbar">
@@ -19,15 +19,15 @@
 <main class="container">
   <h1>TIKCOIN — WhitePaper</h1>
 
-  <!-- INTRO -->
+  <!-- INTRODUCTION -->
   <section id="intro">
     <h2>Introduction</h2>
-    <p><strong>Slogan:</strong> “We cannot stop time — but we can tokenize it.” Time is the only universal unit. TIKCOIN encodes time into a transparent, irreversible set of rules where effort and honesty compound into lasting value.</p>
+    <p><strong>Slogan:</strong> “We cannot stop time — but we can tokenize it.” Time is the only universal unit. TIKCOIN encodes time into transparent, irreversible rules where effort and honesty compound into lasting value.</p>
     <ul>
       <li><strong>Unit:</strong> 1 TIK = 1 second.</li>
-      <li><strong>Total Supply:</strong> 3,155,760,000 TIK (exactly one century of seconds).</li>
-      <li><strong>Vision:</strong> Tokenize a century (“Golden Age”) and align incentives so that time, effort and honesty remain the core of value creation.</li>
-      <li><strong>Design Principles:</strong> Irreversibility, Equality of rules, Verifiability, Minimal attack surface.</li>
+      <li><strong>Total Supply:</strong> <strong>3,155,760,000 TIK</strong> — exactly one century of seconds (“Golden Age”).</li>
+      <li><strong>Core Principles:</strong> Irreversibility (no rollbacks), Equality of rules (same vesting across locked buckets), Verifiability (on-chain proofs), Minimal surface (no backdoors, no bridges).</li>
+      <li><strong>Design Goal:</strong> Make time the base layer for distribution, governance and utility so that earlier conviction and greater contribution are recognized within clear, public limits — без ручного управления и «серых зон».</li>
     </ul>
   </section>
 
@@ -35,19 +35,19 @@
   <nav id="toc" class="toc">
     <h3>Table of Contents</h3>
     <ol>
-      <li><a href="#ch0">0. Roadmap</a></li>
+      <li><a href="#ch0">0. Roadmap (V1…V6)</a></li>
       <li><a href="#ch1-tokenomics">1. Tokenomics</a></li>
       <li><a href="#ch2">2. Honesty Doctrine</a></li>
       <li><a href="#ch3">3. Equality of Time</a></li>
       <li><a href="#ch4-axioms">4. Time Axioms</a></li>
-      <li><a href="#ch5-stages">5. Stages (Sun → Quantum)</a></li>
+      <li><a href="#ch5-stages">5. Stages of Time (Sun → Quantum)</a></li>
       <li><a href="#ch6-mechanics">6. Contract Mechanics</a></li>
       <li><a href="#ch7-presale">7. Presale</a></li>
       <li><a href="#ch8-bonuses">8. Presale Bonuses</a></li>
-      <li><a href="#ch9-airdrop">9. Airdrop</a></li>
+      <li><a href="#ch9-airdrop">9. Airdrop (time → tokens)</a></li>
       <li><a href="#ch10-vesting">10. Vesting & Lockups</a></li>
       <li><a href="#ch11-vote">11. Governance & Voting</a></li>
-      <li><a href="#ch12-utility">12. Utility</a></li>
+      <li><a href="#ch12-utility">12. Utility & Telegram Bot</a></li>
       <li><a href="#ch13-symbols">13. Symbolism & Golden Age</a></li>
       <li><a href="#ch14-comms">14. Communications (Waves)</a></li>
       <li><a href="#ch15-trust">15. Trust & Community</a></li>
@@ -56,150 +56,202 @@
     </ol>
   </nav>
 
-  <!-- 0 -->
+  <!-- 0. ROADMAP -->
   <section id="ch0">
-    <h2>0. Roadmap</h2>
+    <h2>0. Roadmap (product evolution)</h2>
     <ol>
-      <li><strong>V1:</strong> Minimal contract (TIKP + Distributor), secure baseline.</li>
-      <li><strong>V1.5:</strong> Telegram bot (onboarding, tasks, payouts).</li>
-      <li><strong>V2:</strong> Immutable TIK, audit, DEX listing.</li>
-      <li><strong>V3:</strong> Integrations, first CEX listing.</li>
-      <li><strong>V4:</strong> Wider CEX listings, collaborations.</li>
-      <li><strong>V5:</strong> NFT roles, merchant pilots.</li>
-      <li><strong>V6:</strong> “Quantum Clock” long-term mechanics.</li>
+      <li id="ch0-1"><strong>0.1 — Version 1:</strong> Minimal TIKP + Distributor для аирдропа/бонусов. Никаких мостов, бэкдоров, “админ-пауз”. Контур безопасности: строго ограниченные роли, timelocks.</li>
+      <li id="ch0-2"><strong>0.2 — Version 1.5:</strong> Telegram-бот: онбординг, задания/префы, доказательства вклада, выплаты из Airdrop, публичная статистика и логи.</li>
+      <li id="ch0-3"><strong>0.3 — Version 2:</strong> Immutable TIK; внешний аудит; подготовка и запуск на DEX; финализация неизменяемых правил токена.</li>
+      <li id="ch0-4"><strong>0.4 — Version 3:</strong> Интеграции и первый CEX-листинг. Операционная дисциплина: отчёты 85/15, мониторинг ликвидности, соблюдение вестингов.</li>
+      <li id="ch0-5"><strong>0.5 — Version 4:</strong> Доп. CEX-листинги, партнёрства, коллаборации (без кастодиальных мостов), расширение покрытия.</li>
+      <li id="ch0-6"><strong>0.6 — Version 5:</strong> NFT-роли/доступ, пилоты с мерчантами, расширенные модули бота, кейсы утилиты.</li>
+      <li id="ch0-7"><strong>0.7 — Version 6:</strong> “Quantum Clock” — долгосрочные механики на базе времени и честности (компаундинг доверия и участия).</li>
     </ol>
   </section>
 
-  <!-- 1 -->
+  <!-- 1. TOKENOMICS -->
   <section id="ch1-tokenomics">
     <h2>1. Tokenomics</h2>
-    <p>Total: 3,155,760,000 TIK.</p>
+    <p><strong>Total supply:</strong> 3,155,760,000 TIK (1 TIK = 1 second).</p>
     <ul>
-      <li>35% — Presale ($0.01 each).</li>
-      <li>20% — Airdrop.</li>
-      <li>20% — Reserve.</li>
-      <li>10% — Marketing.</li>
-      <li>10% — Founder (locked 12 months after global unlock).</li>
-      <li>5% — Team/Operations.</li>
+      <li><strong>35%</strong> — <strong>Presale</strong> (price <strong>$0.01</strong> per TIK). Уровни присваиваются только на пресейле.</li>
+      <li><strong>20%</strong> — <strong>Airdrop</strong> (включая выплаты пресейл-бонусов; не продаётся проектом).</li>
+      <li><strong>20%</strong> — <strong>Liquidity (LP)</strong> — токены под ликвидность, <strong>жёстко залоченные</strong> на DEX. Это не «резерв».</li>
+      <li><strong>15%</strong> — <strong>Marketing (future, locked)</strong> — будущий маркетинг; включает ранее выделяемые 5% «Team» (командного пула нет).</li>
+      <li><strong>10%</strong> — <strong>Founder</strong> — разлочка через <strong>12 месяцев после глобальной разлочки</strong>.</li>
     </ul>
-    <p>Presale funds: 85% liquidity, 15% development (audits, infra).</p>
+    <p><strong>Use of presale funds (currency split):</strong> <strong>85%</strong> → ликвидность, <strong>15%</strong> → развитие (аудиты, контракт, инфраструктура). Принцип равенства: единая логика вестинга для всех заблокированных категорий.</p>
+    <p><strong>Equality clause:</strong> одинаковые правила вестинга/таймлоков для всех заблокированных корзин; никаких скрытых привилегий или «ручных» исключений.</p>
   </section>
 
-  <!-- 2 -->
+  <!-- 2. HONESTY -->
   <section id="ch2">
     <h2>2. Honesty Doctrine</h2>
-    <p>Transparency, irreversibility, equal vesting, trust through rules not promises.</p>
+    <ul>
+      <li><strong>Правила важнее обещаний:</strong> все критичные параметры публичны и совпадают с кодом.</li>
+      <li><strong>Необратимость:</strong> никаких откатов распределений и «передумали»; финальные состояния не переписываются.</li>
+      <li><strong>Единство правил:</strong> единый вестинг для всех заблокированных категорий — это фундамент доверия.</li>
+      <li><strong>Принцип доверия:</strong> кто раньше поверил и вложил больше, тот получает большее признание в объявленных границах (уровни/бонусы), не нарушая равенства правил.</li>
+      <li><strong>Безопасность:</strong> внешние аудиты, наименьшие привилегии, timelocks; никаких апгрейд-бэкдоров, ломающих обещания.</li>
+    </ul>
   </section>
 
-  <!-- 3 -->
+  <!-- 3. EQUALITY -->
   <section id="ch3">
     <h2>3. Equality of Time</h2>
-    <p>All categories share equal rules of vesting; differentiation is public and predefined.</p>
+    <p>Время — единственная универсальная мера. Учёт, награды и пороги управления выводятся из времени. Там, где дифференциация допустима (уровни пресейла), она заранее и публично определена, а правила вестинга для заблокированных категорий — одинаковые.</p>
   </section>
 
-  <!-- 4 -->
+  <!-- 4. AXIOMS -->
   <section id="ch4-axioms">
     <h2>4. Time Axioms</h2>
     <ul>
-      <li>Time cannot be stopped.</li>
-      <li>Time cannot be reversed.</li>
-      <li>Time cannot be cheated.</li>
+      <li><strong>Время нельзя остановить</strong> → никаких пауз в вестинге/распределениях по чьей-то воле.</li>
+      <li><strong>Время нельзя вернуть</strong> → никакого «ревёрса» финальных состояний и перераздач.</li>
+      <li><strong>Время нельзя обмануть</strong> → анти-сибил, он-чейн доказуемость, аудит правил.</li>
     </ul>
   </section>
 
-  <!-- 5 -->
+  <!-- 5. STAGES -->
   <section id="ch5-stages">
-    <h2>5. Stages of Time</h2>
+    <h2>5. Stages of Time (levels & bonuses)</h2>
+    <p>Уровни фиксируются исключительно на пресейле и не могут быть получены или потеряны после его завершения. Бонусы платятся только из пула Airdrop и не продаются проектом.</p>
     <table class="table">
-      <thead><tr><th>Stage</th><th>Threshold</th><th>Bonus</th></tr></thead>
+      <thead><tr><th>Stage</th><th>Threshold (USD)</th><th>Bonus</th><th>Rights & Notes</th></tr></thead>
       <tbody>
-        <tr><td>Sun</td><td>Free</td><td>0%</td></tr>
-        <tr><td>Hourglass</td><td>$300</td><td>0%</td></tr>
-        <tr><td>Mechanic</td><td>$1,000</td><td>2.5%</td></tr>
-        <tr><td>Quartz</td><td>$5,000</td><td>5%</td></tr>
-        <tr><td>Tourbillon</td><td>$10,000</td><td>10%</td></tr>
-        <tr><td>Atomic</td><td>$25,000</td><td>20%</td></tr>
-        <tr><td>Quantum</td><td>$50,000</td><td>30%</td></tr>
+        <tr><td>Sun</td><td>Free</td><td>0%</td><td>Вход уровня</td></tr>
+        <tr><td>Hourglass</td><td>$300</td><td>0%</td><td>Без бонуса</td></tr>
+        <tr><td>Mechanic</td><td>$1,000</td><td>2.5%</td><td>Только на пресейле</td></tr>
+        <tr><td>Quartz</td><td>$5,000</td><td>5%</td><td>Только на пресейле</td></tr>
+        <tr><td>Tourbillon</td><td>$10,000</td><td>10%</td><td><strong>Governance</strong></td></tr>
+        <tr><td>Atomic</td><td>$25,000</td><td>20%</td><td>Premium gifts; <strong>Governance</strong></td></tr>
+        <tr><td>Quantum</td><td>$50,000</td><td>30%</td><td>Top gifts; <strong>Governance</strong>; <strong>max $50k per wallet</strong></td></tr>
       </tbody>
     </table>
-    <p>Levels only during presale; gifts for Atomic & Quantum; governance rights for Tourbillon+.</p>
+    <p class="muted small">Принцип доверия: кто раньше и больше вложил, получает выше признание в рамках правил; равенство — в одинаковых вестингах заблокированных пулов.</p>
   </section>
 
-  <!-- 6 -->
+  <!-- 6. MECHANICS -->
   <section id="ch6-mechanics">
     <h2>6. Contract Mechanics</h2>
-    <p>Step-by-step evolution: V1 minimal contract → V6 quantum mechanics. Security: audits, timelocks, no bridges.</p>
+    <ul>
+      <li><strong>V1:</strong> TIKP + Distributor: минимальный периметр, учёт аирдропа/бонусов, без мостов.</li>
+      <li><strong>V1.5:</strong> Telegram-бот: задачи, пруфы, выплаты, уведомления, публичные логи.</li>
+      <li><strong>V2:</strong> Immutable TIK; внешний аудит; запуск на DEX; защита инвариантов.</li>
+      <li><strong>V3:</strong> Интеграции для первого CEX; мониторинг, отчётность, дисциплина 85/15.</li>
+      <li><strong>V4–V6:</strong> NFT-утилита, роли/доступ, «Quantum Clock», коллаборации.</li>
+      <li><strong>Security:</strong> наименьшие привилегии, timelocks, отсутствие апгрейдов, нарушающих коммитменты.</li>
+    </ul>
   </section>
 
-  <!-- 7 -->
+  <!-- 7. PRESALE -->
   <section id="ch7-presale">
     <h2>7. Presale</h2>
-    <p>Price $0.01. Ends without extension. Listing on 8th day. Max $50k/wallet. Funds split 85/15.</p>
+    <ul>
+      <li><strong>Price:</strong> $0.01 per TIK.</li>
+      <li><strong>Cap:</strong> max $50,000 per wallet.</li>
+      <li><strong>Finality:</strong> без продлений; листинг на <strong>8-й день</strong> после закрытия (конкретная дата не анонсируется заранее).</li>
+      <li><strong>Levels:</strong> присваиваются строго во время пресейла и после завершения не меняются.</li>
+      <li><strong>Funds split (currency):</strong> 85% ликвидность / 15% развитие.</li>
+    </ul>
   </section>
 
-  <!-- 8 -->
+  <!-- 8. BONUSES -->
   <section id="ch8-bonuses">
     <h2>8. Presale Bonuses</h2>
-    <p>Bonuses only from Airdrop pool: Mechanic 2.5%, Quartz 5%, Tourbillon 10%, Atomic 20%, Quantum 30%.</p>
+    <p>Бонусы считаются по достигнутому уровню на момент закрытия пресейла и выплачиваются <strong>только</strong> из пула <strong>Airdrop</strong>:</p>
+    <ul>
+      <li>Mechanic 2.5% • Quartz 5% • Tourbillon 10% • Atomic 20% • Quantum 30%</li>
+    </ul>
+    <p>Gifts: <strong>Atomic</strong> — premium gifts; <strong>Quantum</strong> — top-tier gifts.</p>
   </section>
 
-  <!-- 9 -->
+  <!-- 9. AIRDROP -->
   <section id="ch9-airdrop">
-    <h2>9. Airdrop</h2>
-    <p>Rewards time spent: memes, hashtags, translations, integrations. 20% reserved, never sold.</p>
+    <h2>9. Airdrop (time → tokens)</h2>
+    <ul>
+      <li><strong>Принцип:</strong> затраченное время на значимые задачи конвертируется в токены (логика 1:1 в пределах программы).</li>
+      <li><strong>Скоуп:</strong> контент, мемы, хештеги, переводы, интеграции, образование.</li>
+      <li><strong>Источник:</strong> исключительно пул Airdrop; проект не продаёт эти токены.</li>
+      <li><strong>Анти-сибил:</strong> проверки, лидеры, публичные логи в боте.</li>
+    </ul>
   </section>
 
-  <!-- 10 -->
+  <!-- 10. VESTING -->
   <section id="ch10-vesting">
     <h2>10. Vesting & Lockups</h2>
-    <p>Unified across categories. Founder unlocks 12 months later. Timelocks ensure fairness.</p>
+    <ul>
+      <li><strong>Единый вестинг</strong> для всех заблокированных корзин (Liquidity LP tokens, Marketing future, Founder).</li>
+      <li><strong>Founder:</strong> разлочка через <strong>12 месяцев после глобальной разлочки</strong>.</li>
+      <li><strong>Timelocks:</strong> он-чейн таймлоки; без привилегированных обходов и ручных пауз.</li>
+      <li><strong>Необратимость:</strong> расписания после запуска не «стопятся» и не переписываются.</li>
+    </ul>
   </section>
 
-  <!-- 11 -->
+  <!-- 11. GOVERNANCE -->
   <section id="ch11-vote">
     <h2>11. Governance & Voting</h2>
-    <p>Tourbillon, Atomic, Quantum vote. Topics: locks, roadmap, integrations. One time = one unit weight.</p>
+    <ul>
+      <li><strong>Право голоса:</strong> Tourbillon, Atomic, Quantum.</li>
+      <li><strong>Темы:</strong> сроки локов, приоритеты дорожной карты, интеграции, долгосрочные параметры.</li>
+      <li><strong>Вес:</strong> отображение во времени (time-based mapping) для согласования с базовой единицей.</li>
+      <li><strong>Процесс:</strong> анонс через бота → окно обсуждения → срез/снэпшот → голосование (он-чейн/подписанные сообщения).</li>
+    </ul>
   </section>
 
-  <!-- 12 -->
+  <!-- 12. UTILITY -->
   <section id="ch12-utility">
-    <h2>12. Utility</h2>
-    <p>Telegram bot, NFT roles, partner pilots, developer docs.</p>
+    <h2>12. Utility & Telegram Bot</h2>
+    <ul>
+      <li><strong>Бот:</strong> онбординг, задачи, пруфы, выплаты, статусы уровней, публичная статистика.</li>
+      <li><strong>NFT-роли/доступ:</strong> гейты в каналы, партнёрские перки, офф-чейн мероприятия.</li>
+      <li><strong>Merchant pilots:</strong> эксперименты с вознаграждением за время/вовлечённость.</li>
+      <li><strong>Dev-интерфейсы:</strong> понятные API/ABI, чтобы внешние разработчики/аудиторы быстро включались.</li>
+    </ul>
   </section>
 
-  <!-- 13 -->
+  <!-- 13. SYMBOLISM -->
   <section id="ch13-symbols">
     <h2>13. Symbolism & Golden Age</h2>
-    <p>Sun → Hourglass → Mechanic → Quartz → Tourbillon → Atomic → Quantum. One century = Golden Age.</p>
+    <p>Семь стадий (Sun → Hourglass → Mechanic → Quartz → Tourbillon → Atomic → Quantum) — это язык визуального образования и прогресса. «Golden Age» — имя токенизированного века: 100 лет, закодированных в 3,155,760,000 секунд.</p>
   </section>
 
-  <!-- 14 -->
+  <!-- 14. COMMS -->
   <section id="ch14-comms">
-    <h2>14. Communications</h2>
-    <p>Waves (not fixed dates). Reports of treasury 85/15, audits, airdrop stats. Channels: website, bot, X/Twitter.</p>
+    <h2>14. Communications (Waves)</h2>
+    <ul>
+      <li><strong>Waves:</strong> выпуск новостей волнами по факту готовности, без заранее фиксированных дат.</li>
+      <li><strong>Отчётность:</strong> казна (85/15), KPI прогресса, статусы аирдропа, результаты аудитов.</li>
+      <li><strong>Каналы:</strong> сайт, Telegram-бот, X/Twitter — зеркалирование анонсов.</li>
+      <li><strong>Стиль:</strong> сжато, проверяемо, без сенсационщины.</li>
+    </ul>
   </section>
 
-  <!-- 15 -->
+  <!-- 15. TRUST -->
   <section id="ch15-trust">
     <h2>15. Trust & Community</h2>
-    <p>Trust operationalized. Rules public. Earlier belief rewarded. Governance rights for top levels. No hidden mints, no backdoors.</p>
+    <p>Доверие — это механизм, а не обещание. Правила публичны и проверяемы; вестинг единый; апгрейды не могут нарушать коммитменты. Кто поверил раньше и вложил больше, получает большее признание в оговорённых границах (уровни/бонусы), при этом равенство правил защищает поздних участников от произвола.</p>
+    <ul>
+      <li><strong>Recognition:</strong> уровни пресейла (Tourbillon/Atomic/Quantum), gifts и права голоса.</li>
+      <li><strong>Participation:</strong> предложения через бота; публичное обсуждение; прозрачные тайминги.</li>
+      <li><strong>Integrity:</strong> нет скрытого минтинга; токены Airdrop не продаются; нет нераскрытых ключей и обходов.</li>
+    </ul>
   </section>
 
-  <!-- OUTRO -->
+  <!-- CONCLUSION -->
   <section id="outro">
     <h2>Conclusion</h2>
-    <p>Time is the only universal unit. By encoding honesty and equality into code, TIKCOIN aligns time, effort and value. We cannot stop time — but together, we can tokenize it.</p>
+    <p>Time is the only universal unit. By encoding honesty, equality and verifiability into code, TIKCOIN aligns time, effort and value. We cannot stop time — but together, we can tokenize it.</p>
   </section>
 
-  <!-- APPENDIX -->
+  <!-- APPENDIX A -->
   <section id="app-risk">
     <h2>Appendix A — Risks & Disclaimer</h2>
-    <p>Markets are volatile, regulations evolve. This is not financial advice. Do your own research.</p>
+    <p>Рынки волатильны; нормы меняются. Документ не является финансовой рекомендацией. Участники обязаны проводить собственный анализ и соблюдать местные законы.</p>
   </section>
 </main>
 
-<footer class="footer">
-  © 2025 TIKCOIN — #TimeTokenized
-</footer>
+<footer class="footer">© 2025 TIKCOIN — #TimeTokenized</footer>
 </body>
 </html>
