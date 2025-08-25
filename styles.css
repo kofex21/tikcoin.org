@@ -59,7 +59,8 @@ img{max-width:100%;height:auto}
   color:var(--muted);text-align:center;margin-top:48px
 }
 
-/* TREE area: fixed-size for readability */
+/* Edge-to-edge section for the tree */
+.edge{width:100vw;margin-left:calc(50% - 50vw)}
 .tree-wrap{
   background:var(--card);border:1px solid var(--border);
   border-radius:14px;box-shadow:0 8px 24px var(--shadow);
@@ -68,7 +69,7 @@ img{max-width:100%;height:auto}
 .tree-wrap.fixed{display:flex;justify-content:center}
 .tree-fixed{display:block;max-width:100%}
 
-/* Node/link visual styles (reused by embedded <style> in SVG for sizes) */
+/* Node/link visual styles (SVG) */
 .node rect{
   fill:#1b222a;stroke:var(--border);stroke-width:1.6;
   filter:drop-shadow(0 4px 10px var(--shadow))
@@ -79,6 +80,9 @@ img{max-width:100%;height:auto}
 .link{fill:none;stroke:#2b3946;stroke-width:3.2}
 .node:hover rect{stroke:var(--accent2)}
 .node:hover text{fill:#fff}
+
+/* Offset for anchor targets (avoid hiding under sticky header) */
+:target{scroll-margin-top:90px}
 
 /* WHITEPAPER content */
 .toc{
@@ -100,7 +104,7 @@ h2{margin-top:0}
 .table thead th{background:#1b2026;text-align:left}
 .table tbody tr:hover{background:#1a2128}
 
-/* Print for PDF from browser */
+/* Print for PDF */
 @media print{
   body{background:#fff;color:#000;font:12pt/1.5 Arial,Helvetica,sans-serif}
   .topbar,.footer,.toc a[href^="http"]::after,.hero{display:none}
@@ -109,11 +113,11 @@ h2{margin-top:0}
   a{color:#000;text-decoration:none}
 }
 
-/* Responsive: keep nodes readable; allow horizontal scroll on small screens */
+/* Responsive */
 @media (max-width:900px){
   .hero-title{font-size:clamp(24px,5vw,34px)}
   .tree-wrap{padding:10px}
-  .tree-fixed{width:1200px;height:auto} /* минимальный размер дерева для читаемости */
+  .tree-fixed{width:1200px;height:auto} /* минимальная ширина дерева для читаемости */
 }
 @media (max-width:600px){
   .tree-fixed{width:1100px}
