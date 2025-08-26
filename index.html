@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <title>TIKcoin — Time Will Tell</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="TIKcoin — a symbol of time on Ethereum. Liquidity locked. Contracts immutable after freeze. No bridges. Time Will Tell.">
+<meta name="description" content="TIKcoin — time in Ethereum. Liquidity locked. Contracts immutable after freeze. No bridges. Time Will Tell.">
 <style>
   :root{
     --bg:#0b1230; /* blue background */
     --fg:#e7e9ee; --mut:#a7adbb; --line:#232634;
     --card:#151923; --accent:#e8d27c; --btn:#1a1f2a; --link:#bcd1ff;
+    --violet:#8b5cf6;      /* ярко-фиолетовый для H1 */
+    --lavender:#a78bfa;    /* другой фиолетовый для H2 */
   }
   *{box-sizing:border-box}
   html,body{
@@ -48,6 +50,28 @@
     display:inline-block;padding:.2rem .55rem;border-radius:999px;
     border:1px solid var(--line);font-size:.82rem;color:var(--mut)
   }
+  /* рамки и стили для слоганов */
+  .headline-box{
+    border:2px solid var(--violet);
+    color:var(--violet);
+    padding:.7rem .9rem;
+    border-radius:12px;
+    text-transform:uppercase;
+    font-weight:800;
+    letter-spacing:.5px;
+  }
+  .subhead-box{
+    border:2px solid var(--lavender);
+    color:var(--lavender);
+    padding:.55rem .8rem;
+    border-radius:10px;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:.4px;
+    font-size:1.1rem;
+    display:inline-block;
+    margin-top:.4rem;
+  }
   .foot{padding:22px 0 36px}
 </style>
 </head>
@@ -67,21 +91,19 @@
 </header>
 
 <main>
-  <!-- HERO (with tiny early slogan restored) -->
+  <!-- HERO (updated slogans uppercase + framed + purple) -->
   <section>
     <div class="wrap">
-      <!-- tiny top slogan from early version -->
-      <div class="pill">A symbol of time on Ethereum</div>
+      <!-- tiny top slogan -->
+      <div class="pill">TIME IN ETHEREUM</div>
 
-      <!-- main heading (largest) -->
-      <h1>We cannot stop time — but we can tokenize it.</h1>
+      <!-- main heading framed, uppercase, purple -->
+      <h1 class="headline-box">WE CANNOT STOP TIME — BUT WE CAN TOKENIZE IT.</h1>
 
-      <!-- subheading (smaller) -->
-      <h2 style="font-size:1.4rem;font-weight:500;margin-top:0.3rem;">
-        Time can’t be stopped, rewound, or cheated.
-      </h2>
+      <!-- subheading framed, uppercase, other purple -->
+      <div class="subhead-box">TIME CAN’T BE STOPPED, REWOUND, OR CHEATED.</div>
 
-      <p class="mut">
+      <p class="mut" style="margin-top:.8rem">
         We tokenize time — we don’t alter it.  
         Liquidity locked. Core contracts immutable after freeze.
         No bridges. No taxes. Community pool supports partners & integrations.
