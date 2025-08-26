@@ -111,17 +111,41 @@
       <img src="ASSOCET/Logo.png" alt="TIKcoin logo">
       <span>TIKcoin</span>
     </div>
-    <nav style="display:flex;gap:.5rem;flex-wrap:wrap;">
-      <a class="btn" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Telegram</a>
-      <a class="btn" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
-      <a class="btn" href="https://t.me/+x57P-D0v_xJmNGZi" target="_blank" rel="noopener">Partners</a>
+    <nav style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;">
+      <!-- Telegram dropdown -->
+      <div style="position:relative;">
+        <a class="btn" href="#">Telegram ▾</a>
+        <div style="display:none;position:absolute;top:100%;left:0;background:#151923;border:1px solid #232634;border-radius:8px;min-width:180px;z-index:999;">
+          <a class="btn" style="display:block;width:100%;border:none;border-radius:0;" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Channel</a>
+          <a class="btn" style="display:block;width:100%;border:none;border-radius:0;" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Community Chat</a>
+          <a class="btn" style="display:block;width:100%;border:none;border-radius:0;" href="https://t.me/+x57P-D0v_xJmNGZi" target="_blank" rel="noopener">Partners</a>
+        </div>
+      </div>
+
+      <!-- Twitter -->
       <a class="btn" href="https://twitter.com/TIKcoinProject" target="_blank" rel="noopener">Twitter</a>
+
+      <!-- Whitepaper -->
       <a class="btn primary" href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
     </nav>
   </div>
 </header>
-  </div>
-</header>
+
+<script>
+  // JS для выпадающего списка Telegram
+  document.addEventListener('DOMContentLoaded', () => {
+    const tgMenu = document.querySelector('nav div');
+    const tgButton = tgMenu.querySelector('a.btn');
+    const dropdown = tgMenu.querySelector('div');
+    tgButton.addEventListener('click', e => {
+      e.preventDefault();
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+    document.addEventListener('click', e => {
+      if (!tgMenu.contains(e.target)) dropdown.style.display = 'none';
+    });
+  });
+</script>
 
 <main>
   <!-- HERO (only headlines refined) -->
