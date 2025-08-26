@@ -7,13 +7,15 @@
 <meta name="description" content="TIKcoin — a symbol of time on Ethereum. Liquidity locked. Contracts immutable after freeze. No bridges. Time Will Tell.">
 <style>
   :root{
-    --bg:#0b1230; /* синий фон */
+    --bg:#0b1230; /* blue background */
     --fg:#e7e9ee; --mut:#a7adbb; --line:#232634;
     --card:#151923; --accent:#e8d27c; --btn:#1a1f2a; --link:#bcd1ff;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--fg);
-    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+  html,body{
+    margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial
+  }
   a{color:var(--link);text-decoration:none}
   a:hover{text-decoration:underline}
   .wrap{max-width:980px;margin:0 auto;padding:0 16px}
@@ -21,9 +23,11 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
   .brand{display:flex;align-items:center;gap:.5rem;font-weight:800}
   .brand img{height:26px;width:26px}
-  .btn{display:inline-flex;align-items:center;gap:.4rem;
+  .btn{
+    display:inline-flex;align-items:center;gap:.4rem;
     padding:.55rem .8rem;border:1px solid var(--line);border-radius:10px;
-    background:var(--btn);color:var(--fg);font-weight:600}
+    background:var(--btn);color:var(--fg);font-weight:600
+  }
   .btn.primary{background:var(--accent);color:#111}
   section{padding:28px 0;border-bottom:1px solid var(--line)}
   h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:.2rem 0}
@@ -31,13 +35,20 @@
   p.mut{color:var(--mut)}
   .small{font-size:.92rem}
   .center{text-align:center}
-  .card{background:var(--card);border:1px solid var(--line);
-    border-radius:12px;padding:16px}
+  .card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px
+  }
   .grid{display:grid;gap:12px}
   @media(min-width:860px){
     .grid.cols-2{grid-template-columns:1fr 1fr}
     .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
   }
+  .pill{
+    display:inline-block;padding:.2rem .55rem;border-radius:999px;
+    border:1px solid var(--line);font-size:.82rem;color:var(--mut)
+  }
+  .foot{padding:22px 0 36px}
 </style>
 </head>
 <body>
@@ -50,26 +61,35 @@
     <nav style="display:flex;gap:.5rem">
       <a class="btn" href="https://t.me/tikcoin" target="_blank" rel="noopener">Telegram</a>
       <a class="btn" href="https://x.com/tikcoin" target="_blank" rel="noopener">X</a>
-      <!-- Whitepaper как отдельная страница -->
       <a class="btn primary" href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
+  <!-- HERO (updated slogans) -->
   <section>
     <div class="wrap">
-      <h1>Time can’t be stopped, rewound, or cheated.</h1>
+      <!-- small slogan on top -->
+      <div class="pill">New Time on Ethereum — We tokenize time, we don’t alter it.</div>
+
+      <!-- main heading (largest) -->
+      <h1>We cannot stop time — but we can tokenize it.</h1>
+
+      <!-- subheading (smaller) -->
+      <h2 style="font-size:1.4rem;font-weight:500;margin-top:0.3rem;">
+        Time can’t be stopped, rewound, or cheated.
+      </h2>
+
       <p class="mut">
-        Liquidity locked. Core contracts immutable after freeze.  
-        No bridges. No taxes. Community pool supports partners & integrations.  
+        Liquidity locked. Core contracts immutable after freeze.
+        No bridges. No taxes. Community pool supports partners & integrations.
         The rest — <strong>Time Will Tell</strong>.
       </p>
     </div>
   </section>
 
-  <!-- ROAD OF TIME -->
+  <!-- ROAD OF TIME (unchanged, with Quantum) -->
   <section id="road">
     <div class="wrap">
       <h2>Road of Time</h2>
