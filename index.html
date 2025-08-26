@@ -106,32 +106,76 @@
 <body>
   <header>
   <div class="wrap nav" style="align-items:center;justify-content:space-between;">
-    <!-- Логотип -->
-    <div class="brand" style="display:flex;align-items:center;gap:.4rem;">
-      <img src="assets/Logo.png" alt="TIKcoin logo" style="height:22px;width:auto;">
-      <span style="font-weight:700;font-size:1rem;">TIKcoin</span>
+    <!-- ЛОГОТИП (супер-компактно) -->
+    <div class="brand" style="display:flex;align-items:center;gap:.35rem;min-width:120px;">
+      <img id="tikLogo" src="ASSOCET/Logo.svg" alt="TIKcoin logo" style="height:18px;width:auto;display:block;">
+      <span style="font-weight:700;font-size:.95rem;">TIKcoin</span>
     </div>
 
-    <!-- Меню -->
-    <nav style="display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;font-size:.85rem;">
+    <!-- МЕНЮ (ещё меньше; одна строка) -->
+    <nav style="display:flex;gap:.35rem;align-items:center;flex-wrap:nowrap;font-size:.8rem;">
       <!-- Telegram dropdown -->
       <div style="position:relative;">
-        <a class="btn" style="padding:.35rem .6rem;" href="#" id="tgButton">Telegram ▾</a>
-        <div id="tgDropdown" style="display:none;position:absolute;top:100%;left:0;background:#151923;border:1px solid #232634;border-radius:8px;min-width:160px;z-index:999;">
-          <a class="btn" style="display:block;width:100%;padding:.35rem .6rem;" href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official</a>
-          <a class="btn" style="display:block;width:100%;padding:.35rem .6rem;" href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
-          <a class="btn" style="display:block;width:100%;padding:.35rem .6rem;" href="https://t.me/+x57P-D0v_xJmNGZi" target="_blank" rel="noopener">Partners</a>
+        <a class="btn" style="padding:.28rem .5rem;border:1px solid #232634;border-radius:8px;background:#1a1f2a;color:#e7e9ee;display:inline-block;"
+           href="#" id="tgButton">Telegram ▾</a>
+        <div id="tgDropdown" style="display:none;position:absolute;top:100%;left:0;background:#151923;border:1px solid #232634;border-radius:8px;min-width:180px;z-index:999;">
+          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
+             href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Channel</a>
+          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
+             href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Group</a>
+          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
+             href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
+          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
+             href="https://t.me/+x57P-D0v_xJmNGZi" target="_blank" rel="noopener">Partners</a>
         </div>
       </div>
 
       <!-- Twitter -->
-      <a class="btn" style="padding:.35rem .6rem;" href="https://twitter.com/TIKcoinProject" target="_blank" rel="noopener">Twitter</a>
+      <a class="btn" style="padding:.28rem .5rem;border:1px solid #232634;border-radius:8px;background:#1a1f2a;color:#e7e9ee;"
+         href="https://twitter.com/TIKcoinProject" target="_blank" rel="noopener">Twitter</a>
 
-      <!-- Whitepaper -->
-      <a class="btn primary" style="padding:.35rem .6rem;background:#8b5cf6;color:#fff;" href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
+      <!-- Whitepaper (компактная) -->
+      <a class="btn" style="padding:.28rem .5rem;border:1px solid #8b5cf6;border-radius:8px;background:#8b5cf6;color:#fff;"
+         href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
     </nav>
   </div>
 </header>
+
+<script>
+  // 1) Выпадающее меню Telegram
+  (function(){
+    const tgBtn = document.getElementById('tgButton');
+    const tgDropdown = document.getElementById('tgDropdown');
+    if(tgBtn && tgDropdown){
+      tgBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        tgDropdown.style.display = tgDropdown.style.display === 'block' ? 'none' : 'block';
+      });
+      document.addEventListener('click', function(e){
+        if (!tgBtn.contains(e.target) && !tgDropdown.contains(e.target)) tgDropdown.style.display = 'none';
+      });
+    }
+  })();
+
+  // 2) Фолбэки для логотипа (ищем рабочий путь)
+  (function(){
+    const img = document.getElementById('tikLogo');
+    if(!img) return;
+    const candidates = [
+      'ASSOCET/Logo.svg',
+      'ASSOCET/Logo.png',
+      'assets/Logo.svg',
+      'assets/Logo.png'
+    ];
+    let idx = 0;
+    function tryNext(){
+      idx++;
+      if(idx >= candidates.length) return;
+      img.src = candidates[idx];
+    }
+    img.addEventListener('error', tryNext);
+  })();
+</script>
 
 <script>
   // Telegram dropdown toggle
