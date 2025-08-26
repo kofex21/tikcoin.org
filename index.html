@@ -106,41 +106,37 @@
 <body>
 <header>
   <style>
-    .hdr-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .hdr-brand{display:flex;align-items:center;gap:.7rem;min-width:200px}
-    .hdr-brand img{height:64px;width:auto;display:block} /* логотип увеличен до 64px */
-    .hdr-brand span{font-weight:800;font-size:1.6rem;}   /* текст "TIKcoin" крупнее */
+    .hdr-wrap{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+    .hdr-brand img{height:64px;width:auto;display:block} /* большой логотип */
+    .hdr-nav{display:flex;align-items:center;gap:.4rem;flex-wrap:nowrap}
 
-    .hdr-nav{display:flex;align-items:center;gap:.7rem;flex-wrap:nowrap}
-
-    /* фиолетовые кнопки увеличены */
+    /* компактные кнопки */
     .hdr-btn{
-      padding:.7rem 1.2rem; border:2px solid #8b5cf6; border-radius:10px;
+      padding:.35rem .7rem; border:1px solid #8b5cf6; border-radius:8px;
       background:#8b5cf6; color:#fff; display:inline-flex; align-items:center;
-      font-size:1.2rem; line-height:1; text-decoration:none; white-space:nowrap;
-      height:64px; /* высота как у логотипа */
+      font-size:.85rem; line-height:1; text-decoration:none; white-space:nowrap;
+      height:32px;
     }
 
     /* dropdown */
     .tg-wrap{position:relative;z-index:9999}
     .tg-menu{
-      display:none; position:absolute; top:100%; left:0; min-width:260px;
-      background:#151923; border:1px solid #232634; border-radius:12px; overflow:hidden;
-      box-shadow:0 10px 25px rgba(0,0,0,.45)
+      display:none; position:absolute; top:100%; left:0; min-width:190px;
+      background:#151923; border:1px solid #232634; border-radius:10px; overflow:hidden;
+      box-shadow:0 10px 20px rgba(0,0,0,.35)
     }
     .tg-menu a{
-      display:block; width:100%; padding:.7rem 1rem; text-decoration:none;
-      border:0; border-radius:0; background:#151923; color:#e7e9ee; font-size:1.1rem
+      display:block; width:100%; padding:.4rem .6rem; text-decoration:none;
+      border:0; border-radius:0; background:#151923; color:#e7e9ee; font-size:.85rem
     }
     .tg-menu a:hover{background:#1b2130}
     header, .wrap, .nav{overflow:visible}
   </style>
 
   <div class="wrap nav hdr-wrap">
-    <!-- ЛОГОТИП -->
+    <!-- ЛОГОТИП (без надписи) -->
     <div class="hdr-brand">
       <img id="tikLogo" src="assets/logo.svg" alt="TIKcoin logo">
-      <span>TIKcoin</span>
     </div>
 
     <!-- МЕНЮ -->
