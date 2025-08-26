@@ -104,41 +104,96 @@
 </style>
 </head>
 <body>
+  
   <header>
-  <div class="wrap nav" style="align-items:center;justify-content:space-between;">
-    <!-- ЛОГОТИП (супер-компактно) -->
-    <div class="brand" style="display:flex;align-items:center;gap:.35rem;min-width:120px;">
-      <img id="tikLogo" src="ASSOCET/Logo.svg" alt="TIKcoin logo" style="height:18px;width:auto;display:block;">
+  <!-- локальные стили ТОЛЬКО для меню, чтобы ничего не зависело от внешних CSS -->
+  <style>
+    /* компактные кнопки */
+    .hdr-btn{padding:.28rem .5rem;border:1px solid #232634;border-radius:8px;background:#1a1f2a;color:#e7e9ee;display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;line-height:1;text-decoration:none}
+    .hdr-btn.primary{border-color:#8b5cf6;background:#8b5cf6;color:#fff}
+    /* контейнер шапки */
+    .hdr-wrap{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+    .hdr-brand{display:flex;align-items:center;gap:.35rem;min-width:120px}
+    .hdr-brand img{height:18px;width:auto;display:block}
+    .hdr-nav{display:flex;align-items:center;gap:.35rem;flex-wrap:nowrap}
+    /* dropdown */
+    .tg-wrap{position:relative;z-index:9999}
+    .tg-menu{display:none;position:absolute;top:100%;left:0;min-width:190px;background:#151923;border:1px solid #232634;border-radius:10px;overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,.35)}
+    .tg-menu a{display:block;width:100%;padding:.36rem .6rem;text-decoration:none;border:0;border-radius:0;background:#151923;color:#e7e9ee}
+    .tg-menu a:hover{background:#1b2130}
+    /* показывать на hover (десктоп как запасной вариант) */
+    .tg-wrap:hover .tg-menu{display:block}
+    /* предотвращаем обрезание выпадайки родителями */
+    header, .wrap, .nav{overflow:visible}
+  </style>
+
+  <div class="wrap nav hdr-wrap">
+    <!-- ЛОГОТИП -->
+    <div class="hdr-brand">
+      <img id="tikLogo" src="ASSOCET/Logo.svg" alt="TIKcoin logo">
       <span style="font-weight:700;font-size:.95rem;">TIKcoin</span>
     </div>
 
-    <!-- МЕНЮ (ещё меньше; одна строка) -->
-    <nav style="display:flex;gap:.35rem;align-items:center;flex-wrap:nowrap;font-size:.8rem;">
+    <!-- МЕНЮ -->
+    <nav class="hdr-nav">
       <!-- Telegram dropdown -->
-      <div style="position:relative;">
-        <a class="btn" style="padding:.28rem .5rem;border:1px solid #232634;border-radius:8px;background:#1a1f2a;color:#e7e9ee;display:inline-block;"
-           href="#" id="tgButton">Telegram ▾</a>
-        <div id="tgDropdown" style="display:none;position:absolute;top:100%;left:0;background:#151923;border:1px solid #232634;border-radius:8px;min-width:180px;z-index:999;">
-          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
-             href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener">Official Channel</a>
-          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
-             href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Group</a>
-          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
-             href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener">Chat</a>
-          <a class="btn" style="display:block;width:100%;padding:.32rem .6rem;border:none;border-radius:0;background:#151923;color:#e7e9ee;"
-             href="https://t.me/+x57P-D0v_xJmNGZi" target="_blank" rel="noopener">Partners</a>
+      <div class="tg-wrap">
+        <a href="#" class="hdr-btn" id="tgToggle" aria-haspopup="true" aria-expanded="false">Telegram ▾</a>
+        <div class="tg-menu" id="tgMenu" role="menu" aria-label="Telegram links">
+          <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener" role="menuitem">Official Channel</a>
+          <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener" role="menuitem">Group</a>
+          <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener" role="menuitem">Chat</a>
+          <a href="https://t.me/+x57P-D0v_xJmNGZi" target="_blank" rel="noopener" role="menuitem">Partners</a>
         </div>
       </div>
 
       <!-- Twitter -->
-      <a class="btn" style="padding:.28rem .5rem;border:1px solid #232634;border-radius:8px;background:#1a1f2a;color:#e7e9ee;"
-         href="https://twitter.com/TIKcoinProject" target="_blank" rel="noopener">Twitter</a>
+      <a class="hdr-btn" href="https://twitter.com/TIKcoinProject" target="_blank" rel="noopener">Twitter</a>
 
-      <!-- Whitepaper (компактная) -->
-      <a class="btn" style="padding:.28rem .5rem;border:1px solid #8b5cf6;border-radius:8px;background:#8b5cf6;color:#fff;"
-         href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
+      <!-- Whitepaper -->
+      <a class="hdr-btn primary" href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
     </nav>
   </div>
+
+  <script>
+    // Надёжный JS для открытия/закрытия меню (клик, тач, ESC, клик-вне)
+    (function(){
+      const btn = document.getElementById('tgToggle');
+      const menu = document.getElementById('tgMenu');
+      if(!btn || !menu) return;
+
+      function open(){ menu.style.display='block'; btn.setAttribute('aria-expanded','true'); }
+      function close(){ menu.style.display='none'; btn.setAttribute('aria-expanded','false'); }
+      function toggle(e){ e.preventDefault(); menu.style.display === 'block' ? close() : open(); }
+
+      btn.addEventListener('click', toggle);
+      btn.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(e); } });
+      document.addEventListener('click', (e)=>{ if(!menu.contains(e.target) && !btn.contains(e.target)) close(); });
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+
+      // На мобильных — закрывать при выборе пункта
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> close()));
+    })();
+
+    // Фолбэки для логотипа: перебираем пути пока не найдём рабочий
+    (function(){
+      const img = document.getElementById('tikLogo');
+      if(!img) return;
+      const candidates = [
+        'ASSOCET/Logo.svg',
+        'ASSOCET/Logo.png',
+        'assets/Logo.svg',
+        'assets/Logo.png',
+        'Logo.svg',
+        'Logo.png'
+      ];
+      let i = 0;
+      img.onerror = function(){
+        i++;
+        if(i < candidates.length){ img.src = candidates[i]; }
+      };
+    })();
+  </script>
 </header>
 
 <script>
