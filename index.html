@@ -5,13 +5,19 @@
 <title>TIKcoin — Time Will Tell</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="TIKcoin — time in Ethereum. Liquidity locked. Contracts immutable after freeze. No bridges. Time Will Tell.">
+
+<!-- Headline font (only for titles) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --bg:#0b1230; /* blue background */
     --fg:#e7e9ee; --mut:#a7adbb; --line:#232634;
     --card:#151923; --accent:#e8d27c; --btn:#1a1f2a; --link:#bcd1ff;
-    --violet:#8b5cf6;      /* ярко-фиолетовый для H1 */
-    --lavender:#a78bfa;    /* другой фиолетовый для H2 */
+    --violet:#8b5cf6;      /* main purple */
+    --lavender:#a78bfa;    /* secondary purple */
   }
   *{box-sizing:border-box}
   html,body{
@@ -32,9 +38,57 @@
   }
   .btn.primary{background:var(--accent);color:#111}
   section{padding:28px 0;border-bottom:1px solid var(--line)}
-  h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:.2rem 0}
-  h2{margin:.2rem 0 6px}
-  p.mut{color:var(--mut)}
+  h1,h2{margin:.2rem 0}
+
+  /* --- ONLY HEADLINES (HERO) — refined, designer-style --- */
+  .hero-stack{
+    max-width:860px;
+    margin:0 auto;
+    padding-top:8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:12px; /* controlled vertical rhythm */
+  }
+  .eyebrow{
+    /* small top label: TIME IN ETHEREUM */
+    display:inline-block;
+    font:600 .82rem/1.2 "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+    letter-spacing:.08em;
+    padding:.28rem .7rem;
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    color:var(--mut);
+    text-transform:uppercase;
+  }
+  .headline-box{
+    font:700 clamp(24px,4.2vw,46px)/1.1 "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+    letter-spacing:.06em;          /* tighter than default for all-caps */
+    text-transform:uppercase;
+    color:var(--violet);
+    border:2px solid var(--violet);
+    border-radius:14px;
+    padding:12px 16px;
+    display:inline-block;
+  }
+  .subhead-box{
+    font:700 clamp(14px,2.1vw,20px)/1.2 "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--lavender);
+    border:2px solid var(--lavender);
+    border-radius:12px;
+    padding:8px 12px;
+    display:inline-block;
+  }
+  .hero-desc{
+    color:var(--mut);
+    max-width:760px;
+    margin-top:6px;
+  }
+  /* --- /ONLY HEADLINES --- */
+
   .small{font-size:.92rem}
   .center{text-align:center}
   .card{
@@ -45,32 +99,6 @@
   @media(min-width:860px){
     .grid.cols-2{grid-template-columns:1fr 1fr}
     .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
-  }
-  .pill{
-    display:inline-block;padding:.2rem .55rem;border-radius:999px;
-    border:1px solid var(--line);font-size:.82rem;color:var(--mut)
-  }
-  /* рамки и стили для слоганов */
-  .headline-box{
-    border:2px solid var(--violet);
-    color:var(--violet);
-    padding:.7rem .9rem;
-    border-radius:12px;
-    text-transform:uppercase;
-    font-weight:800;
-    letter-spacing:.5px;
-  }
-  .subhead-box{
-    border:2px solid var(--lavender);
-    color:var(--lavender);
-    padding:.55rem .8rem;
-    border-radius:10px;
-    text-transform:uppercase;
-    font-weight:700;
-    letter-spacing:.4px;
-    font-size:1.1rem;
-    display:inline-block;
-    margin-top:.4rem;
   }
   .foot{padding:22px 0 36px}
 </style>
@@ -91,20 +119,21 @@
 </header>
 
 <main>
-  <!-- HERO (updated slogans uppercase + framed + purple) -->
+  <!-- HERO (only headlines refined) -->
   <section>
-    <div class="wrap">
-      <!-- tiny top slogan -->
-      <div class="pill">TIME IN ETHEREUM</div>
+    <div class="wrap hero-stack">
+      <!-- tiny top slogan, requested text -->
+      <span class="eyebrow">TIME IN ETHEREUM</span>
 
-      <!-- main heading framed, uppercase, purple -->
+      <!-- main headline -->
       <h1 class="headline-box">WE CANNOT STOP TIME — BUT WE CAN TOKENIZE IT.</h1>
 
-      <!-- subheading framed, uppercase, other purple -->
+      <!-- sub headline -->
       <div class="subhead-box">TIME CAN’T BE STOPPED, REWOUND, OR CHEATED.</div>
 
-      <p class="mut" style="margin-top:.8rem">
-        We tokenize time — we don’t alter it.  
+      <!-- short description stays muted and unchanged in wording -->
+      <p class="hero-desc">
+        We tokenize time — we don’t alter it.
         Liquidity locked. Core contracts immutable after freeze.
         No bridges. No taxes. Community pool supports partners & integrations.
         The rest — <strong>Time Will Tell</strong>.
@@ -112,7 +141,7 @@
     </div>
   </section>
 
-  <!-- ROAD OF TIME (unchanged, with Quantum) -->
+  <!-- ROAD OF TIME (unchanged) -->
   <section id="road">
     <div class="wrap">
       <h2>Road of Time</h2>
@@ -131,7 +160,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (unchanged) -->
   <section class="foot">
     <div class="wrap center small">
       © <span id="y"></span> TIKcoin — A symbol of time.<br>
