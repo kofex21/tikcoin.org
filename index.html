@@ -7,46 +7,50 @@
 <meta name="description" content="TIKcoin — a symbol of time on Ethereum. Liquidity locked. Contracts immutable after freeze. No bridges. Time Will Tell.">
 <style>
   :root{
-    --bg:#0f1115; --fg:#e7e9ee; --mut:#a7adbb; --line:#222631; --card:#141820; --accent:#e8d27c;
-    --btn:#1b1f2a; --link:#bcd1ff;
+    --bg:#0b1230; /* синий фон */
+    --fg:#e7e9ee; --mut:#a7adbb; --line:#232634;
+    --card:#151923; --accent:#e8d27c; --btn:#1a1f2a; --link:#bcd1ff;
   }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#ffffff; --fg:#0a0c10; --mut:#4a5160; --line:#e6e8ee; --card:#f6f7fa; --accent:#8b6f1f; --btn:#eef0f6; --link:#1b4fd8; }
+    :root{--bg:#ffffff;--fg:#0b0d12;--mut:#4a5160;--line:#e5e8ef;--card:#f6f7fb;--accent:#8b6f1f;--btn:#eef0f6;--link:#1b4fd8}
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-  a{color:var(--link);text-decoration:none}
-  a:hover{text-decoration:underline}
+  a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
   .wrap{max-width:980px;margin:0 auto;padding:0 16px}
   header{border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .brand{display:flex;align-items:center;gap:.6rem;font-weight:800}
+  .brand{display:flex;align-items:center;gap:.5rem;font-weight:800}
+  .brand img{height:26px;width:26px;border-radius:6px}
   .logo{width:26px;height:26px;border:2px solid var(--accent);border-radius:50%;display:grid;place-items:center;font-size:.8rem}
   .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--btn);color:var(--fg);font-weight:600}
   .btn.primary{background:var(--accent);color:#111}
   section{padding:28px 0;border-bottom:1px solid var(--line)}
   h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:.2rem 0}
-  h2{margin:.2rem 0 8px}
-  p.mut{color:var(--mut)}
+  h2{margin:.2rem 0 6px}h3{margin:.2rem 0 4px}
+  p.mut{color:var(--mut)}.small{font-size:.92rem}.center{text-align:center}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
   .grid{display:grid;gap:12px}
-  @media(min-width:860px){ .grid.cols-2{grid-template-columns:1fr 1fr} .grid.cols-3{grid-template-columns:1fr 1fr 1fr} }
+  @media(min-width:860px){.grid.cols-2{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:1fr 1fr 1fr}}
   ul.clean{margin:.3rem 0 .2rem 1.1rem}
-  .k{display:flex;gap:.6rem;align-items:center}
   .pill{display:inline-block;padding:.2rem .55rem;border-radius:999px;border:1px solid var(--line);font-size:.82rem;color:var(--mut)}
-  .center{text-align:center}
-  .small{font-size:.92rem}
+  details{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px}
+  summary{cursor:pointer;font-weight:700}
+  .toc a{display:block;padding:.25rem 0}
   .foot{padding:22px 0 36px}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <div class="brand"><span class="logo">TIK</span><span>TIKcoin</span></div>
-    <nav class="k" style="gap:.5rem">
+    <div class="brand">
+      <img src="logo.png" alt="TIKcoin logo">
+      <span>TIKcoin</span>
+    </div>
+    <nav style="display:flex;gap:.5rem">
       <a class="btn" href="https://t.me/tikcoin" target="_blank" rel="noopener">Telegram</a>
       <a class="btn" href="https://x.com/tikcoin" target="_blank" rel="noopener">X</a>
-      <a class="btn primary" href="#airdrop">Airdrop</a>
+      <a class="btn primary" href="#whitepaper">Whitepaper</a>
     </nav>
   </div>
 </header>
@@ -57,40 +61,7 @@
     <div class="wrap">
       <div class="pill">A symbol of time on Ethereum</div>
       <h1>Time can’t be stopped, rewound, or cheated.</h1>
-      <p class="mut">Liquidity locked. Core contracts immutable after freeze. No bridges. No taxes. Community pool exists for partners & integrations. The rest — <strong>Time Will Tell</strong>.</p>
-      <div class="grid cols-3" style="margin-top:12px">
-        <div class="card"><strong>Immutable after freeze</strong><br><span class="small mut">Final core becomes unchangeable.</span></div>
-        <div class="card"><strong>Liquidity locked</strong><br><span class="small mut">LP tokens locked with public proof.</span></div>
-        <div class="card"><strong>No bridges</strong><br><span class="small mut">Ethereum mainnet only (canon).</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MANIFESTO -->
-  <section id="manifesto">
-    <div class="wrap grid cols-2">
-      <div class="card">
-        <h2>Manifest</h2>
-        <ul class="clean">
-          <li>Time is the creator. We are just the form.</li>
-          <li>Liquidity: <strong>locked</strong>, public, auditable.</li>
-          <li>Contracts: <strong>immutable after freeze</strong>.</li>
-          <li>No hidden functions; allowlist improvements only.</li>
-          <li>No taxes. No burns. Transparent locks & vestings.</li>
-          <li>No bridges. Ethereum mainnet only.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>Contacts & Proofs</h2>
-        <p class="mut small">Placeholders until published:</p>
-        <ul class="clean small">
-          <li>Token (immutable): 0x0000…TIK</li>
-          <li>Multisig (3/5): 0x0000…SAFE</li>
-          <li>Timelock: 0x0000…TIME</li>
-          <li>Community vault: 0x0000…POOL</li>
-          <li>LP lock tx: 0x0000…LOCK</li>
-        </ul>
-      </div>
+      <p class="mut">Liquidity locked. Core contracts immutable after freeze. No bridges. No taxes. Community pool supports partners & integrations. The rest — <strong>Time Will Tell</strong>.</p>
     </div>
   </section>
 
@@ -104,58 +75,18 @@
         <div class="card"><strong>⏳ Hourglass — Audit prep</strong><br><span class="small mut">Contracts in development; audit scheduling; freeze criteria set.</span></div>
         <div class="card"><strong>⚙️ Mechanics — Presale & LP lock</strong><br><span class="small mut">Presale at $0.01. Listing target $0.02–$0.03. LP lock (public).</span></div>
         <div class="card"><strong>💎 Quartz — Listing & utilities</strong><br><span class="small mut">DEX listing, dashboards, on-chain referrals.</span></div>
-        <div class="card"><strong>🌀 Tourbillon — DAO</strong><br><span class="small mut">Governance via multisig + timelock; allowlisted upgrades only.</span></div>
+        <div class="card"><strong>🌀 Tourbillon — DAO</strong><br><span class="small mut">Governance via multisig + timelock.</span></div>
         <div class="card"><strong>⚛️ Atom — Integrations</strong><br><span class="small mut">Partners via community pool grants/OTC; ecosystem growth.</span></div>
+        <div class="card"><strong>🧭 Quantum — Beyond Time</strong><br><span class="small mut">Future innovations, undisclosed. Time Will Tell.</span></div>
       </div>
     </div>
   </section>
 
-  <!-- AIRDROP -->
-  <section id="airdrop">
-    <div class="wrap grid cols-2">
-      <div class="card">
-        <h2>Airdrop (teaser)</h2>
-        <ul class="clean">
-          <li>Invite-based via Telegram — <strong>social time-mining</strong>.</li>
-          <li>On-chain claim: part immediate, rest via vesting stages.</li>
-          <li>Referral ladder (up to 33) with strict verification.</li>
-        </ul>
-        <div class="k" style="gap:.6rem;margin-top:8px">
-          <a class="btn primary" href="https://t.me/tikcoin" target="_blank" rel="noopener">Join Telegram</a>
-          <a class="btn" href="https://x.com/tikcoin" target="_blank" rel="noopener">Follow on X</a>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Rules (TL;DR)</h2>
-        <ul class="clean">
-          <li>Liquidity locked; public proof.</li>
-          <li>Core immutable after freeze.</li>
-          <li>No bridges; L1 Ethereum only.</li>
-          <li>No taxes / burns; transparent locks & vestings.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOKENOMICS (with 11M → 6M / 3M / 2M) -->
-  <section id="tokenomics">
+  <!-- WHITEPAPER -->
+  <section id="whitepaper">
     <div class="wrap">
-      <h2>Liquidity & Funds (fixed)</h2>
-      <div class="card">
-        <ul class="clean">
-          <li><strong>Presale raised:</strong> $11,000,000</li>
-          <li><strong>Initial liquidity (locked):</strong> $6,000,000 (DEX LP)</li>
-          <li><strong>Reserve liquidity (locked, not touched at start):</strong> $3,000,000</li>
-          <li><strong>Development fund (unlocked):</strong> $2,000,000
-            <ul class="clean">
-              <li>Audit & listings (baseline): $250,000</li>
-              <li>Launch marketing (baseline): $500,000</li>
-              <li>Build & ops: remainder</li>
-            </ul>
-          </li>
-        </ul>
-        <p class="mut small">Locked liquidity is a public commitment. Development fund covers building, audit, listings, creative and operations. No creator privilege; we avoid personalities — time is the creator.</p>
-      </div>
+      <h2>Whitepaper (teaser)</h2>
+      <p class="mut small">Full document: Introduction + 15 Chapters + Conclusion. Main invariant: Liquidity $11M → $6M locked LP / $3M reserve locked / $2M development unlocked.</p>
     </div>
   </section>
 
