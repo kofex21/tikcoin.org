@@ -1,303 +1,269 @@
-/* =========================
-   Theme
-   ========================= */
-:root{
-  --bg:#0b1020;
-  --bg-soft:#0f1430;
-  --white:#f5f7ff;
-  --muted:#b9c3e6;
-  --ring:#2a3a88;
-  --line:#22306a;
-  --grad: linear-gradient(135deg, rgba(47,93,255,.95), rgba(123,63,255,.95));
-  --timeGrad: linear-gradient(180deg, rgba(47,93,255,.22), rgba(18,26,64,.94));
-  --honestGrad: linear-gradient(180deg, rgba(123,63,255,.22), rgba(18,26,64,.94));
-  --philoGrad: linear-gradient(180deg, rgba(65,201,255,.20), rgba(18,26,64,.94));
-}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TIKcoin — Time Will Tell</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="TIKcoin — a symbol of time on Ethereum. Liquidity locked. Contracts immutable after freeze. No bridges. Community pool 20%. Time Will Tell." />
+  <meta property="og:title" content="TIKcoin — Time Will Tell" />
+  <meta property="og:description" content="A token shaped by time. Liquidity locked. Immutable after freeze. No bridges. Time Will Tell." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og.png" />
+  <meta name="theme-color" content="#0d0d0f" />
+  <style>
+    :root{
+      --bg:#0b0b0e; --fg:#e6e6eb; --muted:#acacb5; --accent:#e8d27c; --line:#23232a;
+      --card:#111116; --chip:#1a1a20; --ok:#65d99f; --now:#e8d27c; --next:#7f8aa3;
+      --link:#c9d8ff;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#ffffff; --fg:#0e0f12; --muted:#4a4f5c; --accent:#8b6f1f; --line:#e8e8ef; --card:#f7f7fb; --chip:#efeff6; --link:#1b4fd8; }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky;top:0;background:rgba(11,11,14,.7);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:5}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.4px}
+    .logo{width:28px;height:28px;border:2px solid var(--accent);border-radius:50%;display:inline-grid;place-items:center;font-size:.9rem}
+    .cta{display:flex;gap:.6rem}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid var(--line);border-radius:10px;background:var(--chip);color:var(--fg);font-weight:600}
+    .btn.primary{background:var(--accent);color:#0f0f10;border-color:transparent}
+    .btn:hover{filter:brightness(1.04)}
+    .hero{padding:64px 0 24px;border-bottom:1px solid var(--line);background:
+      radial-gradient(1200px 600px at 50% -200px, rgba(232,210,124,.08), transparent 60%)}
+    h1{font-size:clamp(28px,4vw,48px);line-height:1.15;margin:0 0 12px}
+    .tag{display:inline-block;padding:.2rem .6rem;border:1px solid var(--line);border-radius:999px;background:var(--chip);color:var(--muted);font-weight:600;font-size:.85rem}
+    .lead{color:var(--muted);max-width:800px;margin:.3rem 0 1rem}
+    .grid{display:grid;gap:18px}
+    @media (min-width:860px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
+    section{padding:36px 0;border-bottom:1px solid var(--line)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .k{display:flex;align-items:center;gap:.7rem}
+    .k .dot{width:10px;height:10px;border-radius:50%;background:var(--ok)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", Consolas, "Liberation Mono", monospace}
+    .timeline{display:grid;gap:12px}
+    .step{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--card)}
+    .icon{font-size:20px;line-height:1.1}
+    .pill{display:inline-flex;align-items:center;gap:.4rem;padding:.15rem .5rem;border-radius:999px;border:1px solid var(--line);background:var(--chip);font-size:.8rem;color:var(--muted)}
+    .state-now{color:#0f0f10;background:var(--accent);border-color:var(--accent);font-weight:700}
+    .state-done{color:#0f0f10;background:var(--ok);border-color:var(--ok);font-weight:700}
+    .state-next{color:var(--muted)}
+    .muted{color:var(--muted)}
+    .ul{margin:.5rem 0 .2rem 1.1rem;padding:0}
+    .ul li{margin:.25rem 0}
+    .footer{padding:28px 0 44px}
+    .hash{margin-top:10px;color:var(--muted)}
+    .small{font-size:.9rem}
+    .chiprow{display:flex;flex-wrap:wrap;gap:8px}
+    .chiprow .chip{padding:.35rem .6rem;background:var(--chip);border:1px solid var(--line);border-radius:999px;font-weight:600}
+    .notice{border-left:4px solid var(--accent);padding:.7rem .9rem;background:rgba(232,210,124,.06);border-radius:10px}
+    .divider{height:1px;background:var(--line);margin:16px 0}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <span class="logo">TIK</span> TIKcoin
+      </div>
+      <nav class="cta">
+        <a class="btn" href="https://t.me/tikcoin" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn" href="https://x.com/tikcoin" target="_blank" rel="noopener">X (Twitter)</a>
+        <a class="btn primary" href="#airdrop">Airdrop</a>
+      </nav>
+    </div>
+  </header>
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
-  color:var(--white);
-  background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(65,201,255,.12), transparent 60%),
-    radial-gradient(1000px 700px at 120% 0%, rgba(123,63,255,.14), transparent 60%),
-    var(--bg);
-  line-height:1.6;
-}
-h1,h2,h3{margin:0 0 8px;font-weight:800}
-.muted{color:var(--muted)}
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="tag">A symbol of time on Ethereum</span>
+        <h1>Time can’t be stopped, rewound, or cheated.</h1>
+        <p class="lead">TIKcoin is a minimalist, immutable-by-design token. Liquidity will be locked, contracts frozen after audit, no bridges, no taxes, no burns. Community pool = 20%. The rest — <strong>Time Will Tell</strong>.</p>
 
-/* ===== HERO ===== */
-.hero{
-  position: relative;
-  display: block;
-  padding: clamp(28px, 4vw, 48px) 16px;
-  background: transparent;
-}
-.hero__inner{
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        <div class="grid cols-3">
+          <div class="card">
+            <div class="k"><span class="dot"></span><strong>Immutable after freeze</strong></div>
+            <p class="muted small">Core contracts become unchangeable after the final audit+</p>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot"></span><strong>Liquidity locked</strong></div>
+            <p class="muted small">LP tokens locked publicly. No private lever, no backdoors.</p>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot"></span><strong>No bridges</strong></div>
+            <p class="muted small">Ethereum mainnet only. No cross-chain risk. Canon rule.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* LOGO */
-.hero__logo{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto clamp(16px, 3vw, 28px);
-}
-.hero__logo img{
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: clamp(340px, 40vw, 720px);
-  filter: drop-shadow(0 8px 24px rgba(108, 99, 255, 0.22));
-  transition: transform .25s ease, filter .25s ease;
-}
-.hero__logo a:hover img{
-  transform: translateY(-2px) scale(1.01);
-  filter: drop-shadow(0 10px 28px rgba(108, 99, 255, 0.28));
-}
+    <section id="manifesto">
+      <div class="wrap grid cols-2">
+        <div class="card">
+          <h2>Manifest</h2>
+          <p>We don’t promise pumps. We promise rules:</p>
+          <ul class="ul">
+            <li>Time is the creator. We are just the form.</li>
+            <li>Contracts: <span class="mono">immutable after freeze</span>.</li>
+            <li>Liquidity: <strong>locked</strong>, public, auditable.</li>
+            <li>Improvements: allowlist only, no hidden functions.</li>
+            <li>Economy: no taxes, no burns; transparent locks & vestings.</li>
+            <li>Community pool: <strong>20%</strong> — partners, grants, integrations (via DAO/timelock).</li>
+          </ul>
+          <div class="notice small">Nothing here is financial advice. We build slow & honest. Time will show.</div>
+        </div>
+        <div class="card">
+          <h2>Addresses (placeholders)</h2>
+          <p class="muted small">Replace when ready; kept here for verifiability.</p>
+          <ul class="ul mono small">
+            <li>Token (v2, immutable): <span id="addr-token">0x0000…TIK</span></li>
+            <li>Multisig (3/5): <span id="addr-safe">0x0000…SAFE</span></li>
+            <li>Timelock: <span id="addr-tl">0x0000…TIME</span></li>
+            <li>Community vault: <span id="addr-cv">0x0000…POOL</span></li>
+            <li>LP lock tx: <span id="addr-lp">TX: 0x0000…LOCK</span></li>
+          </ul>
+          <div class="chiprow">
+            <span class="chip">Etherscan soon</span>
+            <span class="chip">Audit in prep</span>
+            <span class="chip">Freeze planned</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* TAGLINE (3 slogans) */
-.hero__tagline{
-  text-align: center;
-  margin: 0 auto clamp(18px, 3.5vw, 32px);
-  color: #e6e6e6;
-  opacity: .95;
-}
-.hero__tagline p{
-  margin: 4px 0;
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 1.5;
-}
+    <section id="road">
+      <div class="wrap">
+        <h2>Road of Time</h2>
+        <p class="muted small">Not a “roadmap”. A sequence. Unskippable by canon: Sun → Hourglass → Mechanics → Quartz → Tourbillon → Atom → Quantum.</p>
+        <div class="timeline">
+          <div class="step" data-state="done">
+            <div class="icon">☀️</div>
+            <div>
+              <div class="pill state-done">Sun — Foundation</div>
+              <div class="small muted">Architecture v1→audit→v2 hardening defined. Whitepaper skeleton ready.</div>
+            </div>
+          </div>
+          <div class="step" data-state="now">
+            <div class="icon">⏳</div>
+            <div>
+              <div class="pill state-now">Hourglass — Audit prep</div>
+              <div class="small muted">Contracts in development; audit scheduling; freeze criteria set.</div>
+            </div>
+          </div>
+          <div class="step" data-state="next">
+            <div class="icon">⚙️</div>
+            <div>
+              <div class="pill state-next">Mechanics — Presale & LP lock</div>
+              <div class="small muted">Presale @ $0.01. Listing target $0.02–0.03. LP lock (public). No bridges.</div>
+            </div>
+          </div>
+          <div class="step" data-state="next">
+            <div class="icon">💎</div>
+            <div>
+              <div class="pill state-next">Quartz — Listing & utilities</div>
+              <div class="small muted">DEX listing, basic utilities, dashboards, referral payouts on-chain.</div>
+            </div>
+          </div>
+          <div class="step" data-state="next">
+            <div class="icon">🌀</div>
+            <div>
+              <div class="pill state-next">Tourbillon — Hardening & DAO</div>
+              <div class="small muted">Governance via multisig + timelock; allowlisted improvements only.</div>
+            </div>
+          </div>
+          <div class="step" data-state="next">
+            <div class="icon">⚛️</div>
+            <div>
+              <div class="pill state-next">Atom — Integrations</div>
+              <div class="small muted">Partners via community pool grants/OTC; ecosystem growth.</div>
+            </div>
+          </div>
+          <div class="step" data-state="next">
+            <div class="icon">🧭</div>
+            <div>
+              <div class="pill state-next">Quantum — To be revealed</div>
+              <div class="small muted">When time permits. Time Will Tell.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* GRID WITH 3 CARDS */
-.hero__grid{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  gap: clamp(10px, 1.2vw, 18px);
-  margin: 0 auto;
-  max-width: 1000px;
-}
-.hero__card{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #e6e6e6;
-  background: #121219;
-  border: 1px solid #242432;
-  border-radius: 14px;
-  padding: clamp(16px, 2vw, 22px);
-  transition: border-color .25s ease, transform .2s ease, box-shadow .25s ease;
-}
-.hero__card:hover{
-  border-color: #7c6cff;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(124,108,255,.12);
-}
-.hero__card-title{
-  font-weight: 700;
-  letter-spacing: .6px;
-  font-size: clamp(16px, 1.5vw, 18px);
-  color: #cfcaff;
-}
-.hero__card-sub{
-  font-size: clamp(13px, 1.2vw, 15px);
-  color: #b9b9c9;
-  opacity: .9;
-}
+    <section id="airdrop">
+      <div class="wrap grid cols-2">
+        <div class="card">
+          <h2>Airdrop (teaser)</h2>
+          <ul class="ul">
+            <li>Invite-based via Telegram — <strong>social time-mining</strong>.</li>
+            <li>On-chain claim: part immediate, rest via stages (vesting).</li>
+            <li>Referral ladder (up to 33), strict verification.</li>
+            <li>No fake promises; verifiable by Etherscan.</li>
+          </ul>
+          <p class="muted small">Details & exact dates will be announced in Telegram. The sequence never breaks the canon.</p>
+          <div class="chiprow">
+            <a class="btn primary" href="https://t.me/tikcoin" target="_blank" rel="noopener">Join Telegram</a>
+            <a class="btn" href="https://x.com/tikcoin" target="_blank" rel="noopener">Follow on X</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Rules (TL;DR)</h2>
+          <ul class="ul">
+            <li>No bridges. Ethereum mainnet only.</li>
+            <li>LP locked. Public lock proof.</li>
+            <li>Core immutable after freeze.</li>
+            <li>Community pool 20% — partners/grants via DAO+timelock.</li>
+            <li>No taxes. No burns. Transparent locks & vestings.</li>
+          </ul>
+          <div class="divider"></div>
+          <p class="small muted">We speak in principles. We avoid personalities. Time is the creator.</p>
+        </div>
+      </div>
+    </section>
 
-/* Responsive */
-@media (max-width: 900px){
-  .hero__grid{ grid-template-columns: 1fr; max-width: 560px; }
-  .hero__card{ text-align: center; }
-}
-@media (max-width: 360px){
-  .hero__logo img{ max-width: 300px; }
-}
+    <section id="faq">
+      <div class="wrap grid cols-2">
+        <div class="card">
+          <h3>Why TIK?</h3>
+          <p>Because scarcity of time is universal. TIK is the symbol that encodes this truth on-chain. No theatrics, no shortcuts.</p>
+        </div>
+        <div class="card">
+          <h3>Who “we” are?</h3>
+          <p>Keepers of the idea. No cult of personality. The code, the locks, and the chain are the only sources of truth. The rest — Time Will Tell.</p>
+        </div>
+      </div>
+    </section>
 
-/* =========================
-   TREE: Center hub + bottom row
-   ========================= */
-.tree{max-width:1200px;margin:28px auto 40px;padding:0 16px}
-.tree-stage{
-  position:relative;
-  background: linear-gradient(180deg, rgba(18,25,54,.7), rgba(12,18,40,.7));
-  border:1px solid #1a2250;
-  border-radius:22px;
-  overflow:hidden;
-  min-height:760px;
-}
+    <section class="footer">
+      <div class="wrap center">
+        <div class="small">© <span id="y"></span> TIKcoin — A symbol of time.</div>
+        <div class="hash small">Time Will Tell ⏳ &nbsp; #TimeTokenized &nbsp; #GoldenAge</div>
+        <div class="small muted" style="margin-top:8px">Продолжение следует…</div>
+      </div>
+    </section>
+  </main>
 
-/* HUB (center big) */
-.hub{
-  position:absolute;
-  left:50%;
-  top:34%;
-  transform:translate(-50%,-50%);
-  text-decoration:none;
-  color:var(--white);
-  width:360px; height:360px; /* большой центр */
-  border-radius:50%;
-  display:block;
-}
-.hub__ring{
-  position:absolute; inset:-18px;
-  border-radius:50%;
-  background:
-    radial-gradient(closest-side, rgba(47,93,255,.22), transparent 70%),
-    radial-gradient(closest-side, rgba(123,63,255,.18), transparent 72%);
-  filter: blur(10px);
-}
-.hub__inner{
-  position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center; flex-direction:column;
-  border-radius:50%;
-  background: var(--grad);
-  border:1px solid rgba(255,255,255,.18);
-  box-shadow: 0 30px 60px rgba(47,93,255,.35), 0 16px 30px rgba(123,63,255,.25);
-}
-.hub__logo{
-  width:120px; height:auto; margin-bottom:10px;
-}
-.hub__brand{
-  font-weight:900; letter-spacing:.16em; text-transform:uppercase;
-  font-size:clamp(22px, 4.6vw, 34px);
-}
+  <script>
+    // minimal JS helpers
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-/* Bottom row of three cards */
-.row{
-  position:absolute;
-  left:50%; transform:translateX(-50%);
-  bottom:44px;
-  display:flex; gap:22px;
-  width:calc(100% - 64px);
-  max-width:1040px;
-  justify-content:space-between;
-}
-.card{
-  flex:1 1 0;
-  min-width:240px;
-  height:160px;
-  text-decoration:none;
-  color:var(--white);
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:linear-gradient(180deg, rgba(20,28,64,.92), rgba(10,16,40,.95));
-  box-shadow: 0 20px 30px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.03);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  display:flex; align-items:center; justify-content:center;
-}
-.card:hover{ transform:translateY(-2px); border-color:#3a56ff }
-.card--time{ background: var(--timeGrad) }
-.card--honesty{ background: var(--honestGrad) }
-.card--philosophy{ background: var(--philoGrad) }
-
-.card__content{
-  font-weight:900; letter-spacing:.08em; text-transform:uppercase;
-  font-size:clamp(18px, 3.6vw, 28px);
-  text-align:center; width:100%;
-}
-
-/* Stems (lines) from hub to cards */
-.stem{ position:absolute; width:2px; background: linear-gradient(180deg, rgba(79,103,220,.55), rgba(101,64,220,.55)) }
-.stem--time{
-  left:50%; top:34%; height:230px;
-  transform-origin: top; transform: translateX(-280px) rotate(20deg);
-}
-.stem--honesty{
-  left:50%; top:34%; height:230px;
-  transform-origin: top; transform: translateX(280px) rotate(-20deg);
-}
-.stem--philosophy{
-  left:50%; top:34%; height:280px; transform: translateX(-1px) translateY(16px);
-}
-
-/* Adaptive */
-@media (max-width: 1100px){
-  .hub{ width:320px; height:320px }
-  .row{ max-width:940px }
-  .stem--time{ transform: translateX(-250px) rotate(21deg) }
-  .stem--honesty{ transform: translateX(250px) rotate(-21deg) }
-}
-@media (max-width: 900px){
-  .hub{ width:300px; height:300px; top:32% }
-  .row{ gap:16px; max-width:820px; bottom:36px }
-}
-@media (max-width: 760px){
-  .tree-stage{ min-height:900px }
-  .hub{ top:28% }
-  .row{
-    bottom:34px;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
-    width:calc(100% - 48px);
-    max-width:540px;
-  }
-  .card{ width:100%; height:130px }
-  .stem{ display:none } /* мобильный — без линий, чисто */
-}
-
-/* =========================
-   Text blocks & footer
-   ========================= */
-.block{max-width:1100px;margin:28px auto;padding:0 16px}
-.footer{
-  margin-top:40px;text-align:center;padding:20px 16px;color:var(--muted);
-  border-top:1px solid #1a2250;background: rgba(12,18,40,.5);
-}
-/* Central hub logo — bigger, no background ring */
-.hub--logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-  text-decoration: none;
-  border: none;
-  background: none;
-  box-shadow: none;
-}
-
-.hub__logo-big {
-  width: 200px;   /* можно увеличить до 240px если нужно еще больше */
-  height: auto;
-  display: block;
-}
-/* FAQ block */
-.faq {
-  background: #0f0f14;
-  border-top: 1px solid #23232b;
-  padding: 48px 20px;
-}
-.faq__title {
-  color: #7c6cff;
-  font-size: 1.8rem;
-  margin: 0 0 24px 0;
-  text-align: center;
-}
-.faq__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 14px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.faq__item a {
-  display: block;
-  text-decoration: none;
-  color: #e6e6e6;
-  background: #15151b;
-  border: 1px solid #242432;
-  padding: 14px 16px;
-  border-radius: 10px;
-}
-.faq__item a:hover { border-color: #7c6cff; }
-@media (max-width: 720px){
-  .faq__grid { grid-template-columns: 1fr; }
-}
+    // OPTIONAL: quickly flip which step is "now" without editing HTML
+    // setCurrentStep('Hourglass'); // 'Sun','Hourglass','Mechanics','Quartz','Tourbillon','Atom','Quantum'
+    function setCurrentStep(name){
+      const map = {Sun:0,Hourglass:1,Mechanics:2,Quartz:3,Tourbillon:4,Atom:5,Quantum:6};
+      const idx = map[name] ?? 1;
+      document.querySelectorAll('.timeline .step').forEach((el,i)=>{
+        const pill = el.querySelector('.pill');
+        pill.classList.remove('state-done','state-now','state-next');
+        if(i < idx){ pill.classList.add('state-done'); pill.textContent = pill.textContent.replace('—','—'); }
+        else if(i === idx){ pill.classList.add('state-now'); }
+        else { pill.classList.add('state-next'); }
+      });
+    }
+  </script>
+</body>
+</html>
