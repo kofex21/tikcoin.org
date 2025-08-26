@@ -11,46 +11,47 @@
     --fg:#e7e9ee; --mut:#a7adbb; --line:#232634;
     --card:#151923; --accent:#e8d27c; --btn:#1a1f2a; --link:#bcd1ff;
   }
-  @media (prefers-color-scheme: light){
-    :root{--bg:#ffffff;--fg:#0b0d12;--mut:#4a5160;--line:#e5e8ef;--card:#f6f7fb;--accent:#8b6f1f;--btn:#eef0f6;--link:#1b4fd8}
-  }
   *{box-sizing:border-box}
-  html,body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-  a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+  html,body{margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
   .wrap{max-width:980px;margin:0 auto;padding:0 16px}
   header{border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
   .brand{display:flex;align-items:center;gap:.5rem;font-weight:800}
-  .brand img{height:26px;width:26px;border-radius:6px}
-  .logo{width:26px;height:26px;border:2px solid var(--accent);border-radius:50%;display:grid;place-items:center;font-size:.8rem}
-  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .8rem;border:1px solid var(--line);border-radius:10px;background:var(--btn);color:var(--fg);font-weight:600}
+  .brand img{height:26px;width:26px}
+  .btn{display:inline-flex;align-items:center;gap:.4rem;
+    padding:.55rem .8rem;border:1px solid var(--line);border-radius:10px;
+    background:var(--btn);color:var(--fg);font-weight:600}
   .btn.primary{background:var(--accent);color:#111}
   section{padding:28px 0;border-bottom:1px solid var(--line)}
   h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:.2rem 0}
-  h2{margin:.2rem 0 6px}h3{margin:.2rem 0 4px}
-  p.mut{color:var(--mut)}.small{font-size:.92rem}.center{text-align:center}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  h2{margin:.2rem 0 6px}
+  p.mut{color:var(--mut)}
+  .small{font-size:.92rem}
+  .center{text-align:center}
+  .card{background:var(--card);border:1px solid var(--line);
+    border-radius:12px;padding:16px}
   .grid{display:grid;gap:12px}
-  @media(min-width:860px){.grid.cols-2{grid-template-columns:1fr 1fr}.grid.cols-3{grid-template-columns:1fr 1fr 1fr}}
-  ul.clean{margin:.3rem 0 .2rem 1.1rem}
-  .pill{display:inline-block;padding:.2rem .55rem;border-radius:999px;border:1px solid var(--line);font-size:.82rem;color:var(--mut)}
-  details{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px}
-  summary{cursor:pointer;font-weight:700}
-  .toc a{display:block;padding:.25rem 0}
-  .foot{padding:22px 0 36px}
+  @media(min-width:860px){
+    .grid.cols-2{grid-template-columns:1fr 1fr}
+    .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+  }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <div class="brand">
-      <img src="logo.png" alt="TIKcoin logo">
+      <img src="assets/Logo.png" alt="TIKcoin logo">
       <span>TIKcoin</span>
     </div>
     <nav style="display:flex;gap:.5rem">
       <a class="btn" href="https://t.me/tikcoin" target="_blank" rel="noopener">Telegram</a>
       <a class="btn" href="https://x.com/tikcoin" target="_blank" rel="noopener">X</a>
-      <a class="btn primary" href="#whitepaper">Whitepaper</a>
+      <!-- Whitepaper как отдельная страница -->
+      <a class="btn primary" href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
     </nav>
   </div>
 </header>
@@ -59,9 +60,12 @@
   <!-- HERO -->
   <section>
     <div class="wrap">
-      <div class="pill">A symbol of time on Ethereum</div>
       <h1>Time can’t be stopped, rewound, or cheated.</h1>
-      <p class="mut">Liquidity locked. Core contracts immutable after freeze. No bridges. No taxes. Community pool supports partners & integrations. The rest — <strong>Time Will Tell</strong>.</p>
+      <p class="mut">
+        Liquidity locked. Core contracts immutable after freeze.  
+        No bridges. No taxes. Community pool supports partners & integrations.  
+        The rest — <strong>Time Will Tell</strong>.
+      </p>
     </div>
   </section>
 
@@ -69,7 +73,9 @@
   <section id="road">
     <div class="wrap">
       <h2>Road of Time</h2>
-      <p class="mut small">Unskippable sequence (canon): Sun → Hourglass → Mechanics → Quartz → Tourbillon → Atom → Quantum.</p>
+      <p class="mut small">
+        Canon sequence: Sun → Hourglass → Mechanics → Quartz → Tourbillon → Atom → Quantum.
+      </p>
       <div class="grid cols-2" style="margin-top:10px">
         <div class="card"><strong>☀️ Sun — Foundation</strong><br><span class="small mut">Architecture defined. Whitepaper skeleton ready.</span></div>
         <div class="card"><strong>⏳ Hourglass — Audit prep</strong><br><span class="small mut">Contracts in development; audit scheduling; freeze criteria set.</span></div>
@@ -77,16 +83,8 @@
         <div class="card"><strong>💎 Quartz — Listing & utilities</strong><br><span class="small mut">DEX listing, dashboards, on-chain referrals.</span></div>
         <div class="card"><strong>🌀 Tourbillon — DAO</strong><br><span class="small mut">Governance via multisig + timelock.</span></div>
         <div class="card"><strong>⚛️ Atom — Integrations</strong><br><span class="small mut">Partners via community pool grants/OTC; ecosystem growth.</span></div>
-        <div class="card"><strong>🧭 Quantum — Beyond Time</strong><br><span class="small mut">Future innovations, undisclosed. Time Will Tell.</span></div>
+        <div class="card"><strong>🧭 Quantum — Beyond Time</strong><br><span class="small mut">Future innovations. Time Will Tell.</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHITEPAPER -->
-  <section id="whitepaper">
-    <div class="wrap">
-      <h2>Whitepaper (teaser)</h2>
-      <p class="mut small">Full document: Introduction + 15 Chapters + Conclusion. Main invariant: Liquidity $11M → $6M locked LP / $3M reserve locked / $2M development unlocked.</p>
     </div>
   </section>
 
