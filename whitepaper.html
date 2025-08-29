@@ -192,74 +192,77 @@ We do not give empty promises. We give numbers and mechanisms. Everything else �
 
     <!-- 2.5 START -->
 <div id="tokenomics" class="section">
-  <h3>2.5 Honest Tokenomics</h3>
-  <p>Fixed supply tied to time. <strong>Total supply: 3,155,760,000 TIK</strong> (= 100 years in seconds; 1 TIK = 1 second). No minting after deployment.</p>
+  <h3>2.5 Fair Tokenomics</h3>
+<p>
+Fixed supply bound to time. Total supply: <strong>3,155,760,000 TIK</strong> (= 100 years in seconds; 1 TIK = 1 second). 
+No minting after deployment.
+</p>
 
-  <h4>2.5.1 Supply Allocation</h4>
-  <table class="tokenomics">
-    <thead>
-      <tr>
-        <th>Bucket</th>
-        <th class="num">Percent</th>
-        <th class="num">Amount (TIK)</th>
-        <th>Purpose &amp; Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Presale</td>
-        <td class="num">35%</td>
-        <td class="num">1,104,516,000</td>
-        <td>Single presale at $0.01. Status tiers granted once, forever.</td>
-      </tr>
-      <tr>
-        <td>Airdrop &amp; Bonuses</td>
-        <td class="num">20%</td>
-        <td class="num">631,152,000</td>
-        <td>Rewards time contribution + presale bonuses. No sales from this pool.</td>
-      </tr>
-      <tr>
-        <td>Treasury / Reserve</td>
-        <td class="num">20%</td>
-        <td class="num">631,152,000</td>
-        <td>Partnerships, audits, listings, grants. Multisig + timelock; on-chain governance.</td>
-      </tr>
-      <tr>
-        <td>Marketing (Locked)</td>
-        <td class="num">15%</td>
-        <td class="num">473,364,000</td>
-        <td>Future campaigns in waves; unlocks per governance/vesting. No discretionary dumps.</td>
-      </tr>
-      <tr>
-        <td>Founder (Vesting)</td>
-        <td class="num">10%</td>
-        <td class="num">315,576,000</td>
-        <td>10% at listing; remaining 90% start after community finishes 8-month vesting, then 8 equal monthly parts (total ~16 months). Founder wallet is public.</td>
-      </tr>
-    </tbody>
-  </table>
+<h4>2.5.1 Distribution of Supply</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Bucket</th>
+      <th>Percent</th>
+      <th>Amount (TIK)</th>
+      <th>Purpose & Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Presale</td>
+      <td><strong>35%</strong></td>
+      <td><strong>1,104,516,000</strong></td>
+      <td>One-time presale at $0.01. Total raise: $11,045,160. Vesting: 10% TGE, 2m cliff, 18m linear (full unlock by month 20).</td>
+    </tr>
+    <tr>
+      <td>Airdrop & Community</td>
+      <td><strong>20%</strong></td>
+      <td><strong>631,152,000</strong></td>
+      <td>Referral ladder ≤33, rewards for time participation, community incentives. Distributed only via contracts, with the same vesting rules.</td>
+    </tr>
+    <tr>
+      <td>Reserve Liquidity</td>
+      <td><strong>15%</strong></td>
+      <td><strong>473,364,000</strong></td>
+      <td>Liquidity source. At listing: 200M TIK paired with $6M → start ≈ $0.03 (3× presale). LP tokens locked ≥18m. Remaining 273,364,000 TIK in timelock for future DAO-managed liquidity injections.</td>
+    </tr>
+    <tr>
+      <td>TIK Vault</td>
+      <td><strong>10%</strong></td>
+      <td><strong>315,576,000</strong></td>
+      <td>No “founder” allocation. This vault represents equal rules: 10% TGE, 2m cliff, 18m linear. Optionally stricter: 0% TGE, 12m cliff, 24–36m linear. The vault address is public.</td>
+    </tr>
+    <tr>
+      <td>DAO Treasury</td>
+      <td><strong>20%</strong></td>
+      <td><strong>631,152,000</strong></td>
+      <td>Partnerships, audits, listings, grants, ecosystem growth. Managed via DAO + multisig + timelock; no discretionary unlocks.</td>
+    </tr>
+  </tbody>
+</table>
 
-  <h4>2.5.2 Locks &amp; Vesting (alignment with §2.4)</h4>
-  <ul>
-    <li><strong>No lock:</strong> Sun, Hourglass (and Mechanica — per community rule of simplicity at entry).</li>
-    <li><strong>With lock:</strong> Quartz, Tourbillon, Atom, Quantum — 10% at listing, remaining 90% linearly over 8 months.</li>
-    <li><strong>Founder:</strong> as detailed above (later than all; fully transparent).</li>
-    <li><strong>Airdrop &amp; Bonuses:</strong> only to reward time &amp; presale tiers; distribution enforced by contract.</li>
-    <li><strong>Marketing pool:</strong> locked; tranches unlocked only via multisig+timelock following on-chain votes.</li>
-  </ul>
+<h4>2.5.2 Locks and Vesting (aligned with §2.4)</h4>
+<ul>
+  <li><strong>Universal Vesting:</strong> 10% TGE, 2m cliff, 90% linear over 18m (full unlock by month 20). Applies to presale, airdrops, community, and treasury grants.</li>
+  <li><strong>TIK Vault:</strong> same rules or stricter (0% TGE, 12m cliff, 24–36m linear) — always later than community. Vault is public.</li>
+  <li><strong>Reserve Liquidity:</strong> 200M TIK at listing + $6M (locked LP tokens ≥18m). Remaining 273,364,000 TIK in timelock, deployable only via DAO vote + matching quote assets at market price.</li>
+  <li><strong>DAO Treasury:</strong> timelock + on-chain governance required for any release.</li>
+</ul>
 
-  <h4>2.5.3 Presale Funds Flow (not tokens)</h4>
-  <ul>
-    <li><strong>85% of raised funds → liquidity</strong> (locked per contract logic).</li>
-    <li><strong>15% → development</strong> (engineering, audit, ops, growth). Tracked via public treasury addresses.</li>
-  </ul>
+<h4>2.5.3 Presale Fund Flows (USD, not tokens)</h4>
+<ul>
+  <li>$6,000,000 → Initial Liquidity (locked via LaunchEscrow, LP tokens timelocked).</li>
+  <li>$3,000,000 → Reserve Liquidity (timelock, future DAO-managed injections).</li>
+  <li>$2,000,000 → Development (engineering, audit, operations, marketing). Tracked via treasury addresses.</li>
+</ul>
 
-  <h4>2.5.4 Transparency</h4>
-  <ul>
-    <li>All allocation wallets are public and labeled.</li>
-    <li>No hidden taxes/fees, no mint after deploy, no pausable backdoors.</li>
-    <li>Any exceptional movement from treasury/marketing requires an on-chain vote.</li>
-  </ul>
+<h4>2.5.4 Transparency</h4>
+<ul>
+  <li>All allocation vaults and treasury wallets are public and labeled.</li>
+  <li>No hidden taxes, no backdoors, no pause switches.</li>
+  <li>Any exceptional movement from Reserve Liquidity or DAO Treasury requires on-chain DAO governance + timelock execution.</li>
+</ul>
 </div>
 <!-- 2.5 END -->
 
