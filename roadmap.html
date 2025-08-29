@@ -1,39 +1,51 @@
 <!-- ROADMAP -->
-<h2 id="roadmap">3.X Roadmap — In Plain Words</h2>
+<h2 id="roadmap">3.11 Roadmap — In Plain Words</h2>
+
 <p>
-  We keep our roadmap simple and honest. No buzzwords, no empty promises.
-  Below is what we plan to do <em>before listing</em>. Everything beyond that is guided by one rule:
-  <strong>Time Will Tell</strong>.
+We keep our roadmap simple and honest. No buzzwords, no hidden promises. Below is what we plan to deliver <em>before listing</em>. Beyond that, only one principle applies:
+<strong>Time Will Tell</strong>.
 </p>
 
 <h3>V1 — Prototype (☀️ Sun)</h3>
-<p>
-  First workable foundation. Think of it as laying the rails before the train:
-  a prototype token for staging, the distribution logic for the airdrop, and a safe multisig.
-  It’s not a “finished product” — it’s the start you can inspect and critique.
-</p>
+<ul>
+  <li>Deploy prototype contracts: <code>TIKP</code> (1 TIK = 1 second, cap = 31,557,600), <code>AirdropDistributor</code>, multisig 3/5.</li>
+  <li>Launch Airdrop #1 with referral ladder (≤33, from community pool).</li>
+  <li>Immutable ethos: no bridges, no admin tricks, no hidden switches.</li>
+</ul>
+<p><em>Result: the idea goes live — time cannot be faked.</em></p>
 
 <h3>V1.5 — Presale Prep (⏳ Hourglass)</h3>
-<p>
-  We tighten the prototype, prepare for audit, and open the presale at <strong>$0.01</strong>.
-  Funds are split transparently: <strong>$6M</strong> to initial liquidity (locked at listing),
-  <strong>$3M</strong> to a locked reserve, and <strong>$2M</strong> to the development fund.
-  No hidden mechanics — just clear rules you can read twice.
-</p>
+<ul>
+  <li>Presale contract with anti-sybil filters (Gitcoin Passport / WorldID threshold, commit-reveal).</li>
+  <li><strong>Vesting:</strong> 10% unlock at TGE, 2-month cliff, 90% linear over 18 months (fully unlocked by month 20).</li>
+  <li><strong>LaunchEscrow:</strong> stores presale funds, enforces $0.01 listing, anyone can call <code>launch()</code> at deadline. LP tokens go directly to timelock (≥12m).</li>
+  <li>Fund split: $6M → liquidity (locked), $3M → reserve (timelock), $2M → development.</li>
+</ul>
+<p><em>Result: a fair presale, permissionless launch, no “trust me”.</em></p>
 
 <h3>V2 — Immutable Core & Listing (💎 Quartz)</h3>
-<p>
-  The core token becomes immutable (no owner keys, no tricks). We publish the listing with locked liquidity,
-  enable basic utilities (dashboard, referrals), and let the market do what the market does — without “admin magic”.
-</p>
+<ul>
+  <li>Deploy final <code>TIK</code> (immutable ERC20, supply = 3,155,760,000, no mint/pause/tax/blacklist, ownership = 0x0).</li>
+  <li>Migrate 1:1 from <code>TIKP</code> via <code>Migrator</code>.</li>
+  <li>Permissionless listing at $0.01 (from LaunchEscrow). LP tokens already locked.</li>
+  <li>Governance: multisig 3/5 + Timelock + Constitutional Guardian.</li>
+  <li>Utilities live:
+    <ul>
+      <li><strong>Century Meter:</strong> on-chain dashboard of the century’s progress.</li>
+      <li><strong>NFT Clocks:</strong> dynamic by share of locked tokens.</li>
+    </ul>
+  </li>
+</ul>
+<p><em>Result: immutable core, liquidity locked, utilities online.</em></p>
 
-<h3>… Time Will Tell (🌀 → ⚛️ → 🧭)</h3>
-<p>
-  Partnerships, integrations, and everything that comes next are earned over time. We don’t force it, we don’t fake it.
-  We build, ship, and let time prove the rest.
-</p>
+<h3>V3 — Ecosystem Growth (🌀 Tourbillon → ⚛️ Atom)</h3>
+<ul>
+  <li>DAO votes with tiered governance, referrals and dashboards on-chain.</li>
+  <li>DEX and aggregator integrations.</li>
+  <li>Partnerships and creative utilities — only if aligned with the canon (no bridges, no admin privileges).</li>
+</ul>
+<p><em>Result: the century evolves. Beyond this point — Time Will Tell.</em></p>
 
 <p class="note">
-  <strong>Summary:</strong> V1 lays the rails, V1.5 starts the journey with presale, V2 locks the route and opens the station (listing).
-  Beyond that — Time Will Tell.
+<strong>Summary:</strong> V1 = idea and airdrop, V1.5 = fair presale (anti-sybil, escrow, vesting), V2 = immutable core & listing, V3 = ecosystem growth. After that — <strong>Time Will Tell</strong>.
 </p>
