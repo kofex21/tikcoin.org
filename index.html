@@ -4,55 +4,48 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>TIKCOIN — Time Tokenized</title>
-<meta name="description" content="TIKCOIN — Immutable core on Ethereum mainnet. 1 TIK = 1 second. No bridges. Open-source, audited, transparent vestings." />
+<meta name="description" content="TIKCOIN — 1 TIK = 1 second. Immutable on Ethereum mainnet. No bridges." />
 <link rel="icon" href="favicon.ico" />
 <style>
   :root{
-    --bg:#0b0c0f; --fg:#f1f5f9; --muted:#94a3b8; --accent:#7c6cff;
-    --ok:#22c55e; --warn:#f59e0b; --info:#60a5fa; --bad:#ef4444;
-    --card:#11141a; --line:#242a35;
+    --bg:#0b0c0f; --fg:#f1f5f9; --muted:#9aa4b2; --accent:#7c6cff; --line:#202532;
+    --card:#11141a; --ghost:#0e1218; --good:#10b981;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-  a{color:#93c5fd;text-decoration:none} a:hover{text-decoration:underline}
-  header{position:sticky;top:0;background:rgba(11,12,15,.85);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--line);z-index:50}
-  .wrap{max-width:1140px;margin:0 auto;padding:16px 20px}
+  a{color:#9bbcff;text-decoration:none} a:hover{text-decoration:underline}
+  header{position:sticky;top:0;background:rgba(11,12,15,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:50}
+  .wrap{max-width:1100px;margin:0 auto;padding:16px 20px}
   .brand{display:flex;gap:12px;align-items:center}
   nav{display:flex;gap:18px;flex-wrap:wrap}
   .logo{width:28px;height:28px}
-  .badge{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:#121521;font-size:12px;color:#cfd1ff}
   .btn{padding:11px 16px;border:1px solid var(--line);background:var(--card);border-radius:10px}
   .btn.primary{border-color:transparent;background:linear-gradient(90deg,#7c6cff,#60a5fa);color:#0b1020;font-weight:700}
-  section{padding:48px 0;border-bottom:1px solid var(--line)}
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
   h1,h2,h3{margin:0 0 10px}
-  h1{font-size:36px;line-height:1.15}
+  h1{font-size:40px;line-height:1.1;letter-spacing:.2px}
   h2{font-size:22px}
-  h3{font-size:18px}
-  p.lead{color:#d1d5db;max-width:78ch}
+  p.lead{color:#d3dae4;max-width:74ch}
   .muted{color:var(--muted)}
-  .grid{display:grid;gap:24px}
-  @media (min-width:960px){.grid.cols-2{grid-template-columns:1.2fr .8fr}}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media (max-width:960px){.cards{grid-template-columns:1fr}}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .badge{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:#121521;font-size:12px;color:#cfd1ff}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-  .kvs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-  @media (max-width:960px){.kvs{grid-template-columns:repeat(2,1fr)}}
-  .kv{background:#0f131a;border:1px dashed #202635;padding:12px;border-radius:10px}
-  .svgrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-  .svgbox{width:28px;height:28px;display:inline-grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:#0e1218}
-  .timeline{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
-  @media (max-width:960px){.timeline{grid-template-columns:repeat(3,1fr)}}
-  .phase{background:#10141c;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
-  .phase small{display:block;color:#9aa5b1}
-  .table{border:1px solid var(--line);border-radius:12px;overflow:hidden}
-  table{border-collapse:collapse;width:100%;background:var(--card)}
-  th,td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}
-  thead th{background:#141926}
-  footer{color:var(--muted);padding:28px 0}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .grid-2{display:grid;gap:24px}
+  @media (min-width:980px){.grid-2{grid-template-columns:1.2fr .8fr}}
+  /* Century Clock */
+  .clock{background:var(--ghost);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .clock .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .clock .big{font-size:28px;font-weight:700;letter-spacing:.3px}
+  .bar{height:10px;border-radius:999px;background:#0d1118;border:1px solid #1a2130;overflow:hidden;margin-top:10px}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,#7c6cff,#60a5fa)}
+  .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
   .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#10141c;border:1px solid var(--line);font-size:12px;color:#cbd5e1}
-  .ok{color:#10b981}
+  /* Minimal manifesto list */
+  .manifesto{display:grid;gap:10px;margin-top:12px}
+  .manifesto .item{background:var(--ghost);border:1px dashed #232a38;border-radius:12px;padding:12px}
+  footer{color:var(--muted);padding:30px 0}
 </style>
 </head>
 <body>
@@ -61,23 +54,16 @@
 <header>
   <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
     <div class="brand">
-      <!-- Inline SVG logo -->
+      <!-- Minimal inline logo -->
       <svg class="logo" viewBox="0 0 64 64" aria-label="TIKCOIN logo" role="img">
         <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#7c6cff"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
         <circle cx="32" cy="32" r="29" fill="none" stroke="url(#g)" stroke-width="4"/>
         <path d="M18 22h28M32 22v24" stroke="#cfd1ff" stroke-width="4" stroke-linecap="round"/>
       </svg>
       <strong style="letter-spacing:.3px">TIKCOIN</strong>
-      <span class="badge">#TimeTokenized</span>
+      <span class="badge">Minimal Landing</span>
     </div>
     <nav>
-      <a href="#hero">Intro</a>
-      <a href="#canon">Canon</a>
-      <a href="#foundations">Foundations</a>
-      <a href="#numbers">Numbers</a>
-      <a href="#phases">Phases</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#faq">FAQ</a>
       <a href="whitepaper.html">WhitePaper</a>
       <a href="roadmap.html">Roadmap</a>
     </nav>
@@ -86,222 +72,110 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO (only essence) -->
   <section id="hero">
-    <div class="wrap grid cols-2">
+    <div class="wrap grid-2">
       <div>
-        <h1>#TimeTokenized — One Canon. One Chain. One Community.</h1>
+        <h1>We cannot stop time — but we can tokenize it.</h1>
         <p class="lead">
-          We anchor value in <b>time</b>. <b>1 TIK = 1 second</b> (seconds in a century: <b>3,155,760,000</b>, <i>decimals=0</i>).
-          Immutable core on Ethereum mainnet. <b>No bridges</b>. Open-source, audited, transparent vestings.
-          Visual arc: <span class="pill">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span>
+          <b>1 TIK = 1 second</b>. Total supply <b>3,155,760,000</b> (seconds in a century, <i>decimals=0</i>).
+          Immutable on <b>Ethereum mainnet</b>. <b>No bridges.</b>
         </p>
-        <div class="cta-row" style="margin-top:14px">
-          <a class="btn primary" href="whitepaper.html">Read WhitePaper</a>
-          <a class="btn" href="roadmap.html">See Roadmap</a>
-          <a class="btn" href="#tokenomics">Tokenomics</a>
-        </div>
-        <div class="svgrow" aria-hidden="true" style="margin-top:12px">
+        <div class="badges" aria-hidden="true">
           <span class="badge">Immutable Core (V2)</span>
           <span class="badge">No Bridges</span>
           <span class="badge">Open-Source & Audited</span>
-          <span class="badge">Community Pool 20%</span>
-          <span class="badge">Airdrop #1 = 1%</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn primary" href="whitepaper.html">Read WhitePaper</a>
+          <a class="btn" href="roadmap.html">See Roadmap</a>
         </div>
       </div>
-      <div class="card">
-        <h3>Quick Facts</h3>
-        <div class="kvs" style="margin-top:8px">
-          <div class="kv"><b>Total Supply</b><br/>3,155,760,000 TIK</div>
-          <div class="kv"><b>Decimals</b><br/>0</div>
-          <div class="kv"><b>Airdrop #1</b><br/>31,557,600 TIK (1%)</div>
-          <div class="kv"><b>Multisig</b><br/>3 / 5</div>
-        </div>
-        <p class="muted" style="margin-top:10px">No taxes. No burns. Transparent locks & vestings. Mainnet only.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CANON -->
-  <section id="canon">
-    <div class="wrap grid cols-2">
-      <div>
-        <h2>Canon (Invariants)</h2>
-        <ul>
-          <li><b>TIK</b> — ERC-20, <b>decimals=0</b>, supply <b>3,155,760,000</b>; V2 has <b>no owner/mint/pause/blacklist</b>.</li>
-          <li><b>No bridges / no cross-chain</b>. Optional side tokens only via 3/5 multisig under strict policy.</li>
-          <li><b>Transparency:</b> Community Pool <b>20%</b>; Airdrop #1 <b>1%</b>; locks & vestings on-chain.</li>
-          <li><b>Governance:</b> Tiered-DAO + Timelock + Policy Module + Multisig (3/5) + Constitutional Guardian (pre-execution veto; cannot spend treasury).</li>
-          <li><b>Listing & Liquidity:</b> public playbook; LP lock ≥ <b>18 months</b>; addresses public and labeled.</li>
-        </ul>
-        <div class="svgrow" aria-hidden="true" style="margin-top:8px">
-          <div class="svgbox">☀️</div><div class="svgbox">⌛</div><div class="svgbox">⚙️</div>
-          <div class="svgbox">💎</div><div class="svgbox">🌀</div><div class="svgbox">⚛️</div><div class="svgbox">🧩</div>
+      <!-- Century Clock -->
+      <div class="clock" id="century">
+        <div class="row"><span class="muted">Century Clock</span><span class="pill">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span></div>
+        <div class="big" id="pct">0.00%</div>
+        <div class="bar"><span id="bar" style="width:0%"></span></div>
+        <div class="kv">
+          <div><span class="muted">Elapsed</span><br/><b id="elapsed">—</b> sec</div>
+          <div><span class="muted">Remaining</span><br/><b id="remain">—</b> sec</div>
+          <div><span class="muted">Now (UTC)</span><br/><b id="nowutc">—</b></div>
+          <div><span class="muted">Total (Canon)</span><br/><b>3,155,760,000</b> sec</div>
         </div>
       </div>
-      <div class="card">
-        <h3>At a Glance</h3>
-        <ul style="margin-top:6px">
-          <li><b>Mainnet only.</b> Reduced attack surface.</li>
-          <li><b>Immutable core.</b> Code reflects the three axioms of time.</li>
-          <li><b>Policy-gated actions.</b> DAO → Timelock → Multisig execution.</li>
-          <li><b>Public proofs.</b> Audits, LP locks, labeled addresses.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
-  <!-- FOUNDATIONS -->
-  <section id="foundations">
+  <!-- MANIFESTO (short, non-duplicating) -->
+  <section id="manifesto">
     <div class="wrap">
-      <h2>Foundations</h2>
-      <p class="muted">We don’t name internal committees — we publish principles and encode them.</p>
-      <div class="cards" style="margin-top:12px">
-        <div class="card"><h3>Philosophy</h3><p>Fixed symbolism; arc strictly follows <i>Sun → … → Quantum</i>.</p></div>
-        <div class="card"><h3>Psychology</h3><p>Trust by design: clarity over hype; no dark patterns; honest CTAs.</p></div>
-        <div class="card"><h3>Mathematics</h3><p>Supply = seconds; vesting math explicit; safety margins & cap guards.</p></div>
-        <div class="card"><h3>Economics</h3><p>No taxes/burns; transparent locks; Community Pool = 20%.</p></div>
-        <div class="card"><h3>Ethics</h3><p>Immutable core. No bridges. Audits & addresses public.</p></div>
-        <div class="card"><h3>Sociology & Marketing</h3><p>Community-first rituals; fair referrals (≤33); accessible docs.</p></div>
-        <div class="card"><h3>Governance</h3><p>Tiered-DAO + Timelock + Policy + Multisig + Constitutional Guardian.</p></div>
+      <h2>Manifesto (3 axioms)</h2>
+      <div class="manifesto">
+        <div class="item"><b>Time cannot be stopped.</b> Core stays immutable; no pause, no blacklist, no stealth controls.</div>
+        <div class="item"><b>Time cannot be reversed.</b> No changes that alter fundamentals after V2.</div>
+        <div class="item"><b>Time cannot be deceived.</b> No taxes, no hidden mint; open code and audits.</div>
       </div>
+      <p class="muted" style="margin-top:10px">Everything deeper — see WhitePaper and Roadmap.</p>
     </div>
   </section>
 
-  <!-- NUMBERS -->
-  <section id="numbers">
+  <!-- SLOGANS (brand voice only) -->
+  <section id="slogans">
     <div class="wrap">
-      <h2>Numbers that Matter</h2>
-      <div class="kvs" style="margin-top:12px">
-        <div class="kv"><b>Seconds in a Century</b><br/>3,155,760,000</div>
-        <div class="kv"><b>Community Pool</b><br/>20%</div>
-        <div class="kv"><b>Airdrop #1</b><br/>1% (31,557,600 TIK)</div>
-        <div class="kv"><b>LP Lock</b><br/>≥ 18 months</div>
+      <h2>Core Slogans</h2>
+      <div class="manifesto">
+        <div class="item">Time is the only unit of measure.</div>
+        <div class="item">Code over words.</div>
+        <div class="item">One Canon. One Chain. One Community.</div>
       </div>
-      <p class="muted" style="margin-top:8px">No stealth taxes or burns. Every allocation and vesting is visible and auditable.</p>
-    </div>
-  </section>
-
-  <!-- PHASES PREVIEW -->
-  <section id="phases">
-    <div class="wrap">
-      <h2>Phases (Sun → … → Quantum)</h2>
-      <p class="muted">Full detail in the <a href="roadmap.html">Roadmap</a>.</p>
-      <div class="timeline" style="margin-top:12px">
-        <div class="phase"><b>Sun</b><small>Canon Freeze</small></div>
-        <div class="phase"><b>Hourglass</b><small>V1 Contracts</small></div>
-        <div class="phase"><b>Mechanical</b><small>Presale (IOU)</small></div>
-        <div class="phase"><b>Quartz</b><small>Immutable Core</small></div>
-        <div class="phase"><b>Tourbillon</b><small>Listing & LP</small></div>
-        <div class="phase"><b>Atom</b><small>Utilities</small></div>
-        <div class="phase"><b>Quantum</b><small>DAO Scale-Up</small></div>
-      </div>
-      <div class="cta-row" style="margin-top:14px">
-        <a class="btn primary" href="roadmap.html#phases">View Full Phases</a>
-        <a class="btn" href="roadmap.html#gates">Go/No-Go Gates</a>
-        <a class="btn" href="roadmap.html#ledger">Governance Log</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOKENOMICS MINI -->
-  <section id="tokenomics">
-    <div class="wrap">
-      <h2>Tokenomics (Overview)</h2>
-      <div class="table" style="margin-top:12px">
-        <table aria-label="Tokenomics overview">
-          <thead>
-            <tr><th>Bucket</th><th>Percent</th><th>Amount (TIK)</th><th>Notes</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Presale (IOU)</td><td><b>35%</b></td><td><b>1,104,516,000</b></td>
-              <td>One-time presale via LaunchEscrow; converts 1:1 at migration; baseline vesting.</td>
-            </tr>
-            <tr>
-              <td>Community Pool</td><td><b>20%</b></td><td><b>631,152,000</b></td>
-              <td>Incentives & airdrops (<b>Airdrop #1 = 1%</b> = 31,557,600 TIK); on-chain proofs.</td>
-            </tr>
-            <tr>
-              <td>Reserve Liquidity</td><td><b>15%</b></td><td><b>473,364,000</b></td>
-              <td>LP lock ≥18 months; remaining reserve timelocked; DAO-managed injections.</td>
-            </tr>
-            <tr>
-              <td>TIK Vault</td><td><b>10%</b></td><td><b>315,576,000</b></td>
-              <td>Protocol vault; stricter locks allowed; address public.</td>
-            </tr>
-            <tr>
-              <td>DAO Treasury</td><td><b>20%</b></td><td><b>631,152,000</b></td>
-              <td>Audits, listings, grants, ecosystem; DAO + Policy + Timelock + Multisig 3/5.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="muted" style="margin-top:8px">No taxes or burns. Any movement from reserves/treasury requires DAO proposal → timelock → execution.</p>
-      <div class="cta-row" style="margin-top:10px">
-        <a class="btn" href="whitepaper.html#tokenomics">Full Tokenomics</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="wrap grid cols-2">
-      <div>
-        <h2>FAQ</h2>
-        <details open><summary><b>Why decimals = 0?</b></summary>
-          <p>Time is atomic at our chosen granularity. <i>decimals=0</i> simplifies accounting and UX.</p>
-        </details>
-        <details><summary><b>Why no bridges?</b></summary>
-          <p>To minimize attack surface and trust. Optional side tokens only via 3/5 multisig under strict policy.</p>
-        </details>
-        <details><summary><b>Are there taxes or burns?</b></summary>
-          <p>No. All flows are explicit: locks, vestings, grants.</p>
-        </details>
-        <details><summary><b>What is Airdrop #1?</b></summary>
-          <p>1% of total supply (31,557,600 TIK), conceptually one year in seconds; distributed by verifiable contribution.</p>
-        </details>
-      </div>
-      <div class="card">
-        <h3>Go / No-Go Gates</h3>
-        <ul style="margin-top:6px">
-          <li><b>Security:</b> criticals resolved or formally waived with rationale.</li>
-          <li><b>Legal/Policy:</b> disclosures & geo policy live; presale terms approved.</li>
-          <li><b>Ops:</b> incident runbooks; keys rotation; backups verified.</li>
-          <li><b>Comms:</b> launch posts & dashboards scheduled.</li>
-          <li><b>Finance:</b> LP lock proof; treasury map; streaming where possible.</li>
-        </ul>
-        <div style="margin-top:8px">
-          <a class="btn" href="roadmap.html#gates">See Gates</a>
-        </div>
+      <div class="hero-cta" style="margin-top:14px">
+        <a class="btn" href="whitepaper.html">Dive into the WhitePaper</a>
+        <a class="btn" href="roadmap.html">Check the Roadmap</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div>© TIKCOIN — Immutable on Ethereum mainnet. No bridges. One community.</div>
-    <div class="svgrow">
-      <span class="pill">Audit PDFs + SHA256: <span class="ok">to be published</span></span>
-      <span class="pill">Contracts: <span class="muted">to be linked in footer</span></span>
+    <div>© TIKCOIN — Immutable on Ethereum mainnet. No bridges.</div>
+    <div class="badges">
+      <span class="pill">1 TIK = 1 second</span>
+      <span class="pill">decimals = 0</span>
     </div>
   </div>
 </footer>
 
-<!-- (Optional) JSON-LD for better previews -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebSite",
-  "name":"TIKCOIN",
-  "url":"https://tikcoin.org",
-  "description":"TIKCOIN — 1 TIK = 1 second. Immutable core on Ethereum mainnet. No bridges.",
-  "inLanguage":"en"
-}
-</script>
+<!-- Minimal JS: Century Clock (canon-based, approx; updates each second) -->
+<script>
+(function(){
+  // Canon model: 100 years = 3,155,760,000 seconds (365.25d/year)
+  const TOTAL = 3155760000;
+  // 21st century: 2001-01-01 00:00:00 UTC → 2100-12-31 23:59:59 UTC
+  const start = Date.UTC(2001,0,1,0,0,0);
+  const end   = start + TOTAL*1000; // align with canon seconds
+  const $ = id => document.getElementById(id);
+  const fmt = n => Number(n).toLocaleString('en-US');
 
+  function tick(){
+    const now = Date.now();
+    const clamped = Math.min(Math.max(now,start), end);
+    const elapsedSec = Math.floor((clamped - start)/1000);
+    const remainSec  = Math.max(TOTAL - elapsedSec, 0);
+    const pct = Math.min(100, Math.max(0, (elapsedSec/TOTAL)*100));
+
+    $('elapsed').textContent = fmt(elapsedSec);
+    $('remain').textContent  = fmt(remainSec);
+    $('pct').textContent     = pct.toFixed(2) + '%';
+    $('bar').style.width     = pct.toFixed(4) + '%';
+    const d = new Date(now);
+    $('nowutc').textContent  = d.toISOString().replace('T',' ').replace('Z',' UTC');
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
