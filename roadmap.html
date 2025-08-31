@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TIKcoin — Roadmap (v2025-08-31)</title>
-  <meta name="description" content="TIKcoin Roadmap: immutable core on Ethereum mainnet, no bridges, Council-of-Fifteen governance, phased delivery from V1 → V2 → Utilities → DAO." />
+  <meta name="description" content="TIKcoin Roadmap: immutable core on Ethereum mainnet, no bridges, governance with Timelock + Multisig + Policy Module + Constitutional Guardian, phased delivery from V1 → V2 → Utilities → DAO." />
   <style>
     :root{
       --bg:#0b0c0f; --fg:#f2f2f2; --muted:#9aa0a6; --accent:#7dd3fc;
@@ -67,10 +67,10 @@
     </div>
     <nav>
       <a href="#canon">Canon</a>
-      <a href="#council">Council</a>
+      <a href="#foundations">Foundations</a>
       <a href="#phases">Phases</a>
       <a href="#gates">Gates</a>
-      <a href="#ledger">Decision Log</a>
+      <a href="#ledger">Governance Log</a>
       <a href="#faq">FAQ</a>
     </nav>
   </div>
@@ -95,7 +95,7 @@
     <div class="cta">
       <a class="btn primary" href="#phases">View Phases</a>
       <a class="btn" href="#gates">Go/No-Go Gates</a>
-      <a class="btn" href="#ledger">Council Decisions</a>
+      <a class="btn" href="#ledger">Governance Log</a>
     </div>
   </section>
 
@@ -128,17 +128,41 @@
     </div>
   </section>
 
-  <!-- COUNCIL -->
-  <section id="council">
-    <h2>Council of Fifteen (C15) — Roles</h2>
+  <!-- FOUNDATIONS -->
+  <section id="foundations">
+    <h2>Foundations of TIKcoin</h2>
+    <p class="muted">TIKcoin stands on rigorous, interdisciplinary foundations. We don’t name committees — we publish principles.</p>
     <div class="cards">
-      <div class="card"><h3>Philosophy</h3><p>Guard symbolism & first principles. Approve narrative of each phase.</p></div>
-      <div class="card"><h3>Psychology</h3><p>Design for trust & clarity. Reduce cognitive load; avoid dark patterns.</p></div>
-      <div class="card"><h3>Mathematics</h3><p>Check token arithmetic, vesting math, security margins, cap guards.</p></div>
-      <div class="card"><h3>Marketing</h3><p>Messaging, funnels, KPIs. Define CTAs & launch communications.</p></div>
-      <div class="card"><h3>Economics</h3><p>Policy for pools/treasury; sustainability without hidden taxes.</p></div>
-      <div class="card"><h3>Ethics</h3><p>Compliance with canon; fairness; no manipulation in UX.</p></div>
-      <div class="card"><h3>Sociology</h3><p>Community rituals, referral fairness, inclusion & moderation norms.</p></div>
+      <div class="card">
+        <h3>Philosophy</h3>
+        <p>Fixed symbolism and first principles. The visual and narrative arc strictly follows:
+          <span class="symbol">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span>.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Psychology</h3>
+        <p>Design for trust: clarity over hype, minimal cognitive load, no dark patterns, honest CTAs.</p>
+      </div>
+      <div class="card">
+        <h3>Mathematics</h3>
+        <p>Supply and vesting arithmetic are exact and auditable. Cap guards and security margins are explicit.</p>
+      </div>
+      <div class="card">
+        <h3>Economics</h3>
+        <p>No taxes. No burns. Transparent locks/vestings. Community pool 20%. Sustainability over gimmicks.</p>
+      </div>
+      <div class="card">
+        <h3>Ethics</h3>
+        <p>Immutable core on Ethereum mainnet. No bridges/cross-chain. Open-source with public audits.</p>
+      </div>
+      <div class="card">
+        <h3>Sociology & Marketing</h3>
+        <p>Community-first rituals, fair referrals (≤33 levels by policy), clear comms and accessible docs.</p>
+      </div>
+      <div class="card">
+        <h3>Governance</h3>
+        <p>Tiered-DAO + Timelock + Policy Module + Multisig (3/5) + Constitutional Guardian (pre-execution veto; cannot spend treasury).</p>
+      </div>
     </div>
   </section>
 
@@ -155,7 +179,7 @@
           <h3>Phase 0 — Canon Freeze (Sun)</h3>
           <div class="meta">
             <span class="status ok">ACTIVE</span>
-            <span class="pill">Owner: C15</span>
+            <span class="pill">Owner: Governance</span>
             <span class="pill">Output: Canon v1</span>
           </div>
           <ul class="ul">
@@ -165,7 +189,7 @@
           </ul>
           <details><summary>Acceptance</summary>
             <ul class="checklist ul">
-              <li>Signed C15 resolution for Canon v1 (hash stored on-chain or repo tag).</li>
+              <li>Signed governance resolution for Canon v1 (hash stored on-chain or repo tag).</li>
               <li>Public Canon page live with immutable commitments.</li>
             </ul>
           </details>
@@ -191,7 +215,7 @@
           <details><summary>Acceptance</summary>
             <ul class="ul">
               <li>Contracts deployed to Ethereum mainnet (V1 scope only).</li>
-              <li>Audit #1 report published; criticals resolved or formally waived by C15.</li>
+              <li>Audit #1 report published; criticals resolved or formally waived by governance.</li>
               <li>Distributor hard-disabled after Airdrop #1 window closes.</li>
             </ul>
           </details>
@@ -323,7 +347,7 @@
     <div>
       <h2>Go / No-Go Gates</h2>
       <ul class="ul">
-        <li><b>Security</b>: all critical findings resolved or explicitly waived by C15 with rationale.</li>
+        <li><b>Security</b>: all critical findings resolved or explicitly waived by governance with rationale.</li>
         <li><b>Legal/Policy</b>: disclosures live; presale terms (if any) approved; KYC/geo policy documented.</li>
         <li><b>Ops</b>: runbooks for incidents; keys & signers rotated/tested; backups verified.</li>
         <li><b>Comms</b>: launch posts, docs, and playbooks scheduled; public dashboards online.</li>
@@ -348,14 +372,14 @@
     </div>
   </section>
 
-  <!-- DECISION LEDGER -->
+  <!-- GOVERNANCE LOG -->
   <section id="ledger">
-    <h2>C15 Decision Log (Public Extract)</h2>
+    <h2>Governance Log (Public Extract)</h2>
     <p class="muted">Authoritative records live on-chain or signed in repo. Below is a human-readable feed.</p>
     <div class="card mono">
       <!-- Example entries; replace with real commits / tx hashes -->
       [2025-08-31] Canon v1 frozen — invariants approved; symbolism locked; EN as primary. (tag: canon-v1)<br/>
-      [2025-08-31] Landing v1 IA approved — hero + canon + phases + gates + ledger. (tag: site-ia-v1)<br/>
+      [2025-08-31] Landing v1 IA approved — hero + canon + foundations + phases + gates + log. (tag: site-ia-v1)<br/>
       [TBD] Audit #1 scope confirmed — TIKP, Distributor, Multisig. (issue: audit-1-scope)<br/>
       [TBD] Presale IOU policy — escrow thresholds & refunds. (policy: presale-escrow-v1)<br/>
     </div>
