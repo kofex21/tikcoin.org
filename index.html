@@ -173,5 +173,40 @@
   setInterval(tick, 1000);
 })();
 </script>
+<!-- TOKENIZATION PROGRESS (Council-approved) -->
+<section id="progress" style="padding:50px 0;border-top:1px solid #222">
+  <div class="wrap">
+    <h2>Tokenization Progress</h2>
+    <p class="muted">Reflecting the Council’s doctrine: time is tokenized second by second.</p>
+    <div class="card" style="max-width:500px">
+      <p><b>Total Supply:</b> 3,155,760,000 TIK (= 100 years in seconds)</p>
+      <p><b>Already Tokenized:</b> <span id="tok-now">0</span> TIK</p>
+      <p><b>Progress:</b> <span id="tok-pct">0%</span></p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const TOTAL = 3155760000; // 100 years in seconds
+  const start = Date.UTC(2001,0,1,0,0,0);
+  const $ = id => document.getElementById(id);
+  const fmt = n => Number(n).toLocaleString('en-US');
+
+  function tick(){
+    const now = Date.now();
+    const shifted = now + 4*3600*1000; // UTC+4
+    const elapsedSec = Math.max(0, Math.floor((shifted - start)/1000));
+    const clamped = Math.min(elapsedSec, TOTAL);
+    const pct = (clamped / TOTAL) * 100;
+
+    $('tok-now').textContent = fmt(clamped);
+    $('tok-pct').textContent = pct.toFixed(6) + '%';
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
