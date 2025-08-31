@@ -1,301 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TIKCOIN — WhitePaper (Canon v2025-08-31)</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    :root{
-      --bg:#0d0d0f;--fg:#e6e6e6;--muted:#a1a1aa;--accent:#7c6cff;--line:#1f2230;--card:#121318;
-    }
-    *{box-sizing:border-box}
-    body{font-family:Arial,Helvetica,sans-serif;line-height:1.65;margin:32px;background:var(--bg);color:var(--fg)}
-    h1,h2,h3,h4{color:var(--accent);margin-top:28px}
-    h1{font-size:2.2rem} h2{font-size:1.7rem} h3{font-size:1.25rem} h4{font-size:1.05rem}
-    p,li{max-width:92ch}
-    .section{margin-bottom:56px}
-    ul,ol{margin:12px 0 18px 22px}
-    li{margin:6px 0}
-    .sep{opacity:.35;margin:18px 0;border:0;border-top:1px solid var(--line)}
-    .muted{color:var(--muted)}
-    code,.mono{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;color:#cbd5e1}
-    table{border-collapse:collapse;width:100%;max-width:1100px;background:var(--card);border:1px solid var(--line)}
-    th,td{padding:10px;border:1px solid var(--line);vertical-align:top}
-    thead th{background:#141720}
-    .badge{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:#151722;color:#cfd1ff;font-size:12px;margin-right:8px}
-    .inline-icons{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:#10131c;color:#cbd5e1;font-size:12px;margin-right:6px}
-    .callout{background:#121525;border:1px solid var(--line);padding:14px;border-radius:10px}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TIKCOIN — WhitePaper (v2025-08-31)</title>
+<meta name="description" content="TIKCOIN WhitePaper: Immutable core on Ethereum mainnet, no bridges, transparent vestings, Foundations-driven design, phased delivery Sun→Hourglass→Mechanical→Quartz→Tourbillon→Atom→Quantum." />
+<style>
+  :root{
+    --bg:#0b0c0f; --fg:#f1f5f9; --muted:#94a3b8; --accent:#7c6cff;
+    --ok:#22c55e; --warn:#f59e0b; --info:#60a5fa; --bad:#ef4444;
+    --card:#11141a; --line:#242a35;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+  a{color:#93c5fd;text-decoration:none} a:hover{text-decoration:underline}
+  header{position:sticky;top:0;background:rgba(11,12,15,.8);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--line);z-index:50}
+  .wrap{max-width:1100px;margin:0 auto;padding:16px 20px}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:28px;height:28px;border:2px solid var(--fg);border-radius:50%;display:inline-grid;place-items:center;font-weight:700}
+  nav{display:flex;gap:18px;flex-wrap:wrap}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h1,h2,h3{margin:0 0 10px}
+  h1{font-size:34px;line-height:1.15;color:#e5e7eb}
+  h2{font-size:22px;color:#e5e7eb}
+  h3{font-size:18px;color:#e5e7eb}
+  p.lead{color:#d1d5db;max-width:74ch}
+  .muted{color:var(--muted)}
+  .badges{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+  .badge{border:1px solid var(--line);background:var(--card);padding:6px 10px;border-radius:999px;font-size:12px}
+  .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+  .btn{padding:10px 14px;border:1px solid var(--line);background:var(--card);border-radius:10px}
+  .btn.primary{border-color:transparent;background:linear-gradient(90deg,#7c6cff,#60a5fa);color:#0b1020;font-weight:700}
+  .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:900px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .kvs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .kv{background:#0f131a;border:1px dashed #202635;padding:10px;border-radius:8px}
+  .mono{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;color:#cbd5e1}
+  ul,ol{margin:8px 0 0 18px;padding:0}
+  li{margin:6px 0}
+  .svgrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .svgbox{width:28px;height:28px;display:inline-grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:#0e1218}
+  .timeline{position:relative}
+  .timeline::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:linear-gradient(#2a2f3a,transparent 30%),linear-gradient(transparent,#2a2f3a 70%);opacity:.7}
+  .mile{position:relative;display:grid;grid-template-columns:36px 1fr;gap:14px;margin:18px 0}
+  .dot{width:14px;height:14px;border-radius:50%;background:#60a5fa;border:2px solid #0b0c0f;margin-top:6px;box-shadow:0 0 0 4px rgba(96,165,250,.15)}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 10px}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#10141c;border:1px solid var(--line);font-size:12px;color:#cbd5e1}
+  .status{padding:2px 8px;border-radius:6px;font-size:12px;border:1px solid var(--line);background:#0e1218}
+  .ok{color:#10b981;border-color:#064e3b}
+  .wip{color:#f59e0b;border-color:#4d2f00}
+  .todo{color:#60a5fa;border-color:#1e3a8a}
+  details{background:#0e1218;border:1px solid var(--line);border-radius:10px;padding:10px;margin-top:10px}
+  table{border-collapse:collapse;width:100%;border:1px solid var(--line);background:var(--card)}
+  th,td{border:1px solid var(--line);padding:10px;vertical-align:top}
+  thead th{background:#141926}
+  footer{color:var(--muted);padding:24px 0}
+</style>
 </head>
 <body>
 
-  <h1>TIKCOIN WhitePaper</h1>
-  <div class="inline-icons" aria-hidden="true">
-    <span class="badge">Immutable Core (V2 TIK)</span>
-    <span class="badge">No Bridges / No Cross-Chain</span>
-    <span class="badge">Open-Source & Audited</span>
-    <span class="badge">Community Pool 20%</span>
-    <span class="badge">Airdrop #1 = 1% (1 year)</span>
+<header>
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <div class="brand">
+      <div class="logo">T</div>
+      <strong>TIKCOIN</strong>
+      <span class="badge">WhitePaper v2025-08-31</span>
+    </div>
+    <nav>
+      <a href="#hero">Intro</a>
+      <a href="#canon">Canon</a>
+      <a href="#foundations">Foundations</a>
+      <a href="#mechanics">Mechanics</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#phases">Phases</a>
+      <a href="#faq">FAQ</a>
+      <a href="#log">Governance Log</a>
+    </nav>
   </div>
+</header>
 
-  <!-- INTRO -->
-  <div class="section" id="introduction">
-    <h2>Introduction</h2>
-    <p>
-      TIKCOIN is not another meme-token. We anchor value in the most universal unit — <b>time</b>.
-      We tokenize one century — specifically the <b>XXI century</b>. The basic unit is a second:
-      <b>1 TIK = 1 second</b>. Total supply equals the seconds in 100 years:
-      <b>3,155,760,000 TIK</b> (<span class="mono">decimals=0</span>).
+<main class="wrap">
+
+  <!-- HERO -->
+  <section id="hero">
+    <h1>#TimeTokenized — WhitePaper</h1>
+    <p class="lead">
+      We anchor value in <b>time</b>. <b>1 TIK = 1 second</b>. Total supply = <b>3,155,760,000 TIK</b> (seconds in a century).
+      Immutable core on Ethereum mainnet. <b>No bridges</b>. Open-source, audited, transparent vestings.
+      Visual & narrative arc: <span class="mono">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span>.
     </p>
-    <p>
-      Three axioms guide every mechanism:
-    </p>
-    <ol>
-      <li><b>Time cannot be stopped.</b> — The core token is immutable; no pause switches.</li>
-      <li><b>Time cannot be reversed.</b> — No upgrade that alters fundamentals after freeze.</li>
-      <li><b>Time cannot be deceived.</b> — No hidden taxes, no stealth mint, no backdoors.</li>
-    </ol>
-    <p>
-      We choose minimalism: <b>Ethereum mainnet only</b>, <b>no bridges</b>, open repositories, published audits,
-      transparent locks and vestings. Marketing follows meaning — not the other way around.
-    </p>
-  </div>
+    <div class="badges">
+      <span class="badge">Immutable Core (V2 TIK)</span>
+      <span class="badge">No Bridges / No Cross-Chain</span>
+      <span class="badge">Open-Source & Audited</span>
+      <span class="badge">Community Pool 20%</span>
+      <span class="badge">Airdrop #1 = 1% (1 year)</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="#phases">Skip to Phases</a>
+      <a class="btn" href="#faq">Read FAQ</a>
+      <a class="btn" href="#tokenomics">See Tokenomics</a>
+    </div>
+  </section>
 
   <!-- CANON -->
-  <div class="section" id="canon">
-    <h2>Canon (Invariants)</h2>
-    <ul>
-      <li><b>Core token:</b> <span class="mono">TIK (ERC-20, decimals=0, totalSupply=3,155,760,000)</span>; <b>no owner/mint/pause/blacklist</b> in V2.</li>
-      <li><b>No bridges / no cross-chain.</b> Optional side tokens only via <b>Multisig 3/5</b> and strict policy (rare exceptions).</li>
-      <li><b>Transparency:</b> community pool <b>20%</b>; <b>Airdrop #1 = 1%</b> (31,557,600 TIK) — equivalent to one year in seconds.</li>
-      <li><b>Governance:</b> Tiered-DAO + Timelock + Policy Module + Multisig Executor (3/5) + <i>Constitutional Guardian</i> (pre-execution veto; cannot spend treasury).</li>
-      <li><b>Symbolism sequence is fixed everywhere:</b> <i>Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</i>.</li>
-      <li><b>Listing & liquidity:</b> per public playbook; LP lock ≥ <b>18 months</b>; all addresses public.</li>
-    </ul>
-  </div>
+  <section id="canon" class="grid">
+    <div>
+      <h2>Canon (Invariants)</h2>
+      <ul>
+        <li><b>TIK</b> — ERC-20, <b>decimals=0</b>, totalSupply <b>3,155,760,000</b>; in V2: no owner/mint/pause/blacklist.</li>
+        <li><b>No bridges</b>, no cross-chain. Optional limited side tokens only via 3/5 multisig under strict policy.</li>
+        <li><b>Transparency:</b> Community Pool <b>20%</b>; <b>Airdrop #1 = 1%</b> (31,557,600 TIK). Locks & vestings on-chain.</li>
+        <li><b>Governance:</b> Tiered-DAO + Timelock + Policy Module + Multisig (3/5) + Constitutional Guardian (pre-execution veto; cannot spend treasury).</li>
+        <li><b>Listing & Liquidity:</b> public playbook; LP lock ≥ <b>18 months</b>; addresses public and labeled.</li>
+      </ul>
+      <div class="svgrow" aria-hidden="true">
+        <div class="svgbox">☀️</div><div class="svgbox">⌛</div><div class="svgbox">⚙️</div>
+        <div class="svgbox">💎</div><div class="svgbox">🌀</div><div class="svgbox">⚛️</div><div class="svgbox">🧩</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Key Numbers</h3>
+      <div class="kvs">
+        <div class="kv"><b>Total Supply</b><br/>3,155,760,000 TIK</div>
+        <div class="kv"><b>Decimals</b><br/>0</div>
+        <div class="kv"><b>Airdrop #1</b><br/>31,557,600 TIK (1%)</div>
+        <div class="kv"><b>Multisig</b><br/>3 / 5</div>
+      </div>
+      <p class="muted" style="margin-top:10px">No taxes. No burns. Transparent locks & vestings.</p>
+    </div>
+  </section>
 
   <!-- FOUNDATIONS -->
-  <div class="section" id="foundations">
-    <h2>Foundations of TIKCOIN</h2>
+  <section id="foundations">
+    <h2>Foundations</h2>
     <p class="muted">We do not name internal committees. We publish principles and encode them.</p>
-    <ul>
-      <li><b>Philosophy:</b> fixed symbolism & first principles; narrative follows <i>Sun → … → Quantum</i>.</li>
-      <li><b>Psychology:</b> trust by design — clarity over hype; no dark patterns; honest CTAs.</li>
-      <li><b>Mathematics:</b> supply math = seconds; vesting arithmetic is explicit and auditable.</li>
-      <li><b>Economics:</b> no taxes/burns; transparent locks/vestings; community pool = 20%.</li>
-      <li><b>Ethics:</b> immutable core; no bridges; audits published.</li>
-      <li><b>Sociology & Marketing:</b> community-first rituals; fair referrals (≤33); accessible docs.</li>
-      <li><b>Governance:</b> Tiered-DAO + Timelock + Policy + Multisig (3/5) + Constitutional Guardian.</li>
-    </ul>
-  </div>
-
-  <!-- TIME -->
-  <div class="section" id="time">
-    <h2>Chapter 1 — Time</h2>
-    <p>
-      Time is the only equal resource. We digitize it directly: <b>1 TIK = 1 second</b>.
-      The protocol mirrors the nature of time: unstoppable, irreversible, incorruptible.
-    </p>
-    <div class="callout">
-      <b>Design reflections:</b> no pause; immutable core after V2; upgrades only via allow-listed modules that do not alter fundamentals.
+    <div class="cards">
+      <div class="card"><h3>Philosophy</h3><p>Fixed symbolism; the arc strictly follows <span class="mono">Sun → … → Quantum</span>.</p></div>
+      <div class="card"><h3>Psychology</h3><p>Trust by design: clarity over hype, no dark patterns, honest CTAs.</p></div>
+      <div class="card"><h3>Mathematics</h3><p>Supply = seconds; vesting math explicit; cap guards & safety margins.</p></div>
+      <div class="card"><h3>Economics</h3><p>No taxes/burns; transparent locks; Community Pool 20%.</p></div>
+      <div class="card"><h3>Ethics</h3><p>Immutable core. No bridges. Audits & addresses public.</p></div>
+      <div class="card"><h3>Sociology & Marketing</h3><p>Community-first rituals; fair referrals (≤33); accessible docs.</p></div>
+      <div class="card"><h3>Governance</h3><p>Tiered-DAO + Timelock + Policy + Multisig + Constitutional Guardian.</p></div>
     </div>
-  </div>
+  </section>
 
-  <!-- HONESTY -->
-  <div class="section" id="honesty">
-    <h2>Chapter 2 — Honesty</h2>
-    <h3>2.1 Honest Code</h3>
-    <ul>
-      <li><b>Open-source:</b> repos public; reproducible builds; tagged releases.</li>
-      <li><b>No hidden functions:</b> no stealth mint; no taxes; no blacklist/pause in V2.</li>
-      <li><b>Independent audits:</b> audit PDFs published; hash in repo; issues tracked openly.</li>
-      <li><b>No bridges / no backdoors:</b> attack surface minimized by design.</li>
-    </ul>
-    <hr class="sep">
-    <h3>2.2 Honest Airdrop</h3>
-    <ul>
-      <li><b>Time-first distribution:</b> rewards for verified contributions (content, support, referrals).</li>
-      <li><b>Sybil resistance:</b> e.g., Passport/WorldID + off-chain scoring → <span class="mono">Merkle root</span> → on-chain claim with proof.</li>
-      <li><b>Funding source:</b> only from <b>Community pool (20%)</b>; <b>Airdrop #1 = 1%</b>.</li>
-      <li><b>Referral fairness:</b> capped depth (≤33); payouts on-chain; no manual overrides.</li>
-    </ul>
-    <hr class="sep">
-    <h3>2.3 Honest Presale (IOU)</h3>
-    <ul>
-      <li><b>Model:</b> selling <i>future TIK (IOU)</i> via audited <b>LaunchEscrow</b>; funds release per thresholds; refunds if unmet.</li>
-      <li><b>Price:</b> target $0.01 per future TIK (policy-controlled; final terms published pre-launch).</li>
-      <li><b>Compliance & risk:</b> clear disclosures; geo policy; on-chain dashboard for inflows.</li>
-      <li><b>Bonuses:</b> only from Community pool; vesting applies equally.</li>
-    </ul>
-    <hr class="sep">
-    <h3>2.4 Vesting</h3>
-    <ul>
-      <li><b>Universal schedule (baseline):</b> 10% at TGE, 2-month cliff, then 90% linearly over 18 months (full unlock by month 20).</li>
-      <li><b>LP & reserves:</b> LP tokens locked ≥18 months; reserve tokens timelocked; injections only by DAO at market terms.</li>
-      <li><b>Vaults:</b> labeled addresses; stricter cliffs permitted (e.g., 12-month cliff + 24–36 mo linear) for protocol vaults.</li>
-    </ul>
-  </div>
+  <!-- MECHANICS -->
+  <section id="mechanics" class="grid">
+    <div>
+      <h2>Mechanics (Simplified)</h2>
+      <h3>Honest Code</h3>
+      <ul>
+        <li>Open-source repos; tagged releases; reproducible builds.</li>
+        <li>No stealth mint/taxes; no pause/blacklist in V2.</li>
+        <li>Independent audits; PDFs & hashes published.</li>
+      </ul>
+      <h3>Honest Airdrop</h3>
+      <ul>
+        <li>Time-first: rewards for verified contributions (content/support/referrals).</li>
+        <li>Sybil resistance: e.g., Passport/WorldID → off-chain score → <span class="mono">Merkle root</span> → on-chain claim.</li>
+        <li>Funded strictly from Community Pool; programmatic payouts only.</li>
+      </ul>
+      <h3>Presale (IOU)</h3>
+      <ul>
+        <li>Audited <b>LaunchEscrow</b>; thresholds & refunds enforced; open dashboards.</li>
+        <li>Target price policy: $0.01 per future TIK; bonuses only from community allocation; vesting applies.</li>
+      </ul>
+      <h3>Vesting</h3>
+      <ul>
+        <li>Baseline: 10% TGE, 2-month cliff, 90% linear over 18 months (full by month 20).</li>
+        <li>LP lock ≥18 months; reserves timelocked; DAO-gated injections at market terms.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>At a glance</h3>
+      <ul>
+        <li><b>Mainnet only.</b> No bridges.</li>
+        <li><b>Immutable V2.</b> TIK core cannot be changed.</li>
+        <li><b>Policy-gated.</b> Actions via DAO + Timelock + Multisig.</li>
+        <li><b>Public proofs.</b> Audits, addresses, LP locks on site.</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- TOKENOMICS -->
-  <div class="section" id="tokenomics">
-    <h2>Chapter 2.5 — Tokenomics</h2>
-    <p>
-      Fixed supply bound to time. <b>Total:</b> 3,155,760,000 TIK. <b>Decimals:</b> 0. No mint after V2 deployment.
-    </p>
-
-    <h3>2.5.1 Supply Map</h3>
+  <section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <p class="muted">Fixed supply bound to time. <b>1 TIK = 1 second.</b></p>
     <table>
-      <thead>
-        <tr><th>Bucket</th><th>Percent</th><th>Amount (TIK)</th><th>Purpose & Notes</th></tr>
-      </thead>
+      <thead><tr><th>Bucket</th><th>Percent</th><th>Amount (TIK)</th><th>Purpose & Notes</th></tr></thead>
       <tbody>
-        <tr>
-          <td>Presale (IOU)</td>
-          <td><b>35%</b></td>
-          <td><b>1,104,516,000</b></td>
-          <td>One-time presale via LaunchEscrow; converts 1:1 into TIK at migration; vesting baseline applies.</td>
-        </tr>
-        <tr>
-          <td>Community Pool</td>
-          <td><b>20%</b></td>
-          <td><b>631,152,000</b></td>
-          <td>Incentives, airdrops, referrals. <b>Airdrop #1 = 1%</b> (31,557,600 TIK). All programmatic; on-chain proofs.</td>
-        </tr>
-        <tr>
-          <td>Reserve Liquidity</td>
-          <td><b>15%</b></td>
-          <td><b>473,364,000</b></td>
-          <td>Source for liquidity. LP lock ≥18 months. Remaining reserve timelocked; DAO-governed injections at market price.</td>
-        </tr>
-        <tr>
-          <td>TIK Vault</td>
-          <td><b>10%</b></td>
-          <td><b>315,576,000</b></td>
-          <td>Protocol vault with stricter locks (e.g., 12-month cliff + 24–36 mo linear). Address public.</td>
-        </tr>
-        <tr>
-          <td>DAO Treasury</td>
-          <td><b>20%</b></td>
-          <td><b>631,152,000</b></td>
-          <td>Audits, listings, grants, ecosystem; executed via DAO + Policy + Timelock + Multisig 3/5.</td>
-        </tr>
+        <tr><td>Presale (IOU)</td><td><b>35%</b></td><td><b>1,104,516,000</b></td><td>One-time presale via LaunchEscrow; converts 1:1 into TIK at migration; baseline vesting.</td></tr>
+        <tr><td>Community Pool</td><td><b>20%</b></td><td><b>631,152,000</b></td><td>Incentives & airdrops (Airdrop #1 = 1% = 31,557,600 TIK); on-chain proofs.</td></tr>
+        <tr><td>Reserve Liquidity</td><td><b>15%</b></td><td><b>473,364,000</b></td><td>Source for liquidity; LP lock ≥18 months; remaining reserve timelocked, DAO-managed.</td></tr>
+        <tr><td>TIK Vault</td><td><b>10%</b></td><td><b>315,576,000</b></td><td>Protocol vault; stricter locks (e.g., 12-month cliff + 24–36 mo linear); address public.</td></tr>
+        <tr><td>DAO Treasury</td><td><b>20%</b></td><td><b>631,152,000</b></td><td>Audits/listings/grants/ecosystem; executed via DAO + Policy + Timelock + Multisig 3/5.</td></tr>
       </tbody>
     </table>
+    <details><summary class="mono">Presale fund flows (USD)</summary>
+      <ul>
+        <li>$6,000,000 → Initial Liquidity (LP locked; proofs linked).</li>
+        <li>$3,000,000 → Reserve Liquidity (timelocked; DAO-controlled injections).</li>
+        <li>$2,000,000 → Development & Operations (public treasury; streaming where feasible).</li>
+      </ul>
+    </details>
+  </section>
 
-    <h3>2.5.2 Presale Fund Flows (USD)</h3>
-    <ul>
-      <li>$6,000,000 → Initial Liquidity (LP locked; proof on-chain).</li>
-      <li>$3,000,000 → Reserve Liquidity (timelocked; DAO-controlled future injections).</li>
-      <li>$2,000,000 → Development & Operations (public treasury wallets; streaming where possible).</li>
-      <li>All flows visible on a public dashboard; addresses labeled.</li>
-    </ul>
+  <!-- PHASES (TIMELINE) -->
+  <section id="phases">
+    <h2>Phases (Sun → … → Quantum)</h2>
+    <p class="muted">Statuses are illustrative; connect to ops JSON later.</p>
+    <div class="timeline">
+      <div class="mile" id="p0">
+        <div class="dot"></div>
+        <div>
+          <h3>Phase 0 — Canon Freeze (☀️ Sun)</h3>
+          <div class="meta"><span class="status ok">ACTIVE</span><span class="pill">Output: Canon v1</span></div>
+          <ul>
+            <li>Freeze invariants, symbolism, language (EN), visual line.</li>
+            <li>Publish <span class="mono">/canon</span> commitments (immutable, no bridges, audits).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mile" id="p1">
+        <div class="dot"></div>
+        <div>
+          <h3>Phase 1 — V1 Contracts (⌛ Hourglass)</h3>
+          <div class="meta"><span class="status wip">WIP</span><span class="pill">Audit #1</span></div>
+          <ul>
+            <li><b>TIKP</b> (non-transferable, <span class="mono">decimals=0</span>, cap <b>31,557,600</b>, burnable, permit, <i>closeMinting</i>).</li>
+            <li><b>AirdropDistributor</b> (batchMint, cap-guard, disableForever, endEpoch) + optional anti-sybil.</li>
+            <li><b>Multisig 3/5</b>; repos public.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mile" id="p15">
+        <div class="dot"></div>
+        <div>
+          <h3>Phase 1.5 — Presale (⚙️ Mechanical)</h3>
+          <div class="meta"><span class="status todo">PLANNED</span><span class="pill">Policy + Eng</span></div>
+          <ul>
+            <li>Audited <b>LaunchEscrow</b>; thresholds & refunds; public dashboards.</li>
+            <li>Terms published; referral ladder ≤33 by policy.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mile" id="p2">
+        <div class="dot"></div>
+        <div>
+          <h3>Phase 2 — Immutable Core (💎 Quartz)</h3>
+          <div class="meta"><span class="status todo">PLANNED</span><span class="pill">Audit #2</span></div>
+          <ul>
+            <li><b>TIK</b> immutable (no owner/mint/pause/blacklist).</li>
+            <li><b>Migrator</b> burns TIKP → transfers TIK 1:1 from MigratorVault; supports permit; emergency pause.</li>
+            <li><b>Timelock</b> + Multisig executor + Policy wired.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mile" id="p21">
+        <div class="dot"></div>
+        <div>
+          <h3>Phase 2.1 — Listing & Liquidity (🌀 Tourbillon)</h3>
+          <div class="meta"><span class="status todo">PLANNED</span></div>
+          <ul>
+            <li>DEX listing per public playbook; LP lock ≥18 months; proofs linked.</li>
+            <li>Supply map & vestings dashboard live.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mile" id="p3">
+        <div class="dot"></div>
+        <div>
+          <h3>Phase 3 — Utilities (⚛️ Atom)</h3>
+          <div class="meta"><span class="status todo">PLANNED</span><span class="pill">Product</span></div>
+          <ul>
+            <li>TaaS primitives: Time Rent, Time-NFT, on-chain referral payouts.</li>
+            <li>Grants via Policy; first exemplar shipped.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mile" id="p4">
+        <div class="dot"></div>
+        <div>
+          <h3>Phase 4 — DAO Scale-Up (🧩 Quantum)</h3>
+          <div class="meta"><span class="status todo">PLANNED</span><span class="pill">Governance</span></div>
+          <ul>
+            <li>Tiered-DAO live; proposals via timelock; pre-execution veto tested; quarterly reports.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h3>2.5.3 Transparency</h3>
-    <ul>
-      <li>No taxes. No burns. No stealth mechanics.</li>
-      <li>Any movement from reserves/treasury requires DAO proposal → timelock → execution.</li>
-    </ul>
-  </div>
+  <!-- FAQ -->
+  <section id="faq" class="grid">
+    <div>
+      <h2>FAQ</h2>
+      <details open><summary><b>Why decimals = 0?</b></summary>
+        <p>Time is atomic at the chosen granularity. <span class="mono">decimals=0</span> simplifies accounting and UX.</p>
+      </details>
+      <details><summary><b>Why no bridges?</b></summary>
+        <p>To minimize attack surface and trust. Optional side tokens only via 3/5 multisig under strict policy.</p>
+      </details>
+      <details><summary><b>Are there taxes or burns?</b></summary>
+        <p>No. All flows are explicit: locks, vestings, grants. No stealth mechanics.</p>
+      </details>
+      <details><summary><b>What is Airdrop #1?</b></summary>
+        <p>1% of total supply (31,557,600 TIK), conceptually equivalent to one year in seconds; distributed by verifiable contribution.</p>
+      </details>
+      <details><summary><b>When listing?</b></summary>
+        <p>Listing follows the public playbook after V2 & policy checkpoints; LP lock proofs and addresses are published.</p>
+      </details>
+    </div>
+    <div class="card">
+      <h3>Go / No-Go Gates</h3>
+      <ul>
+        <li><b>Security:</b> criticals resolved or formally waived with rationale.</li>
+        <li><b>Legal/Policy:</b> disclosures live; geo policy; presale terms approved.</li>
+        <li><b>Ops:</b> runbooks; key rotations; backups verified.</li>
+        <li><b>Comms:</b> launch posts & dashboards scheduled.</li>
+        <li><b>Finance:</b> LP lock proof; treasury map; streaming where possible.</li>
+      </ul>
+    </div>
+  </section>
 
-  <!-- GOVERNANCE -->
-  <div class="section" id="governance">
-    <h2>Chapter 2.6 — Governance</h2>
-    <ul>
-      <li><b>Model:</b> Tiered-DAO (reputation/eligibility policy) + <b>Timelock</b> + <b>Policy Module</b> + <b>Multisig 3/5</b> executor + <b>Constitutional Guardian</b> (pre-execution veto on critical modules; cannot spend treasury).</li>
-      <li><b>Scope:</b> policy rates, grants, reserves injections, listings/playbooks; core TIK remains immutable.</li>
-      <li><b>Records:</b> proposals, votes, and executions are archived on-chain and linked from docs.</li>
-    </ul>
-  </div>
+  <!-- GOVERNANCE LOG -->
+  <section id="log">
+    <h2>Governance Log (Public Extract)</h2>
+    <p class="muted">Authoritative records live on-chain or signed in repo. Below is a human-readable feed.</p>
+    <div class="card mono">
+      [2025-08-31] Canon v1 frozen — invariants approved; symbolism locked; EN as primary. (tag: canon-v1)<br/>
+      [2025-08-31] WhitePaper IA aligned with Roadmap: hero + canon + foundations + mechanics + tokenomics + phases + faq + log. (tag: wp-ia-v1)<br/>
+      [TBD] Audit #1 scope confirmed — TIKP, Distributor, Multisig. (issue: audit-1-scope)<br/>
+      [TBD] Presale IOU policy — escrow thresholds & refunds. (policy: presale-escrow-v1)<br/>
+    </div>
+  </section>
 
-  <!-- UTILITIES -->
-  <div class="section" id="utilities">
-    <h2>Chapter 2.7 — Utilities</h2>
-    <ul>
-      <li><b>Proof-of-Time Rewards:</b> verifiable time contributions → off-chain logs → Merkle root → on-chain claims.</li>
-      <li><b>Time-NFTs:</b> dynamic NFTs that evolve along the symbolism line as lock duration increases (Hourglass → … → Quantum).</li>
-      <li><b>Access & Priority:</b> time-locked staking → access to future features, proposal creation, and tooling.</li>
-      <li><b>Integrations:</b> partner services denominated in TIK (1 TIK = 1 second) where feasible.</li>
-    </ul>
-  </div>
+</main>
 
-  <!-- PHILOSOPHY -->
-  <div class="section" id="philosophy">
-    <h2>Chapter 3 — Philosophy</h2>
-    <p>
-      We don’t sell promises — we encode rules. Equality before time, differentiation by risk and contribution.
-      No rent-seeking mechanics. Reputation is earned by behavior over time.
-    </p>
-    <h3>3.1 Slogans</h3>
-    <ul>
-      <li>We cannot stop time — but we can tokenize it.</li>
-      <li>Time is the only unit of measure.</li>
-      <li>Time will tell.</li>
-      <li>Code over words.</li>
-    </ul>
-  </div>
-
-  <!-- ROADMAP (ALIGNED WITH SITE) -->
-  <div class="section" id="roadmap">
-    <h2>Roadmap (Aligned with Site)</h2>
-    <p class="muted">Visual sequence: <i>Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</i>.</p>
-
-    <h3>Phase 0 — Canon Freeze (☀️ Sun)</h3>
-    <ul>
-      <li>Freeze invariants, symbolism, governance model, language (EN), visual line.</li>
-      <li>Publish <span class="mono">/canon</span> and public commitments (immutable, no bridges, audits).</li>
-    </ul>
-
-    <h3>Phase 1 — V1 Contracts (⌛ Hourglass)</h3>
-    <ul>
-      <li><b>TIKP</b> (non-transferable, <span class="mono">decimals=0</span>, cap <b>31,557,600</b>, burnable, permit, <i>closeMinting</i>).</li>
-      <li><b>AirdropDistributor</b> (batchMint, cap-guard, disableForever, endEpoch) + optional anti-sybil stack.</li>
-      <li><b>Multisig 3/5</b>. Repos public. Audit #1 scope: V1 set.</li>
-    </ul>
-
-    <h3>Phase 1.5 — Presale (⚙️ Mechanical)</h3>
-    <ul>
-      <li>Audited <b>LaunchEscrow</b> sells <i>future TIK (IOU)</i>; thresholds & refunds enforced.</li>
-      <li>Public terms and dashboards; referral ladder ≤33 by policy.</li>
-    </ul>
-
-    <h3>Phase 2 — Immutable Core (💎 Quartz)</h3>
-    <ul>
-      <li><b>TIK</b> immutable (no owner/mint/pause/blacklist).</li>
-      <li><b>Migrator</b> (burn TIKP → transfer TIK 1:1 from <i>MigratorVault</i>; permit; emergency <i>pause</i>).</li>
-      <li><b>TimelockController</b> + Multisig 3/5 + Policy wired.</li>
-    </ul>
-
-    <h3>Phase 2.1 — Listing & Liquidity (🌀 Tourbillon)</h3>
-    <ul>
-      <li>DEX listing per public playbook; LP lock ≥18 months; proofs linked.</li>
-      <li>Supply map & vestings dashboard live.</li>
-    </ul>
-
-    <h3>Phase 3 — Utilities (⚛️ Atom)</h3>
-    <ul>
-      <li>TaaS primitives (Time Rent, Time-NFT, referral payouts on-chain).</li>
-      <li>Grants via Policy; streams; example project shipped.</li>
-    </ul>
-
-    <h3>Phase 4 — DAO Scale-Up (🧩 Quantum)</h3>
-    <ul>
-      <li>Tiered-DAO live; proposals via timelock; pre-execution veto tested; quarterly reports.</li>
-    </ul>
-  </div>
-
-  <!-- CONCLUSION -->
-  <div class="section" id="conclusion">
-    <h2>Conclusion</h2>
-    <ul>
-      <li><b>Code does not lie.</b> Open, verifiable, immutable core.</li>
-      <li><b>Time cannot be bribed.</b> No stealth mechanics; one canon for all.</li>
-      <li><b>Founder equals community.</b> Same vesting principles; public addresses.</li>
-      <li><b>Trust compounds slowly.</b> We reward behavior over time — transparently and on-chain.</li>
-    </ul>
-    <p><b>We don’t promise x100. We promise that time will tell.</b></p>
-  </div>
+<footer>
+  <div class="wrap">© TIKCOIN — Immutable on Ethereum mainnet. No bridges. One community.</div>
+</footer>
 
 </body>
 </html>
