@@ -9,7 +9,7 @@
 <style>
   :root{
     --bg:#0b0c0f; --fg:#f1f5f9; --muted:#9aa4b2; --accent:#7c6cff; --line:#202532;
-    --card:#11141a; --ghost:#0e1218; --good:#10b981;
+    --card:#11141a; --ghost:#0e1218;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -19,11 +19,13 @@
   .wrap{max-width:1100px;margin:0 auto;padding:16px 20px}
   .brand{display:flex;gap:12px;align-items:center}
   nav{display:flex;gap:18px;flex-wrap:wrap}
-  .logo{width:28px;height:28px}
+  /* ЛОГОТИП: аккуратная подгонка PNG/SVG */
+  .logo{height:28px; width:auto; display:block; image-rendering:-webkit-optimize-contrast}
+  @media (min-width:980px){ .logo{height:32px} }
   .btn{padding:11px 16px;border:1px solid var(--line);background:var(--card);border-radius:10px}
   .btn.primary{border-color:transparent;background:linear-gradient(90deg,#7c6cff,#60a5fa);color:#0b1020;font-weight:700}
   section{padding:56px 0;border-bottom:1px solid var(--line)}
-  h1,h2,h3{margin:0 0 10px}
+  h1,h2{margin:0 0 10px}
   h1{font-size:40px;line-height:1.1;letter-spacing:.2px}
   h2{font-size:22px}
   p.lead{color:#d3dae4;max-width:74ch}
@@ -42,9 +44,6 @@
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,#7c6cff,#60a5fa)}
   .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
   .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#10141c;border:1px solid var(--line);font-size:12px;color:#cbd5e1}
-  /* Minimal manifesto list */
-  .manifesto{display:grid;gap:10px;margin-top:12px}
-  .manifesto .item{background:var(--ghost);border:1px dashed #232a38;border-radius:12px;padding:12px}
   footer{color:var(--muted);padding:30px 0}
 </style>
 </head>
@@ -54,12 +53,8 @@
 <header>
   <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
     <div class="brand">
-      <!-- Minimal inline logo -->
-      <svg class="logo" viewBox="0 0 64 64" aria-label="TIKCOIN logo" role="img">
-        <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#7c6cff"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
-        <circle cx="32" cy="32" r="29" fill="none" stroke="url(#g)" stroke-width="4"/>
-        <path d="M18 22h28M32 22v24" stroke="#cfd1ff" stroke-width="4" stroke-linecap="round"/>
-      </svg>
+      <!-- ИСПОЛЬЗУЕМ ВАШ ФАЙЛ ЛОГОТИПА -->
+      <img src="assets/logo.png" alt="TIKCOIN logo" class="logo" />
       <strong style="letter-spacing:.3px">TIKCOIN</strong>
       <span class="badge">Minimal Landing</span>
     </div>
@@ -72,7 +67,7 @@
 
 <main>
 
-  <!-- HERO (only essence) -->
+  <!-- HERO -->
   <section id="hero">
     <div class="wrap grid-2">
       <div>
@@ -91,6 +86,7 @@
           <a class="btn" href="roadmap.html">See Roadmap</a>
         </div>
       </div>
+
       <!-- Century Clock -->
       <div class="clock" id="century">
         <div class="row"><span class="muted">Century Clock</span><span class="pill">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span></div>
@@ -106,27 +102,27 @@
     </div>
   </section>
 
-  <!-- MANIFESTO (short, non-duplicating) -->
+  <!-- MANIFESTO (3 axioms) -->
   <section id="manifesto">
     <div class="wrap">
-      <h2>Manifesto (3 axioms)</h2>
-      <div class="manifesto">
-        <div class="item"><b>Time cannot be stopped.</b> Core stays immutable; no pause, no blacklist, no stealth controls.</div>
-        <div class="item"><b>Time cannot be reversed.</b> No changes that alter fundamentals after V2.</div>
-        <div class="item"><b>Time cannot be deceived.</b> No taxes, no hidden mint; open code and audits.</div>
+      <h2>Manifesto — Three Axioms</h2>
+      <div class="card" style="display:grid;gap:10px">
+        <div><b>Time cannot be stopped.</b> Core stays immutable; no pause, no blacklist, no stealth controls.</div>
+        <div><b>Time cannot be reversed.</b> No changes that alter fundamentals after V2.</div>
+        <div><b>Time cannot be deceived.</b> No taxes, no hidden mint; open code and audits.</div>
       </div>
-      <p class="muted" style="margin-top:10px">Everything deeper — see WhitePaper and Roadmap.</p>
+      <p class="muted" style="margin-top:10px">Details live in WhitePaper (mechanics) and Roadmap (delivery).</p>
     </div>
   </section>
 
-  <!-- SLOGANS (brand voice only) -->
+  <!-- SLOGANS -->
   <section id="slogans">
     <div class="wrap">
       <h2>Core Slogans</h2>
-      <div class="manifesto">
-        <div class="item">Time is the only unit of measure.</div>
-        <div class="item">Code over words.</div>
-        <div class="item">One Canon. One Chain. One Community.</div>
+      <div class="card" style="display:grid;gap:10px">
+        <div>Time is the only unit of measure.</div>
+        <div>Code over words.</div>
+        <div>One Canon. One Chain. One Community.</div>
       </div>
       <div class="hero-cta" style="margin-top:14px">
         <a class="btn" href="whitepaper.html">Dive into the WhitePaper</a>
@@ -140,21 +136,22 @@
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
     <div>© TIKCOIN — Immutable on Ethereum mainnet. No bridges.</div>
-    <div class="badges">
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
       <span class="pill">1 TIK = 1 second</span>
       <span class="pill">decimals = 0</span>
     </div>
   </div>
 </footer>
 
-<!-- Minimal JS: Century Clock (canon-based, approx; updates each second) -->
+<!-- Century Clock -->
 <script>
 (function(){
-  // Canon model: 100 years = 3,155,760,000 seconds (365.25d/year)
+  // Canon: 100 years = 3,155,760,000 seconds (365.25 d/y)
   const TOTAL = 3155760000;
   // 21st century: 2001-01-01 00:00:00 UTC → 2100-12-31 23:59:59 UTC
   const start = Date.UTC(2001,0,1,0,0,0);
-  const end   = start + TOTAL*1000; // align with canon seconds
+  const end   = start + TOTAL*1000;
+
   const $ = id => document.getElementById(id);
   const fmt = n => Number(n).toLocaleString('en-US');
 
@@ -169,10 +166,8 @@
     $('remain').textContent  = fmt(remainSec);
     $('pct').textContent     = pct.toFixed(2) + '%';
     $('bar').style.width     = pct.toFixed(4) + '%';
-    const d = new Date(now);
-    $('nowutc').textContent  = d.toISOString().replace('T',' ').replace('Z',' UTC');
+    $('nowutc').textContent  = new Date(now).toISOString().replace('T',' ').replace('Z',' UTC');
   }
-
   tick();
   setInterval(tick, 1000);
 })();
