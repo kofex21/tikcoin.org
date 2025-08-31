@@ -3,447 +3,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TIKCOIN WhitePaper</title>
+  <title>TIKCOIN — WhitePaper (Canon v2025-08-31)</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;margin:32px;background:#0d0d0f;color:#e6e6e6}
-    h1,h2,h3,h4{color:#7c6cff;margin-top:28px}
+    :root{
+      --bg:#0d0d0f;--fg:#e6e6e6;--muted:#a1a1aa;--accent:#7c6cff;--line:#1f2230;--card:#121318;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial,Helvetica,sans-serif;line-height:1.65;margin:32px;background:var(--bg);color:var(--fg)}
+    h1,h2,h3,h4{color:var(--accent);margin-top:28px}
     h1{font-size:2.2rem} h2{font-size:1.7rem} h3{font-size:1.25rem} h4{font-size:1.05rem}
+    p,li{max-width:92ch}
     .section{margin-bottom:56px}
-    ul{margin:12px 0 18px 22px}
+    ul,ol{margin:12px 0 18px 22px}
     li{margin:6px 0}
-    .sep{opacity:.35;margin:18px 0}
-    .muted{opacity:.85}
+    .sep{opacity:.35;margin:18px 0;border:0;border-top:1px solid var(--line)}
+    .muted{color:var(--muted)}
+    code,.mono{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;color:#cbd5e1}
+    table{border-collapse:collapse;width:100%;max-width:1100px;background:var(--card);border:1px solid var(--line)}
+    th,td{padding:10px;border:1px solid var(--line);vertical-align:top}
+    thead th{background:#141720}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:#151722;color:#cfd1ff;font-size:12px;margin-right:8px}
+    .inline-icons{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:#10131c;color:#cbd5e1;font-size:12px;margin-right:6px}
+    .callout{background:#121525;border:1px solid var(--line);padding:14px;border-radius:10px}
   </style>
 </head>
 <body>
 
   <h1>TIKCOIN WhitePaper</h1>
+  <div class="inline-icons" aria-hidden="true">
+    <span class="badge">Immutable Core (V2 TIK)</span>
+    <span class="badge">No Bridges / No Cross-Chain</span>
+    <span class="badge">Open-Source & Audited</span>
+    <span class="badge">Community Pool 20%</span>
+    <span class="badge">Airdrop #1 = 1% (1 year)</span>
+  </div>
 
   <!-- INTRO -->
-  <div class="section" id="intro">
-    <h2 id="intro">Introduction</h2>
-<p>
-TIKCOIN is not another meme-token and not an empty promise. We are tired of projects where marketing is louder than meaning, where they promise “X100 tomorrow” and disappear a week later.  
-</p>
+  <div class="section" id="introduction">
+    <h2>Introduction</h2>
+    <p>
+      TIKCOIN is not another meme-token. We anchor value in the most universal unit — <b>time</b>.
+      We tokenize one century — specifically the <b>XXI century</b>. The basic unit is a second:
+      <b>1 TIK = 1 second</b>. Total supply equals the seconds in 100 years:
+      <b>3,155,760,000 TIK</b> (<span class="mono">decimals=0</span>).
+    </p>
+    <p>
+      Three axioms guide every mechanism:
+    </p>
+    <ol>
+      <li><b>Time cannot be stopped.</b> — The core token is immutable; no pause switches.</li>
+      <li><b>Time cannot be reversed.</b> — No upgrade that alters fundamentals after freeze.</li>
+      <li><b>Time cannot be deceived.</b> — No hidden taxes, no stealth mint, no backdoors.</li>
+    </ol>
+    <p>
+      We choose minimalism: <b>Ethereum mainnet only</b>, <b>no bridges</b>, open repositories, published audits,
+      transparent locks and vestings. Marketing follows meaning — not the other way around.
+    </p>
+  </div>
 
-<p>
-We chose a different foundation: time. Time is the only universal measure, equal for everyone. Each of us has 24 hours a day, but everyone uses them differently.  
-</p>
+  <!-- CANON -->
+  <div class="section" id="canon">
+    <h2>Canon (Invariants)</h2>
+    <ul>
+      <li><b>Core token:</b> <span class="mono">TIK (ERC-20, decimals=0, totalSupply=3,155,760,000)</span>; <b>no owner/mint/pause/blacklist</b> in V2.</li>
+      <li><b>No bridges / no cross-chain.</b> Optional side tokens only via <b>Multisig 3/5</b> and strict policy (rare exceptions).</li>
+      <li><b>Transparency:</b> community pool <b>20%</b>; <b>Airdrop #1 = 1%</b> (31,557,600 TIK) — equivalent to one year in seconds.</li>
+      <li><b>Governance:</b> Tiered-DAO + Timelock + Policy Module + Multisig Executor (3/5) + <i>Constitutional Guardian</i> (pre-execution veto; cannot spend treasury).</li>
+      <li><b>Symbolism sequence is fixed everywhere:</b> <i>Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</i>.</li>
+      <li><b>Listing & liquidity:</b> per public playbook; LP lock ≥ <b>18 months</b>; all addresses public.</li>
+    </ul>
+  </div>
 
-<p>
-We decided to tokenize one century — specifically the <strong>XXI century</strong>, the century we live in. Seconds become the basic unit of measurement: 1 TIK = 1 second.  
-Total supply: 3,155,760,000 TIK = 100 years (one century).  
-</p>
-
-<p>
-Our project is built on three axioms:  
-<ol>
-  <li>Time cannot be stopped.</li>
-  <li>Time cannot be reversed.</li>
-  <li>Time cannot be deceived.</li>
-</ol>
-</p>
-
-<p>
-These axioms are embedded at the core. The contract has no bridges, no hidden switches, no ability to alter the core after launch.  
-</p>
-
-<p>
-TIKCOIN is also a philosophy of honesty.<br>
-Fair airdrops — rewards for time, not for money.<br>
-Fair presale — fixed price $0.01; funds are split by code:<br>
-$6M → initial liquidity (LP locked in timelock),<br>
-$3M → reserved liquidity (timelocked),<br>
-$2M → development & operations.<br>
-Fair vesting — equal rules for everyone.
-</p>
-
-<p>
-Finally, TIKCOIN is a philosophy of meaning. Our slogans are simple:  
-<ul>
-  <li>“WE CANNOT STOP TIME, BUT WE CAN TOKENIZE IT.”</li>
-  <li>“TIME IS THE ONLY UNIT OF MEASURE.”</li>
-  <li>“TIME WILL TELL.”</li>
-</ul>
-</p>
-
-<p>
-We do not give empty promises. We give numbers and mechanisms. Everything else — time itself will decide.  
-</p>
-    <p>We make no empty promises. We give numbers and mechanisms. Everything else — time itself will decide.</p>
+  <!-- FOUNDATIONS -->
+  <div class="section" id="foundations">
+    <h2>Foundations of TIKCOIN</h2>
+    <p class="muted">We do not name internal committees. We publish principles and encode them.</p>
+    <ul>
+      <li><b>Philosophy:</b> fixed symbolism & first principles; narrative follows <i>Sun → … → Quantum</i>.</li>
+      <li><b>Psychology:</b> trust by design — clarity over hype; no dark patterns; honest CTAs.</li>
+      <li><b>Mathematics:</b> supply math = seconds; vesting arithmetic is explicit and auditable.</li>
+      <li><b>Economics:</b> no taxes/burns; transparent locks/vestings; community pool = 20%.</li>
+      <li><b>Ethics:</b> immutable core; no bridges; audits published.</li>
+      <li><b>Sociology & Marketing:</b> community-first rituals; fair referrals (≤33); accessible docs.</li>
+      <li><b>Governance:</b> Tiered-DAO + Timelock + Policy + Multisig (3/5) + Constitutional Guardian.</li>
+    </ul>
   </div>
 
   <!-- TIME -->
   <div class="section" id="time">
-    <h2>📖 Chapter 1. Time </h2>
-    <p>Time is the foundation of our project. We can argue about prices, blockchains, or exchanges, but there is one thing beyond debate — time. It flows equally for everyone, yet each person uses it differently.</p>
-    <p><strong>TIKCOIN is built on three axioms of time:</strong></p>
-    <ol>
-      <li><strong>Time cannot be stopped.</strong><br>
-        Life moves forward. Every second becomes the past, and no human, no technology can press pause. That is why our contract has no “pause button,” no freeze functions. The code works as time itself — unstoppable.</li>
-      <li><strong>Time cannot be reversed.</strong><br>
-        Lost moments are gone forever. One can repeat experiences, but never recover the exact second. In our project, this is expressed through the principle of the immutable core — the contract’s foundation cannot be altered after launch. Just like in real life, there is no way back.</li>
-      <li><strong>Time cannot be deceived.</strong><br>
-        A person may deceive another, but not time. The sunrise comes, seconds pass — reality cannot be tricked. In TIKCOIN this is reflected in honesty and transparency. Open code, visible contracts, no hidden functions. No one can “rig” the rules.</li>
-    </ol>
-    <hr class="sep">
-    <p>Time is the fairest unit. It does not distinguish between rich or poor, beginner or professional. We all live within the frame of seconds, minutes, hours.</p>
-    <p><strong>TIKCOIN turns seconds into digital form.</strong><br>
-      1 TIK = 1 second. 3,155,760,000 TIK = 100 years.</p>
-    <p>We created a currency tied to the very foundation of reality. It is not a meme, not an illusion. It is a token built on the only resource everyone possesses.</p>
+    <h2>Chapter 1 — Time</h2>
+    <p>
+      Time is the only equal resource. We digitize it directly: <b>1 TIK = 1 second</b>.
+      The protocol mirrors the nature of time: unstoppable, irreversible, incorruptible.
+    </p>
+    <div class="callout">
+      <b>Design reflections:</b> no pause; immutable core after V2; upgrades only via allow-listed modules that do not alter fundamentals.
+    </div>
   </div>
 
   <!-- HONESTY -->
   <div class="section" id="honesty">
-    <h2>Chapter 2. Honesty</h2>
-    <p>Honesty is the foundation of TIKCOIN. Without honesty, time loses its meaning. In this chapter, we show how the principle of honesty is embedded in every layer of the project: in the code, in the airdrops, in the tokenomics, and in the vesting.</p>
-
-    <hr class="sep">
-
+    <h2>Chapter 2 — Honesty</h2>
     <h3>2.1 Honest Code</h3>
     <ul>
-      <li><strong>Open source.</strong> All TIKCOIN contracts are published publicly and available for review.</li>
-      <li><strong>No hidden functions:</strong> no minting after freeze, no pausing, no blacklists, no backdoors.</li>
-      <li><strong>Independent audits.</strong> Contracts undergo external audits and community review before every major milestone.</li>
-      <li><strong>No bridges, no backdoors.</strong> The architecture is minimal, transparent, and immutable.</li>
+      <li><b>Open-source:</b> repos public; reproducible builds; tagged releases.</li>
+      <li><b>No hidden functions:</b> no stealth mint; no taxes; no blacklist/pause in V2.</li>
+      <li><b>Independent audits:</b> audit PDFs published; hash in repo; issues tracked openly.</li>
+      <li><b>No bridges / no backdoors:</b> attack surface minimized by design.</li>
     </ul>
-
     <hr class="sep">
-
     <h3>2.2 Honest Airdrop</h3>
-<ul>
-  <li><strong>Time-based distribution:</strong> tokens go first to those who invested time — verified subscriptions, referrals, and community contributions.</li>
-  <li><strong>Sybil resistance:</strong> World ID / Gitcoin Passport verification + commit–reveal. Off-chain scoring produces a Merkle root, published by the multisig; on-chain claims require Merkle proofs. Rewards are paid only to validated addresses.</li>
-  <li><strong>Presale access, not conversion:</strong> the airdrop does not convert into purchases. Early participants get priority access and programmatic bonuses <em>funded strictly from the Airdrop &amp; Community pool</em>, following the universal vesting.</li>
-  <li><strong>Referral limits:</strong> capped (≤33) and paid only for validated referees; everything is encoded, with no manual overrides.</li>
-</ul>
-
+    <ul>
+      <li><b>Time-first distribution:</b> rewards for verified contributions (content, support, referrals).</li>
+      <li><b>Sybil resistance:</b> e.g., Passport/WorldID + off-chain scoring → <span class="mono">Merkle root</span> → on-chain claim with proof.</li>
+      <li><b>Funding source:</b> only from <b>Community pool (20%)</b>; <b>Airdrop #1 = 1%</b>.</li>
+      <li><b>Referral fairness:</b> capped depth (≤33); payouts on-chain; no manual overrides.</li>
+    </ul>
     <hr class="sep">
-
-    <h3>2.3 Honest Presale</h3>
-
-    <h4>2.3.1 Price and Conditions</h4>
+    <h3>2.3 Honest Presale (IOU)</h3>
     <ul>
-      <li><strong>Fixed price:</strong> $0.01 = 1 TIK.</li>
-      <li><strong>No minimum entry</strong> for participation. But starting at <strong>$300</strong>, the participant receives the first tier (<strong>Hourglass</strong>).</li>
-      <li><strong>Tier thresholds:</strong><br>
-        Hourglass — $300<br>
-        Mechanica — $1,000<br>
-        Quartz — $5,000<br>
-        Tourbillon — $10,000<br>
-        Atom — $25,000<br>
-        Quantum Clock — $50,000 (max per wallet).
-      </li>
+      <li><b>Model:</b> selling <i>future TIK (IOU)</i> via audited <b>LaunchEscrow</b>; funds release per thresholds; refunds if unmet.</li>
+      <li><b>Price:</b> target $0.01 per future TIK (policy-controlled; final terms published pre-launch).</li>
+      <li><b>Compliance & risk:</b> clear disclosures; geo policy; on-chain dashboard for inflows.</li>
+      <li><b>Bonuses:</b> only from Community pool; vesting applies equally.</li>
     </ul>
-
-    <h4>2.3.2 Tier Rewards</h4>
-    <ul>
-      <li>Mechanica — <strong>2.5%</strong> bonus</li>
-      <li>Quartz — <strong>5%</strong> bonus</li>
-      <li>Tourbillon — <strong>10%</strong> bonus (+ special gift)</li>
-      <li>Atom — <strong>20%</strong> bonus (+ premium gift)</li>
-      <li>Quantum Clock — <strong>30%</strong> bonus (+ exclusive gift, governance rights)</li>
-      <p><em>All bonuses are funded strictly from the Airdrop & Community pool and follow the universal vesting schedule (10% TGE, 2-month cliff, 18-month linear unlock).</em></p>
-    </ul>
-
-    <h4>2.3.3 Transparent Rules</h4>
-    <ul>
-      <li>This is the <strong>one and only presale</strong>.</li>
-      <li><strong>No</strong> relaunches, no resets, no extensions.</li>
-      <li>It is all coded: once the last token is sold, the timer starts.</li>
-      <li><strong>Exactly 8 days</strong> after the presale ends, the listing on DEX is triggered automatically by the contract.</li>
-    </ul>
-<h5>2.3.4 If presale raises less than $11,045,160</h5>
-<ul>
-  <li>If ≥ $6M → listing proceeds; all allocations ($6M / $3M / $2M) scale proportionally to the actual raise.</li>
-  <li>If < $6M → automatic refund by LaunchEscrow; listing postponed.</li>
-</ul>
     <hr class="sep">
-<h3>2.4 Fair Vesting</h3>
+    <h3>2.4 Vesting</h3>
+    <ul>
+      <li><b>Universal schedule (baseline):</b> 10% at TGE, 2-month cliff, then 90% linearly over 18 months (full unlock by month 20).</li>
+      <li><b>LP & reserves:</b> LP tokens locked ≥18 months; reserve tokens timelocked; injections only by DAO at market terms.</li>
+      <li><b>Vaults:</b> labeled addresses; stricter cliffs permitted (e.g., 12-month cliff + 24–36 mo linear) for protocol vaults.</li>
+    </ul>
+  </div>
 
-<h4>2.4.1 General Principle</h4>
-<ul>
-  <li>Vesting guarantees that no one can crash the market with instant large sales.</li>
-  <li>The rules are written in code in advance and apply equally to everyone.</li>
-</ul>
+  <!-- TOKENOMICS -->
+  <div class="section" id="tokenomics">
+    <h2>Chapter 2.5 — Tokenomics</h2>
+    <p>
+      Fixed supply bound to time. <b>Total:</b> 3,155,760,000 TIK. <b>Decimals:</b> 0. No mint after V2 deployment.
+    </p>
 
-<h4>2.4.2 Rules of Vesting</h4>
-<ul>
-  <li><strong>Universal vesting (for everyone except LP/reserve):</strong> 10% at TGE, 2-month cliff, then 90% released linearly over 18 months (fully unlocked by month 20).</li>
-  <li><strong>TIK Vault (stricter than community):</strong> 0% at TGE, 12-month cliff, then linear unlock over 24–36 months. The vault address is public and immutable.</li>
-  <li><strong>Reserve Liquidity (token side):</strong> at listing, <strong>200M TIK</strong> from the reserve is paired with <strong>$6M</strong> (start ≈ $0.03). <strong>LP tokens are timelocked for ≥18 months.</strong> The remaining <strong>273,364,000 TIK</strong> stay timelocked and can be injected only via DAO vote with matching quote assets at market price.</li>
-  <li><strong>DAO Treasury:</strong> any disbursement requires DAO governance and timelock execution.</li>
-</ul>
+    <h3>2.5.1 Supply Map</h3>
+    <table>
+      <thead>
+        <tr><th>Bucket</th><th>Percent</th><th>Amount (TIK)</th><th>Purpose & Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Presale (IOU)</td>
+          <td><b>35%</b></td>
+          <td><b>1,104,516,000</b></td>
+          <td>One-time presale via LaunchEscrow; converts 1:1 into TIK at migration; vesting baseline applies.</td>
+        </tr>
+        <tr>
+          <td>Community Pool</td>
+          <td><b>20%</b></td>
+          <td><b>631,152,000</b></td>
+          <td>Incentives, airdrops, referrals. <b>Airdrop #1 = 1%</b> (31,557,600 TIK). All programmatic; on-chain proofs.</td>
+        </tr>
+        <tr>
+          <td>Reserve Liquidity</td>
+          <td><b>15%</b></td>
+          <td><b>473,364,000</b></td>
+          <td>Source for liquidity. LP lock ≥18 months. Remaining reserve timelocked; DAO-governed injections at market price.</td>
+        </tr>
+        <tr>
+          <td>TIK Vault</td>
+          <td><b>10%</b></td>
+          <td><b>315,576,000</b></td>
+          <td>Protocol vault with stricter locks (e.g., 12-month cliff + 24–36 mo linear). Address public.</td>
+        </tr>
+        <tr>
+          <td>DAO Treasury</td>
+          <td><b>20%</b></td>
+          <td><b>631,152,000</b></td>
+          <td>Audits, listings, grants, ecosystem; executed via DAO + Policy + Timelock + Multisig 3/5.</td>
+        </tr>
+      </tbody>
+    </table>
 
-<h4>2.4.3 Vesting Philosophy</h4>
-<ul>
-  <li>Everyone is equal before time.</li>
-  <li>No founder, no privileged wallets — the same vesting rules apply to all categories.</li>
-  <li>This proves the project is built for the future, not for shortcuts.</li>
-</ul>
+    <h3>2.5.2 Presale Fund Flows (USD)</h3>
+    <ul>
+      <li>$6,000,000 → Initial Liquidity (LP locked; proof on-chain).</li>
+      <li>$3,000,000 → Reserve Liquidity (timelocked; DAO-controlled future injections).</li>
+      <li>$2,000,000 → Development & Operations (public treasury wallets; streaming where possible).</li>
+      <li>All flows visible on a public dashboard; addresses labeled.</li>
+    </ul>
 
+    <h3>2.5.3 Transparency</h3>
+    <ul>
+      <li>No taxes. No burns. No stealth mechanics.</li>
+      <li>Any movement from reserves/treasury requires DAO proposal → timelock → execution.</li>
+    </ul>
+  </div>
 
-<h3>2.5 Fair Tokenomics</h3>
-<p>
-Fixed supply bound to time. Total supply: <strong>3,155,760,000 TIK</strong> (= 100 years in seconds; 1 TIK = 1 second). 
-No minting after deployment.
-</p>
+  <!-- GOVERNANCE -->
+  <div class="section" id="governance">
+    <h2>Chapter 2.6 — Governance</h2>
+    <ul>
+      <li><b>Model:</b> Tiered-DAO (reputation/eligibility policy) + <b>Timelock</b> + <b>Policy Module</b> + <b>Multisig 3/5</b> executor + <b>Constitutional Guardian</b> (pre-execution veto on critical modules; cannot spend treasury).</li>
+      <li><b>Scope:</b> policy rates, grants, reserves injections, listings/playbooks; core TIK remains immutable.</li>
+      <li><b>Records:</b> proposals, votes, and executions are archived on-chain and linked from docs.</li>
+    </ul>
+  </div>
 
-<h4>2.5.1 Distribution of Supply</h4>
-<table>
-  <thead>
-    <tr>
-      <th>Bucket</th>
-      <th>Percent</th>
-      <th>Amount (TIK)</th>
-      <th>Purpose &amp; Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Presale</td>
-      <td><strong>35%</strong></td>
-      <td><strong>1,104,516,000</strong></td>
-      <td>
-        One-time presale at $0.01 (total raise: $11,045,160).<br>
-        Vesting: 10% at TGE, 2-month cliff, 18-month linear unlock (fully unlocked by month 20).
-      </td>
-    </tr>
-    <tr>
-      <td>Airdrop &amp; Community</td>
-      <td><strong>20%</strong></td>
-      <td><strong>631,152,000</strong></td>
-      <td>
-        Referral ladder ≤33, participation rewards, community incentives.<br>
-        Distributed only via contracts; universal vesting applies.
-      </td>
-    </tr>
-    <tr>
-      <td>Reserve Liquidity</td>
-      <td><strong>15%</strong></td>
-      <td><strong>473,364,000</strong></td>
-      <td>
-        Liquidity source. At listing: 200M TIK paired with $6M → start ≈ $0.03 (3× presale).<br>
-        LP tokens locked ≥18 months. Remaining <strong>273,364,000</strong> TIK timelocked for DAO-managed future injections at market price.
-      </td>
-    </tr>
-    <tr>
-      <td>TIK Vault</td>
-      <td><strong>10%</strong></td>
-      <td><strong>315,576,000</strong></td>
-      <td>
-        No privileged founder wallet. Same universal vesting applies, or optionally stricter
-        (0% TGE, 12-month cliff, 24–36-month linear). Vault address is public.
-      </td>
-    </tr>
-    <tr>
-      <td>DAO Treasury</td>
-      <td><strong>20%</strong></td>
-      <td><strong>631,152,000</strong></td>
-      <td>
-        Partnerships, audits, listings, grants, ecosystem growth.<br>
-        Managed via DAO + multisig + timelock; no discretionary unlocks.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<h4>2.5.2 Locks and Vesting (aligned with §2.4)</h4>
-<ul>
-  <li><strong>Universal Vesting:</strong> 10% TGE, 2-month cliff, 90% linear over 18 months (full unlock by month 20).</li>
-  <li><strong>TIK Vault (stricter):</strong> 0% TGE, 12-month cliff, 24–36-month linear unlock. Always later than community; vault address is public.</li>
-  <li><strong>Reserve Liquidity:</strong> 200M TIK + $6M at listing; <strong>LP tokens timelocked for ≥18 months</strong>. Remaining <strong>273,364,000 TIK</strong> timelocked; deployable only via DAO with market-rate quote assets.</li>
-  <li><strong>DAO Treasury:</strong> DAO governance + timelock required for any spending.</li>
-</ul>
-
-<h4>2.5.3 Presale Fund Flows (USD, not tokens)</h4>
-<ul>
-  <li>$6,000,000 → Initial Liquidity (locked via LaunchEscrow, LP tokens timelocked).</li>
-  <li>$3,000,000 → Reserve Liquidity (timelock, future DAO-managed injections).</li>
-  <li>$2,000,000 → Development (engineering, audit, operations, marketing). Public treasury wallets track all flows.</li>
-</ul>
-
-<h4>2.5.4 Transparency</h4>
-<ul>
-  <li>All allocation vaults and treasury wallets are public and labeled.</li>
-  <li>No hidden taxes, no backdoors, no pause switches.</li>
-  <li>Any exceptional movement from Reserve Liquidity or DAO Treasury requires DAO governance + timelock execution.</li>
-</ul>
-    
-</div>
-<!-- 2.5 END -->
-
-    <h4>2.6 Governance</h4>
-<p>
-DAO voting rights are <strong>non-transferable</strong>, <strong>not purchasable</strong> on secondary markets, and <strong>can only be obtained during presale</strong>.
-Voting power belongs exclusively to wallets that reached the <strong>Quantum Clock</strong> tier in the presale. 
-No post-listing acquisition of TIK grants governance rights.
-</p>
-<p>
-This design anchors governance in <em>time and risk</em>: those who committed earliest and at the highest level are empowered to vote on protocol decisions. 
-All other participants enjoy equal economic rules but do not hold DAO authority.
-</p>
-
-<h5>2.6.1 Presale Tiers &amp; Permanent Status</h5>
-<p>
-Presale tiers (Hourglass → Mechanica → Quartz → Tourbillon → Atom → Quantum Clock) are assigned <strong>once</strong> at presale finalization and recorded on-chain <strong>forever</strong>. 
-Each eligible wallet is first assigned its final tier status, then receives the corresponding tier bonus in tokens. 
-Statuses cannot be upgraded, traded, or obtained after presale under any circumstances.
-</p>
-<p>
-Only <strong>Quantum Clock</strong> tier wallets hold DAO voting rights. 
-Other tiers remain permanently recorded for future recognitions, rewards, collectibles, or community benefits, without governance power.
-</p>
-    <h4>2.7 Utility of TIK</h4>
-<ul>
-  <li><strong>Proof-of-Time Rewards:</strong> community members can earn TIK by contributing verifiable time (moderation, content, support). Rewards are distributed from the Airdrop & Community pool.</li>
-  <li><strong>NFT Timepieces:</strong> dynamic NFTs representing staked time. The longer TIK is locked, the more advanced the NFT evolves (Hourglass → Quartz → Tourbillon → Atom → Quantum).</li>
-  <li><strong>Access & Priority:</strong> time-locked staking in TIK grants priority access to future rounds, governance proposals, and DAO tools.</li>
-  <li><strong>Future Integrations:</strong> partnerships may tokenize actual services and consulting hours in TIK (1 TIK = 1 second), turning “time” into a transferable marketplace asset.</li>
-</ul>
+  <!-- UTILITIES -->
+  <div class="section" id="utilities">
+    <h2>Chapter 2.7 — Utilities</h2>
+    <ul>
+      <li><b>Proof-of-Time Rewards:</b> verifiable time contributions → off-chain logs → Merkle root → on-chain claims.</li>
+      <li><b>Time-NFTs:</b> dynamic NFTs that evolve along the symbolism line as lock duration increases (Hourglass → … → Quantum).</li>
+      <li><b>Access & Priority:</b> time-locked staking → access to future features, proposal creation, and tooling.</li>
+      <li><b>Integrations:</b> partner services denominated in TIK (1 TIK = 1 second) where feasible.</li>
+    </ul>
   </div>
 
   <!-- PHILOSOPHY -->
   <div class="section" id="philosophy">
-    <h2>Chapter 3. Philosophy </h2>
-    <p>We don’t build a personality cult, we don’t sell promises, and we don’t wave memes. We build a mechanism where time is the only judge and honesty is the operating system. Our creed: no greed, no deception — only transparent rules and equal conditions.</p>
-
-    <h3>3.1 Project Ethos: “Time Will Tell”</h3>
-<ol>
-  <li><strong>Time is the only unit of measure.</strong><br>
-    We tokenize the XXI century: 1 TIK = 1 second, total 3,155,760,000 TIK. Time belongs to everyone equally; choices and contributions create the difference.</li>
-  <li><strong>Honesty above convenience.</strong><br>
-    If a feature helps but breaks honesty, the feature does not exist. No bridges, no hidden switches, no “admin magic.”</li>
-  <li><strong>No rent-seeking.</strong><br>
-    Transparent tokenomics, not taxes or insider mechanics: <strong>35%</strong> Presale ($0.01), <strong>20%</strong> Airdrop & Community, <strong>15%</strong> Reserve Liquidity, <strong>10%</strong> TIK Vault, <strong>20%</strong> DAO Treasury.</li>
-  <li><strong>Trust is rewarded, not purchased.</strong><br>
-    Earlier and larger contributors earn more because they accepted risk earlier. That’s how time works in nature.</li>
-</ol>
-
-    <h3>3.2 Growth Without Greed</h3>
-    <ul>
-      <li><strong>No dirty marketing.</strong> No fake volume, no astroturfing, no stealth shill bounties. Interest comes from product, rules, and time.</li>
-      <li><strong>Honest airdrop: time over money.</strong> We reward time contribution (content, useful actions, verified referrals). Bots and fakes are excluded automatically.</li>
-      <li><strong>Market without crutches.</strong> No taxes, no rebases, no artificial scarcity. Price reflects real decisions of real people — not a joystick in the team’s hands.</li>
-    </ul>
-
-    <h3>3.3 Fairness &amp; Differentiation</h3>
-    <ul>
-      <li><strong>Equality before time.</strong> Core conditions are the same for everyone: open code, clear vesting, public rules.</li>
-      <li><strong>Differentiation by trust.</strong> Presale tiers (Hourglass → Quantum) are granted once during presale. Bonuses come only from the airdrop pool. Voting rights belong to those who proved engagement and risk.</li>
-      <p>
-There is no privileged “founder” allocation. The TIK Vault follows the same universal vesting (10% TGE, 2-month cliff, 18-month linear unlock) or stricter terms (0% TGE, 12-month cliff, 24–36-month linear). The vault address is public and fully transparent.
-</p>
-      /li>
-    </ul>
-
-    <h3>3.4 Transparency as a Method</h3>
-    <ul>
-      <li><strong>Public code and addresses.</strong> Contracts are open-source; critical addresses (treasury, any temporary admin surfaces) are public.</li>
-      <li><strong>Rules in code, not in posts.</strong> Terminal conditions (presale end → listing in 8 days; no bridges; no pause/blacklist/mint) are hardcoded.</li>
-      <li><strong>On-chain voting.</strong> Community decisions are executed and archived on-chain, verifiable by anyone.</li>
-    </ul>
-
-    <h3>3.5 Community Covenant</h3>
-    <ol>
-      <li><strong>Good-faith standard.</strong> One human — one honest contribution. Sybil schemes and “farming for farming’s sake” violate the project’s spirit and letter.</li>
-      <li><strong>Respect &amp; clarity.</strong> We don’t promise what we can’t encode. We speak in numbers, algorithms, and timelines.</li>
-      <li><strong>Anti-fragmentation.</strong> We avoid mechanics that split the community (privileges, exceptions, “elite roles”). Rules must be equally clear and attainable.</li>
-    </ol>
-
-    <h3>3.6 Symbolism of Time’s Evolution</h3>
-    <p><em>Sun → Hourglass → Mechanics → Quartz → Tourbillon → Atomic → Quantum</em> is not marketing garnish but a metaphor of progress: from crude measures to ultimate precision. The protocol mirrors this path: from immutable core to precise, minimal functions that never break the three axioms of time.</p>
-
-    <h3>3.7 Slogans (for site, WP, Telegram)</h3>
+    <h2>Chapter 3 — Philosophy</h2>
+    <p>
+      We don’t sell promises — we encode rules. Equality before time, differentiation by risk and contribution.
+      No rent-seeking mechanics. Reputation is earned by behavior over time.
+    </p>
+    <h3>3.1 Slogans</h3>
     <ul>
       <li>We cannot stop time — but we can tokenize it.</li>
       <li>Time is the only unit of measure.</li>
       <li>Time will tell.</li>
-      <li>All are equal before time; trust differentiates.</li>
-      <li>The earlier the belief, the greater the reward.</li>
       <li>Code over words.</li>
     </ul>
-
-    <h3>3.8 Thoughts &amp; Parables (for sidebars)</h3>
-    <ul>
-      <li>“Lost time is never found again.”</li>
-      <li>“You can deceive people, but not time.”</li>
-      <li>“Time is the fabric life is woven from.”</li>
-      <li>“Trust accumulates slowly and vanishes fast.”</li>
-      <li>“A human is the sum of their actions.”</li>
-      <li><strong>Proof-of-Time utilities:</strong> verified time contributions (moderation, content, support, service hours) are rewarded in TIK via off-chain logs → Merkle root → on-chain claim. This makes “1 TIK = 1 second” practical, not just symbolic.</li>
-    </ul>
-    <p class="muted">(We use universal formulations without contentious attributions; the focus is the meaning, not the name.)</p>
-
-    <h3>3.9 Practical Consequences of the Philosophy</h3>
-    <ul>
-      <li>No bridges. Radically reduced risk surface.</li>
-      <li>Immutable core. You cannot “roll back” rules, just as you cannot return a second.</li>
-      <li>Bonuses only from the airdrop pool. No stealth inflation.</li>
-      <li>One presale, one listing, timer in code. Time governs — not an admin.</li>
-      <li>Public founder wallet. A symbol and instrument of trust.</li>
-    </ul>
-
-    <h3>3.10 Summary</h3>
-    <p>Our “religion” is not promises but behavior over time. We measure contribution in time, encode rules in code, and let the market do its job. <strong>TIKCOIN is the Golden Age of Time — minted on-chain.</strong></p>
   </div>
-<!-- ROADMAP -->
-<h2 id="roadmap">3.11 Roadmap — In Plain Words</h2>
-<p>
-  We keep our roadmap simple and honest. No buzzwords, no empty promises.
-  Below is what we plan to do <em>before listing</em>. Everything beyond that is guided by one rule:
-  <strong>Time Will Tell</strong>.
-</p>
 
-<h3>V1 — Prototype (☀️ Sun)</h3>
-<p>
-  First workable foundation. Think of it as laying the rails before the train:
-  a prototype token for staging, the distribution logic for the airdrop, and a safe multisig.
-</p>
+  <!-- ROADMAP (ALIGNED WITH SITE) -->
+  <div class="section" id="roadmap">
+    <h2>Roadmap (Aligned with Site)</h2>
+    <p class="muted">Visual sequence: <i>Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</i>.</p>
 
-<h3>V1.5 — Presale Prep (⏳ Hourglass)</h3>
-<p>
-  We tighten the prototype, prepare for audit, and open the presale at <strong>$0.01</strong>.
-  Funds are split transparently: <strong>$6M</strong> to initial liquidity (locked at listing),
-  <strong>$3M</strong> to a locked reserve, and <strong>$2M</strong> to the development fund.
-</p>
+    <h3>Phase 0 — Canon Freeze (☀️ Sun)</h3>
+    <ul>
+      <li>Freeze invariants, symbolism, governance model, language (EN), visual line.</li>
+      <li>Publish <span class="mono">/canon</span> and public commitments (immutable, no bridges, audits).</li>
+    </ul>
 
-<h3>V2 — Immutable Core & Listing (💎 Quartz)</h3>
-<p>
-  The core token becomes immutable (no owner keys, no tricks). We publish the listing with locked liquidity,
-  enable basic utilities (dashboard, referrals), and let the market do what the market does — without “admin magic”.
-</p>
+    <h3>Phase 1 — V1 Contracts (⌛ Hourglass)</h3>
+    <ul>
+      <li><b>TIKP</b> (non-transferable, <span class="mono">decimals=0</span>, cap <b>31,557,600</b>, burnable, permit, <i>closeMinting</i>).</li>
+      <li><b>AirdropDistributor</b> (batchMint, cap-guard, disableForever, endEpoch) + optional anti-sybil stack.</li>
+      <li><b>Multisig 3/5</b>. Repos public. Audit #1 scope: V1 set.</li>
+    </ul>
 
-<h3>… Time Will Tell (🌀 → ⚛️ → 🧭)</h3>
-<p>
-  Partnerships, integrations, and everything that comes next are earned over time. 
-  We don’t force it, we don’t fake it. Time will show.
-</p>
+    <h3>Phase 1.5 — Presale (⚙️ Mechanical)</h3>
+    <ul>
+      <li>Audited <b>LaunchEscrow</b> sells <i>future TIK (IOU)</i>; thresholds & refunds enforced.</li>
+      <li>Public terms and dashboards; referral ladder ≤33 by policy.</li>
+    </ul>
 
-<p class="note">
-  <strong>Summary:</strong> V1 lays the rails, V1.5 starts the journey with presale, V2 locks the route and opens the station (listing).
-  Beyond that — Time Will Tell.
-</p>
+    <h3>Phase 2 — Immutable Core (💎 Quartz)</h3>
+    <ul>
+      <li><b>TIK</b> immutable (no owner/mint/pause/blacklist).</li>
+      <li><b>Migrator</b> (burn TIKP → transfer TIK 1:1 from <i>MigratorVault</i>; permit; emergency <i>pause</i>).</li>
+      <li><b>TimelockController</b> + Multisig 3/5 + Policy wired.</li>
+    </ul>
+
+    <h3>Phase 2.1 — Listing & Liquidity (🌀 Tourbillon)</h3>
+    <ul>
+      <li>DEX listing per public playbook; LP lock ≥18 months; proofs linked.</li>
+      <li>Supply map & vestings dashboard live.</li>
+    </ul>
+
+    <h3>Phase 3 — Utilities (⚛️ Atom)</h3>
+    <ul>
+      <li>TaaS primitives (Time Rent, Time-NFT, referral payouts on-chain).</li>
+      <li>Grants via Policy; streams; example project shipped.</li>
+    </ul>
+
+    <h3>Phase 4 — DAO Scale-Up (🧩 Quantum)</h3>
+    <ul>
+      <li>Tiered-DAO live; proposals via timelock; pre-execution veto tested; quarterly reports.</li>
+    </ul>
+  </div>
+
   <!-- CONCLUSION -->
   <div class="section" id="conclusion">
     <h2>Conclusion</h2>
-    <p>We don’t ask for faith in words. We offer trust in what cannot be changed — time and code.</p>
     <ul>
-      <li><strong>Code does not lie.</strong><br>
-        It’s open, verifiable, immutable. Anyone can confirm there are no hidden functions, privileges, or backdoors.</li>
-      <li><strong>Time cannot be bribed.</strong><br>
-        There is one presale, no extensions. The timer is hardcoded. On the 8th day after it ends — listing. Not even the founder can change this.</li>
-      <li><strong>The founder is equal.</strong><br>
-        His wallet is public. He receives tokens under the same rules: 10% at launch, the rest after the community’s vesting.</li>
-      <li><strong>Trust creates fairness.</strong><br>
-        The earlier you believe, the greater the reward. This is not inequality — it’s the law of time itself: those who sow earlier, reap earlier.</li>
-      <li><strong>Philosophy, not manipulation.</strong><br>
-        No greed, no fear, no hype traps. Only honesty, transparency, and immutable code.</li>
+      <li><b>Code does not lie.</b> Open, verifiable, immutable core.</li>
+      <li><b>Time cannot be bribed.</b> No stealth mechanics; one canon for all.</li>
+      <li><b>Founder equals community.</b> Same vesting principles; public addresses.</li>
+      <li><b>Trust compounds slowly.</b> We reward behavior over time — transparently and on-chain.</li>
     </ul>
-
-    <h3>Final Word</h3>
-    <p>We don’t promise “x100.” We promise only one thing: <strong>time will tell</strong>. Those who join today are not just buying a token. They are becoming part of a movement, part of an idea, part of the <strong>Golden Age of Time</strong>.</p>
+    <p><b>We don’t promise x100. We promise that time will tell.</b></p>
   </div>
 
 </body>
