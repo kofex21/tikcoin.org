@@ -146,9 +146,7 @@
 <!-- Century Clock -->
 <script>
 (function(){
-  // Canon: 100 years = 3,155,760,000 seconds (365.25 d/y)
-  const TOTAL = 3155760000;
-  // 21st century: 2001-01-01 00:00:00 UTC → 2100-12-31 23:59:59 UTC
+  const TOTAL = 3155760000; // 100 years in seconds
   const start = Date.UTC(2001,0,1,0,0,0);
   const end   = start + TOTAL*1000;
 
@@ -166,7 +164,10 @@
     $('remain').textContent  = fmt(remainSec);
     $('pct').textContent     = pct.toFixed(2) + '%';
     $('bar').style.width     = pct.toFixed(4) + '%';
-    $('nowutc').textContent  = new Date(now).toISOString().replace('T',' ').replace('Z',' UTC');
+
+    // смещение +4 часа относительно UTC
+    const shifted = new Date(now + 4*3600*1000);
+    $('nowutc').textContent  = shifted.toISOString().replace('T',' ').replace('Z',' UTC+4');
   }
   tick();
   setInterval(tick, 1000);
