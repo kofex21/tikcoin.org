@@ -9,7 +9,7 @@
 <style>
   :root{
     --bg:#0b0c0f; --fg:#f1f5f9; --muted:#9aa4b2; --accent:#7c6cff; --line:#202532;
-    --card:#11141a; --ghost:#0e1218;
+    --card:#11141a; --ghost:#0e1218; --ok:#10b981;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -19,7 +19,7 @@
   .wrap{max-width:1100px;margin:0 auto;padding:16px 20px}
   .brand{display:flex;gap:12px;align-items:center}
   nav{display:flex;gap:18px;flex-wrap:wrap}
-  /* logo fit for PNG/SVG */
+  /* Logo fit */
   .logo{height:28px;width:auto;display:block;image-rendering:-webkit-optimize-contrast}
   @media (min-width:980px){ .logo{height:32px} }
   .btn{padding:11px 16px;border:1px solid var(--line);background:var(--card);border-radius:10px}
@@ -36,15 +36,18 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
   .grid-2{display:grid;gap:24px}
   @media (min-width:980px){.grid-2{grid-template-columns:1.2fr .8fr}}
-  /* Bars */
+
+  /* Progress bars */
   .bar{height:10px;border-radius:999px;background:#0d1118;border:1px solid #1a2130;overflow:hidden;margin-top:8px}
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,#7c6cff,#60a5fa)}
-  /* Century Clock */
+
+  /* Century Clock (Council design) */
   .clock{background:var(--ghost);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px}
   .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .big{font-size:28px;font-weight:700;letter-spacing:.3px}
   .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
   .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#10141c;border:1px solid var(--line);font-size:12px;color:#cbd5e1}
+  .tiny{font-size:12px;margin:0;color:var(--muted)}
   footer{color:var(--muted);padding:30px 0}
 </style>
 </head>
@@ -114,6 +117,9 @@
           <span class="muted">Tokenized so far (Council)</span>
           <b><span id="tokAmt">0</span> TIK · <span id="tokPct">0.00%</span></b>
         </div>
+        <p class="tiny">
+          TIK is a digital registry of seconds. It does not sell time and does not add lifespan.
+        </p>
       </div>
     </div>
   </section>
@@ -161,12 +167,12 @@
 </footer>
 
 <!-- ===== Council Config (edit only by Council) =====
-     You may set tokenized either by percent OR by absolute amount.
+     Set tokenized either by PERCENT or AMOUNT.
      If both provided, 'amount' wins. Defaults to 0. -->
 <script type="application/json" id="council-config">
 {
-  "tokenized_pct": 0,
-  "tokenized_amount": null
+  "tokenized_amount": 0,
+  "tokenized_pct": null
 }
 </script>
 
@@ -176,55 +182,53 @@
   // Canon
   const TOTAL = 3155760000; // seconds in a century (365.25 d/y)
   const startUTC = Date.UTC(2001,0,1,0,0,0); // 2001-01-01 00:00:00 UTC
-  const TZ_SHIFT_MS = 4 * 3600 * 1000; // UTC+4 everywhere
+  const TZ_SHIFT_MS = 4 * 3600 * 1000; // Council mandate: UTC+4 everywhere
 
   const $ = id => document.getElementById(id);
   const fmt = n => Number(n).toLocaleString('en-US');
 
-  // Read Council config
+  // Council-configured tokenized amount
   function readConfig(){
     try{
       const raw = document.getElementById('council-config').textContent || '{}';
       const cfg = JSON.parse(raw);
-      let amount = null;
       if (cfg.tokenized_amount != null && isFinite(Number(cfg.tokenized_amount))) {
-        amount = Math.max(0, Math.min(TOTAL, Math.floor(Number(cfg.tokenized_amount))));
-      } else if (isFinite(Number(cfg.tokenized_pct))) {
-        const p = Math.max(0, Math.min(100, Number(cfg.tokenized_pct)));
-        amount = Math.round(TOTAL * p / 100);
-      } else {
-        amount = 0;
+        const a = Math.max(0, Math.min(TOTAL, Math.floor(Number(cfg.tokenized_amount))));
+        return a;
       }
-      return { tokenized_amount: amount };
-    } catch(e){
-      return { tokenized_amount: 0 };
-    }
+      if (cfg.tokenized_pct != null && isFinite(Number(cfg.tokenized_pct))) {
+        const p = Math.max(0, Math.min(100, Number(cfg.tokenized_pct)));
+        return Math.round(TOTAL * p / 100);
+      }
+    } catch(e){}
+    return 0;
   }
 
   function render(){
     const nowReal = Date.now();
-    const nowShifted = nowReal + TZ_SHIFT_MS; // Council mandate: use UTC+4 baseline
+    const nowShifted = nowReal + TZ_SHIFT_MS; // UTC+4
     const elapsedSec = Math.max(0, Math.floor((nowShifted - startUTC) / 1000));
     const clampedElapsed = Math.min(elapsedSec, TOTAL);
     const remainSec = Math.max(TOTAL - clampedElapsed, 0);
     const pctCentury = (clampedElapsed / TOTAL) * 100;
 
     // Century progress
-    $('elapsed').textContent = fmt(clampedElapsed);
-    $('remain').textContent  = fmt(remainSec);
-    $('pct').textContent     = pctCentury.toFixed(2) + '%';
-    $('bar').style.width     = Math.max(0, Math.min(100, pctCentury)).toFixed(4) + '%';
+    if ($('elapsed')) $('elapsed').textContent = fmt(clampedElapsed);
+    if ($('remain'))  $('remain').textContent  = fmt(remainSec);
+    if ($('pct'))     $('pct').textContent     = pctCentury.toFixed(2) + '%';
+    if ($('bar'))     $('bar').style.width     = Math.max(0, Math.min(100, pctCentury)).toFixed(4) + '%';
 
     // Now label: UTC+4 (no city)
-    const d = new Date(nowShifted);
-    $('nowutc').textContent = d.toISOString().replace('T',' ').replace('Z',' UTC+4');
+    if ($('nowutc')){
+      const d = new Date(nowShifted);
+      $('nowutc').textContent = d.toISOString().replace('T',' ').replace('Z',' UTC+4');
+    }
 
-    // Tokenized (Council-controlled)
-    const { tokenized_amount } = readConfig();
-    const tokAmt = Math.min(tokenized_amount, TOTAL);
+    // Tokenized so far (Council-controlled)
+    const tokAmt = readConfig(); // absolute amount prevails, else percent
     const tokPct = (tokAmt / TOTAL) * 100;
-    $('tokAmt').textContent = fmt(tokAmt);
-    $('tokPct').textContent = tokPct.toFixed(2) + '%';
+    if ($('tokAmt')) $('tokAmt').textContent = fmt(tokAmt);
+    if ($('tokPct')) $('tokPct').textContent = tokPct.toFixed(2) + '%';
   }
 
   render();
