@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>TIKCOIN — Time Tokenized</title>
-<meta name="description" content="TIKCOIN — 1 TIK = 1 second. Immutable on Ethereum mainnet. No bridges." />
+<title>TIKCOIN — Time Tokenized (Council)</title>
+<meta name="description" content="TIKCOIN — 1 TIK = 1 second. Council-led. Immutable on Ethereum. No bridges. All time displays are UTC+4." />
 <link rel="icon" href="favicon.ico" />
 <style>
   :root{
@@ -19,8 +19,8 @@
   .wrap{max-width:1100px;margin:0 auto;padding:16px 20px}
   .brand{display:flex;gap:12px;align-items:center}
   nav{display:flex;gap:18px;flex-wrap:wrap}
-  /* ЛОГОТИП: аккуратная подгонка PNG/SVG */
-  .logo{height:28px; width:auto; display:block; image-rendering:-webkit-optimize-contrast}
+  /* logo fit for PNG/SVG */
+  .logo{height:28px;width:auto;display:block;image-rendering:-webkit-optimize-contrast}
   @media (min-width:980px){ .logo{height:32px} }
   .btn{padding:11px 16px;border:1px solid var(--line);background:var(--card);border-radius:10px}
   .btn.primary{border-color:transparent;background:linear-gradient(90deg,#7c6cff,#60a5fa);color:#0b1020;font-weight:700}
@@ -36,13 +36,14 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
   .grid-2{display:grid;gap:24px}
   @media (min-width:980px){.grid-2{grid-template-columns:1.2fr .8fr}}
-  /* Century Clock */
-  .clock{background:var(--ghost);border:1px solid var(--line);border-radius:14px;padding:16px}
-  .clock .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  .clock .big{font-size:28px;font-weight:700;letter-spacing:.3px}
-  .bar{height:10px;border-radius:999px;background:#0d1118;border:1px solid #1a2130;overflow:hidden;margin-top:10px}
+  /* Bars */
+  .bar{height:10px;border-radius:999px;background:#0d1118;border:1px solid #1a2130;overflow:hidden;margin-top:8px}
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,#7c6cff,#60a5fa)}
-  .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  /* Century Clock */
+  .clock{background:var(--ghost);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px}
+  .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .big{font-size:28px;font-weight:700;letter-spacing:.3px}
+  .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
   .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#10141c;border:1px solid var(--line);font-size:12px;color:#cbd5e1}
   footer{color:var(--muted);padding:30px 0}
 </style>
@@ -53,10 +54,9 @@
 <header>
   <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
     <div class="brand">
-      <!-- ИСПОЛЬЗУЕМ ВАШ ФАЙЛ ЛОГОТИПА -->
       <img src="assets/logo.png" alt="TIKCOIN logo" class="logo" />
       <strong style="letter-spacing:.3px">TIKCOIN</strong>
-      <span class="badge">Minimal Landing</span>
+      <span class="badge">Council Edition · UTC+4</span>
     </div>
     <nav>
       <a href="whitepaper.html">WhitePaper</a>
@@ -71,12 +71,13 @@
   <section id="hero">
     <div class="wrap grid-2">
       <div>
-        <h1>We cannot stop time — but we can tokenize it.</h1>
+        <h1>The Council cannot stop time — but it can tokenize it.</h1>
         <p class="lead">
           <b>1 TIK = 1 second</b>. Total supply <b>3,155,760,000</b> (seconds in a century, <i>decimals=0</i>).
           Immutable on <b>Ethereum mainnet</b>. <b>No bridges.</b>
         </p>
         <div class="badges" aria-hidden="true">
+          <span class="badge">Council-Led</span>
           <span class="badge">Immutable Core (V2)</span>
           <span class="badge">No Bridges</span>
           <span class="badge">Open-Source & Audited</span>
@@ -87,16 +88,31 @@
         </div>
       </div>
 
-      <!-- Century Clock -->
+      <!-- CENTURY CLOCK (UTC+4) -->
       <div class="clock" id="century">
-        <div class="row"><span class="muted">Century Clock</span><span class="pill">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span></div>
-        <div class="big" id="pct">0.00%</div>
+        <div class="row">
+          <span class="muted">Century Clock</span>
+          <span class="pill">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span>
+        </div>
+
+        <!-- Century Progress -->
+        <div class="row" style="align-items:end">
+          <span class="muted">Century Progress</span>
+          <span class="big" id="pct">0.00%</span>
+        </div>
         <div class="bar"><span id="bar" style="width:0%"></span></div>
+
         <div class="kv">
           <div><span class="muted">Elapsed</span><br/><b id="elapsed">—</b> sec</div>
           <div><span class="muted">Remaining</span><br/><b id="remain">—</b> sec</div>
-          <div><span class="muted">Now (UTC)</span><br/><b id="nowutc">—</b></div>
+          <div><span class="muted">Now (UTC+4)</span><br/><b id="nowutc">—</b></div>
           <div><span class="muted">Total (Canon)</span><br/><b>3,155,760,000</b> sec</div>
+        </div>
+
+        <!-- Tokenized (inside the same block; Council-controlled) -->
+        <div class="row" style="margin-top:6px">
+          <span class="muted">Tokenized so far (Council)</span>
+          <b><span id="tokAmt">0</span> TIK · <span id="tokPct">0.00%</span></b>
         </div>
       </div>
     </div>
@@ -122,7 +138,7 @@
       <div class="card" style="display:grid;gap:10px">
         <div>Time is the only unit of measure.</div>
         <div>Code over words.</div>
-        <div>One Canon. One Chain. One Community.</div>
+        <div>One Canon. One Council. One Community.</div>
       </div>
       <div class="hero-cta" style="margin-top:14px">
         <a class="btn" href="whitepaper.html">Dive into the WhitePaper</a>
@@ -135,77 +151,84 @@
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div>© TIKCOIN — Immutable on Ethereum mainnet. No bridges.</div>
+    <div>© TIKCOIN — Council-led. Immutable on Ethereum. No bridges. All times UTC+4.</div>
     <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <span class="pill">1 TIK = 1 second</span>
-      <span class="pill">decimals = 0</span>
+      <span class="badge">1 TIK = 1 second</span>
+      <span class="badge">decimals = 0</span>
+      <span class="badge">UTC+4</span>
     </div>
   </div>
 </footer>
 
-<!-- Century Clock -->
-<script>
-(function(){
-  const TOTAL = 3155760000; // 100 years in seconds
-  const start = Date.UTC(2001,0,1,0,0,0);
-  const end   = start + TOTAL*1000;
-
-  const $ = id => document.getElementById(id);
-  const fmt = n => Number(n).toLocaleString('en-US');
-
-  function tick(){
-    const now = Date.now();
-    const clamped = Math.min(Math.max(now,start), end);
-    const elapsedSec = Math.floor((clamped - start)/1000);
-    const remainSec  = Math.max(TOTAL - elapsedSec, 0);
-    const pct = Math.min(100, Math.max(0, (elapsedSec/TOTAL)*100));
-
-    $('elapsed').textContent = fmt(elapsedSec);
-    $('remain').textContent  = fmt(remainSec);
-    $('pct').textContent     = pct.toFixed(2) + '%';
-    $('bar').style.width     = pct.toFixed(4) + '%';
-
-    // смещение +4 часа относительно UTC
-    const shifted = new Date(now + 4*3600*1000);
-    $('nowutc').textContent  = shifted.toISOString().replace('T',' ').replace('Z',' UTC+4');
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
+<!-- ===== Council Config (edit only by Council) =====
+     You may set tokenized either by percent OR by absolute amount.
+     If both provided, 'amount' wins. Defaults to 0. -->
+<script type="application/json" id="council-config">
+{
+  "tokenized_pct": 0,
+  "tokenized_amount": null
+}
 </script>
-<!-- TOKENIZATION PROGRESS (Council-approved) -->
-<section id="progress" style="padding:50px 0;border-top:1px solid #222">
-  <div class="wrap">
-    <h2>Tokenization Progress</h2>
-    <p class="muted">Reflecting the Council’s doctrine: time is tokenized second by second.</p>
-    <div class="card" style="max-width:500px">
-      <p><b>Total Supply:</b> 3,155,760,000 TIK (= 100 years in seconds)</p>
-      <p><b>Already Tokenized:</b> <span id="tok-now">0</span> TIK</p>
-      <p><b>Progress:</b> <span id="tok-pct">0%</span></p>
-    </div>
-  </div>
-</section>
 
+<!-- ===== Century Clock (UTC+4) ===== -->
 <script>
 (function(){
-  const TOTAL = 3155760000; // 100 years in seconds
-  const start = Date.UTC(2001,0,1,0,0,0);
+  // Canon
+  const TOTAL = 3155760000; // seconds in a century (365.25 d/y)
+  const startUTC = Date.UTC(2001,0,1,0,0,0); // 2001-01-01 00:00:00 UTC
+  const TZ_SHIFT_MS = 4 * 3600 * 1000; // UTC+4 everywhere
+
   const $ = id => document.getElementById(id);
   const fmt = n => Number(n).toLocaleString('en-US');
 
-  function tick(){
-    const now = Date.now();
-    const shifted = now + 4*3600*1000; // UTC+4
-    const elapsedSec = Math.max(0, Math.floor((shifted - start)/1000));
-    const clamped = Math.min(elapsedSec, TOTAL);
-    const pct = (clamped / TOTAL) * 100;
-
-    $('tok-now').textContent = fmt(clamped);
-    $('tok-pct').textContent = pct.toFixed(6) + '%';
+  // Read Council config
+  function readConfig(){
+    try{
+      const raw = document.getElementById('council-config').textContent || '{}';
+      const cfg = JSON.parse(raw);
+      let amount = null;
+      if (cfg.tokenized_amount != null && isFinite(Number(cfg.tokenized_amount))) {
+        amount = Math.max(0, Math.min(TOTAL, Math.floor(Number(cfg.tokenized_amount))));
+      } else if (isFinite(Number(cfg.tokenized_pct))) {
+        const p = Math.max(0, Math.min(100, Number(cfg.tokenized_pct)));
+        amount = Math.round(TOTAL * p / 100);
+      } else {
+        amount = 0;
+      }
+      return { tokenized_amount: amount };
+    } catch(e){
+      return { tokenized_amount: 0 };
+    }
   }
 
-  tick();
-  setInterval(tick, 1000);
+  function render(){
+    const nowReal = Date.now();
+    const nowShifted = nowReal + TZ_SHIFT_MS; // Council mandate: use UTC+4 baseline
+    const elapsedSec = Math.max(0, Math.floor((nowShifted - startUTC) / 1000));
+    const clampedElapsed = Math.min(elapsedSec, TOTAL);
+    const remainSec = Math.max(TOTAL - clampedElapsed, 0);
+    const pctCentury = (clampedElapsed / TOTAL) * 100;
+
+    // Century progress
+    $('elapsed').textContent = fmt(clampedElapsed);
+    $('remain').textContent  = fmt(remainSec);
+    $('pct').textContent     = pctCentury.toFixed(2) + '%';
+    $('bar').style.width     = Math.max(0, Math.min(100, pctCentury)).toFixed(4) + '%';
+
+    // Now label: UTC+4 (no city)
+    const d = new Date(nowShifted);
+    $('nowutc').textContent = d.toISOString().replace('T',' ').replace('Z',' UTC+4');
+
+    // Tokenized (Council-controlled)
+    const { tokenized_amount } = readConfig();
+    const tokAmt = Math.min(tokenized_amount, TOTAL);
+    const tokPct = (tokAmt / TOTAL) * 100;
+    $('tokAmt').textContent = fmt(tokAmt);
+    $('tokPct').textContent = tokPct.toFixed(2) + '%';
+  }
+
+  render();
+  setInterval(render, 1000);
 })();
 </script>
 </body>
