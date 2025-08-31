@@ -1,343 +1,307 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>TIKcoin — Time Will Tell</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="TIKcoin — time in Ethereum. Liquidity locked. Contracts immutable after freeze. No bridges. Time Will Tell.">
-
-<!-- Headline font (only for titles) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TIKCOIN — Time Tokenized</title>
+<meta name="description" content="TIKCOIN — Immutable core on Ethereum mainnet. 1 TIK = 1 second. No bridges. Open-source, audited, transparent vestings." />
+<link rel="icon" href="favicon.ico" />
 <style>
   :root{
-    --bg:#0b1230; /* blue background */
-    --fg:#e7e9ee; --mut:#a7adbb; --line:#232634;
-    --card:#151923; --accent:#e8d27c; --btn:#1a1f2a; --link:#bcd1ff;
-    --violet:#8b5cf6;      /* main purple */
-    --lavender:#a78bfa;    /* secondary purple */
+    --bg:#0b0c0f; --fg:#f1f5f9; --muted:#94a3b8; --accent:#7c6cff;
+    --ok:#22c55e; --warn:#f59e0b; --info:#60a5fa; --bad:#ef4444;
+    --card:#11141a; --line:#242a35;
   }
   *{box-sizing:border-box}
-  html,body{
-    margin:0;background:var(--bg);color:var(--fg);
-    font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial
-  }
-  a{color:var(--link);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:980px;margin:0 auto;padding:0 16px}
-  header{border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .brand{display:flex;align-items:center;gap:.5rem;font-weight:800}
-  .brand img{height:26px;width:26px}
-  .btn{
-    display:inline-flex;align-items:center;gap:.4rem;
-    padding:.55rem .8rem;border:1px solid var(--line);border-radius:10px;
-    background:var(--btn);color:var(--fg);font-weight:600
-  }
-  .btn.primary{background:var(--accent);color:#111}
-  section{padding:28px 0;border-bottom:1px solid var(--line)}
-  h1,h2{margin:.2rem 0}
-
-  /* --- ONLY HEADLINES (HERO) — refined, designer-style --- */
-  .hero-stack{
-    max-width:860px;
-    margin:0 auto;
-    padding-top:8px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-    gap:12px; /* controlled vertical rhythm */
-  }
-  .eyebrow{
-    /* small top label: TIME IN ETHEREUM */
-    display:inline-block;
-    font:600 .82rem/1.2 "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
-    letter-spacing:.08em;
-    padding:.28rem .7rem;
-    border:1.5px solid var(--line);
-    border-radius:999px;
-    color:var(--mut);
-    text-transform:uppercase;
-  }
-  .headline-box{
-    font:700 clamp(24px,4.2vw,46px)/1.1 "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
-    letter-spacing:.06em;          /* tighter than default for all-caps */
-    text-transform:uppercase;
-    color:var(--violet);
-    border:2px solid var(--violet);
-    border-radius:14px;
-    padding:12px 16px;
-    display:inline-block;
-  }
-  .subhead-box{
-    font:700 clamp(14px,2.1vw,20px)/1.2 "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--lavender);
-    border:2px solid var(--lavender);
-    border-radius:12px;
-    padding:8px 12px;
-    display:inline-block;
-  }
-  .hero-desc{
-    color:var(--mut);
-    max-width:760px;
-    margin-top:6px;
-  }
-  /* --- /ONLY HEADLINES --- */
-
-  .small{font-size:.92rem}
-  .center{text-align:center}
-  .card{
-    background:var(--card);border:1px solid var(--line);
-    border-radius:12px;padding:16px
-  }
-  .grid{display:grid;gap:12px}
-  @media(min-width:860px){
-    .grid.cols-2{grid-template-columns:1fr 1fr}
-    .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
-  }
-  .foot{padding:22px 0 36px}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+  a{color:#93c5fd;text-decoration:none} a:hover{text-decoration:underline}
+  header{position:sticky;top:0;background:rgba(11,12,15,.85);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--line);z-index:50}
+  .wrap{max-width:1140px;margin:0 auto;padding:16px 20px}
+  .brand{display:flex;gap:12px;align-items:center}
+  nav{display:flex;gap:18px;flex-wrap:wrap}
+  .logo{width:28px;height:28px}
+  .badge{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:#121521;font-size:12px;color:#cfd1ff}
+  .btn{padding:11px 16px;border:1px solid var(--line);background:var(--card);border-radius:10px}
+  .btn.primary{border-color:transparent;background:linear-gradient(90deg,#7c6cff,#60a5fa);color:#0b1020;font-weight:700}
+  section{padding:48px 0;border-bottom:1px solid var(--line)}
+  h1,h2,h3{margin:0 0 10px}
+  h1{font-size:36px;line-height:1.15}
+  h2{font-size:22px}
+  h3{font-size:18px}
+  p.lead{color:#d1d5db;max-width:78ch}
+  .muted{color:var(--muted)}
+  .grid{display:grid;gap:24px}
+  @media (min-width:960px){.grid.cols-2{grid-template-columns:1.2fr .8fr}}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:960px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .kvs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  @media (max-width:960px){.kvs{grid-template-columns:repeat(2,1fr)}}
+  .kv{background:#0f131a;border:1px dashed #202635;padding:12px;border-radius:10px}
+  .svgrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .svgbox{width:28px;height:28px;display:inline-grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:#0e1218}
+  .timeline{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+  @media (max-width:960px){.timeline{grid-template-columns:repeat(3,1fr)}}
+  .phase{background:#10141c;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+  .phase small{display:block;color:#9aa5b1}
+  .table{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  table{border-collapse:collapse;width:100%;background:var(--card)}
+  th,td{border-bottom:1px solid var(--line);padding:10px;vertical-align:top}
+  thead th{background:#141926}
+  footer{color:var(--muted);padding:28px 0}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#10141c;border:1px solid var(--line);font-size:12px;color:#cbd5e1}
+  .ok{color:#10b981}
 </style>
 </head>
 <body>
+
+<!-- HEADER -->
 <header>
-  <style>
-    .hdr-wrap{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
-    .hdr-brand img{height:64px;width:auto;display:block} /* большой логотип */
-    .hdr-nav{display:flex;align-items:center;gap:.4rem;flex-wrap:nowrap}
-
-    /* компактные кнопки */
-    .hdr-btn{
-      padding:.35rem .7rem; border:1px solid #8b5cf6; border-radius:8px;
-      background:#8b5cf6; color:#fff; display:inline-flex; align-items:center;
-      font-size:.85rem; line-height:1; text-decoration:none; white-space:nowrap;
-      height:32px;
-    }
-
-    /* dropdown */
-    .tg-wrap{position:relative;z-index:9999}
-    .tg-menu{
-      display:none; position:absolute; top:100%; left:0; min-width:190px;
-      background:#151923; border:1px solid #232634; border-radius:10px; overflow:hidden;
-      box-shadow:0 10px 20px rgba(0,0,0,.35)
-    }
-    .tg-menu a{
-      display:block; width:100%; padding:.4rem .6rem; text-decoration:none;
-      border:0; border-radius:0; background:#151923; color:#e7e9ee; font-size:.85rem
-    }
-    .tg-menu a:hover{background:#1b2130}
-    header, .wrap, .nav{overflow:visible}
-  </style>
-
-  <div class="wrap nav hdr-wrap">
-    <!-- ЛОГОТИП (без надписи) -->
-    <div class="hdr-brand">
-      <img id="tikLogo" src="assets/logo.svg" alt="TIKcoin logo">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <div class="brand">
+      <!-- Inline SVG logo -->
+      <svg class="logo" viewBox="0 0 64 64" aria-label="TIKCOIN logo" role="img">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#7c6cff"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+        <circle cx="32" cy="32" r="29" fill="none" stroke="url(#g)" stroke-width="4"/>
+        <path d="M18 22h28M32 22v24" stroke="#cfd1ff" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <strong style="letter-spacing:.3px">TIKCOIN</strong>
+      <span class="badge">#TimeTokenized</span>
     </div>
-
-    <!-- МЕНЮ -->
-    <nav class="hdr-nav">
-      <!-- Telegram dropdown -->
-      <div class="tg-wrap">
-        <a href="#" class="hdr-btn" id="tgToggle" aria-haspopup="true" aria-expanded="false">Telegram ▾</a>
-        <div class="tg-menu" id="tgMenu" role="menu" aria-label="Telegram links">
-          <a href="https://t.me/tikcoin_official_org" target="_blank" rel="noopener" role="menuitem">Official Channel</a>
-          <a href="https://t.me/tikcoin_community_chat" target="_blank" rel="noopener" role="menuitem">Community Group</a>
-          <a href="https://t.me/+x57P-D0v_xJmNGZi" target="_blank" rel="noopener" role="menuitem">Partners</a>
-        </div>
-      </div>
-
-      <!-- Twitter -->
-      <a class="hdr-btn" href="https://twitter.com/TIKcoinProject" target="_blank" rel="noopener">Twitter</a>
-
-      <!-- Whitepaper -->
-      <a class="hdr-btn" href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
+    <nav>
+      <a href="#hero">Intro</a>
+      <a href="#canon">Canon</a>
+      <a href="#foundations">Foundations</a>
+      <a href="#numbers">Numbers</a>
+      <a href="#phases">Phases</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#faq">FAQ</a>
+      <a href="whitepaper.html">WhitePaper</a>
+      <a href="roadmap.html">Roadmap</a>
     </nav>
   </div>
-
-  <script>
-    // открытие/закрытие Telegram меню
-    (function(){
-      const btn = document.getElementById('tgToggle');
-      const menu = document.getElementById('tgMenu');
-      if(!btn || !menu) return;
-      function open(){ menu.style.display='block'; btn.setAttribute('aria-expanded','true'); }
-      function close(){ menu.style.display='none'; btn.setAttribute('aria-expanded','false'); }
-      function toggle(e){ e.preventDefault(); (menu.style.display==='block') ? close() : open(); }
-
-      btn.addEventListener('click', toggle);
-      document.addEventListener('click', (e)=>{ if(!menu.contains(e.target) && !btn.contains(e.target)) close(); });
-      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
-      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> close()));
-    })();
-  </script>
 </header>
 
-<script>
-  // 1) Выпадающее меню Telegram
-  (function(){
-    const tgBtn = document.getElementById('tgButton');
-    const tgDropdown = document.getElementById('tgDropdown');
-    if(tgBtn && tgDropdown){
-      tgBtn.addEventListener('click', function(e){
-        e.preventDefault();
-        tgDropdown.style.display = tgDropdown.style.display === 'block' ? 'none' : 'block';
-      });
-      document.addEventListener('click', function(e){
-        if (!tgBtn.contains(e.target) && !tgDropdown.contains(e.target)) tgDropdown.style.display = 'none';
-      });
-    }
-  })();
-
-  // 2) Фолбэки для логотипа (ищем рабочий путь)
-  (function(){
-    const img = document.getElementById('tikLogo');
-    if(!img) return;
-    const candidates = [
-      'ASSOCET/Logo.svg',
-      'ASSOCET/Logo.png',
-      'assets/Logo.svg',
-      'assets/Logo.png'
-    ];
-    let idx = 0;
-    function tryNext(){
-      idx++;
-      if(idx >= candidates.length) return;
-      img.src = candidates[idx];
-    }
-    img.addEventListener('error', tryNext);
-  })();
-</script>
-
-<script>
-  // Telegram dropdown toggle
-  document.addEventListener('DOMContentLoaded', () => {
-    const tgBtn = document.getElementById('tgButton');
-    const tgDropdown = document.getElementById('tgDropdown');
-    tgBtn.addEventListener('click', e => {
-      e.preventDefault();
-      tgDropdown.style.display = tgDropdown.style.display === 'block' ? 'none' : 'block';
-    });
-    document.addEventListener('click', e => {
-      if (!tgBtn.contains(e.target) && !tgDropdown.contains(e.target)) {
-        tgDropdown.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-<script>
-  // Telegram dropdown toggle
-  document.addEventListener('DOMContentLoaded', () => {
-    const tgBtn = document.getElementById('tgButton');
-    const tgDropdown = document.getElementById('tgDropdown');
-    tgBtn.addEventListener('click', e => {
-      e.preventDefault();
-      tgDropdown.style.display = tgDropdown.style.display === 'block' ? 'none' : 'block';
-    });
-    document.addEventListener('click', e => {
-      if (!tgBtn.contains(e.target) && !tgDropdown.contains(e.target)) {
-        tgDropdown.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-<script>
-  // JS для выпадающего списка Telegram
-  document.addEventListener('DOMContentLoaded', () => {
-    const tgMenu = document.querySelector('nav div');
-    const tgButton = tgMenu.querySelector('a.btn');
-    const dropdown = tgMenu.querySelector('div');
-    tgButton.addEventListener('click', e => {
-      e.preventDefault();
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    });
-    document.addEventListener('click', e => {
-      if (!tgMenu.contains(e.target)) dropdown.style.display = 'none';
-    });
-  });
-</script>
-
 <main>
-  <!-- HERO (only headlines refined) -->
-  <section>
-    <div class="wrap hero-stack">
-      <!-- tiny top slogan, requested text -->
-      <span class="eyebrow">TIME IN ETHEREUM</span>
 
-      <!-- main headline -->
-      <h1 class="headline-box">WE CANNOT STOP TIME — BUT WE CAN TOKENIZE IT.</h1>
-
-      <!-- sub headline -->
-      <div class="subhead-box">TIME CAN’T BE STOPPED, REWOUND, OR CHEATED.</div>
-
-      <!-- short description stays muted and unchanged in wording -->
-      <p class="hero-desc">
-        We tokenize time — we don’t alter it.
-        Liquidity locked. Core contracts immutable after freeze.
-        No bridges. No taxes. Community pool supports partners & integrations.
-        The rest — <strong>Time Will Tell</strong>.
-      </p>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap grid cols-2">
+      <div>
+        <h1>#TimeTokenized — One Canon. One Chain. One Community.</h1>
+        <p class="lead">
+          We anchor value in <b>time</b>. <b>1 TIK = 1 second</b> (seconds in a century: <b>3,155,760,000</b>, <i>decimals=0</i>).
+          Immutable core on Ethereum mainnet. <b>No bridges</b>. Open-source, audited, transparent vestings.
+          Visual arc: <span class="pill">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span>
+        </p>
+        <div class="cta-row" style="margin-top:14px">
+          <a class="btn primary" href="whitepaper.html">Read WhitePaper</a>
+          <a class="btn" href="roadmap.html">See Roadmap</a>
+          <a class="btn" href="#tokenomics">Tokenomics</a>
+        </div>
+        <div class="svgrow" aria-hidden="true" style="margin-top:12px">
+          <span class="badge">Immutable Core (V2)</span>
+          <span class="badge">No Bridges</span>
+          <span class="badge">Open-Source & Audited</span>
+          <span class="badge">Community Pool 20%</span>
+          <span class="badge">Airdrop #1 = 1%</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Quick Facts</h3>
+        <div class="kvs" style="margin-top:8px">
+          <div class="kv"><b>Total Supply</b><br/>3,155,760,000 TIK</div>
+          <div class="kv"><b>Decimals</b><br/>0</div>
+          <div class="kv"><b>Airdrop #1</b><br/>31,557,600 TIK (1%)</div>
+          <div class="kv"><b>Multisig</b><br/>3 / 5</div>
+        </div>
+        <p class="muted" style="margin-top:10px">No taxes. No burns. Transparent locks & vestings. Mainnet only.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ROAD OF TIME (unchanged) -->
-  <section id="road">
+  <!-- CANON -->
+  <section id="canon">
+    <div class="wrap grid cols-2">
+      <div>
+        <h2>Canon (Invariants)</h2>
+        <ul>
+          <li><b>TIK</b> — ERC-20, <b>decimals=0</b>, supply <b>3,155,760,000</b>; V2 has <b>no owner/mint/pause/blacklist</b>.</li>
+          <li><b>No bridges / no cross-chain</b>. Optional side tokens only via 3/5 multisig under strict policy.</li>
+          <li><b>Transparency:</b> Community Pool <b>20%</b>; Airdrop #1 <b>1%</b>; locks & vestings on-chain.</li>
+          <li><b>Governance:</b> Tiered-DAO + Timelock + Policy Module + Multisig (3/5) + Constitutional Guardian (pre-execution veto; cannot spend treasury).</li>
+          <li><b>Listing & Liquidity:</b> public playbook; LP lock ≥ <b>18 months</b>; addresses public and labeled.</li>
+        </ul>
+        <div class="svgrow" aria-hidden="true" style="margin-top:8px">
+          <div class="svgbox">☀️</div><div class="svgbox">⌛</div><div class="svgbox">⚙️</div>
+          <div class="svgbox">💎</div><div class="svgbox">🌀</div><div class="svgbox">⚛️</div><div class="svgbox">🧩</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>At a Glance</h3>
+        <ul style="margin-top:6px">
+          <li><b>Mainnet only.</b> Reduced attack surface.</li>
+          <li><b>Immutable core.</b> Code reflects the three axioms of time.</li>
+          <li><b>Policy-gated actions.</b> DAO → Timelock → Multisig execution.</li>
+          <li><b>Public proofs.</b> Audits, LP locks, labeled addresses.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDATIONS -->
+  <section id="foundations">
     <div class="wrap">
-      <h2>Road of Time</h2>
-      <p class="mut small">
-        Canon sequence: Sun → Hourglass → Mechanics → Quartz → Tourbillon → Atom → Quantum.
-      </p>
-      <div class="grid cols-2" style="margin-top:10px">
-        <div class="card"><strong>☀️ Sun — Foundation</strong><br><span class="small mut">Architecture defined. Whitepaper skeleton ready.</span></div>
-        <div class="card"><strong>⏳ Hourglass — Audit prep</strong><br><span class="small mut">Contracts in development; audit scheduling; freeze criteria set.</span></div>
-        <div class="card"><strong>⚙️ Mechanics — Presale & LP lock</strong><br><span class="small mut">Presale at $0.01. Listing target $0.02–$0.03. LP lock (public).</span></div>
-        <div class="card"><strong>💎 Quartz — Listing & utilities</strong><br><span class="small mut">DEX listing, dashboards, on-chain referrals.</span></div>
-        <div class="card"><strong>🌀 Tourbillon — DAO</strong><br><span class="small mut">Governance via multisig + timelock.</span></div>
-        <div class="card"><strong>⚛️ Atom — Integrations</strong><br><span class="small mut">Partners via community pool grants/OTC; ecosystem growth.</span></div>
-        <div class="card"><strong>🧭 Quantum — Beyond Time</strong><br><span class="small mut">Future innovations. Time Will Tell.</span></div>
+      <h2>Foundations</h2>
+      <p class="muted">We don’t name internal committees — we publish principles and encode them.</p>
+      <div class="cards" style="margin-top:12px">
+        <div class="card"><h3>Philosophy</h3><p>Fixed symbolism; arc strictly follows <i>Sun → … → Quantum</i>.</p></div>
+        <div class="card"><h3>Psychology</h3><p>Trust by design: clarity over hype; no dark patterns; honest CTAs.</p></div>
+        <div class="card"><h3>Mathematics</h3><p>Supply = seconds; vesting math explicit; safety margins & cap guards.</p></div>
+        <div class="card"><h3>Economics</h3><p>No taxes/burns; transparent locks; Community Pool = 20%.</p></div>
+        <div class="card"><h3>Ethics</h3><p>Immutable core. No bridges. Audits & addresses public.</p></div>
+        <div class="card"><h3>Sociology & Marketing</h3><p>Community-first rituals; fair referrals (≤33); accessible docs.</p></div>
+        <div class="card"><h3>Governance</h3><p>Tiered-DAO + Timelock + Policy + Multisig + Constitutional Guardian.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ROADMAP (PUBLIC PREVIEW) -->
-<section id="roadmap">
-  <div class="wrap center">
-    <h2>Roadmap (Public Preview)</h2>
-    <p class="mut small">We share only the essentials. The rest — Time Will Tell.</p>
-
-    <div style="margin:20px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
-      <div class="card small" style="min-width:160px;">
-        <strong>V1 — Prototype ☀️</strong>
+  <!-- NUMBERS -->
+  <section id="numbers">
+    <div class="wrap">
+      <h2>Numbers that Matter</h2>
+      <div class="kvs" style="margin-top:12px">
+        <div class="kv"><b>Seconds in a Century</b><br/>3,155,760,000</div>
+        <div class="kv"><b>Community Pool</b><br/>20%</div>
+        <div class="kv"><b>Airdrop #1</b><br/>1% (31,557,600 TIK)</div>
+        <div class="kv"><b>LP Lock</b><br/>≥ 18 months</div>
       </div>
-      <div class="card small" style="min-width:160px;">
-        <strong>V1.5 — Presale Prep ⏳</strong>
-      </div>
-      <div class="card small" style="min-width:160px;">
-        <strong>V2 — Immutable Core 💎</strong>
-      </div>
-      <div class="card small" style="min-width:160px;">
-        <strong>… Time Will Tell</strong>
-      </div>
-    </div>
-
-    <a class="btn primary" href="roadmap.html" target="_blank" rel="noopener">See full Roadmap</a>
-  </div>
-</section>
-  <section class="foot">
-    <div class="wrap center small">
-      © <span id="y"></span> TIKcoin — A symbol of time.<br>
-      Time Will Tell ⏳ &nbsp; #TimeTokenized &nbsp; #GoldenAge<br>
-      <span class="mut">Продолжение следует…</span>
+      <p class="muted" style="margin-top:8px">No stealth taxes or burns. Every allocation and vesting is visible and auditable.</p>
     </div>
   </section>
+
+  <!-- PHASES PREVIEW -->
+  <section id="phases">
+    <div class="wrap">
+      <h2>Phases (Sun → … → Quantum)</h2>
+      <p class="muted">Full detail in the <a href="roadmap.html">Roadmap</a>.</p>
+      <div class="timeline" style="margin-top:12px">
+        <div class="phase"><b>Sun</b><small>Canon Freeze</small></div>
+        <div class="phase"><b>Hourglass</b><small>V1 Contracts</small></div>
+        <div class="phase"><b>Mechanical</b><small>Presale (IOU)</small></div>
+        <div class="phase"><b>Quartz</b><small>Immutable Core</small></div>
+        <div class="phase"><b>Tourbillon</b><small>Listing & LP</small></div>
+        <div class="phase"><b>Atom</b><small>Utilities</small></div>
+        <div class="phase"><b>Quantum</b><small>DAO Scale-Up</small></div>
+      </div>
+      <div class="cta-row" style="margin-top:14px">
+        <a class="btn primary" href="roadmap.html#phases">View Full Phases</a>
+        <a class="btn" href="roadmap.html#gates">Go/No-Go Gates</a>
+        <a class="btn" href="roadmap.html#ledger">Governance Log</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS MINI -->
+  <section id="tokenomics">
+    <div class="wrap">
+      <h2>Tokenomics (Overview)</h2>
+      <div class="table" style="margin-top:12px">
+        <table aria-label="Tokenomics overview">
+          <thead>
+            <tr><th>Bucket</th><th>Percent</th><th>Amount (TIK)</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Presale (IOU)</td><td><b>35%</b></td><td><b>1,104,516,000</b></td>
+              <td>One-time presale via LaunchEscrow; converts 1:1 at migration; baseline vesting.</td>
+            </tr>
+            <tr>
+              <td>Community Pool</td><td><b>20%</b></td><td><b>631,152,000</b></td>
+              <td>Incentives & airdrops (<b>Airdrop #1 = 1%</b> = 31,557,600 TIK); on-chain proofs.</td>
+            </tr>
+            <tr>
+              <td>Reserve Liquidity</td><td><b>15%</b></td><td><b>473,364,000</b></td>
+              <td>LP lock ≥18 months; remaining reserve timelocked; DAO-managed injections.</td>
+            </tr>
+            <tr>
+              <td>TIK Vault</td><td><b>10%</b></td><td><b>315,576,000</b></td>
+              <td>Protocol vault; stricter locks allowed; address public.</td>
+            </tr>
+            <tr>
+              <td>DAO Treasury</td><td><b>20%</b></td><td><b>631,152,000</b></td>
+              <td>Audits, listings, grants, ecosystem; DAO + Policy + Timelock + Multisig 3/5.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:8px">No taxes or burns. Any movement from reserves/treasury requires DAO proposal → timelock → execution.</p>
+      <div class="cta-row" style="margin-top:10px">
+        <a class="btn" href="whitepaper.html#tokenomics">Full Tokenomics</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap grid cols-2">
+      <div>
+        <h2>FAQ</h2>
+        <details open><summary><b>Why decimals = 0?</b></summary>
+          <p>Time is atomic at our chosen granularity. <i>decimals=0</i> simplifies accounting and UX.</p>
+        </details>
+        <details><summary><b>Why no bridges?</b></summary>
+          <p>To minimize attack surface and trust. Optional side tokens only via 3/5 multisig under strict policy.</p>
+        </details>
+        <details><summary><b>Are there taxes or burns?</b></summary>
+          <p>No. All flows are explicit: locks, vestings, grants.</p>
+        </details>
+        <details><summary><b>What is Airdrop #1?</b></summary>
+          <p>1% of total supply (31,557,600 TIK), conceptually one year in seconds; distributed by verifiable contribution.</p>
+        </details>
+      </div>
+      <div class="card">
+        <h3>Go / No-Go Gates</h3>
+        <ul style="margin-top:6px">
+          <li><b>Security:</b> criticals resolved or formally waived with rationale.</li>
+          <li><b>Legal/Policy:</b> disclosures & geo policy live; presale terms approved.</li>
+          <li><b>Ops:</b> incident runbooks; keys rotation; backups verified.</li>
+          <li><b>Comms:</b> launch posts & dashboards scheduled.</li>
+          <li><b>Finance:</b> LP lock proof; treasury map; streaming where possible.</li>
+        </ul>
+        <div style="margin-top:8px">
+          <a class="btn" href="roadmap.html#gates">See Gates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div>© TIKCOIN — Immutable on Ethereum mainnet. No bridges. One community.</div>
+    <div class="svgrow">
+      <span class="pill">Audit PDFs + SHA256: <span class="ok">to be published</span></span>
+      <span class="pill">Contracts: <span class="muted">to be linked in footer</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- (Optional) JSON-LD for better previews -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"TIKCOIN",
+  "url":"https://tikcoin.org",
+  "description":"TIKCOIN — 1 TIK = 1 second. Immutable core on Ethereum mainnet. No bridges.",
+  "inLanguage":"en"
+}
+</script>
+
 </body>
 </html>
