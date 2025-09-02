@@ -29,7 +29,7 @@
   h1{font-size:40px;line-height:1.1;letter-spacing:.2px}
   h2{font-size:22px}
   p.lead{color:#d3dae4;max-width:74ch}
-  .muted{color:var(--muted)}
+  .muted{color:#9aa4b2}
   .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
   .badge{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:#121521;font-size:12px;color:#cfd1ff}
   .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
@@ -37,17 +37,18 @@
   .grid-2{display:grid;gap:24px}
   @media (min-width:980px){.grid-2{grid-template-columns:1.2fr .8fr}}
 
-  /* Progress bar (no numbers) */
+  /* Progress bars */
   .bar{height:10px;border-radius:999px;background:#0d1118;border:1px solid #1a2130;overflow:hidden;margin-top:8px}
   .bar>span{display:block;height:100%;background:linear-gradient(90deg,#7c6cff,#60a5fa)}
 
   /* Century Clock (Council design) */
   .clock{background:var(--ghost);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:14px}
   .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .big{font-size:28px;font-weight:700;letter-spacing:.3px}
   .kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
   .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#10141c;border:1px solid var(--line);font-size:12px;color:#cbd5e1}
   .tiny{font-size:12px;margin:0;color:var(--muted)}
-  footer{color:var(--muted);padding:30px 0}
+  footer{color:#9aa4b2;padding:30px 0}
 </style>
 </head>
 <body>
@@ -75,7 +76,7 @@
       <div>
         <h1>We cannot stop time — but we can tokenize it.</h1>
         <p class="lead">
-          <b>1 TIK = 1 second</b>. Total supply <b>3,155,760,000</b> (one century, <i>decimals=0</i>).
+          <b>1 TIK = 1 second</b>. Total supply <b>3,155,760,000</b> (seconds in a century, <i>decimals=0</i>).
           Immutable on <b>Ethereum mainnet</b>. <b>No bridges.</b>
         </p>
         <div class="badges" aria-hidden="true">
@@ -90,27 +91,32 @@
         </div>
       </div>
 
-      <!-- CENTURY CLOCK (UTC+4, NO NUMBERS EXCEPT "UTC+4" LABEL) -->
+      <!-- CENTURY CLOCK (UTC+4) -->
       <div class="clock" id="century">
         <div class="row">
           <span class="muted">Century Clock</span>
           <span class="pill">Sun → Hourglass → Mechanical → Quartz → Tourbillon → Atom → Quantum</span>
         </div>
 
-        <!-- Visual progress only -->
-        <div class="row" style="align-items:center">
-          <span class="muted">Century in progress</span>
-          <span class="pill">Minimal, numberless view</span>
+        <!-- Century Progress -->
+        <div class="row" style="align-items:end">
+          <span class="muted">Century Progress</span>
+          <span class="big" id="pct">0.00%</span>
         </div>
-        <div class="bar" aria-label="Century progress (visual only)"><span id="bar" style="width:0%"></span></div>
+        <div class="bar"><span id="bar" style="width:0%"></span></div>
 
         <div class="kv">
+          <div><span class="muted">Elapsed</span><br/><b id="elapsed">—</b> sec</div>
+          <div><span class="muted">Remaining</span><br/><b id="remain">—</b> sec</div>
           <div><span class="muted">Now (UTC+4)</span><br/><b id="nowutc">—</b></div>
-          <div><span class="muted">Canon</span><br/><b>1 TIK = 1 second</b></div>
-          <div><span class="muted">Total Supply</span><br/><b>3,155,760,000</b></div>
-          <div><span class="muted">Decimals</span><br/><b>0</b></div>
+          <div><span class="muted">Total (Canon)</span><br/><b>3,155,760,000</b> sec</div>
         </div>
 
+        <!-- Tokenized (inside the same block; Council-controlled) -->
+        <div class="row" style="margin-top:6px">
+          <span class="muted">Tokenized so far (Council)</span>
+          <b><span id="tokAmt">0</span> TIK · <span id="tokPct">0.00%</span></b>
+        </div>
         <p class="tiny">
           TIK is a digital registry of seconds. It does not sell time and does not add lifespan.
         </p>
@@ -154,35 +160,4 @@
     <div>© TIKCOIN — Council-led. Immutable on Ethereum. No bridges. All times UTC+4.</div>
     <div style="display:flex;gap:10px;flex-wrap:wrap">
       <span class="badge">1 TIK = 1 second</span>
-      <span class="badge">decimals = 0</span>
-      <span class="badge">UTC+4</span>
-    </div>
-  </div>
-</footer>
-
-<!-- No tokenization counters or bonus figures. Only fundamentals remain. -->
-<script>
-(function(){
-  const TZ_SHIFT_MS = 4 * 3600 * 1000; // UTC+4 only
-  const $ = id => document.getElementById(id);
-
-  function render(){
-    const nowReal = Date.now();
-    const nowShifted = nowReal + TZ_SHIFT_MS;
-    if ($('nowutc')){
-      const d = new Date(nowShifted);
-      $('nowutc').textContent = d.toISOString().replace('T',' ').replace('Z',' UTC+4');
-    }
-    // Visual-only bar animation (no numbers)
-    const seconds = Math.floor((nowReal/1000)%100);
-    const w = (seconds/100)*100; // just a soft pulse effect 0→100
-    const bar = document.getElementById('bar');
-    if (bar) bar.style.width = w.toFixed(2) + '%';
-  }
-
-  render();
-  setInterval(render, 1000);
-})();
-</script>
-</body>
-</html>
+      <span class="
